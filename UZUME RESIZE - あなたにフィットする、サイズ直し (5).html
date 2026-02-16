@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=430, initial-scale=1.0">
+    <title>UZUME RESIZE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+        /* Font Setup based on assets */
+        @font-face {
+            font-family: 'NotoSerifCJKsc-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf');
+        }
+        @font-face {
+            font-family: 'NotoSerifCJKsc-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Bold.otf');
+        }
+        @font-face {
+            font-family: 'NotoSansHans-Regular';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSansHans-Regular.otf');
+        }
+        @font-face {
+            font-family: 'NotoSansHans-Bold';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSansHans-Bold.otf');
+        }
+
+        :root {
+            --primary-color: #2C4A4A; /* Dark Teal Green */
+            --secondary-color: #F8F8F6; /* Off White */
+            --accent-color: #C5A065; /* Gold Accent */
+            --text-color: #333333;
+            --white: #FFFFFF;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 430px;
+            font-family: 'NotoSansHans-Regular', 'Noto Sans JP', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Utility */
+        .serif {
+            font-family: 'NotoSerifCJKsc-Regular', 'Noto Serif JP', serif;
+        }
+        .bold {
+            font-weight: 700;
+        }
+        .container {
+            padding: 0 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mb-1 { margin-bottom: 8px; }
+        .mb-2 { margin-bottom: 16px; }
+        .mb-3 { margin-bottom: 24px; }
+        .mb-4 { margin-bottom: 32px; }
+        .mb-5 { margin-bottom: 40px; }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 430px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo {
+            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-size: 20px;
+            color: var(--primary-color);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .menu-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            margin-top: 60px;
+            height: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(44, 74, 74, 0.2), rgba(44, 74, 74, 0.6));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+        .hero-title {
+            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-copy {
+            font-family: 'NotoSerifCJKsc-Regular', serif;
+            font-size: 28px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero-sub {
+            font-size: 14px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* CTA Button Global */
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 15px rgba(44, 74, 74, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+        }
+        .btn-cta.outline {
+            background-color: transparent;
+            border: 1px solid var(--white);
+        }
+
+        /* Section Global */
+        section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        section:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+        .section-title {
+            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-size: 24px;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        /* Empathy Section */
+        .empathy-card {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .empathy-card:last-child {
+            margin-bottom: 0;
+        }
+        .empathy-img-wrap {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+        }
+        .empathy-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .empathy-content {
+            background: var(--white);
+            padding: 20px;
+            margin-top: -30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 2px;
+        }
+        .empathy-text {
+            font-family: 'NotoSerifCJKsc-Regular', serif;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Reason Section */
+        .reason-item {
+            margin-bottom: 60px;
+        }
+        .reason-item:last-child {
+            margin-bottom: 0;
+        }
+        .reason-num {
+            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-size: 48px;
+            color: rgba(44, 74, 74, 0.1);
+            line-height: 1;
+            margin-bottom: -20px;
+            margin-left: -5px;
+            position: relative;
+            z-index: 0;
+        }
+        .reason-header {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+        .reason-title {
+            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .reason-img-wrap {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .reason-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .reason-desc {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .reason-highlight {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .ba-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .ba-img-wrap {
+            flex: 1;
+            height: 150px;
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .ba-label {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            background: rgba(44, 74, 74, 0.8);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
+
+        /* Brand Section */
+        .brand-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            overflow: hidden;
+            padding: 40px 0;
+        }
+        .brand-title {
+            text-align: center;
+            font-family: 'NotoSerifCJKsc-Regular', serif;
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            letter-spacing: 0.1em;
+        }
+        .brand-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .brand-name {
+            font-family: 'Times New Roman', serif;
+            font-size: 18px;
+            opacity: 0.7;
+            white-space: nowrap;
+        }
+
+        /* Process Section */
+        .process-flow {
+            position: relative;
+            padding-left: 20px;
+            margin-left: 10px;
+            border-left: 1px dashed #ccc;
+        }
+        .process-step {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        .process-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .process-desc {
+            font-size: 13px;
+            color: #666;
+        }
+        .process-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+        .process-tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #999;
+            border-bottom: 2px solid transparent;
+        }
+        .process-tab.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* Price Section */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: var(--white);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .price-table th, .price-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        .price-table th {
+            background-color: #f9f9f9;
+            color: var(--primary-color);
+            font-weight: 600;
+            width: 40%;
+        }
+        .price-table td {
+            font-weight: 500;
+        }
+        .price-note {
+            font-size: 12px;
+            color: #888;
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+        .discount-box {
+            background-color: #FDF8F0;
+            border: 1px solid #EEDCC0;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .discount-title {
+            color: #B08D55;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .cta-title {
+            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .cta-guarantee {
+            font-size: 14px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        .cta-btn-wrapper {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .btn-cta.light {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #888;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">UZUME</div>
+        <div class="menu-icon"><i class="ri-menu-line"></i></div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="https://a.lovart.ai/artifacts/agent/szzoCI4N465qtHqk.png" alt="Hero Image" class="hero-img">
+        <div class="hero-overlay">
+            <h1 class="hero-title">UZUME RESIZE</h1>
+            <p class="hero-copy">あなたにフィットする、<br>0.5号刻みのサイズ直し</p>
+            <p class="hero-sub">日本人のための、繊細なサイズ調整</p>
+            <div style="width: 240px;">
+                <a href="#" class="btn-cta">無料送付キットを申し込む</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Empathy Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">こんなお悩みありませんか？</h2>
+            
+            <div class="empathy-card">
+                <div class="empathy-img-wrap">
+                    <img src="https://a.lovart.ai/artifacts/agent/eZULhCa5Vp6QJWMy.jpg" alt="Engagement Ring" class="empathy-img">
+                </div>
+                <div class="empathy-content">
+                    <p class="empathy-text">大切に保管している婚約指輪。<br>久しぶりに指を通したらサイズが合わなくてつけられなかった。</p>
+                </div>
+            </div>
+
+            <div class="empathy-card">
+                <div class="empathy-img-wrap">
+                    <img src="https://a.lovart.ai/artifacts/agent/o4yikn0PFp6EIiKP.jpg" alt="Inherited Ring" class="empathy-img">
+                </div>
+                <div class="empathy-content">
+                    <p class="empathy-text">大切な人から受け継いだリング。<br>私の指にはあわなくて・・・</p>
+                </div>
+            </div>
+
+            <div class="empathy-card">
+                <div class="empathy-img-wrap">
+                    <img src="https://a.lovart.ai/artifacts/agent/5LAtCpsJQmBiom8k.jpg" alt="Vintage Ring" class="empathy-img">
+                </div>
+                <div class="empathy-content">
+                    <p class="empathy-text">一目惚れしたヴィンテージリング。<br>サイズが合えば買いたかったのに。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reason Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">UZUMEが選ばれる理由</h2>
+
+            <!-- Reason 01 -->
+            <div class="reason-item">
+                <div class="reason-num">01</div>
+                <div class="reason-header">
+                    <h3 class="reason-title">世界に誇る甲府の職人技術</h3>
+                </div>
+                <div class="reason-img-wrap">
+                    <img src="https://a.lovart.ai/artifacts/agent/Xdmrj9LkQJ5KIW97.png" alt="Craftsman" class="reason-img">
+                </div>
+                <div class="reason-desc">
+                    <p class="mb-2"><span class="reason-highlight">精密にデザインを守りながらのリサイズが可能。</span><br>他店やブランドのお店で断られてしまったデザインも、諦めないでください。</p>
+                    <p><span class="reason-highlight">0.5号刻みのジャストフィットを実現。</span><br>日本人の肌質、気候の変化を熟知している職人技で0.5号刻みの細やかな調整ができます。</p>
+                </div>
+            </div>
+
+            <!-- Reason 02 -->
+            <div class="reason-item">
+                <div class="reason-num">02</div>
+                <div class="reason-header">
+                    <h3 class="reason-title">これからも長く<br>ジュエリーを愛してほしいから</h3>
+                </div>
+                <div class="ba-container">
+                    <div class="ba-img-wrap">
+                        <img src="https://a.lovart.ai/artifacts/agent/IdC88ijRym3UXNbS.png" alt="Before" class="reason-img">
+                        <span class="ba-label">Before</span>
+                    </div>
+                    <div class="ba-img-wrap">
+                        <img src="https://a.lovart.ai/artifacts/agent/zCeiLTFLoc68zxVk.png" alt="After" class="reason-img">
+                        <span class="ba-label">After</span>
+                    </div>
+                </div>
+                <div class="reason-desc">
+                    <ul style="padding-left: 20px; margin: 0;">
+                        <li>1年間の安心保証</li>
+                        <li>新品同様の磨き上げを無償で</li>
+                        <li>チェーン切れや石留めも対応可能</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reason 03 -->
+            <div class="reason-item">
+                <div class="reason-num">03</div>
+                <div class="reason-header">
+                    <h3 class="reason-title">自宅から、簡単オンライン完結</h3>
+                </div>
+                <div class="reason-img-wrap">
+                    <img src="https://a.lovart.ai/artifacts/agent/XIWqzuwpxyAqPexC.jpg" alt="Kit" class="reason-img">
+                </div>
+                <div class="reason-desc">
+                    <p>無料送付キットで、ご自宅から簡単に。<br>忙しい方でも安心してご利用いただけます。<br>※来店での対応も可能です。</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn-cta">無料送付キットを申し込む</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <div class="brand-section">
+        <h3 class="brand-title">すべてのハイブランドに対応</h3>
+        <div class="brand-list">
+            <span class="brand-name">Cartier</span>
+            <span class="brand-name">Tiffany & Co.</span>
+            <span class="brand-name">Bvlgari</span>
+            <span class="brand-name">Van Cleef & Arpels</span>
+            <span class="brand-name">Harry Winston</span>
+            <span class="brand-name">Chopard</span>
+            <span class="brand-name">Piaget</span>
+        </div>
+    </div>
+
+    <!-- Process Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">ご利用の流れ</h2>
+            
+            <div class="process-tabs">
+                <div class="process-tab active">オンライン</div>
+                <div class="process-tab">ご来店</div>
+            </div>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="process-title">STEP 1 申し込み</div>
+                    <div class="process-desc">Webサイトから無料送付キットをお申し込みください。</div>
+                </div>
+                <div class="process-step">
+                    <div class="process-title">STEP 2 送付キット到着・発送</div>
+                    <div class="process-desc">届いたキットにジュエリーを入れ、ポストに投函してください。</div>
+                </div>
+                <div class="process-step">
+                    <div class="process-title">STEP 3 お見積り・修理</div>
+                    <div class="process-desc">職人が状態を確認しお見積り。ご了承後、丁寧にリサイズします。</div>
+                </div>
+                <div class="process-step">
+                    <div class="process-title">STEP 4 お受け取り</div>
+                    <div class="process-desc">綺麗に生まれ変わったジュエリーをお届けします。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">料金について</h2>
+            
+            <table class="price-table">
+                <tr>
+                    <th>サイズアップ</th>
+                    <td>¥20,000〜</td>
+                </tr>
+                <tr>
+                    <th>サイズダウン</th>
+                    <td>¥30,000〜</td>
+                </tr>
+                <tr>
+                    <th>チェーン修理</th>
+                    <td>¥3,000〜</td>
+                </tr>
+                <tr>
+                    <th>磨き上げ</th>
+                    <td>¥2,000〜</td>
+                </tr>
+                <tr>
+                    <th>石留め直し</th>
+                    <td>¥8,000〜</td>
+                </tr>
+            </table>
+            <p class="price-note">※デザインの特徴や複雑さにより料金は変動します</p>
+
+            <div class="discount-box">
+                <div class="discount-title"><i class="ri-lightbulb-flash-line"></i> お得な割引情報</div>
+                <p style="font-size: 13px; margin: 0; color: #666;">不要な貴金属を一緒にお送りいただくことで、買取金額をサイズ直し料金から割引いたします。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <div class="cta-guarantee">1年保証つき・安心のアフターケア</div>
+        <h2 class="cta-title">大切なジュエリーを、<br>もう一度あなたのそばに。</h2>
+        <div class="cta-btn-wrapper">
+            <a href="#" class="btn-cta light">無料送付キットを申し込む</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="color: #666; margin-bottom: 20px;">UZUME</div>
+        <p>&copy; 2024 UZUME RESIZE. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
