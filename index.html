@@ -2,43 +2,26 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=430, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UZUME RESIZE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
-
-        /* Font Setup based on assets */
-        @font-face {
-            font-family: 'NotoSerifCJKsc-Regular';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf');
-        }
-        @font-face {
-            font-family: 'NotoSerifCJKsc-Bold';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Bold.otf');
-        }
-        @font-face {
-            font-family: 'NotoSansHans-Regular';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSansHans-Regular.otf');
-        }
-        @font-face {
-            font-family: 'NotoSansHans-Bold';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSansHans-Bold.otf');
-        }
-
         :root {
-            --primary-color: #2C4A4A; /* Dark Teal Green */
-            --secondary-color: #F8F8F6; /* Off White */
-            --accent-color: #C5A065; /* Gold Accent */
-            --text-color: #333333;
+            --primary-color: #1B2A4A;
+            --secondary-color: #FAF8F5;
+            --accent-color: #7A9AB5;
+            --text-color: #3D3D3D;
             --white: #FFFFFF;
+            --section-bg: #E8E4E1;
         }
 
         body {
             margin: 0;
             padding: 0;
-            width: 430px;
-            font-family: 'NotoSansHans-Regular', 'Noto Sans JP', sans-serif;
+            max-width: 430px;
+            width: 100%;
+            margin: 0 auto;
+            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
             background-color: var(--secondary-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -47,9 +30,6 @@
         }
 
         /* Utility */
-        .serif {
-            font-family: 'NotoSerifCJKsc-Regular', 'Noto Serif JP', serif;
-        }
         .bold {
             font-weight: 700;
         }
@@ -69,8 +49,10 @@
         header {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 430px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 430px;
+            width: 100%;
             height: 60px;
             background-color: rgba(255, 255, 255, 0.95);
             display: flex;
@@ -83,8 +65,9 @@
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .logo {
-            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
             font-size: 20px;
+            font-weight: 700;
             color: var(--primary-color);
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -113,7 +96,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(44, 74, 74, 0.2), rgba(44, 74, 74, 0.6));
+            background: linear-gradient(to bottom, rgba(27, 42, 74, 0.2), rgba(27, 42, 74, 0.6));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -124,7 +107,7 @@
             box-sizing: border-box;
         }
         .hero-title {
-            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
             font-size: 14px;
             letter-spacing: 0.2em;
             margin-bottom: 15px;
@@ -132,7 +115,7 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         .hero-copy {
-            font-family: 'NotoSerifCJKsc-Regular', serif;
+            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
             font-size: 28px;
             line-height: 1.4;
             margin-bottom: 15px;
@@ -156,7 +139,7 @@
             font-size: 16px;
             font-weight: 500;
             letter-spacing: 0.05em;
-            box-shadow: 0 4px 15px rgba(44, 74, 74, 0.3);
+            box-shadow: 0 4px 15px rgba(27, 42, 74, 0.3);
             transition: all 0.3s ease;
             width: 100%;
             box-sizing: border-box;
@@ -177,8 +160,9 @@
             background-color: var(--secondary-color);
         }
         .section-title {
-            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
             font-size: 24px;
+            font-weight: 700;
             color: var(--primary-color);
             text-align: center;
             margin-bottom: 40px;
@@ -228,7 +212,7 @@
             border-radius: 2px;
         }
         .empathy-text {
-            font-family: 'NotoSerifCJKsc-Regular', serif;
+            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
             font-size: 15px;
             line-height: 1.8;
             color: #555;
@@ -242,14 +226,15 @@
             margin-bottom: 0;
         }
         .reason-num {
-            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
             font-size: 48px;
-            color: rgba(44, 74, 74, 0.1);
+            color: rgba(27, 42, 74, 0.1);
             line-height: 1;
             margin-bottom: -20px;
             margin-left: -5px;
             position: relative;
             z-index: 0;
+            font-weight: 700;
         }
         .reason-header {
             position: relative;
@@ -257,8 +242,9 @@
             margin-bottom: 20px;
         }
         .reason-title {
-            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
             font-size: 20px;
+            font-weight: 700;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
@@ -300,40 +286,27 @@
             position: absolute;
             bottom: 5px;
             left: 5px;
-            background: rgba(44, 74, 74, 0.8);
+            background: rgba(27, 42, 74, 0.8);
             color: white;
             font-size: 10px;
             padding: 2px 6px;
             border-radius: 2px;
         }
 
-        /* Brand Section */
-        .brand-section {
-            background-color: var(--primary-color);
-            color: var(--white);
-            overflow: hidden;
-            padding: 40px 0;
-        }
-        .brand-title {
+        /* Trust Section */
+        .trust-section {
+            background-color: var(--section-bg);
+            padding: 40px 20px;
             text-align: center;
-            font-family: 'NotoSerifCJKsc-Regular', serif;
-            font-size: 16px;
-            margin-bottom: 30px;
-            opacity: 0.8;
-            letter-spacing: 0.1em;
         }
-        .brand-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 20px;
+        .trust-section p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 8px;
         }
-        .brand-name {
-            font-family: 'Times New Roman', serif;
-            font-size: 18px;
-            opacity: 0.7;
-            white-space: nowrap;
+        .trust-section p:last-child {
+            margin-bottom: 0;
         }
 
         /* Process Section */
@@ -418,14 +391,14 @@
             margin-bottom: 30px;
         }
         .discount-box {
-            background-color: #FDF8F0;
-            border: 1px solid #EEDCC0;
+            background-color: #F0F4F8;
+            border: 1px solid #B8CCDB;
             padding: 20px;
             border-radius: 4px;
             margin-bottom: 30px;
         }
         .discount-title {
-            color: #B08D55;
+            color: var(--accent-color);
             font-weight: 700;
             margin-bottom: 5px;
             display: flex;
@@ -441,8 +414,9 @@
             padding: 80px 20px;
         }
         .cta-title {
-            font-family: 'NotoSerifCJKsc-Bold', serif;
+            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
             font-size: 26px;
+            font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.4;
         }
@@ -489,7 +463,7 @@
         <div class="hero-overlay">
             <h1 class="hero-title">UZUME RESIZE</h1>
             <p class="hero-copy">あなたにフィットする、<br>0.5号刻みのサイズ直し</p>
-            <p class="hero-sub">日本人のための、繊細なサイズ調整</p>
+            <p class="hero-sub">呼吸が、深くなる。— あなたのジュエリーに、再びフィットする安心を。</p>
             <div style="width: 240px;">
                 <a href="#" class="btn-cta">無料送付キットを申し込む</a>
             </div>
@@ -595,18 +569,10 @@
         </div>
     </section>
 
-    <!-- Brands Section -->
-    <div class="brand-section">
-        <h3 class="brand-title">すべてのハイブランドに対応</h3>
-        <div class="brand-list">
-            <span class="brand-name">Cartier</span>
-            <span class="brand-name">Tiffany & Co.</span>
-            <span class="brand-name">Bvlgari</span>
-            <span class="brand-name">Van Cleef & Arpels</span>
-            <span class="brand-name">Harry Winston</span>
-            <span class="brand-name">Chopard</span>
-            <span class="brand-name">Piaget</span>
-        </div>
+    <!-- Trust Section (replaces Brands Section) -->
+    <div class="trust-section">
+        <p>他店やブランドショップで断られた方も、お気軽にご相談ください。</p>
+        <p>素材・デザインを問わず、まずはお見積もりから。</p>
     </div>
 
     <!-- Process Section -->
@@ -688,7 +654,7 @@
     <!-- Footer -->
     <footer>
         <div class="logo" style="color: #666; margin-bottom: 20px;">UZUME</div>
-        <p>&copy; 2024 UZUME RESIZE. All Rights Reserved.</p>
+        <p>&copy; 2025 UZUME RESIZE. All Rights Reserved.</p>
     </footer>
 
 </body>
