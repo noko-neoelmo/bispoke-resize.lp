@@ -3,49 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UZUME RESIZE</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <title>UZUME RESIZE｜ジュエリーリモデル専門ブランドのサイズ直し</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1B2A4A;
-            --secondary-color: #FAF8F5;
-            --accent-color: #7A9AB5;
-            --text-color: #3D3D3D;
+            --navy: #1B2A4A;
+            --dusty-sky: #6B8FA3;
+            --off-white: #FAF8F5;
+            --warm-white: #F5F3F0;
+            --text-primary: #2D2D2D;
+            --text-secondary: #5A5A5A;
+            --text-light: #888;
             --white: #FFFFFF;
-            --section-bg: #E8E4E1;
+            --line-green: #06C755;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            padding: 0;
             max-width: 430px;
             width: 100%;
             margin: 0 auto;
-            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--off-white);
+            color: var(--text-primary);
+            line-height: 1.8;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Utility */
-        .bold {
-            font-weight: 700;
+        /* ===== Fade-in Animation ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        .container {
-            padding: 0 20px;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .text-center {
-            text-align: center;
-        }
-        .mb-1 { margin-bottom: 8px; }
-        .mb-2 { margin-bottom: 16px; }
-        .mb-3 { margin-bottom: 24px; }
-        .mb-4 { margin-bottom: 32px; }
-        .mb-5 { margin-bottom: 40px; }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .fade-in-delay-4 { transition-delay: 0.4s; }
 
-        /* Header */
+        /* ===== Header ===== */
         header {
             position: fixed;
             top: 0;
@@ -53,35 +65,50 @@
             transform: translateX(-50%);
             max-width: 430px;
             width: 100%;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.95);
+            height: 56px;
+            background-color: rgba(255, 255, 255, 0.97);
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
-            box-sizing: border-box;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
         }
         .logo {
-            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            font-family: 'Noto Serif JP', serif;
             font-size: 20px;
             font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            color: var(--navy);
+            letter-spacing: 0.15em;
         }
-        .menu-icon {
-            font-size: 24px;
-            color: var(--primary-color);
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--line-green);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .header-cta:hover {
+            background-color: #05b04c;
+        }
+        .header-cta svg {
+            width: 16px;
+            height: 16px;
         }
 
-        /* Hero Section */
+        /* ===== Hero ===== */
         .hero {
             position: relative;
-            margin-top: 60px;
-            height: 600px;
+            margin-top: 56px;
+            height: 92vh;
+            max-height: 700px;
             width: 100%;
             overflow: hidden;
         }
@@ -92,360 +119,507 @@
         }
         .hero-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(27, 42, 74, 0.2), rgba(27, 42, 74, 0.6));
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(27, 42, 74, 0.1) 0%,
+                rgba(27, 42, 74, 0.35) 50%,
+                rgba(27, 42, 74, 0.75) 100%
+            );
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            justify-content: flex-end;
+            padding: 0 24px 48px;
             color: var(--white);
-            padding: 40px 20px;
-            box-sizing: border-box;
         }
-        .hero-title {
-            font-family: 'Helvetica Neue', 'Arial', sans-serif;
-            font-size: 14px;
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
             letter-spacing: 0.2em;
-            margin-bottom: 15px;
-            opacity: 0.9;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 4px 14px;
+            border-radius: 2px;
+            margin-bottom: 16px;
+            width: fit-content;
         }
         .hero-copy {
-            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
-            font-size: 28px;
-            line-height: 1.4;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Noto Serif JP', serif;
+            font-size: 24px;
+            line-height: 1.6;
+            font-weight: 700;
+            margin-bottom: 14px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         .hero-sub {
-            font-size: 14px;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            opacity: 0.92;
             font-weight: 300;
         }
-        
-        /* CTA Button Global */
+
+        /* ===== CTA Button ===== */
         .btn-cta {
-            display: inline-block;
-            background-color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--line-green);
             color: var(--white);
             padding: 16px 32px;
-            border-radius: 2px;
+            border-radius: 50px;
             text-decoration: none;
             font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            box-shadow: 0 4px 15px rgba(27, 42, 74, 0.3);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            box-shadow: 0 4px 20px rgba(6, 199, 85, 0.35);
             transition: all 0.3s ease;
             width: 100%;
-            box-sizing: border-box;
             text-align: center;
-            border: 1px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
         }
-        .btn-cta.outline {
-            background-color: transparent;
-            border: 1px solid var(--white);
+        .btn-cta:hover {
+            background-color: #05b04c;
+            box-shadow: 0 6px 28px rgba(6, 199, 85, 0.45);
+            transform: translateY(-2px);
+        }
+        .btn-cta:active {
+            transform: translateY(0);
+        }
+        .btn-cta svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
         }
 
-        /* Section Global */
-        section {
-            padding: 60px 0;
+        /* Pulse animation */
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(6, 199, 85, 0.35); }
+            50% { box-shadow: 0 4px 30px rgba(6, 199, 85, 0.55); }
+        }
+        .btn-cta-pulse {
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        .btn-cta.light {
+            background-color: var(--white);
+            color: var(--line-green);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+        }
+        .btn-cta.light:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 6px 28px rgba(255, 255, 255, 0.35);
+        }
+        .btn-cta.light svg {
+            fill: var(--line-green);
+        }
+
+        /* ===== Section Common ===== */
+        .section {
+            padding: 64px 0;
+        }
+        .section-bg-white {
             background-color: var(--white);
         }
-        section:nth-child(even) {
-            background-color: var(--secondary-color);
+        .section-bg-off {
+            background-color: var(--off-white);
+        }
+        .section-bg-warm {
+            background-color: var(--warm-white);
+        }
+        .container {
+            padding: 0 24px;
+        }
+        .section-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            color: var(--dusty-sky);
+            text-align: center;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
         .section-title {
-            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
-            font-size: 24px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 22px;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .section-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
             text-align: center;
             margin-bottom: 40px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background-color: var(--accent-color);
+            line-height: 1.8;
         }
 
-        /* Empathy Section */
+        /* ===== Empathy (Concerns) ===== */
         .empathy-card {
-            margin-bottom: 40px;
-            position: relative;
-        }
-        .empathy-card:last-child {
-            margin-bottom: 0;
+            margin-bottom: 28px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            background: var(--white);
         }
         .empathy-img-wrap {
             width: 100%;
-            height: 280px;
+            height: 200px;
             overflow: hidden;
-            border-radius: 4px;
-            position: relative;
         }
         .empathy-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .empathy-card:hover .empathy-img {
+            transform: scale(1.03);
         }
         .empathy-content {
-            background: var(--white);
-            padding: 20px;
-            margin-top: -30px;
-            margin-left: 20px;
-            margin-right: 20px;
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-radius: 2px;
+            padding: 20px 24px;
+        }
+        .empathy-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            display: block;
         }
         .empathy-text {
-            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.8;
-            color: #555;
+            color: var(--text-secondary);
         }
 
-        /* Reason Section */
+        /* ===== Reasons ===== */
         .reason-item {
-            margin-bottom: 60px;
+            margin-bottom: 56px;
         }
         .reason-item:last-child {
             margin-bottom: 0;
         }
         .reason-num {
-            font-family: 'Helvetica Neue', 'Arial', sans-serif;
-            font-size: 48px;
-            color: rgba(27, 42, 74, 0.1);
+            font-family: 'Noto Serif JP', serif;
+            font-size: 56px;
+            color: rgba(107, 143, 163, 0.15);
             line-height: 1;
-            margin-bottom: -20px;
-            margin-left: -5px;
-            position: relative;
-            z-index: 0;
+            margin-bottom: -18px;
             font-weight: 700;
-        }
-        .reason-header {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 20px;
         }
         .reason-title {
-            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
-            font-size: 20px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 19px;
             font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 15px;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
         }
         .reason-img-wrap {
             width: 100%;
-            height: 240px;
+            height: 220px;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
         .reason-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .reason-img-wrap:hover .reason-img {
+            transform: scale(1.03);
         }
         .reason-desc {
             font-size: 14px;
-            color: #444;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            color: var(--text-secondary);
+            line-height: 1.9;
         }
         .reason-highlight {
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--navy);
         }
         .ba-container {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 20px;
         }
         .ba-img-wrap {
             flex: 1;
-            height: 150px;
+            height: 160px;
             position: relative;
-            border-radius: 4px;
+            border-radius: 8px;
             overflow: hidden;
         }
         .ba-label {
             position: absolute;
-            bottom: 5px;
-            left: 5px;
-            background: rgba(27, 42, 74, 0.8);
+            bottom: 8px;
+            left: 8px;
+            background: rgba(27, 42, 74, 0.85);
             color: white;
             font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 2px;
+            padding: 3px 10px;
+            border-radius: 3px;
+            letter-spacing: 0.05em;
         }
-
-        /* Trust Section */
-        .trust-section {
-            background-color: var(--section-bg);
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .trust-section p {
-            font-size: 15px;
+        .reason-history {
+            background: var(--warm-white);
+            border-left: 3px solid var(--dusty-sky);
+            padding: 16px 20px;
+            margin-top: 16px;
+            border-radius: 0 6px 6px 0;
+            font-size: 13px;
             line-height: 1.8;
-            color: var(--text-color);
-            margin-bottom: 8px;
-        }
-        .trust-section p:last-child {
-            margin-bottom: 0;
+            color: var(--text-secondary);
         }
 
-        /* Process Section */
+        /* ===== Reviews ===== */
+        .review-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .review-stars {
+            color: #D4A76A;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .review-text {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+        .review-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* ===== Process ===== */
         .process-flow {
             position: relative;
-            padding-left: 20px;
-            margin-left: 10px;
-            border-left: 1px dashed #ccc;
+            padding-left: 28px;
+            margin-left: 8px;
+        }
+        .process-flow::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--dusty-sky), rgba(107,143,163,0.2));
         }
         .process-step {
-            margin-bottom: 30px;
+            margin-bottom: 32px;
             position: relative;
         }
         .process-step::before {
             content: '';
             position: absolute;
-            left: -26px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background-color: var(--primary-color);
+            left: -34px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background-color: var(--white);
+            border: 3px solid var(--dusty-sky);
             border-radius: 50%;
         }
         .process-step:last-child {
             margin-bottom: 0;
         }
-        .process-title {
+        .process-step-num {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            color: var(--dusty-sky);
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+        .process-step-title {
             font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
+            color: var(--navy);
+            font-size: 15px;
+            margin-bottom: 6px;
         }
-        .process-desc {
+        .process-step-desc {
             font-size: 13px;
-            color: #666;
-        }
-        .process-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ddd;
-        }
-        .process-tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #999;
-            border-bottom: 2px solid transparent;
-        }
-        .process-tab.active {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        /* Price Section */
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
+        /* ===== Price ===== */
+        .price-card {
             background: var(--white);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border-radius: 4px;
-            overflow: hidden;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
         }
-        .price-table th, .price-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
+        .price-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        .price-table th {
-            background-color: #f9f9f9;
-            color: var(--primary-color);
-            font-weight: 600;
-            width: 40%;
-        }
-        .price-table td {
+        .price-card-label {
+            font-size: 12px;
+            color: var(--dusty-sky);
+            margin-bottom: 4px;
             font-weight: 500;
+        }
+        .price-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .price-card-amount {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        .price-card-amount span {
+            font-size: 13px;
+            font-weight: 400;
         }
         .price-note {
             font-size: 12px;
-            color: #888;
-            margin-top: -20px;
-            margin-bottom: 30px;
-        }
-        .discount-box {
-            background-color: #F0F4F8;
-            border: 1px solid #B8CCDB;
-            padding: 20px;
-            border-radius: 4px;
-            margin-bottom: 30px;
-        }
-        .discount-title {
-            color: var(--accent-color);
-            font-weight: 700;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            color: var(--text-light);
+            margin-top: 16px;
+            margin-bottom: 32px;
+            line-height: 1.8;
         }
 
-        /* CTA Section */
+        /* ===== FAQ ===== */
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.2s ease;
+        }
+        .faq-question:hover {
+            background-color: var(--warm-white);
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--dusty-sky);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+        .faq-item.open .faq-question::after {
+            content: '−';
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 24px;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding: 0 24px 20px;
+        }
+        .faq-answer-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 16px;
+        }
+
+        /* ===== Final CTA ===== */
         .cta-section {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--navy) 0%, #2A3F66 100%);
             color: var(--white);
             text-align: center;
-            padding: 80px 20px;
+            padding: 72px 24px;
+        }
+        .cta-badge {
+            display: inline-block;
+            font-size: 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
         .cta-title {
-            font-family: 'Yu Gothic', '游ゴシック', sans-serif;
-            font-size: 26px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.4;
+            margin-bottom: 16px;
+            line-height: 1.5;
         }
-        .cta-guarantee {
+        .cta-desc {
             font-size: 14px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            display: inline-block;
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 5px 15px;
-            border-radius: 20px;
+            opacity: 0.85;
+            margin-bottom: 32px;
+            line-height: 1.7;
         }
         .cta-btn-wrapper {
-            max-width: 300px;
+            max-width: 320px;
             margin: 0 auto;
         }
-        .btn-cta.light {
-            background-color: var(--white);
-            color: var(--primary-color);
-            border: none;
-        }
-        
-        /* Footer */
+
+        /* ===== Footer ===== */
         footer {
-            background-color: #222;
-            color: #888;
-            padding: 40px 20px;
+            background-color: #1a1a1a;
+            color: #777;
+            padding: 40px 24px;
             text-align: center;
             font-size: 12px;
+        }
+        .footer-logo {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 18px;
+            color: #999;
+            letter-spacing: 0.15em;
+            margin-bottom: 8px;
+        }
+        .footer-tagline {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 374px) {
+            .hero-copy { font-size: 20px; }
+            .section-title { font-size: 20px; }
+            .btn-cta { font-size: 14px; padding: 14px 24px; }
         }
     </style>
 </head>
@@ -454,82 +628,93 @@
     <!-- Header -->
     <header>
         <div class="logo">UZUME</div>
-        <div class="menu-icon"><i class="ri-menu-line"></i></div>
+        <a href="https://lin.ee/rlFqPDv" class="header-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE相談
+        </a>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== Hero Section ===== -->
     <div class="hero">
-        <img src="https://a.lovart.ai/artifacts/agent/szzoCI4N465qtHqk.png" alt="Hero Image" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1515562141589-67f0d569d3c3?w=800&q=80&auto=format" alt="リングを身につけた美しい手元" class="hero-img">
         <div class="hero-overlay">
-            <h1 class="hero-title">UZUME RESIZE</h1>
-            <p class="hero-copy">あなたにフィットする、<br>0.5号刻みのサイズ直し</p>
-            <p class="hero-sub">呼吸が、深くなる。— あなたのジュエリーに、再びフィットする安心を。</p>
-            <div style="width: 240px;">
-                <a href="#" class="btn-cta">無料送付キットを申し込む</a>
+            <div class="hero-badge">JEWELRY REMODEL BRAND</div>
+            <h1 class="hero-copy">ブランドショップで<br>断られた指輪も。<br>甲府の職人技で、<br>もう一度あなたの指に。</h1>
+            <p class="hero-sub">他店で断られたデザインも、0.5号刻みの<br>ジャストフィットを実現。無料のオンライン見積もりから。</p>
+            <div class="btn-cta btn-cta-pulse" onclick="location.href='https://lin.ee/rlFqPDv'" style="cursor:pointer;">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                LINEで無料相談する
             </div>
         </div>
     </div>
 
-    <!-- Empathy Section -->
-    <section>
+    <!-- ===== Empathy Section ===== -->
+    <div class="section section-bg-white">
         <div class="container">
-            <h2 class="section-title">こんなお悩みありませんか？</h2>
-            
-            <div class="empathy-card">
+            <p class="section-label fade-in">YOUR CONCERNS</p>
+            <h2 class="section-title fade-in">こんなお悩みありませんか？</h2>
+            <p class="section-desc fade-in">大切なジュエリーを諦めていませんか</p>
+
+            <div class="empathy-card fade-in">
                 <div class="empathy-img-wrap">
-                    <img src="https://a.lovart.ai/artifacts/agent/eZULhCa5Vp6QJWMy.jpg" alt="Engagement Ring" class="empathy-img">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80&auto=format" alt="婚約指輪" class="empathy-img">
                 </div>
                 <div class="empathy-content">
-                    <p class="empathy-text">大切に保管している婚約指輪。<br>久しぶりに指を通したらサイズが合わなくてつけられなかった。</p>
+                    <span class="empathy-icon">💍</span>
+                    <p class="empathy-text">大切に保管している婚約指輪。久しぶりに指を通したら、サイズが合わなくてつけられなかった。</p>
                 </div>
             </div>
 
-            <div class="empathy-card">
+            <div class="empathy-card fade-in fade-in-delay-1">
                 <div class="empathy-img-wrap">
-                    <img src="./images/D1-B_引き出しの宝石_ライカ.png" alt="Inherited Ring" class="empathy-img">
+                    <img src="./images/D1-B_引き出しの宝石_ライカ.png" alt="受け継いだリング" class="empathy-img">
                 </div>
                 <div class="empathy-content">
-                    <p class="empathy-text">大切な人から受け継いだリング。<br>私の指にはあわなくて・・・</p>
+                    <span class="empathy-icon">🎁</span>
+                    <p class="empathy-text">大切な人から受け継いだリング。私の指にはあわなくて、引き出しにしまったまま…</p>
                 </div>
             </div>
 
-            <div class="empathy-card">
+            <div class="empathy-card fade-in fade-in-delay-2">
                 <div class="empathy-img-wrap">
-                    <img src="./images/S1-A_洗面台_ライカ.png" alt="Vintage Ring" class="empathy-img">
+                    <img src="./images/S1-A_洗面台_ライカ.png" alt="ヴィンテージリング" class="empathy-img">
                 </div>
                 <div class="empathy-content">
-                    <p class="empathy-text">一目惚れしたヴィンテージリング。<br>サイズが合えば買いたかったのに。</p>
+                    <span class="empathy-icon">✨</span>
+                    <p class="empathy-text">一目惚れしたヴィンテージリング。サイズが合えば買いたかったのに、諦めるしかなかった。</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Reason Section -->
-    <section>
+    <!-- ===== Reasons Section ===== -->
+    <div class="section section-bg-off">
         <div class="container">
-            <h2 class="section-title">UZUMEが選ばれる理由</h2>
+            <p class="section-label fade-in">WHY UZUME</p>
+            <h2 class="section-title fade-in">UZUMEが選ばれる理由</h2>
+            <p class="section-desc fade-in">サイズ直し専門店ではなく、<br>ジュエリーリモデルの専門ブランドだからこそ。</p>
 
             <!-- Reason 01 -->
-            <div class="reason-item">
+            <div class="reason-item fade-in">
                 <div class="reason-num">01</div>
-                <div class="reason-header">
-                    <h3 class="reason-title">世界に誇る甲府の職人技術</h3>
-                </div>
+                <h3 class="reason-title">世界に誇る甲府の職人技術</h3>
                 <div class="reason-img-wrap">
-                    <img src="./images/UZUME店舗_職人エリア_俯瞰アングル_ライカ70%.png" alt="Craftsman" class="reason-img">
+                    <img src="./images/UZUME店舗_職人エリア_俯瞰アングル_ライカ70%.png" alt="甲府の職人" class="reason-img">
                 </div>
                 <div class="reason-desc">
-                    <p class="mb-2"><span class="reason-highlight">精密にデザインを守りながらのリサイズが可能。</span><br>他店やブランドのお店で断られてしまったデザインも、諦めないでください。</p>
-                    <p><span class="reason-highlight">0.5号刻みのジャストフィットを実現。</span><br>日本人の肌質、気候の変化を熟知している職人技で0.5号刻みの細やかな調整ができます。</p>
+                    <p><span class="reason-highlight">精密にデザインを守りながらのリサイズが可能。</span><br>他店やブランドショップで断られたデザインも、諦めないでください。</p>
+                    <br>
+                    <p><span class="reason-highlight">0.5号刻みのジャストフィットを実現。</span><br>日本人の肌質、気候の変化を熟知した職人が、0.5号刻みの細やかな調整を行います。</p>
+                </div>
+                <div class="reason-history">
+                    甲府は約700年の歴史を持つ日本有数の宝飾産業の拠点。水晶研磨から始まった技術は現代のジュエリー加工にも脈々と受け継がれ、世界トップクラスの精密加工を誇ります。
                 </div>
             </div>
 
             <!-- Reason 02 -->
-            <div class="reason-item">
+            <div class="reason-item fade-in">
                 <div class="reason-num">02</div>
-                <div class="reason-header">
-                    <h3 class="reason-title">これからも長く<br>ジュエリーを愛してほしいから</h3>
-                </div>
+                <h3 class="reason-title">リモデルブランドだからできる、<br>デザインを理解したリサイズ</h3>
                 <div class="ba-container">
                     <div class="ba-img-wrap">
                         <img src="https://a.lovart.ai/artifacts/agent/IdC88ijRym3UXNbS.png" alt="Before" class="reason-img">
@@ -541,121 +726,235 @@
                     </div>
                 </div>
                 <div class="reason-desc">
-                    <ul style="padding-left: 20px; margin: 0;">
-                        <li>1年間の安心保証</li>
+                    <p>UZUMEはサイズ直し専門店ではなく、<span class="reason-highlight">ジュエリーリモデルの専門ブランド</span>です。デザインの特性を深く理解した上でのリサイズだから、ジュエリー本来の美しさを損ないません。</p>
+                    <br>
+                    <ul style="padding-left: 20px; color: var(--text-secondary);">
+                        <li>1年間の安心保証つき</li>
                         <li>新品同様の磨き上げを無償で</li>
-                        <li>チェーン切れや石留めも対応可能</li>
+                        <li>将来的なデザイン変更やリモデルの相談にも対応</li>
                     </ul>
                 </div>
             </div>
 
             <!-- Reason 03 -->
-            <div class="reason-item">
+            <div class="reason-item fade-in">
                 <div class="reason-num">03</div>
-                <div class="reason-header">
-                    <h3 class="reason-title">自宅から、簡単オンライン完結</h3>
-                </div>
+                <h3 class="reason-title">自宅から、簡単オンライン完結</h3>
                 <div class="reason-img-wrap">
-                    <img src="https://a.lovart.ai/artifacts/agent/XIWqzuwpxyAqPexC.jpg" alt="Kit" class="reason-img">
+                    <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=600&q=80&auto=format" alt="パッケージ" class="reason-img">
                 </div>
                 <div class="reason-desc">
-                    <p>無料送付キットで、ご自宅から簡単に。<br>忙しい方でも安心してご利用いただけます。<br>※来店での対応も可能です。</p>
+                    <p>無料送付キットで、ご自宅から簡単に。全額補償の輸送保険つきで安心してお送りいただけます。忙しい方でもオンラインで完結。<br><span style="font-size: 12px; color: var(--text-light);">※来店での対応も可能です。</span></p>
                 </div>
             </div>
-            
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="#" class="btn-cta">無料送付キットを申し込む</a>
+
+            <div style="margin-top: 40px;" class="fade-in">
+                <a href="https://lin.ee/rlFqPDv" class="btn-cta btn-cta-pulse">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                    LINEで無料相談する
+                </a>
             </div>
         </div>
-    </section>
-
-    <!-- Trust Section (replaces Brands Section) -->
-    <div class="trust-section">
-        <p>他店やブランドショップで断られた方も、お気軽にご相談ください。</p>
-        <p>素材・デザインを問わず、まずはお見積もりから。</p>
     </div>
 
-    <!-- Process Section -->
-    <section>
+    <!-- ===== Reviews Section ===== -->
+    <div class="section section-bg-white">
         <div class="container">
-            <h2 class="section-title">ご利用の流れ</h2>
-            
-            <div class="process-tabs">
-                <div class="process-tab active">オンライン</div>
-                <div class="process-tab">ご来店</div>
+            <p class="section-label fade-in">VOICE</p>
+            <h2 class="section-title fade-in">お客様の声</h2>
+            <p class="section-desc fade-in">UZUMEをご利用いただいたお客様から</p>
+
+            <div class="review-card fade-in">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">母から受け継いだエメラルドのリング、他のお店では断られましたがUZUMEさんで綺麗にリサイズしていただけました。</p>
+                <p class="review-meta">40代・東京都</p>
             </div>
 
-            <div class="process-flow">
+            <div class="review-card fade-in fade-in-delay-1">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">婚約指輪が入らなくなって諦めていましたが、0.5号の調整でぴったりに。感動しました。</p>
+                <p class="review-meta">30代・神奈川県</p>
+            </div>
+
+            <div class="review-card fade-in fade-in-delay-2">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">オンラインで完結するので忙しくても利用できました。仕上がりも丁寧で大満足です。</p>
+                <p class="review-meta">50代・大阪府</p>
+            </div>
+
+            <div class="review-card fade-in fade-in-delay-3">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">くすんでいたリングが新品同様にピカピカに磨き上げてもらえて、まるで買い直したみたいです。</p>
+                <p class="review-meta">30代・埼玉県</p>
+            </div>
+
+            <div class="review-card fade-in fade-in-delay-4">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">一目惚れしたヴィンテージのリング、サイズが合わず諦めかけていましたが、UZUMEさんでぴったりにしてもらえて毎日つけています。</p>
+                <p class="review-meta">40代・京都府</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Process Section ===== -->
+    <div class="section section-bg-off">
+        <div class="container">
+            <p class="section-label fade-in">HOW IT WORKS</p>
+            <h2 class="section-title fade-in">ご利用の流れ</h2>
+            <p class="section-desc fade-in">オンラインで完結、4つのステップ</p>
+
+            <div class="process-flow fade-in">
                 <div class="process-step">
-                    <div class="process-title">STEP 1 申し込み</div>
-                    <div class="process-desc">Webサイトから無料送付キットをお申し込みください。</div>
+                    <div class="process-step-num">STEP 01</div>
+                    <div class="process-step-title">LINEで無料相談</div>
+                    <div class="process-step-desc">LINEからお気軽にご相談ください。ジュエリーのお写真をお送りいただければ、概算のお見積もりをお伝えします。</div>
                 </div>
                 <div class="process-step">
-                    <div class="process-title">STEP 2 送付キット到着・発送</div>
-                    <div class="process-desc">届いたキットにジュエリーを入れ、ポストに投函してください。</div>
+                    <div class="process-step-num">STEP 02</div>
+                    <div class="process-step-title">ジュエリーをお送りください</div>
+                    <div class="process-step-desc">専用キットまたはご自身の梱包で発送。全額補償の輸送保険つきで安心です。</div>
                 </div>
                 <div class="process-step">
-                    <div class="process-title">STEP 3 お見積り・修理</div>
-                    <div class="process-desc">職人が状態を確認しお見積り。ご了承後、丁寧にリサイズします。</div>
+                    <div class="process-step-num">STEP 03</div>
+                    <div class="process-step-title">職人がリサイズ</div>
+                    <div class="process-step-desc">甲府の職人が状態を確認し、正式なお見積もりをご提示。ご了承後、丁寧にリサイズします。</div>
                 </div>
                 <div class="process-step">
-                    <div class="process-title">STEP 4 お受け取り</div>
-                    <div class="process-desc">綺麗に生まれ変わったジュエリーをお届けします。</div>
+                    <div class="process-step-num">STEP 04</div>
+                    <div class="process-step-title">お届け</div>
+                    <div class="process-step-desc">磨き上げまで施した、生まれ変わったジュエリーをお届けします。通常2〜3週間でお届けします。</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Price Section -->
-    <section>
+    <!-- ===== Price Section ===== -->
+    <div class="section section-bg-white">
         <div class="container">
-            <h2 class="section-title">料金について</h2>
-            
-            <table class="price-table">
-                <tr>
-                    <th>サイズアップ</th>
-                    <td>¥20,000〜</td>
-                </tr>
-                <tr>
-                    <th>サイズダウン</th>
-                    <td>¥30,000〜</td>
-                </tr>
-                <tr>
-                    <th>チェーン修理</th>
-                    <td>¥3,000〜</td>
-                </tr>
-                <tr>
-                    <th>磨き上げ</th>
-                    <td>¥2,000〜</td>
-                </tr>
-                <tr>
-                    <th>石留め直し</th>
-                    <td>¥8,000〜</td>
-                </tr>
-            </table>
-            <p class="price-note">※デザインの特徴や複雑さにより料金は変動します</p>
+            <p class="section-label fade-in">PRICE</p>
+            <h2 class="section-title fade-in">料金の目安</h2>
+            <p class="section-desc fade-in">ジュエリーの素材やデザインによって<br>料金は変動します。まずはお気軽に<br>無料見積もりをご利用ください。</p>
 
-            <div class="discount-box">
-                <div class="discount-title"><i class="ri-lightbulb-flash-line"></i> お得な割引情報</div>
-                <p style="font-size: 13px; margin: 0; color: #666;">不要な貴金属を一緒にお送りいただくことで、買取金額をサイズ直し料金から割引いたします。</p>
+            <div class="price-card fade-in">
+                <div>
+                    <div class="price-card-label">事例 01</div>
+                    <div class="price-card-title">K18リング サイズアップ（2号）</div>
+                </div>
+                <div class="price-card-amount">¥22,000<span>〜</span></div>
+            </div>
+
+            <div class="price-card fade-in fade-in-delay-1">
+                <div>
+                    <div class="price-card-label">事例 02</div>
+                    <div class="price-card-title">Pt900 婚約指輪 サイズダウン（1号）</div>
+                </div>
+                <div class="price-card-amount">¥33,000<span>〜</span></div>
+            </div>
+
+            <div class="price-card fade-in fade-in-delay-2">
+                <div>
+                    <div class="price-card-label">事例 03</div>
+                    <div class="price-card-title">シルバーリング サイズ調整 + 磨き上げ</div>
+                </div>
+                <div class="price-card-amount">¥18,000<span>〜</span></div>
+            </div>
+
+            <p class="price-note fade-in">※上記は一例です。デザインの複雑さや素材により料金は変動します。正式なお見積もりは無料です。</p>
+
+            <div class="fade-in">
+                <a href="https://lin.ee/rlFqPDv" class="btn-cta btn-cta-pulse">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                    LINEで無料相談する
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- CTA Section -->
+    <!-- ===== FAQ Section ===== -->
+    <div class="section section-bg-off">
+        <div class="container">
+            <p class="section-label fade-in">FAQ</p>
+            <h2 class="section-title fade-in">よくあるご質問</h2>
+            <p class="section-desc fade-in">お客様からいただく質問をまとめました</p>
+
+            <div class="faq-item fade-in">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    郵送中に紛失や破損があった場合は？
+                </button>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">全額補償の輸送保険付きで発送いたします。万一の場合も安心です。</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in fade-in-delay-1">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    見積もり後のキャンセルはできますか？
+                </button>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">はい、お見積もり後のキャンセルは無料です。ご納得いただいてからの作業開始となります。</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in fade-in-delay-2">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    どのくらいの期間で届きますか？
+                </button>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">通常2〜3週間でお届けします。お急ぎの場合はご相談ください。</p>
+                </div>
+            </div>
+
+            <div class="faq-item fade-in fade-in-delay-3">
+                <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                    どんなブランド・素材でも対応できますか？
+                </button>
+                <div class="faq-answer">
+                    <p class="faq-answer-text">はい、ハイブランドからヴィンテージまで、素材やデザインを問わずご相談いただけます。甲府の職人が一つひとつ状態を確認します。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Final CTA Section ===== -->
     <div class="cta-section">
-        <div class="cta-guarantee">1年保証つき・安心のアフターケア</div>
-        <h2 class="cta-title">大切なジュエリーを、<br>もう一度あなたのそばに。</h2>
-        <div class="cta-btn-wrapper">
-            <a href="#" class="btn-cta light">無料送付キットを申し込む</a>
+        <div class="cta-badge fade-in">1年保証つき・安心のアフターケア</div>
+        <h2 class="cta-title fade-in">大切なジュエリーを、<br>もう一度あなたのそばに。</h2>
+        <p class="cta-desc fade-in">まずはLINEでお気軽にご相談ください。<br>お見積もりは無料です。</p>
+        <div class="cta-btn-wrapper fade-in">
+            <a href="https://lin.ee/rlFqPDv" class="btn-cta light btn-cta-pulse">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                LINEで無料相談する
+            </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="logo" style="color: #666; margin-bottom: 20px;">UZUME</div>
-        <p>&copy; 2025 UZUME RESIZE. All Rights Reserved.</p>
+        <div class="footer-logo">UZUME</div>
+        <p class="footer-tagline">ジュエリーリモデル専門ブランド</p>
+        <p>&copy; 2025 UZUME. All Rights Reserved.</p>
     </footer>
+
+    <!-- ===== JavaScript ===== -->
+    <script>
+        // IntersectionObserver for fade-in animations
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
