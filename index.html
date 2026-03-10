@@ -44,6 +44,30 @@
       page_type: 'landing_page',
       brand: 'uzume'
     });
+
+    // Meta Conversions API (CAPI) client helper
+    window.metaCAPI = function(eventName, customData) {
+      var cookies = document.cookie.split(';').reduce(function(acc, c) {
+        var parts = c.trim().split('=');
+        acc[parts[0]] = parts.slice(1).join('=');
+        return acc;
+      }, {});
+      fetch('/api/meta-capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: eventName,
+          event_time: Math.floor(Date.now() / 1000),
+          event_source_url: window.location.href,
+          user_data: {
+            fbc: cookies._fbc || '',
+            fbp: cookies._fbp || '',
+            client_user_agent: navigator.userAgent
+          },
+          custom_data: customData || {}
+        })
+      }).catch(function() {});
+    };
     </script>
 
     <script type="application/ld+json">
@@ -1144,6 +1168,9 @@
                         value: 0,
                         currency: 'JPY'
                     });
+                }
+                if (typeof metaCAPI === 'function') {
+                    metaCAPI('Lead', { content_name: 'LINE_CTA_resize', content_category: 'resize' });
                 }
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
