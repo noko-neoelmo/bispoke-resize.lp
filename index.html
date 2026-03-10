@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>指輪サイズ直し｜全国配送・オンライン完結 | UZUME</title>
     <meta name="description" content="指輪のサイズが合わないお悩みを解決。リングゲージ無料送付、約1ヶ月で完成。料金3万円程度。全国配送・オンライン完結。1年品質保証付き。">
+    <meta property="og:title" content="指輪サイズ直し｜全国配送・オンライン完結 | UZUME">
+    <meta property="og:description" content="指輪のサイズが合わないお悩みを解決。リングゲージ無料送付、約1ヶ月で完成。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://service.bispoke.co.jp/resize">
+    <link rel="canonical" href="https://service.bispoke.co.jp/resize">
+
+    <!-- Meta Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_META_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+
+    <!-- Data Layer for Ad Tracking -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    window.bspkTracking = {
+      service: 'resize',
+      page: 'lp',
+      brand: 'uzume',
+      domain: 'service.bispoke.co.jp',
+      utm: Object.fromEntries(new URLSearchParams(window.location.search))
+    };
+    window.dataLayer.push({
+      event: 'page_metadata',
+      service: 'resize',
+      page_type: 'landing_page',
+      brand: 'uzume'
+    });
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -121,10 +162,10 @@
       "provider": {
         "@type": "Organization",
         "name": "株式会社BiSPOKE / UZUME",
-        "url": "https://bispoke-corp.vercel.app"
+        "url": "https://bispoke.co.jp"
       },
       "areaServed": { "@type": "Country", "name": "Japan" },
-      "url": "https://bispoke-resize-lp.vercel.app",
+      "url": "https://service.bispoke.co.jp/resize",
       "offers": {
         "@type": "Offer",
         "price": "30000",
@@ -133,8 +174,8 @@
       "isPartOf": {
         "@type": "Organization",
         "name": "株式会社BiSPOKE",
-        "url": "https://bispoke-corp.vercel.app",
-        "sameAs": ["https://uzume-remodel.vercel.app", "https://bispoke-resize-lp.vercel.app"]
+        "url": "https://bispoke.co.jp",
+        "sameAs": ["https://service.bispoke.co.jp/remodel", "https://service.bispoke.co.jp/resize"]
       }
     }
     </script>
@@ -143,8 +184,8 @@
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "UZUME", "item": "https://bispoke-corp.vercel.app" },
-        { "@type": "ListItem", "position": 2, "name": "指輪サイズ直し", "item": "https://bispoke-resize-lp.vercel.app" }
+        { "@type": "ListItem", "position": 1, "name": "UZUME", "item": "https://bispoke.co.jp" },
+        { "@type": "ListItem", "position": 2, "name": "指輪サイズ直し", "item": "https://service.bispoke.co.jp/resize" }
       ]
     }
     </script>
@@ -1088,6 +1129,67 @@
 
             document.querySelectorAll('.fade-in').forEach(function(el) {
                 observer.observe(el);
+            });
+        });
+
+        // ── Ad Tracking: CTA clicks & engagement events ──
+        // LINE CTA clicks → Meta Lead event
+        document.querySelectorAll('a[href*="lin.ee"], a[href*="line.me"]').forEach(function(el) {
+            el.addEventListener('click', function() {
+                var label = el.textContent.trim().substring(0, 40);
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead', {
+                        content_name: 'LINE_CTA_resize',
+                        content_category: 'resize',
+                        value: 0,
+                        currency: 'JPY'
+                    });
+                }
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'cta_click',
+                    cta_type: 'line',
+                    cta_label: label,
+                    service: 'resize'
+                });
+            });
+        });
+
+        // Scroll depth tracking (25%, 50%, 75%, 100%)
+        var scrollMilestones = {};
+        window.addEventListener('scroll', function() {
+            var h = document.documentElement.scrollHeight - window.innerHeight;
+            if (h <= 0) return;
+            var pct = Math.round(window.scrollY / h * 100);
+            [25, 50, 75, 100].forEach(function(m) {
+                if (pct >= m && !scrollMilestones[m]) {
+                    scrollMilestones[m] = true;
+                    if (typeof fbq === 'function') {
+                        fbq('trackCustom', 'ScrollDepth', { depth: m, service: 'resize' });
+                    }
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({
+                        event: 'scroll_depth',
+                        depth_percent: m,
+                        service: 'resize'
+                    });
+                }
+            });
+        }, { passive: true });
+
+        // FAQ interaction tracking
+        document.querySelectorAll('.faq-question').forEach(function(el) {
+            el.addEventListener('click', function() {
+                var q = el.textContent.trim().substring(0, 60);
+                if (typeof fbq === 'function') {
+                    fbq('trackCustom', 'FAQInteraction', { question: q, service: 'resize' });
+                }
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'faq_click',
+                    faq_question: q,
+                    service: 'resize'
+                });
             });
         });
     </script>
