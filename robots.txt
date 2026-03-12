@@ -1,14 +1,17 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers - Explicitly Allowed
+# AI Search & Retrieval Bots - Explicitly Allowed
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Claude-Web
+User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
@@ -24,6 +27,9 @@ User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://bispoke-resize-lp.vercel.app/sitemap.xml

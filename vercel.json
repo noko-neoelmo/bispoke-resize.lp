@@ -2,5 +2,13 @@
   "rewrites": [
     { "source": "/resize", "destination": "https://bispoke-resize-lp.vercel.app" },
     { "source": "/resize/:path*", "destination": "https://bispoke-resize-lp.vercel.app/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+      ]
+    }
   ]
 }
