@@ -1,0 +1,70 @@
+# UZUME - Ring Resizing Service
+
+> UZUME（ウズメ）の指輪サイズ直しサービス。全国配送・オンライン完結で、甲府の熟練職人が大切な指輪のサイズを調整します。
+
+## Service Overview
+
+- **Service Name:** UZUME 指輪サイズ直し
+- **Service Type:** Ring resizing / Ring size adjustment
+- **Operated by:** 株式会社BiSPOKE (BiSPOKE Corp.)
+- **Website:** https://bispoke-resize-lp.vercel.app
+- **Contact:** LINE Official Account (primary)
+- **Language:** Japanese (日本語)
+
+## What We Do
+
+UZUMEの指輪サイズ直しは、サイズが合わなくなった指輪（婚約指輪、結婚指輪、相続した指輪、ヴィンテージリングなど）を、プロの職人が適切なサイズに調整するサービスです。完全オンライン完結・全国対応です。
+
+### Key Features
+- **Price:** Approximately ¥30,000
+- **Completion Time:** Approximately 1 month
+- **All Materials Supported:** K18, Pt950, Silver, and more
+- **0.5-size Increments:** Precise fitting available in half-size steps
+- **Free Ring Gauge Kit:** Sent to your home at no cost
+- **Prepaid Return Kit:** Free shipping both ways
+- **1-Year Quality Guarantee**
+- **Fully Online:** No store visit required
+- **Nationwide Delivery:** Available across all of Japan
+- **Kofu Craftsmanship:** 700+ years of jewelry-making heritage
+
+## Process (How It Works)
+
+1. **Apply via LINE** - Contact us through LINE official account
+2. **Receive Ring Gauge** - Free ring gauge and return kit delivered to your door
+3. **Self-Measure & Ship** - Measure your size and send your ring using the prepaid kit
+4. **Artisan Resizing** - Kofu master craftsmen adjust your ring with precision
+5. **Receive Your Ring** - Resized ring delivered to your home with 1-year warranty
+
+## FAQ
+
+### How much does ring resizing cost?
+Approximately ¥30,000. Price varies by material and design complexity. Estimates are free.
+
+### How long does it take?
+About 1 month, including ring gauge delivery, return shipping, resizing, and delivery.
+
+### How do I receive the ring gauge?
+After contacting us via LINE, we ship a ring gauge and prepaid return kit to your address at no cost.
+
+### Can you resize any material?
+Yes. We handle K18, Pt950, silver, and all other precious metals.
+
+### Do I need to visit a store?
+No. The entire process is completed online. Ring gauge and return kit are exchanged by mail. Available nationwide.
+
+### Can multiple rings be resized at once?
+Yes. Include all rings in the return kit and we'll resize them together.
+
+### Is there a warranty?
+Yes. 1-year quality guarantee on all resized rings.
+
+### What about shipping damage?
+We provide a dedicated return kit for safe shipping. We handle any shipping-related issues.
+
+## Related Services
+
+- **Jewelry Remodel Service:** https://uzume-remodel.vercel.app (¥100,000-300,000, ~1.5 months)
+
+## About BiSPOKE
+
+株式会社BiSPOKE is the parent company operating the UZUME brand, specializing in jewelry services that combine traditional Kofu craftsmanship with modern design sensibility.
