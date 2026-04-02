@@ -1,6 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/resize", "destination": "https://bispoke-resize-lp.vercel.app" },
-    { "source": "/resize/:path*", "destination": "https://bispoke-resize-lp.vercel.app/:path*" }
-  ]
+  "redirects": [
+    { "source": "/", "destination": "/resize", "permanent": false }
+  ],
+  "trailingSlash": false
 }
