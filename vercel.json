@@ -1,11 +1,15 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/resize", "permanent": false }
-  ],
   "rewrites": [
+    {
+      "source": "/resize/application/:path*",
+      "destination": "https://retold-resize-app.vercel.app/:path*"
+    },
     { "source": "/resize/terms", "destination": "/resize/terms.html" },
     { "source": "/resize/privacy", "destination": "/resize/privacy.html" },
     { "source": "/resize/company", "destination": "/resize/company.html" }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "/resize", "permanent": false }
   ],
   "trailingSlash": false
 }

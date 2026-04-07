@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用規約 | RETOLD TOKYO</title>
-    <meta name="description" content="RETOLD TOKYOの利用規約です。指輪サイズ直しサービスのご利用条件をご確認ください。">
+    <title>利用規約 | RETOLD TOKYO サイズ直しサービス</title>
+    <meta name="description" content="RETOLD TOKYOサイズ直しサービスの利用規約。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -15,13 +15,13 @@
             --off-white: #FAF8F5;
             --text-primary: #2D2D2D;
             --text-secondary: #5A5A5A;
+            --text-light: #999;
             --white: #FFFFFF;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        html { scroll-behavior: smooth; }
         body {
-            max-width: 430px;
+            max-width: 640px;
             width: 100%;
             margin: 0 auto;
             font-family: 'Noto Sans JP', sans-serif;
@@ -30,227 +30,136 @@
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
-
         header {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 430px;
-            width: 100%;
-            height: 56px;
-            background-color: rgba(255,255,255,0.97);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
+            background: var(--white);
             border-bottom: 1px solid rgba(0,0,0,0.06);
+            padding: 16px 20px;
+            text-align: center;
         }
-        .logo {
+        header a {
             font-family: 'Noto Serif JP', serif;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: 0.15em;
+            font-size: 13px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-primary);
             text-decoration: none;
         }
-        .header-back {
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        main {
+            padding: 48px 24px 64px;
         }
-        .header-back:hover { color: var(--text-primary); }
-
-        .legal-content {
-            margin-top: 56px;
-            padding: 40px 24px 60px;
-        }
-        .legal-content h1 {
+        h1 {
             font-family: 'Noto Serif JP', serif;
             font-size: 22px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-        .legal-content .page-label {
-            font-size: 10px;
-            letter-spacing: 0.15em;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-        .legal-content .last-updated {
-            font-size: 11px;
-            color: var(--text-secondary);
-            margin-bottom: 32px;
-        }
-        .legal-content h2 {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-top: 32px;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
-        .legal-content h3 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-top: 20px;
-            margin-bottom: 8px;
-        }
-        .legal-content p {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-        .legal-content ul, .legal-content ol {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-            padding-left: 20px;
-        }
-        .legal-content li {
-            margin-bottom: 6px;
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            color: #666;
-            padding: 48px 24px 40px;
-            padding-bottom: calc(40px + env(safe-area-inset-bottom));
+            font-weight: 400;
             text-align: center;
-            font-size: 11px;
-        }
-        .footer-logo {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 16px;
-            color: #888;
-            letter-spacing: 0.2em;
-            margin-bottom: 6px;
-        }
-        .footer-tagline {
-            font-size: 10px;
-            color: #555;
+            margin-bottom: 48px;
             letter-spacing: 0.1em;
-            margin-bottom: 24px;
         }
-        .footer-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px 16px;
-            margin-bottom: 20px;
+        h2 {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin: 36px 0 12px;
         }
-        .footer-nav a {
-            color: #888;
-            text-decoration: none;
+        p, li {
+            font-size: 13px;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+        ul {
+            padding-left: 1.2em;
+            margin-top: 8px;
+        }
+        li { margin-bottom: 4px; }
+        .date {
             font-size: 11px;
-            transition: color 0.2s ease;
+            color: var(--text-light);
+            margin-top: 48px;
         }
-        .footer-nav a:hover { color: #bbb; }
+        footer {
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding: 24px 20px;
+            text-align: center;
+        }
+        footer a {
+            font-size: 11px;
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        footer a:hover { color: var(--text-primary); }
+        footer p {
+            font-size: 10px;
+            color: var(--text-light);
+            margin-top: 12px;
+        }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="/resize" class="logo">RETOLD TOKYO</a>
-        <a href="/resize" class="header-back">トップに戻る</a>
+        <a href="https://retold.tokyo">Retold Tokyo</a>
     </header>
 
-    <div class="legal-content">
-        <p class="page-label">Terms of Service</p>
+    <main>
         <h1>利用規約</h1>
-        <p class="last-updated">最終更新日：2025年4月7日</p>
 
-        <p>本利用規約（以下、「本規約」といいます。）は、株式会社BiSPOKE（以下、「当社」といいます。）が「RETOLD TOKYO」の名称で提供する指輪サイズ直しサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。ユーザーの皆様には、本規約に従って本サービスをご利用いただきます。</p>
+        <h2>第1条（適用）</h2>
+        <p>本利用規約（以下「本規約」）は、株式会社BiSPOKE（以下「当社」）が「RETOLD TOKYO」の名称で提供するジュエリーサイズ直しサービス（以下「本サービス」）の利用に関する条件を定めるものです。お客様は、本サービスを利用することにより、本規約に同意したものとみなされます。</p>
 
-        <h2>お見積もりについて</h2>
-        <ol>
-            <li><strong>お見積もり</strong>
-                <ul>
-                    <li>お品物到着後、3営業日以内にお見積もりを行います。</li>
-                    <li>お見積もり金額は、LINEにてご連絡いたします。</li>
-                </ul>
-            </li>
-            <li><strong>ご連絡方法</strong>
-                <ul>
-                    <li>お見積もり内容をご確認いただき、正式にご依頼される場合やキャンセルされる場合は、LINEにてご連絡ください。</li>
-                    <li>ご連絡をいただけない場合、担当者よりご連絡いたします。</li>
-                </ul>
-            </li>
-            <li><strong>キャンセルについて</strong>
-                <ul>
-                    <li>お見積もり提示後にキャンセルされる場合は、着払いにてお品物を返送いたします。予めご了承ください。</li>
-                </ul>
-            </li>
-            <li><strong>対応不可の場合</strong>
-                <ul>
-                    <li>何らかの理由で対応不可のお品物の場合、お預かりしたお品物は迅速にお返しいたします。</li>
-                    <li>この場合の送料は当社が負担いたします。</li>
-                </ul>
-            </li>
-        </ol>
-
-        <h2>修理・加工について</h2>
-        <ol>
-            <li>修理や加工により元の状態に近づけるよう最善を尽くしますが、完全に元通りになるものではございません。その点ご承知おきください。</li>
-            <li>特別な意味合いを持つお品物（形見や記念品等）につきまして、破損、変色、変形、紛失等が生じた場合の慰謝料のお支払い等については対応いたしかねます。</li>
-            <li>お品物の形状、重量等につきまして、加工の結果、僅かに変化が生じる可能性がございます。予めご了承ください。</li>
-            <li>石を外す際に爪の下、石座など隠れた部分にキズ、破損等が発見された場合や、加工中に染色された石の褪色、変色等が生じた場合の責任は負いかねます。</li>
-        </ol>
-
-        <h2>預かり品について</h2>
-        <h3>キズなどの外傷について</h3>
-        <p>修理対象品が到着後、状態を写真撮影しております。撮影の際の光の角度によって全てのキズが写真に残らない場合もございます。</p>
-
-        <h2>修理着手後の対応について</h2>
-        <p>修理着手後のキャンセルはお受けすることができません。あらかじめご了承ください。</p>
-
-        <h2>お支払いについて</h2>
-        <p>作業完了後にご連絡するご案内に従ってお支払いください。銀行振込に対応しております。</p>
-
-        <h2>納期について</h2>
-        <p>やむを得ない事情により納期が遅れる場合がございます。この場合、納期遅れによる損害賠償の責任は負いかねます。</p>
-
-        <h2>配送の遅延について</h2>
-        <p>迅速な加工および配送ができるよう努めておりますが、天災、システムトラブル、その他予期せぬ事態により配送が遅延することがあります。これに関して直接的および間接的にご利用者または第三者に発生した損害について、いかなる責任も負いません。</p>
-
-        <h2>免責事項</h2>
-        <p>当社は以下の理由によるお品物の損害については損害賠償の責任を負わないものとします。</p>
+        <h2>第2条（サービスの内容）</h2>
+        <p>本サービスは、以下の内容を含みます。</p>
         <ul>
-            <li>予見できない全ての天災</li>
-            <li>予見できない交通事故・障害</li>
-            <li>予見できない火災・地震</li>
-            <li>その他、当社の責任がない予見することができない事項全て</li>
-            <li>インターネット上におけるトラブル、その他の要因によるメール・LINE送受信の不良、商品の未着、連絡の行き違いによる損害、逸失利益、第三者からの賠償請求に基づく損害等について一切の責任を負わないものとします。また、不慮の事故、災害、第三者や公的機関などによる故意、または過失についても一切の責任を負いません。</li>
-            <li>配送中の紛失・破損（配送中の紛失・破損の補償内容や上限金額は、運送会社規定になります。）</li>
-            <li>当社で作業したブランド製品の加工・修理につきましては、正規品として扱われなくなる場合がございます。また、加工によりブランド特有の刻印が摩耗、あるいは消失する可能性がございます。予めご了承ください。</li>
-            <li>当社で加工した完成品を当社以外で再加工（修理）する場合は、当社の責任範囲外となります。</li>
+            <li>リングゲージおよび梱包材の無料送付</li>
+            <li>お客様のジュエリーのサイズ直し加工</li>
+            <li>加工に伴うお見積もりのご提示</li>
+            <li>加工済みジュエリーの返送</li>
         </ul>
 
-        <h2>規約の変更</h2>
-        <p>本規約は予告なく変更することができるものとします。</p>
+        <h2>第3条（お申し込みとご利用の流れ）</h2>
+        <p>お客様は、当社所定のフォームよりお申し込みいただきます。リングゲージおよび梱包材を送付いたしますので、サイズ直しを希望するジュエリーを同封の着払い伝票にてご返送ください。ジュエリー到着後、3営業日以内にお見積もりをLINEまたはお電話にてご連絡いたします。</p>
 
-        <h2>その他</h2>
-        <p>当社にお預けいただいたお品物について、当社の連絡から120日を超えてもなお、ご入金・お引き取りいただけない場合や、ご連絡等がつかない場合は、所有権を放棄したものとみなしますので十分ご注意ください。</p>
-    </div>
+        <h2>第4条（お見積もりと承認）</h2>
+        <p>当社よりお見積もりをご提示した後、お客様の承認をもって加工を開始いたします。お見積もり内容にご納得いただけない場合は、ジュエリーを無料でご返送いたします。</p>
+
+        <h2>第5条（料金とお支払い）</h2>
+        <p>サービス料金はお見積もり時にご案内いたします。お支払いは銀行振込とし、ご入金確認後に加工を開始いたします。リングゲージの送付・ジュエリーの返送にかかる送料は当社が負担いたします。</p>
+
+        <h2>第6条（納期）</h2>
+        <p>加工期間はご入金確認後、約1ヶ月を目安としております。ただし、加工内容や繁忙期により前後する場合がございます。</p>
+
+        <h2>第7条（保証）</h2>
+        <p>加工完了後1年間の品質保証を提供いたします。保証期間内に加工上の不備が判明した場合は、無償にて再加工いたします。ただし、お客様の使用による損耗・変形等は保証の対象外となります。</p>
+
+        <h2>第8条（返品・キャンセル）</h2>
+        <p>オーダーメイド加工の性質上、加工開始後のキャンセル・返品はお受けできません。加工前のキャンセルについては、ジュエリーを無料でご返送いたします。加工上の不備がある場合は、納品後7日以内にご連絡ください。</p>
+
+        <h2>第9条（責任の範囲）</h2>
+        <p>当社は、加工中のジュエリーに対し細心の注意を払いますが、以下の場合には責任を負いかねます。</p>
+        <ul>
+            <li>素材の経年劣化に起因する破損</li>
+            <li>お客様からの申告内容と実際の素材が異なる場合</li>
+            <li>配送中の事故（配送業者の保険が適用されます）</li>
+        </ul>
+
+        <h2>第10条（個人情報の取り扱い）</h2>
+        <p>お客様の個人情報は、当社の<a href="https://retold.tokyo/privacy" style="color: var(--gold); text-decoration: underline;">プライバシーポリシー</a>に基づき適切に管理いたします。</p>
+
+        <h2>第11条（規約の変更）</h2>
+        <p>当社は、必要に応じて本規約を変更することがあります。変更後の規約は、本ページに掲載した時点で効力を生じるものとします。</p>
+
+        <h2>第12条（準拠法・管轄）</h2>
+        <p>本規約は日本法に準拠し、本サービスに関する一切の紛争は、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+        <p class="date">制定日：2025年4月1日<br>最終改定日：2026年4月7日</p>
+    </main>
 
     <footer>
-        <div class="footer-logo">RETOLD TOKYO</div>
-        <p class="footer-tagline">JEWELRY REMODEL BRAND</p>
-        <nav class="footer-nav">
-            <a href="/resize">トップ</a>
-            <a href="/resize/terms">利用規約</a>
-            <a href="/resize/privacy">プライバシーポリシー</a>
-            <a href="/resize/company">運営情報</a>
-        </nav>
+        <div>
+            <a href="https://retold.tokyo/company">会社概要</a>
+            <a href="https://retold.tokyo/privacy">プライバシーポリシー</a>
+            <a href="https://retold.tokyo/resize/terms">利用規約</a>
+        </div>
         <p>&copy; 2025 RETOLD TOKYO / 株式会社BiSPOKE. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
