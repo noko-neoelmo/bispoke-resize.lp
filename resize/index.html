@@ -105,15 +105,16 @@
     <style>
         :root {
             --navy: #1B2A4A;
-            --gold: #B8977E;
-            --gold-light: rgba(184, 151, 126, 0.12);
-            --off-white: #FAF8F5;
-            --warm-white: #F5F3F0;
-            --text-primary: #2D2D2D;
-            --text-secondary: #5A5A5A;
-            --text-light: #999;
-            --white: #FFFFFF;
+            --gold: #A08A74;
+            --gold-light: rgba(160, 138, 116, 0.10);
+            --off-white: #F2EFEA;
+            --warm-white: #EDE8E1;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A4A4A;
+            --text-light: #888;
+            --white: #FDFCFA;
             --line-green: #06C755;
+            --border: #D4CEC6;
         }
 
         * {
@@ -229,9 +230,9 @@
             background: linear-gradient(
                 to bottom,
                 rgba(27,42,74,0) 0%,
-                rgba(27,42,74,0.25) 30%,
-                rgba(27,42,74,0.7) 60%,
-                rgba(27,42,74,0.92) 100%
+                rgba(27,42,74,0.15) 30%,
+                rgba(27,42,74,0.55) 60%,
+                rgba(27,42,74,0.88) 100%
             );
             color: var(--white);
             display: flex;
@@ -327,6 +328,7 @@
         /* ===== Section Common ===== */
         .section { padding: 80px 0; }
         .section-bg-white { background-color: var(--white); }
+        .section-bg-craft { background-color: #EDEAE4; }
         .section-bg-off { background-color: var(--off-white); }
         .container { padding: 0 24px; }
         .section-label {
@@ -355,9 +357,9 @@
             line-height: 1.8;
         }
         .gold-divider {
-            width: 32px;
+            width: 48px;
             height: 1px;
-            background-color: var(--gold);
+            background-color: var(--border);
             margin: 0 auto 48px;
         }
 
@@ -789,7 +791,7 @@
 
         /* ===== Final CTA ===== */
         .cta-section {
-            background: linear-gradient(135deg, var(--navy) 0%, #2A3F66 100%);
+            background: linear-gradient(135deg, #1a2540 0%, var(--navy) 100%);
             color: var(--white);
             text-align: center;
             padding: 80px 24px;
@@ -891,7 +893,7 @@
 
     <!-- ===== Hero ===== -->
     <div class="hero" id="top">
-        <img src="/resize/images/hero-morning-ring.png" alt="朝の光の中、指輪を身につけた手元" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80&auto=format" alt="ダークウッドの上に置かれたリング" class="hero-img">
         <div class="hero-overlay">
             <div class="hero-badges">
                 <span class="hero-badge-item">全国配送対応</span>
@@ -1003,7 +1005,7 @@
 
             <div class="empathy-card fade-in">
                 <div class="empathy-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80&auto=format" alt="婚約指輪" class="empathy-img">
+                    <img src="https://images.unsplash.com/photo-1600721391776-b5cd0e0048f9?w=600&q=80&auto=format" alt="ダークトーンのジュエリーボックス" class="empathy-img">
                 </div>
                 <div class="empathy-content">
                     <h3 class="empathy-heading">体型が変わって、入らなくなった婚約指輪</h3>
@@ -1013,7 +1015,7 @@
 
             <div class="empathy-card fade-in fade-in-delay-1">
                 <div class="empathy-img-wrap">
-                    <img src="/resize/images/drawer-jewelry.png" alt="受け継いだリング" class="empathy-img">
+                    <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80&auto=format" alt="ダークウッドの什器に並ぶジュエリー" class="empathy-img">
                 </div>
                 <div class="empathy-content">
                     <h3 class="empathy-heading">母から受け継いだ、サイズの合わないリング</h3>
@@ -1023,7 +1025,7 @@
 
             <div class="empathy-card fade-in fade-in-delay-2">
                 <div class="empathy-img-wrap">
-                    <img src="/resize/images/vintage-ring.png" alt="ヴィンテージリング" class="empathy-img">
+                    <img src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?w=600&q=80&auto=format" alt="コンクリートの上に置かれたヴィンテージリング" class="empathy-img">
                 </div>
                 <div class="empathy-content">
                     <h3 class="empathy-heading">一目惚れしたヴィンテージ。でもサイズがない</h3>
@@ -1053,7 +1055,7 @@
                 <div class="reason-num">01</div>
                 <h3 class="reason-title">ブランドリングも対応する、<br>熟練職人の精密技術</h3>
                 <div class="reason-img-wrap">
-                    <img src="/resize/images/uzume-atelier-overview.png" alt="熟練職人の工房" class="reason-img">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format" alt="鉄とウッドのある職人の工房" class="reason-img">
                 </div>
                 <div class="reason-desc">
                     <p><span class="reason-highlight">他店やブランドショップで断られたデザインも、諦めないでください。</span></p>
@@ -1094,7 +1096,7 @@
                 <div class="reason-num">03</div>
                 <h3 class="reason-title">全国どこからでも。<br>自宅で完結するオンライン対応</h3>
                 <div class="reason-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=600&q=80&auto=format" alt="パッケージ" class="reason-img">
+                    <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&q=80&auto=format" alt="クラフト紙パッケージとダークウッド" class="reason-img">
                 </div>
                 <div class="reason-desc">
                     <p>リングゲージと返送キットを無料でお届け。<span class="reason-highlight">大手保険会社の輸送保険付き</span>で、配送中の万が一にも全額補償。</p>
