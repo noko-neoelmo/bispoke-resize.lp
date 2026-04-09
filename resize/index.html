@@ -135,7 +135,7 @@
             width: 100%;
             margin: 0 auto;
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #222;
+            background-color: var(--gauge-bg);
             color: var(--text-primary);
             line-height: 1.8;
             overflow-x: hidden;
@@ -175,7 +175,7 @@
             max-width: 780px;
             width: 100%;
             height: 56px;
-            background-color: #3A3A3C;
+            background-color: var(--gauge-bg);
             background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
             display: flex;
             justify-content: space-between;
@@ -233,10 +233,10 @@
             padding-bottom: calc(40px + env(safe-area-inset-bottom));
             background: linear-gradient(
                 to bottom,
-                rgba(27,42,74,0) 0%,
-                rgba(27,42,74,0.15) 30%,
-                rgba(27,42,74,0.55) 60%,
-                rgba(27,42,74,0.88) 100%
+                rgba(28,40,50,0) 0%,
+                rgba(28,40,50,0.15) 30%,
+                rgba(28,40,50,0.55) 60%,
+                rgba(28,40,50,0.9) 100%
             );
             color: var(--white);
             display: flex;
@@ -387,11 +387,12 @@
             gap: 12px;
         }
         .case-card {
-            background: var(--white);
-            border-radius: 8px;
+            background: #F0EDE7;
+            background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.04'/%3E%3C/svg%3E");
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-            border: 1px solid rgba(0,0,0,0.04);
+            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+            border: 1px solid rgba(180,170,155,0.25);
         }
         .case-card-img-wrap {
             width: 100%;
@@ -408,14 +409,15 @@
         .case-card-label {
             font-size: 9px;
             color: var(--gold);
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             font-weight: 500;
             margin-bottom: 2px;
+            text-transform: uppercase;
         }
         .case-card-title {
             font-size: 12px;
             font-weight: 700;
-            color: var(--navy);
+            color: #2C3028;
             margin-bottom: 4px;
             line-height: 1.4;
         }
@@ -434,7 +436,7 @@
             font-size: 11px;
             color: var(--text-secondary);
             line-height: 1.6;
-            border-top: 1px solid rgba(0,0,0,0.04);
+            border-top: 1px solid rgba(160,150,130,0.2);
             padding-top: 6px;
         }
 
@@ -824,7 +826,7 @@
 
         /* ===== Final CTA ===== */
         .cta-section {
-            background: linear-gradient(135deg, #1a2540 0%, var(--navy) 100%);
+            background: linear-gradient(135deg, #1C2832 0%, #1a2540 100%);
             color: var(--white);
             text-align: center;
             padding: 80px 24px;
@@ -1118,35 +1120,6 @@
         </div>
     </div>
 
-    <!-- ===== Voice Section ===== -->
-    <div class="section section-bg-off" id="voice">
-        <div class="container">
-            <p class="section-label fade-in">VOICE</p>
-            <h2 class="section-title fade-in">届いた声</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <div class="voice-scroll fade-in">
-                <div class="voice-card">
-                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                    <p class="voice-attr">30代女性 / 婚約指輪 サイズアップ</p>
-                </div>
-
-                <div class="voice-card">
-                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                    <p class="voice-attr">40代女性 / 受け継ぎリング サイズダウン</p>
-                </div>
-
-                <div class="voice-card">
-                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。子どもが小さくて外出が難しいので、全部オンラインで完結するのが本当にありがたかったです。</p>
-                    <p class="voice-attr">30代女性 / デザインリング サイズアップ</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- ===== Empathy Section ===== -->
     <div class="section section-bg-off" id="concerns">
         <div class="container">
@@ -1190,6 +1163,35 @@
                     LINEで相談する
                 </a>
                 <span class="btn-sub-text">リングゲージを無料でお届けします。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Voice Section ===== -->
+    <div class="section section-bg-off" id="voice">
+        <div class="container">
+            <p class="section-label fade-in">VOICE</p>
+            <h2 class="section-title fade-in">届いた声</h2>
+            <div class="gold-divider fade-in"></div>
+
+            <div class="voice-scroll fade-in">
+                <div class="voice-card">
+                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
+                    <p class="voice-attr">30代女性 / 婚約指輪 サイズアップ</p>
+                </div>
+
+                <div class="voice-card">
+                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
+                    <p class="voice-attr">40代女性 / 受け継ぎリング サイズダウン</p>
+                </div>
+
+                <div class="voice-card">
+                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。子どもが小さくて外出が難しいので、全部オンラインで完結するのが本当にありがたかったです。</p>
+                    <p class="voice-attr">30代女性 / デザインリング サイズアップ</p>
+                </div>
             </div>
         </div>
     </div>
