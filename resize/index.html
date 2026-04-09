@@ -115,6 +115,10 @@
             --white: #FDFCFA;
             --line-green: #06C755;
             --border: #D4CEC6;
+            --labo-dark: #2C2824;
+            --labo-wood: #3D3530;
+            --labo-concrete: #4A4540;
+            --labo-cream: #E8E2D8;
         }
 
         * {
@@ -192,8 +196,8 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background-color: var(--line-green);
-            color: var(--white);
+            background-color: var(--labo-dark);
+            color: var(--labo-cream);
             text-decoration: none;
             font-size: 12px;
             font-weight: 500;
@@ -201,7 +205,7 @@
             border-radius: 20px;
             transition: background-color 0.3s ease;
         }
-        .header-cta:hover { background-color: #05b04c; }
+        .header-cta:hover { background-color: var(--labo-wood); }
         .header-cta svg { width: 16px; height: 16px; }
 
         /* ===== Hero (full-bleed with bottom text) ===== */
@@ -278,42 +282,46 @@
             font-weight: 300;
         }
 
-        /* ===== CTA Button ===== */
+        /* ===== CTA Button (Le Labo-inspired) ===== */
         .btn-cta {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            background-color: var(--line-green);
-            color: var(--white);
+            gap: 10px;
+            background-color: var(--labo-dark);
+            color: var(--labo-cream);
             padding: 16px 32px;
-            border-radius: 50px;
+            border-radius: 0;
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            box-shadow: 0 4px 20px rgba(6,199,85,0.3);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            border: 1px solid rgba(160,138,116,0.35);
+            box-shadow: none;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
             width: 100%;
             text-align: center;
             cursor: pointer;
         }
         .btn-cta:hover {
-            background-color: #05b04c;
-            box-shadow: 0 6px 28px rgba(6,199,85,0.4);
+            background-color: var(--labo-wood);
+            border-color: var(--gold);
+            box-shadow: none;
             transform: translateY(-1px);
         }
         .btn-cta:active { transform: translateY(0); }
-        .btn-cta svg { width: 22px; height: 22px; flex-shrink: 0; }
+        .btn-cta svg { width: 20px; height: 20px; flex-shrink: 0; }
 
         .btn-cta.light {
-            background-color: var(--white);
-            color: var(--line-green);
-            box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+            background-color: transparent;
+            color: var(--labo-cream);
+            border: 1px solid rgba(232,226,216,0.4);
+            box-shadow: none;
         }
         .btn-cta.light:hover {
-            background-color: #f7f7f7;
-            box-shadow: 0 6px 28px rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.08);
+            border-color: var(--labo-cream);
+            box-shadow: none;
         }
 
         .btn-sub-text {
@@ -847,7 +855,7 @@
         .floating-cta .btn-cta {
             font-size: 14px;
             padding: 14px 24px;
-            box-shadow: 0 4px 24px rgba(6,199,85,0.3);
+            box-shadow: 0 4px 24px rgba(44,40,36,0.4);
         }
 
         /* ===== Footer ===== */
@@ -872,6 +880,140 @@
             letter-spacing: 0.1em;
             margin-bottom: 24px;
         }
+
+        /* ===== Ring Gauge Section ===== */
+        .gauge-section {
+            background-color: var(--labo-dark);
+            background-image:
+                linear-gradient(135deg, rgba(61,53,48,0.6) 0%, rgba(44,40,36,0.95) 100%),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            color: var(--labo-cream);
+            padding: 80px 0;
+        }
+        .gauge-img-wrap {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 32px;
+        }
+        .gauge-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gauge-label {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .gauge-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--labo-cream);
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        .gauge-copy {
+            font-size: 14px;
+            line-height: 2.2;
+            color: rgba(232,226,216,0.85);
+            letter-spacing: 0.04em;
+        }
+        .gauge-copy-accent {
+            color: var(--labo-cream);
+            font-weight: 500;
+        }
+        .gauge-free {
+            margin-top: 28px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            color: var(--gold);
+            text-align: center;
+            border-top: 1px solid rgba(160,138,116,0.25);
+            padding-top: 24px;
+        }
+
+        /* ===== Dark section overrides ===== */
+        .section-bg-wood .section-title,
+        .section-bg-concrete .section-title {
+            color: var(--labo-cream);
+        }
+        .section-bg-wood .voice-card,
+        .section-bg-concrete .voice-card {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(160,138,116,0.15);
+            box-shadow: none;
+        }
+        .section-bg-wood .voice-text {
+            color: var(--labo-cream);
+        }
+        .section-bg-wood .voice-attr {
+            color: rgba(232,226,216,0.5);
+        }
+        .section-bg-wood .gold-divider {
+            background-color: rgba(160,138,116,0.3);
+        }
+        .section-bg-wood .empathy-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(160,138,116,0.15);
+            box-shadow: none;
+        }
+        .section-bg-wood .empathy-heading {
+            color: var(--labo-cream);
+        }
+        .section-bg-wood .empathy-text {
+            color: rgba(232,226,216,0.75);
+        }
+        .section-bg-wood .btn-sub-text {
+            color: rgba(232,226,216,0.4);
+        }
+
+        /* ===== Le Labo-inspired dark backgrounds ===== */
+        .section-bg-wood {
+            background-color: var(--labo-dark);
+            background-image:
+                linear-gradient(180deg, rgba(61,53,48,0.4) 0%, rgba(44,40,36,0.9) 100%),
+                url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+        }
+        .section-bg-concrete {
+            background-color: var(--labo-concrete);
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        /* ===== Le Labo CTA styling ===== */
+        .btn-cta-labo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--labo-dark);
+            color: var(--labo-cream);
+            padding: 16px 32px;
+            border-radius: 0;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            border: 1px solid rgba(160,138,116,0.4);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn-cta-labo:hover {
+            background-color: var(--labo-wood);
+            border-color: var(--gold);
+        }
+        .btn-cta-labo svg { width: 20px; height: 20px; flex-shrink: 0; }
 
         @media (max-width: 374px) {
             .hero-copy { font-size: 22px; }
@@ -908,6 +1050,29 @@
                 LINEで相談する
             </a>
             <span class="btn-sub-text btn-sub-text-light">リングゲージを無料でお届けします</span>
+        </div>
+    </div>
+
+    <!-- ===== Ring Gauge ===== -->
+    <div class="gauge-section" id="gauge">
+        <div class="container">
+            <p class="gauge-label fade-in">RING GAUGE</p>
+            <h2 class="gauge-title fade-in">特注のリングゲージ</h2>
+
+            <div class="gauge-img-wrap fade-in">
+                <img src="/resize/images/ring-gauge.jpg" alt="特注リングゲージ" class="gauge-img">
+            </div>
+
+            <div class="gauge-copy fade-in">
+                <p>手には、日々の営みが繊細に刻まれます。</p>
+                <p>パソコンと向き合う時、文字を書く時、<br>料理をする時、誰かを抱きしめる時。</p>
+                <br>
+                <p>ほんの少しの違和感で、つい外してしまったり、<br>そっとタンスにしまってしまったり。</p>
+                <br>
+                <p><span class="gauge-copy-accent">繊細な手元だからこそ、<br>他にはない「0.5号刻み」のリングゲージを<br>お作りしました。</span></p>
+            </div>
+
+            <p class="gauge-free fade-in">リングゲージは無料でお届けいたします。</p>
         </div>
     </div>
 
@@ -970,7 +1135,7 @@
     </div>
 
     <!-- ===== Voice Section ===== -->
-    <div class="section section-bg-off" id="voice">
+    <div class="section section-bg-wood" id="voice" style="color: var(--labo-cream);">
         <div class="container">
             <p class="section-label fade-in">VOICE</p>
             <h2 class="section-title fade-in">届いた声</h2>
@@ -997,7 +1162,7 @@
     </div>
 
     <!-- ===== Empathy Section ===== -->
-    <div class="section section-bg-off" id="concerns">
+    <div class="section section-bg-wood" id="concerns">
         <div class="container">
             <p class="section-label fade-in">YOUR STORY</p>
             <h2 class="section-title fade-in">しまったままの理由</h2>
@@ -1005,7 +1170,7 @@
 
             <div class="empathy-card fade-in">
                 <div class="empathy-img-wrap">
-                    <img src="/resize/images/empathy-ring-slate.png.png" alt="婚約指輪" class="empathy-img">
+                    <img src="/resize/images/washstand-ring.png" alt="婚約指輪" class="empathy-img">
                 </div>
                 <div class="empathy-content">
                     <h3 class="empathy-heading">体型が変わって、入らなくなった婚約指輪</h3>
