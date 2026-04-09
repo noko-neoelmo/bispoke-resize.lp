@@ -322,6 +322,17 @@
             box-shadow: none;
         }
 
+        .btn-cta.hero-cta {
+            background-color: rgba(255,255,255,0.95);
+            color: var(--navy);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .btn-cta.hero-cta:hover {
+            background-color: #fff;
+            box-shadow: 0 6px 28px rgba(0,0,0,0.2);
+        }
+        .btn-cta.hero-cta svg { color: var(--navy); }
+
         .btn-sub-text {
             display: block;
             text-align: center;
@@ -427,25 +438,41 @@
             padding-top: 6px;
         }
 
-        /* ===== Voice / Reviews ===== */
+        /* ===== Voice / Reviews (horizontal scroll) ===== */
+        .voice-scroll {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+            margin: 0 -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .voice-scroll::-webkit-scrollbar { display: none; }
+        .voice-scroll { -ms-overflow-style: none; scrollbar-width: none; }
         .voice-card {
             background: var(--white);
             border-radius: 8px;
-            padding: 20px 22px;
-            margin-bottom: 12px;
+            padding: 18px 20px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.04);
             border: 1px solid rgba(0,0,0,0.04);
+            min-width: 260px;
+            max-width: 280px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
         }
         .voice-stars {
             color: #E8B849;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 2px;
             margin-bottom: 8px;
         }
         .voice-text {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-primary);
-            line-height: 1.8;
+            line-height: 1.7;
             margin-bottom: 10px;
         }
         .voice-attr {
@@ -968,8 +995,9 @@
             .gauge-copy { font-size: 15px; }
             .gauge-title { font-size: 26px; }
             .btn-cta { max-width: 400px; margin-left: auto; margin-right: auto; }
-            .voice-card { padding: 24px 28px; }
-            .voice-text { font-size: 14px; }
+            .voice-scroll { margin: 0 -48px; padding-left: 48px; padding-right: 48px; }
+            .voice-card { padding: 22px 24px; min-width: 280px; max-width: 300px; }
+            .voice-text { font-size: 13px; }
             .price-row { padding: 24px 32px; }
             .cta-section { padding: 100px 48px; }
             .cta-title { font-size: 28px; }
@@ -1001,7 +1029,7 @@
             <h1 class="hero-copy-main">デザインはそのまま、<br>0.5号刻みで<br>あなたの指に仕立て直す。</h1>
             <p class="hero-copy-sub">あなたの指に合わせて、一点ずつ。</p>
             <p class="hero-sub">他店で断られたリングも対応。全国どこからでも、オンラインで完結します。</p>
-            <a href="https://lin.ee/VhCyZEw" class="btn-cta">
+            <a href="https://lin.ee/VhCyZEw" class="btn-cta hero-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                 LINEで相談する
             </a>
@@ -1097,22 +1125,24 @@
             <h2 class="section-title fade-in">届いた声</h2>
             <div class="gold-divider fade-in"></div>
 
-            <div class="voice-card fade-in">
-                <div class="voice-stars" style="color:var(--gold);font-size:11px;letter-spacing:4px;">&#9679; &#9679; &#9679;</div>
-                <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                <p class="voice-attr">30代女性 / 婚約指輪 サイズアップ</p>
-            </div>
+            <div class="voice-scroll fade-in">
+                <div class="voice-card">
+                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
+                    <p class="voice-attr">30代女性 / 婚約指輪 サイズアップ</p>
+                </div>
 
-            <div class="voice-card fade-in fade-in-delay-1">
-                <div class="voice-stars" style="color:var(--gold);font-size:11px;letter-spacing:4px;">&#9679; &#9679; &#9679;</div>
-                <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。RETOLD TOKYOさんに相談したら対応可能とのことで、仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                <p class="voice-attr">40代女性 / 受け継ぎリング サイズダウン</p>
-            </div>
+                <div class="voice-card">
+                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
+                    <p class="voice-attr">40代女性 / 受け継ぎリング サイズダウン</p>
+                </div>
 
-            <div class="voice-card fade-in fade-in-delay-2">
-                <div class="voice-stars" style="color:var(--gold);font-size:11px;letter-spacing:4px;">&#9679; &#9679; &#9679;</div>
-                <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。子どもが小さくて外出が難しいので、全部オンラインで完結するのが本当にありがたかったです。</p>
-                <p class="voice-attr">30代女性 / デザインリング サイズアップ</p>
+                <div class="voice-card">
+                    <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。子どもが小さくて外出が難しいので、全部オンラインで完結するのが本当にありがたかったです。</p>
+                    <p class="voice-attr">30代女性 / デザインリング サイズアップ</p>
+                </div>
             </div>
         </div>
     </div>
@@ -1154,7 +1184,7 @@
                 </div>
             </div>
 
-            <div style="margin-top: 40px;" class="fade-in">
+            <div style="margin-top: 40px; text-align: center;" class="fade-in">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                     LINEで相談する
@@ -1271,7 +1301,7 @@
 
             <p class="price-note fade-in">※素材・デザイン・サイズ変更幅により変動します。正式なお見積もりはLINEでお伝えします。</p>
 
-            <div class="fade-in">
+            <div class="fade-in" style="text-align: center;">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                     LINEで相談する
