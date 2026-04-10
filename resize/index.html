@@ -3,6 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ══ Google Tag Manager ══ -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MS23VNZH');</script>
+
+    <!-- ══ Meta Pixel ══ -->
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1508544967542722');fbq('track','PageView');</script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.net/tr?id=1508544967542722&ev=PageView&noscript=1"/></noscript>
+
+    <!-- ══ LINE Tag (LAP) ══ -->
+    <!-- TODO: Replace YOUR_LINE_TAG_ID with your LINE Tag ID when available -->
+    <script>(function(g,d,o){g._ltq=g._ltq||[];g._lt=g._lt||function(){g._ltq.push(arguments)};
+    var h=d.getElementsByTagName(o)[0];var j=d.createElement(o);j.async=1;
+    j.src='https://s.yimg.jp/images/listing/tool/cv/ytag.js';
+    h.parentNode.insertBefore(j,h);})(window,document,'script');
+    _lt('init',{customerType:'lap',tagId:'YOUR_LINE_TAG_ID'});
+    _lt('send','pv',['YOUR_LINE_TAG_ID']);</script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://tr.line.me/tag.gif?c_t=lap&t_id=YOUR_LINE_TAG_ID&e=pv&noscript=1"/></noscript>
+
     <title>指輪サイズ直し｜0.5号刻み・5,500円〜・全国配送 | RETOLD TOKYO</title>
     <meta name="description" content="指輪のサイズ直し5,500円〜。0.5号刻みの精密リサイズ。リングゲージ無料送付、来店不要でオンライン完結。他店で断られたブランドリングも対応。約1ヶ月で完成、1年品質保証付き。RETOLD TOKYO">
     <script type="application/ld+json">
@@ -1094,6 +1123,9 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Header -->
     <header>
@@ -1716,6 +1748,31 @@
                 if (e.target === exitModal) {
                     exitModal.classList.remove('active');
                 }
+            });
+
+            // ── LP view event ──
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'lp_view', page: 'resize_lp' });
+
+            // ── CTA click tracking ──
+            document.querySelectorAll('a[href*="lin.ee"], a[href*="/resize/application"]').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    // GTM dataLayer
+                    window.dataLayer.push({
+                        event: 'line_cta_click',
+                        cta_location: el.closest('.floating-cta') ? 'floating' :
+                                      el.closest('.hero') ? 'hero' :
+                                      el.closest('.cta-section') ? 'cta_section' : 'other'
+                    });
+                    // Meta Pixel
+                    if (typeof fbq === 'function') {
+                        fbq('track', 'Lead', { content_name: 'resize_lp_cta_click' });
+                    }
+                    // LINE Tag
+                    if (typeof _lt === 'function') {
+                        _lt('send', 'cv', { type: 'Conversion' }, ['YOUR_LINE_TAG_ID']);
+                    }
+                });
             });
         });
     </script>
