@@ -6,7 +6,8 @@
     },
     { "source": "/resize/terms", "destination": "/resize/terms.html" },
     { "source": "/resize/privacy", "destination": "/resize/privacy.html" },
-    { "source": "/resize/company", "destination": "/resize/company.html" }
+    { "source": "/resize/company", "destination": "/resize/company.html" },
+    { "source": "/resize/legal", "destination": "/resize/legal.html" }
   ],
   "redirects": [
     { "source": "/", "destination": "/resize", "permanent": false }
