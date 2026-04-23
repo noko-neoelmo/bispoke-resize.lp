@@ -32,8 +32,8 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://tr.line.me/tag.gif?c_t=lap&t_id=YOUR_LINE_TAG_ID&e=pv&noscript=1"/></noscript>
 
-    <title>指輪サイズ直し｜0.5号刻み・5,500円〜・全国配送 | RETOLD TOKYO</title>
-    <meta name="description" content="指輪のサイズ直し5,500円〜。0.5号刻みの精密リサイズ。リングゲージ無料送付、来店不要でオンライン完結。他店で断られたブランドリングも対応。約1ヶ月で完成、1年品質保証付き。RETOLD TOKYO">
+    <title>指輪サイズ直し | 0.5号刻みで仕立て直す | LINEで即日お見積もり</title>
+    <meta name="description" content="国家資格保有の職人が、0.5号刻みであなたの指に仕立て直します。ブランドリング対応・磨き上げ無料・往復送料無料。LINEで写真を送るだけで即日お見積もり。RETOLD TOKYO">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -226,18 +226,27 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background-color: rgba(255,255,255,0.12);
-            color: #E0E0E2;
+            background-color: var(--line-green);
+            color: #FFFFFF;
             text-decoration: none;
-            font-size: 12px;
-            font-weight: 500;
-            padding: 6px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 7px 14px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: background-color 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(6,199,85,0.30);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            white-space: nowrap;
         }
-        .header-cta:hover { background-color: rgba(255,255,255,0.2); }
-        .header-cta svg { width: 16px; height: 16px; }
+        .header-cta:hover {
+            background-color: #05A845;
+            box-shadow: 0 6px 16px rgba(6,199,85,0.40);
+        }
+        .header-cta svg { width: 14px; height: 14px; color: #FFFFFF; }
+        @media (min-width: 600px) {
+            .header-cta { font-size: 12px; padding: 8px 16px; }
+            .header-cta svg { width: 16px; height: 16px; }
+        }
 
         /* ===== Hero (full-bleed with bottom text) ===== */
         .hero {
@@ -313,56 +322,62 @@
             font-weight: 300;
         }
 
-        /* ===== CTA Button ===== */
+        /* ===== CTA Button (LINE green, unified) ===== */
         .btn-cta {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background-color: var(--gauge-bg);
-            color: #E0E0E2;
+            background-color: var(--line-green);
+            color: #FFFFFF;
             padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
             font-size: 15px;
             font-weight: 700;
             letter-spacing: 0.03em;
-            box-shadow: 0 4px 20px rgba(28,40,50,0.35);
+            box-shadow: 0 8px 24px rgba(6,199,85,0.30);
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
             width: 100%;
             text-align: center;
             cursor: pointer;
         }
         .btn-cta:hover {
-            background-color: #243848;
-            box-shadow: 0 6px 28px rgba(28,40,50,0.45);
+            background-color: #05A845;
+            box-shadow: 0 10px 32px rgba(6,199,85,0.40);
             transform: translateY(-1px);
         }
         .btn-cta:active { transform: translateY(0); }
-        .btn-cta svg { width: 22px; height: 22px; flex-shrink: 0; }
+        .btn-cta svg { width: 22px; height: 22px; flex-shrink: 0; color: #FFFFFF; }
 
-        .btn-cta.light {
-            background-color: transparent;
-            color: #E0E0E2;
-            border: 1px solid rgba(224,224,226,0.4);
-            box-shadow: none;
-        }
-        .btn-cta.light:hover {
-            background-color: rgba(255,255,255,0.08);
-            border-color: #E0E0E2;
-            box-shadow: none;
-        }
-
+        .btn-cta.light,
         .btn-cta.hero-cta {
-            background-color: rgba(255,255,255,0.95);
-            color: var(--navy);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            background-color: var(--line-green);
+            color: #FFFFFF;
+            border: none;
+            box-shadow: 0 8px 24px rgba(6,199,85,0.30);
         }
+        .btn-cta.light:hover,
         .btn-cta.hero-cta:hover {
-            background-color: #fff;
-            box-shadow: 0 6px 28px rgba(0,0,0,0.2);
+            background-color: #05A845;
+            box-shadow: 0 10px 32px rgba(6,199,85,0.40);
         }
-        .btn-cta.hero-cta svg { color: var(--navy); }
+        .btn-cta.light svg,
+        .btn-cta.hero-cta svg { color: #FFFFFF; }
+
+        /* Outline variant (green on light/dark bg) */
+        .btn-cta.outline {
+            background-color: transparent;
+            color: var(--line-green);
+            border: 1.5px solid var(--line-green);
+            box-shadow: none;
+        }
+        .btn-cta.outline:hover {
+            background-color: var(--line-green);
+            color: #FFFFFF;
+            box-shadow: 0 8px 24px rgba(6,199,85,0.30);
+        }
+        .btn-cta.outline svg { color: currentColor; }
 
         .btn-sub-text {
             display: block;
@@ -458,10 +473,24 @@
             font-weight: 700;
             color: var(--navy);
             margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            border-top: 1px solid rgba(160,150,130,0.2);
+            padding-top: 8px;
+            margin-top: 6px;
         }
-        .case-card-price span {
-            font-size: 11px;
+        .case-card-price .case-card-price-label {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--text-light);
+            letter-spacing: 0.05em;
+            flex: 1;
+        }
+        .case-card-price .case-card-price-tax {
+            font-size: 10px;
             font-weight: 400;
+            color: var(--text-light);
         }
         .case-card-story {
             font-size: 11px;
@@ -550,16 +579,185 @@
             color: var(--text-secondary);
         }
 
+        /* ===== Pain Points Checklist ===== */
+        .pain-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 520px;
+        }
+        .pain-list li {
+            position: relative;
+            padding: 14px 0 14px 36px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .pain-list li:last-child { border-bottom: none; }
+        .pain-list li::before {
+            content: '';
+            position: absolute;
+            left: 4px; top: 20px;
+            width: 16px; height: 8px;
+            border-left: 2.5px solid var(--line-green);
+            border-bottom: 2.5px solid var(--line-green);
+            transform: rotate(-45deg);
+        }
+
+        /* ===== Craftsman Message ===== */
+        .craftsman-msg {
+            text-align: center;
+            padding: 0 8px;
+        }
+        .craftsman-msg-eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            color: var(--line-green);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+        .craftsman-msg-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .craftsman-msg-text {
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+        .craftsman-msg-text strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+        @media (min-width: 600px) {
+            .craftsman-msg-title { font-size: 28px; }
+            .craftsman-msg-text { font-size: 15px; }
+        }
+
+        /* ===== Trust Signals ===== */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        @media (min-width: 600px) {
+            .trust-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+        }
+        .trust-card {
+            background: #FFFFFF;
+            border: 2px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 26px 22px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .trust-card.featured {
+            border-color: var(--line-green);
+            box-shadow: 0 8px 24px rgba(6,199,85,0.10);
+        }
+        .trust-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(6,199,85,0.10);
+            color: var(--line-green);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .trust-card.featured .trust-icon {
+            background: var(--line-green);
+            color: #FFFFFF;
+        }
+        .trust-icon svg { width: 26px; height: 26px; }
+        .trust-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .trust-card-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        @media (min-width: 600px) {
+            .trust-card-title { font-size: 15px; }
+            .trust-card-desc { font-size: 13px; }
+        }
+
+        /* ===== Inherited Ring Section ===== */
+        .inherited-section {
+            background-color: #F5F3EE;
+            padding: 80px 0;
+        }
+        .inherited-lead {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 2;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .inherited-emphasis {
+            font-size: 15px;
+            color: var(--navy);
+            line-height: 2;
+            font-weight: 700;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+        .inherited-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 32px;
+            max-width: 520px;
+        }
+        .inherited-bullets li {
+            position: relative;
+            padding: 10px 0 10px 24px;
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        .inherited-bullets li::before {
+            content: '\25CF';
+            position: absolute;
+            left: 0; top: 10px;
+            color: var(--line-green);
+            font-size: 10px;
+        }
+        .inherited-closing {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
         /* ===== Reasons ===== */
         .reason-item { margin-bottom: 64px; }
         .reason-item:last-child { margin-bottom: 0; }
         .reason-num {
             font-family: inherit;
             font-size: 48px;
-            color: rgba(184,151,126,0.18);
+            color: rgba(6,199,85,0.20);
             line-height: 1;
             margin-bottom: -14px;
             font-weight: 700;
+            letter-spacing: 0.08em;
         }
         .reason-title {
             font-family: inherit;
@@ -1132,7 +1330,7 @@
         <div class="logo"><img src="/resize/images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="logo-img"></div>
         <a href="https://lin.ee/VhCyZEw" class="header-cta">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINE相談
+            LINEで即日見積
         </a>
     </header>
 
@@ -1141,18 +1339,18 @@
         <img src="/resize/images/hero-indigo.png" alt="指輪" class="hero-img">
         <div class="hero-overlay">
             <div class="hero-badges">
-                <span class="hero-badge-item">全国対応</span>
-                <span class="hero-badge-item">郵送完結</span>
-                <span class="hero-badge-item">1年保証</span>
+                <span class="hero-badge-item">国家資格保有の職人</span>
+                <span class="hero-badge-item">0.5号刻み</span>
+                <span class="hero-badge-item">ブランドリング対応</span>
             </div>
             <h1 class="hero-copy-main">デザインはそのまま、<br>0.5号刻みで<br>あなたの指に仕立て直す。</h1>
-            <p class="hero-copy-sub">あなたの指に合わせて、一点ずつ。</p>
-            <p class="hero-sub">他店で断られたリングも対応。全国どこからでも、オンラインで完結します。</p>
+            <p class="hero-copy-sub">思い出はそのままに。<br>今のあなたのための、指輪サイズ直し。</p>
+            <p class="hero-sub">LINEで写真を送るだけ・見積もり無料・全国対応</p>
             <a href="https://lin.ee/VhCyZEw" class="btn-cta hero-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで相談する
+                LINEで即日お見積もり
             </a>
-            <span class="btn-sub-text btn-sub-text-light">リングゲージを無料でお届けします</span>
+            <span class="btn-sub-text btn-sub-text-light">特製リングゲージ プレゼント・往復送料無料</span>
         </div>
     </div>
 
@@ -1184,29 +1382,37 @@
         <div class="container">
             <p class="section-label fade-in">CASE STUDIES</p>
             <h2 class="section-title fade-in">仕立ての記録</h2>
-            <p class="section-desc fade-in">他店で断られたリングが、ここに届きます。<br>一点ずつ、職人が仕立て直した記録です。</p>
+            <p class="section-desc fade-in">一点ずつ、職人が仕立て直した記録です。<br>サイズ直しに加え、磨き上げも無料で。</p>
 
             <div class="case-grid fade-in">
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-diamond-ring.jpg" alt="ダイヤモンドリング Before/After" class="case-card-img">
+                        <img src="/resize/images/ba-diamond-ring.jpg" alt="Pt900 ダイヤモンドリング Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
-                        <div class="case-card-label">CASE 01</div>
+                        <div class="case-card-label">CASE 01 / サイズ直し + 磨き上げ</div>
                         <div class="case-card-title">Pt900 ダイヤモンドリング</div>
-                        <div class="case-card-price">&yen;25,000<span>〜</span></div>
-                        <p class="case-card-story">出産後、入らなくなった婚約指輪。3号アップで毎日つけられるように。</p>
+                        <p class="case-card-story">15年前の婚約指輪。産後のむくみで入らなくなり、2号アップ。磨き上げで購入当時の輝きを取り戻しました。</p>
+                        <div class="case-card-price">
+                            <span class="case-card-price-label">お仕立て価格</span>
+                            &yen;13,000
+                            <span class="case-card-price-tax">税込</span>
+                        </div>
                     </div>
                 </div>
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-hermes-ring.jpg" alt="HERMES リング Before/After" class="case-card-img">
+                        <img src="/resize/images/ba-hermes-ring.jpg" alt="エルメス リング Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
-                        <div class="case-card-label">CASE 02</div>
-                        <div class="case-card-title">シルバー HERMESリング</div>
-                        <div class="case-card-price">&yen;22,000<span>〜</span></div>
-                        <p class="case-card-story">ブランドショップで断られたシェーヌダンクル。2号ダウンで薬指にぴったり。</p>
+                        <div class="case-card-label">CASE 02 / ブランドリング サイズ直し</div>
+                        <div class="case-card-title">エルメス リング</div>
+                        <p class="case-card-story">ブランド工房で断られていたリング。国家資格保有の職人が慎重に0.5号単位で調整。刻印も美しく残りました。</p>
+                        <div class="case-card-price">
+                            <span class="case-card-price-label">お仕立て価格</span>
+                            &yen;28,000
+                            <span class="case-card-price-tax">税込</span>
+                        </div>
                     </div>
                 </div>
                 <div class="case-card">
@@ -1214,72 +1420,113 @@
                         <img src="/resize/images/ba-signet-ring.jpg" alt="シグネットリング Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
-                        <div class="case-card-label">CASE 03</div>
-                        <div class="case-card-title">シルバー シグネットリング</div>
-                        <div class="case-card-price">&yen;18,000<span>〜</span></div>
-                        <p class="case-card-story">ヴィンテージショップで見つけた一点もの。1号アップでジャストサイズに。</p>
+                        <div class="case-card-label">CASE 03 / サイズ直し + 磨き上げ</div>
+                        <div class="case-card-title">シグネットリング</div>
+                        <p class="case-card-story">父から受け継いだシグネットリング。1.5号ダウンして、日常で身につけられる一本に。磨き上げはサービスでお付けしました。</p>
+                        <div class="case-card-price">
+                            <span class="case-card-price-label">お仕立て価格</span>
+                            &yen;11,000
+                            <span class="case-card-price-tax">税込</span>
+                        </div>
                     </div>
                 </div>
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-boucheron-ring.jpg" alt="BOUCHERONリング Before/After" class="case-card-img">
+                        <img src="/resize/images/ba-boucheron-ring.jpg" alt="バンドリング Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
-                        <div class="case-card-label">CASE 04</div>
-                        <div class="case-card-title">シルバー バンドリング</div>
-                        <div class="case-card-price">&yen;20,000<span>〜</span></div>
-                        <p class="case-card-story">母から受け継いだリング。2号ダウンで、今度は私の日常に。</p>
+                        <div class="case-card-label">CASE 04 / 幅広リング サイズ直し</div>
+                        <div class="case-card-title">バンドリング</div>
+                        <p class="case-card-story">幅のあるバンドリングは難易度が高い仕立て直し。熟練職人が歪みを出さず、丁寧に仕上げました。</p>
+                        <div class="case-card-price">
+                            <span class="case-card-price-label">お仕立て価格</span>
+                            &yen;26,000
+                            <span class="case-card-price-tax">税込</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <p class="price-note fade-in" style="text-align: center;">※上記は一例です。デザインの複雑さや素材により料金は変動します。</p>
+            <p class="price-note fade-in" style="text-align: center;">※ 価格は一例です。素材・デザイン・修復内容により変動します。<br>まずはLINEで写真をお送りください。</p>
+
+            <div class="fade-in" style="text-align: center; margin-top: 24px;">
+                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                    LINEで即日お見積もり
+                </a>
+                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
+            </div>
         </div>
     </div>
 
-    <!-- ===== Empathy Section ===== -->
+    <!-- ===== Pain Points Section ===== -->
     <div class="section section-bg-off" id="concerns">
         <div class="container">
-            <p class="section-label fade-in">YOUR STORY</p>
-            <h2 class="section-title fade-in">しまったままの理由</h2>
+            <p class="section-label fade-in">YOUR CONCERN</p>
+            <h2 class="section-title fade-in">こんなお悩み、<br>ありませんか。</h2>
             <div class="gold-divider fade-in"></div>
 
-            <div class="empathy-card fade-in">
-                <div class="empathy-img-wrap">
-                    <img src="/resize/images/washstand-ring.png" alt="婚約指輪" class="empathy-img">
-                </div>
-                <div class="empathy-content">
-                    <h3 class="empathy-heading">体型が変わって、入らなくなった婚約指輪</h3>
-                    <p class="empathy-text">指のかたちは変わる。自然なことです。<br>その指輪を、もう一度あなたの日常に戻す仕事をしています。</p>
-                </div>
-            </div>
-
-            <div class="empathy-card fade-in fade-in-delay-1">
-                <div class="empathy-img-wrap">
-                    <img src="/resize/images/empathy-drawer-vintage.png" alt="受け継いだリング" class="empathy-img">
-                </div>
-                <div class="empathy-content">
-                    <h3 class="empathy-heading">母から受け継いだ、サイズの合わないリング</h3>
-                    <p class="empathy-text">受け継いだ指輪のサイズが合わないのは、よくあることです。<br>想いごと、あなたの手に仕立て直します。</p>
-                </div>
-            </div>
-
-            <div class="empathy-card fade-in fade-in-delay-2">
-                <div class="empathy-img-wrap">
-                    <img src="/resize/images/vintage-ring.png" alt="ヴィンテージリング" class="empathy-img">
-                </div>
-                <div class="empathy-content">
-                    <h3 class="empathy-heading">一目惚れしたヴィンテージ。でもサイズがない</h3>
-                    <p class="empathy-text">二度と出会えない一点もの。<br>サイズを理由に手放す必要はありません。</p>
-                </div>
-            </div>
+            <ul class="pain-list fade-in">
+                <li>結婚指輪が、指のむくみ・産後の変化で入らない</li>
+                <li>母や祖母から受け継いだ指輪が、サイズ違いでつけられない</li>
+                <li>ブランドリングだから直せない、と諦めていた</li>
+                <li>年月で黒ずんだ・傷ついた指輪を、もう一度輝かせたい</li>
+                <li>近くに、安心して任せられる工房がない</li>
+            </ul>
 
             <div style="margin-top: 40px; text-align: center;" class="fade-in">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで相談する
+                    LINEで即日お見積もり
                 </a>
-                <span class="btn-sub-text">リングゲージを無料でお届けします。</span>
+                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Craftsman Message Section ===== -->
+    <div class="section section-bg-white" id="craftsman">
+        <div class="container">
+            <div class="craftsman-msg fade-in">
+                <p class="craftsman-msg-eyebrow">Handcrafted, one by one</p>
+                <h2 class="craftsman-msg-title">あなたの指に合わせて、<br>1点ずつ。</h2>
+                <p class="craftsman-msg-text">
+                    手作りの職人が<strong>0.5号刻み</strong>で、<br>
+                    一本ずつお仕立て直します。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Trust Signals Section ===== -->
+    <div class="section section-bg-off" id="trust">
+        <div class="container">
+            <p class="section-label fade-in">OUR PROMISE</p>
+            <h2 class="section-title fade-in">安心して、お任せください。</h2>
+            <p class="section-desc fade-in">全国どこからでも、ご自宅で完結します。</p>
+
+            <div class="trust-grid fade-in">
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+                    </div>
+                    <div class="trust-card-title">全国配送対応</div>
+                    <div class="trust-card-desc">保険付き宅配便で<br>安全にお届け</div>
+                </div>
+                <div class="trust-card featured">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v4H3z"/><path d="M5 11v9h14v-9"/><path d="M12 7v13"/><path d="M8 7c0-1.5 1-3 4-3s4 1.5 4 3"/></svg>
+                    </div>
+                    <div class="trust-card-title">往復送料 無料</div>
+                    <div class="trust-card-desc">お預かり・お届けの<br>送料は当店負担</div>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="5"/><path d="M9 4l3 4 3-4"/><path d="M7 4h10"/></svg>
+                    </div>
+                    <div class="trust-card-title">特製リングゲージ<br>プレゼント</div>
+                    <div class="trust-card-desc">自宅で正確なサイズ計測<br>申込者全員に無料贈呈</div>
+                </div>
             </div>
         </div>
     </div>
@@ -1332,24 +1579,24 @@
     <!-- ===== Reasons Section ===== -->
     <div class="section section-bg-white" id="reasons">
         <div class="container">
-            <p class="section-label fade-in">OUR CRAFT</p>
-            <h2 class="section-title fade-in">私たちの仕事</h2>
-            <p class="section-desc fade-in">ジュエリーリモデル専門ブランドとして、<br>一点ずつ向き合っています。</p>
+            <p class="section-label fade-in">TWO REASONS</p>
+            <h2 class="section-title fade-in">選ばれる、2つの理由。</h2>
+            <p class="section-desc fade-in">サイズ直し専門の職人が、<br>一点ずつ向き合っています。</p>
 
             <!-- Reason 01 -->
             <div class="reason-item fade-in">
                 <div class="reason-num">01</div>
-                <h3 class="reason-title">ブランドリングも、断らない。</h3>
+                <h3 class="reason-title">ブランドリングも、<br>断らない。</h3>
                 <div class="reason-img-wrap">
                     <img src="/resize/images/reason-craftsman-workshop.png" alt="熟練職人の工房" class="reason-img">
                 </div>
                 <div class="reason-desc">
-                    <p><span class="reason-highlight">他店やブランドショップで断られたデザインも、諦めないでください。</span></p>
+                    <p><span class="reason-highlight">国家資格を保有する職人だから、できる。</span></p>
                     <br>
-                    <p>日本国内随一の技術を持つ熟練職人が、0.5号刻みの精密なリサイズを行います。石の状態、金属の特性、デザインの構造を見極めた上で、最適な加工方法を選択します。</p>
+                    <p>カルティエ・ブルガリ・ティファニー・エルメスなど、ブランドリングのサイズ直しもお任せください。石の状態・金属の特性・デザインの構造を見極めた上で、最適な加工方法を選択します。</p>
                 </div>
                 <div class="reason-history">
-                    Cartier、HERMES、BOUCHERON、Tiffanyなど、ハイブランドジュエリーのリサイズ経験も豊富。デザインの繊細さを熟知した職人が、一点ずつ丁寧に仕上げます。
+                    他店・ブランドショップで断られたリングも、まずはLINEでお写真をお送りください。対応可否を無料でお伝えします。
                 </div>
             </div>
 
@@ -1368,28 +1615,14 @@
                     </div>
                 </div>
                 <div class="reason-desc">
-                    <p>RETOLD TOKYOは<span class="reason-highlight">ジュエリーリモデルの専門ブランド</span>。サイズを変えるだけでなく、ジュエリー本来の美しさを引き出す仕上げまでが私たちの仕事です。</p>
+                    <p><span class="reason-highlight">すべてのリングを、磨き上げ無料で。</span></p>
+                    <br>
+                    <p>サイズを変えるだけでなく、指輪本来の輝きを取り戻す磨き上げまでが、私たちの仕事です。「ピカピカになった！」というお声が、私たちの一番の励みです。</p>
                     <ul class="reason-checklist">
+                        <li>磨き上げ 無料（全リング）</li>
                         <li>1年間の品質保証つき</li>
-                        <li>丁寧な磨き上げで輝きを回復（無料）</li>
-                        <li>将来のリモデル相談にも対応</li>
+                        <li>購入当時の輝きを取り戻します</li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- Reason 03 -->
-            <div class="reason-item fade-in">
-                <div class="reason-num">03</div>
-                <h3 class="reason-title">来店は不要です。<br>すべて、郵送で。</h3>
-                <div class="reason-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=600&q=80&auto=format" alt="パッケージ" class="reason-img">
-                </div>
-                <div class="reason-desc">
-                    <p>リングゲージと返送キットを無料でお届け。<span class="reason-highlight">大手保険会社の輸送保険付き</span>で、配送中の万が一にも全額補償。</p>
-                    <br>
-                    <p>お子さまが小さくて外出が難しい方、近くにジュエリーショップがない方も、ご自宅からすべて完結します。</p>
-                    <br>
-                    <p style="font-size: 12px; color: var(--text-light);">※青山事務所での対面ご相談も可能です。</p>
                 </div>
             </div>
         </div>
@@ -1444,9 +1677,9 @@
             <div class="fade-in" style="text-align: center;">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで相談する
+                    LINEで即日お見積もり
                 </a>
-                <span class="btn-sub-text">お写真を送るだけで、無料でお見積もりします。</span>
+                <span class="btn-sub-text">写真を送るだけで、無料でお見積もりします。</span>
             </div>
         </div>
     </div>
@@ -1461,28 +1694,23 @@
             <div class="process-flow fade-in">
                 <div class="process-step">
                     <div class="process-step-num">STEP 01</div>
-                    <div class="process-step-title">無料キットをお届け</div>
-                    <div class="process-step-desc">LINEでお申し込みいただくと、リングゲージと返送キットを無料でご自宅にお届けします。リングゲージは返品不要です。</div>
+                    <div class="process-step-title">LINEで写真を送る</div>
+                    <div class="process-step-desc">LINEで指輪の写真を送るだけ。現在のサイズ・希望サイズも添えてお送りください。</div>
                 </div>
                 <div class="process-step">
                     <div class="process-step-num">STEP 02</div>
-                    <div class="process-step-title">自宅でサイズ計測</div>
-                    <div class="process-step-desc">届いたリングゲージでサイズを計測。測り方はLINEで丁寧にサポートしますので、初めての方もご安心ください。</div>
+                    <div class="process-step-title">即日お見積もり</div>
+                    <div class="process-step-desc">職人がお写真を確認し、当日中にお見積もりをご返信します。料金もここで確定します。</div>
                 </div>
                 <div class="process-step">
                     <div class="process-step-num">STEP 03</div>
-                    <div class="process-step-title">指輪をお送りください</div>
-                    <div class="process-step-desc">同梱の返送キットに指輪を入れて返送。送料は当社負担。輸送保険付きで安心です。</div>
+                    <div class="process-step-title">お預かり</div>
+                    <div class="process-step-desc">特製リングゲージを同封。往復送料無料・保険付き宅配便で、安全にお預かりします。</div>
                 </div>
                 <div class="process-step">
                     <div class="process-step-num">STEP 04</div>
-                    <div class="process-step-title">職人によるサイズ加工</div>
-                    <div class="process-step-desc">熟練職人が丁寧にサイズ調整。進捗はLINEでお知らせします。</div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-num">STEP 05</div>
-                    <div class="process-step-title">完成品をお届け</div>
-                    <div class="process-step-desc">磨き上げまで完了した指輪をご自宅へ。1年間の品質保証付き。</div>
+                    <div class="process-step-title">お届け</div>
+                    <div class="process-step-desc">0.5号刻みで仕立て直し、磨き上げまで。新品同様の輝きでお届けします。</div>
                 </div>
             </div>
         </div>
@@ -1586,13 +1814,13 @@
             <div class="gold-divider fade-in"></div>
 
             <div class="summary-block fade-in">
-                <p>RETOLD TOKYO（リトールドトーキョー）は、ジュエリーリモデル専門ブランドが手がける指輪サイズ直しサービスです。</p>
+                <p>RETOLD TOKYO（リトールドトーキョー）は、国家資格保有の職人が手がける指輪サイズ直し専門ブランドです。</p>
 
-                <p>リングゲージをご自宅に無料でお届けし、0.5号刻みの精密なサイズ調整を行います。来店不要、全国どこからでもオンラインで完結。届いたキットにリングを入れてポストインするだけ。</p>
+                <p>特製のリングゲージをご自宅に無料でお届けし、0.5号刻みの精密なサイズ直しを行います。来店不要、全国どこからでもオンラインで完結。LINEで写真を送るだけで、即日お見積もりをお伝えします。</p>
 
-                <p>K18、Pt900/950、シルバーなど全素材に対応。Cartier、HERMES、BOUCHERON、Tiffanyなどハイブランドリングのサイズ直しも承ります。他店で断られた方も、まずはお気軽にご相談ください。</p>
+                <p>K18、Pt900/950、シルバーなど全素材に対応。カルティエ・ブルガリ・ティファニー・エルメスなどブランドリングのサイズ直しも承ります。他店で断られた方も、まずはお気軽にご相談ください。</p>
 
-                <p>料金は5,500円〜。送料無料、お見積もり無料、新品仕上げの磨き上げ無料。サイズ直し完了後は1年間の品質保証付きです。</p>
+                <p>往復送料無料・お見積もり無料・磨き上げ無料。サイズ直し完了後は1年間の品質保証付きです。</p>
 
                 <ul class="summary-links">
                     <li><a href="#price">料金について</a></li>
@@ -1604,28 +1832,68 @@
         </div>
     </div>
 
+    <!-- ===== Inherited Ring Section ===== -->
+    <div class="inherited-section" id="inherited">
+        <div class="container">
+            <p class="section-label fade-in">FOR INHERITED RINGS</p>
+            <h2 class="section-title fade-in">受け継いだ指輪を、<br>もう一度あなたの指に。</h2>
+            <div class="gold-divider fade-in"></div>
+
+            <p class="inherited-lead fade-in">
+                お母さま・お祖母さまから受け継いだ指輪。<br>
+                サイズが合わないから、と<br>
+                仕舞ったままにしていませんか。
+            </p>
+
+            <p class="inherited-emphasis fade-in">
+                私たちがお仕立て直しするのは、<br>
+                「思い出」ごと<br>
+                あなたの指に合わせるという仕事です。
+            </p>
+
+            <ul class="inherited-bullets fade-in">
+                <li>0.5号刻みで、あなたの指にぴったり合わせる</li>
+                <li>刻印・デザインはそのまま。思い出を残して仕立て直し</li>
+                <li>磨き上げ無料で、購入当時の輝きを取り戻す</li>
+            </ul>
+
+            <p class="inherited-closing fade-in">
+                まずは指輪の写真を、LINEで送ってください。<br>
+                即日、お見積もりをお伝えします。
+            </p>
+
+            <div class="fade-in" style="text-align: center;">
+                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                    LINEで即日お見積もり
+                </a>
+                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== Final CTA ===== -->
     <div class="cta-section">
-        <div class="cta-badge fade-in">1 YEAR WARRANTY</div>
-        <h2 class="cta-title fade-in">あなたの指に、もう一度。</h2>
-        <p class="cta-desc fade-in">LINEでご相談ください。<br>リングゲージを無料でお届けします。</p>
+        <div class="cta-badge fade-in">即日お見積もり・見積もり完全無料</div>
+        <h2 class="cta-title fade-in">指輪の写真を、LINEで。</h2>
+        <p class="cta-desc fade-in">即日お見積もり・往復送料無料・特製リングゲージ付き。<br>見積もりは完全無料です。</p>
         <div class="cta-btn-wrapper fade-in">
-            <a href="https://lin.ee/VhCyZEw" class="btn-cta light">
+            <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで相談する
+                LINEで即日お見積もり
             </a>
-            <span class="btn-sub-text btn-sub-text-light">リングゲージを無料でお届けします</span>
+            <span class="btn-sub-text btn-sub-text-light">写真を送るだけ・全国対応</span>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-logo"><img src="/resize/images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="footer-logo-img"></div>
-        <p class="footer-tagline">JEWELRY REMODEL — TOKYO</p>
+        <p class="footer-tagline">RING RESIZE — TOKYO</p>
         <nav class="footer-nav">
             <a href="#cases">仕立ての記録</a>
             <a href="#voice">届いた声</a>
-            <a href="#reasons">私たちの仕事</a>
+            <a href="#reasons">選ばれる理由</a>
             <a href="#price">料金</a>
             <a href="#process">仕立ての流れ</a>
             <a href="#faq">FAQ</a>
@@ -1644,7 +1912,7 @@
     <div class="floating-cta" id="floatingCta">
         <a href="https://lin.ee/VhCyZEw" class="btn-cta">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            無料でサイズを計測する
+            LINEで即日お見積もり
         </a>
     </div>
 
@@ -1652,18 +1920,18 @@
     <div class="exit-modal-overlay" id="exitModal">
         <div class="exit-modal">
             <button class="exit-modal-close" id="exitModalClose">&times;</button>
-            <p class="exit-modal-title">まずは無料で相談しませんか？</p>
-            <p class="exit-modal-sub">LINEでお写真を送るだけ。<br>お見積もり・ご相談は一切無料です。</p>
+            <p class="exit-modal-title">写真を送るだけ、即日お見積もり。</p>
+            <p class="exit-modal-sub">国家資格保有の職人が0.5号刻みで<br>あなたの指に仕立て直します。</p>
             <ul class="exit-modal-benefits">
                 <li><span>0</span>お見積もり無料</li>
                 <li><span>0</span>往復送料無料</li>
-                <li><span>0</span>新品仕上げの磨き直し無料</li>
+                <li><span>0</span>磨き上げ無料</li>
             </ul>
             <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで無料相談する
+                LINEで即日お見積もり
             </a>
-            <p class="exit-modal-note">登録後すぐにリングゲージをお届けできます</p>
+            <p class="exit-modal-note">特製リングゲージを無料でお届けします</p>
         </div>
     </div>
 
