@@ -44,7 +44,7 @@
           "name": "指輪のサイズ直しにはいくらかかりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "5,500円〜25,000円程度です。シンプルなリングは5,500円〜、石付きのデザインリングは15,000円〜、ブランドリングや難易度の高いものは25,000円〜。お見積もりは無料ですので、LINEでお気軽にご相談ください。"
+            "text": "11,000円〜28,000円（税込）が目安です。シンプルなリング（甲丸・平打ち等）は11,000円〜、石付きのデザインリングは15,000円〜、ブランドリングや高難度のものは25,000円〜28,000円（税込）。お見積もりは無料ですので、LINEでお気軽にご相談ください。"
           }
         },
         {
@@ -331,6 +331,16 @@
             background: rgba(255,255,255,0.95);
             color: var(--navy);
         }
+        .hero-badge-item.accent {
+            background: var(--line-green);
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .hero-badge-item.accent svg {
+            width: 10px; height: 10px;
+        }
         .hero-copy-main {
             font-family: inherit;
             font-size: 28px;
@@ -552,30 +562,89 @@
             100% { transform: translateX(-50%); }
         }
         .voice-card {
-            background: var(--white);
-            border-radius: 8px;
-            padding: 18px 20px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            border: 1px solid rgba(0,0,0,0.04);
-            min-width: 260px;
-            max-width: 280px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            min-width: 280px;
+            max-width: 300px;
             flex-shrink: 0;
+        }
+        .voice-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .voice-avatar {
+            flex-shrink: 0;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0;
+        }
+        .voice-avatar-1 { background: #7B9EA8; }
+        .voice-avatar-2 { background: #C28A75; }
+        .voice-avatar-3 { background: #8E7FAF; }
+        .voice-avatar-4 { background: #6B8E6B; }
+        .voice-avatar-5 { background: #B58A3C; }
+        .voice-meta {
+            flex: 1;
+            min-width: 0;
+        }
+        .voice-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: 2px;
+        }
+        .voice-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 10px;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+        .voice-location svg {
+            width: 10px; height: 10px;
+            fill: var(--text-light);
+        }
+        .voice-stars-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
         }
         .voice-stars {
             color: #E8B849;
             font-size: 13px;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        .voice-when {
+            font-size: 10px;
+            color: var(--text-light);
         }
         .voice-text {
-            font-size: 12px;
+            font-size: 12.5px;
             color: var(--text-primary);
-            line-height: 1.7;
-            margin-bottom: 10px;
+            line-height: 1.75;
+            margin-bottom: 8px;
         }
         .voice-attr {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-light);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 8px;
+            letter-spacing: 0.02em;
         }
 
         /* ===== Empathy ===== */
@@ -1483,6 +1552,10 @@
         <img src="/resize/images/hero-indigo.png" alt="指輪" class="hero-img">
         <div class="hero-overlay">
             <div class="hero-badges">
+                <span class="hero-badge-item accent">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                    東京・青山
+                </span>
                 <span class="hero-badge-item">国家資格保有の職人</span>
                 <span class="hero-badge-item">0.5号刻み</span>
                 <span class="hero-badge-item">ブランドリング対応</span>
@@ -1738,38 +1811,154 @@
             <div class="voice-marquee fade-in">
                 <div class="voice-track">
                     <div class="voice-card">
-                        <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-1" aria-hidden="true">M</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">M.K. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    東京都・30代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">2 か月前</span>
+                        </div>
                         <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                        <p class="voice-attr">30代女性 / 婚約指輪 サイズアップ</p>
+                        <p class="voice-attr">婚約指輪 / サイズアップ</p>
                     </div>
                     <div class="voice-card">
-                        <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-2" aria-hidden="true">Y</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">Y.S. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    神奈川県・40代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">3 か月前</span>
+                        </div>
                         <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                        <p class="voice-attr">40代女性 / 受け継ぎリング サイズダウン</p>
+                        <p class="voice-attr">受け継ぎリング / サイズダウン</p>
                     </div>
                     <div class="voice-card">
-                        <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-3" aria-hidden="true">A</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">A.T. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    埼玉県・30代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">1 か月前</span>
+                        </div>
                         <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。全部オンラインで完結するのが本当にありがたかったです。</p>
-                        <p class="voice-attr">30代女性 / デザインリング サイズアップ</p>
+                        <p class="voice-attr">デザインリング / サイズアップ</p>
                     </div>
-                    <!-- duplicate for seamless loop -->
                     <div class="voice-card">
-                        <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-4" aria-hidden="true">N</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">N.H. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    東京都・40代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">2 週間前</span>
+                        </div>
+                        <p class="voice-text">ブランドショップで断られたエルメスのリング。0.5号だけ小さくしていただき、刻印もそのまま。まさかの即日見積もりで助かりました。</p>
+                        <p class="voice-attr">ブランドリング / サイズダウン</p>
+                    </div>
+                    <div class="voice-card">
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-5" aria-hidden="true">R</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">R.F. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    千葉県・50代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">5 か月前</span>
+                        </div>
+                        <p class="voice-text">祖母から受け継いだ指輪。ずっとサイズが合わずしまいこんでいましたが、職人さんのおかげで毎日つけられるようになりました。ピカピカになって本当に嬉しいです。</p>
+                        <p class="voice-attr">受け継ぎリング / サイズアップ + 磨き上げ</p>
+                    </div>
+                    <!-- duplicate set for seamless loop -->
+                    <div class="voice-card">
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-1" aria-hidden="true">M</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">M.K. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    東京都・30代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">2 か月前</span>
+                        </div>
                         <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                        <p class="voice-attr">30代女性 / 婚約指輪 サイズアップ</p>
+                        <p class="voice-attr">婚約指輪 / サイズアップ</p>
                     </div>
                     <div class="voice-card">
-                        <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-2" aria-hidden="true">Y</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">Y.S. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    神奈川県・40代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">3 か月前</span>
+                        </div>
                         <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                        <p class="voice-attr">40代女性 / 受け継ぎリング サイズダウン</p>
+                        <p class="voice-attr">受け継ぎリング / サイズダウン</p>
                     </div>
                     <div class="voice-card">
-                        <div class="voice-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="voice-head">
+                            <span class="voice-avatar voice-avatar-3" aria-hidden="true">A</span>
+                            <div class="voice-meta">
+                                <div class="voice-name">A.T. さん</div>
+                                <div class="voice-location">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                                    埼玉県・30代女性
+                                </div>
+                            </div>
+                        </div>
+                        <div class="voice-stars-row">
+                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <span class="voice-when">1 か月前</span>
+                        </div>
                         <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。全部オンラインで完結するのが本当にありがたかったです。</p>
-                        <p class="voice-attr">30代女性 / デザインリング サイズアップ</p>
+                        <p class="voice-attr">デザインリング / サイズアップ</p>
                     </div>
                 </div>
             </div>
+
+            <p class="price-note fade-in" style="text-align: center; margin-top: 16px;">※ いただいたご感想を元に、ご本人の了承の上でお名前はイニシャル表記としています。</p>
         </div>
     </div>
 
@@ -1838,21 +2027,21 @@
                         <div class="price-row-label">シンプルリング</div>
                         <div class="price-row-sub">甲丸・平打ち等</div>
                     </div>
-                    <div class="price-row-amount">&yen;5,500<span>〜</span></div>
+                    <div class="price-row-amount">&yen;11,000<span>〜（税込）</span></div>
                 </div>
                 <div class="price-row">
                     <div>
                         <div class="price-row-label">デザインリング</div>
                         <div class="price-row-sub">石付き・透かし等</div>
                     </div>
-                    <div class="price-row-amount">&yen;15,000<span>〜</span></div>
+                    <div class="price-row-amount">&yen;15,000<span>〜（税込）</span></div>
                 </div>
                 <div class="price-row">
                     <div>
                         <div class="price-row-label">ブランドリング・高難度</div>
-                        <div class="price-row-sub">Cartier, HERMES等</div>
+                        <div class="price-row-sub">カルティエ・エルメス等</div>
                     </div>
-                    <div class="price-row-amount">&yen;25,000<span>〜</span></div>
+                    <div class="price-row-amount">&yen;25,000<span>〜（税込）</span></div>
                 </div>
             </div>
 
@@ -1925,7 +2114,7 @@
                     料金はどのくらいですか？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text"><strong>指輪のサイズ直しは5,500円〜25,000円が目安です。</strong>シンプルなリング（甲丸・平打ち等）で5,500円〜、石付きのデザインリングで15,000円〜、ブランドリングや高難度のものは25,000円〜。素材・デザイン・サイズ変更幅により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。</p>
+                    <p class="faq-answer-text"><strong>指輪のサイズ直しは11,000円〜28,000円（税込）が目安です。</strong>シンプルなリング（甲丸・平打ち等）で11,000円〜、石付きのデザインリングで15,000円〜、ブランドリングや高難度のものは25,000円〜28,000円（税込）。素材・デザイン・サイズ変更幅により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。</p>
                 </div>
             </div>
 
