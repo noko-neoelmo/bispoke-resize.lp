@@ -295,27 +295,33 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 30%;
+            object-position: center 50%;
         }
         .hero-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            padding: 0 24px 40px;
-            padding-bottom: calc(40px + env(safe-area-inset-bottom));
+            height: 100%;
+            padding: 28px 24px 32px;
+            padding-top: calc(28px + env(safe-area-inset-top));
+            padding-bottom: calc(32px + env(safe-area-inset-bottom));
             background: linear-gradient(
                 to bottom,
-                rgba(28,40,50,0) 0%,
-                rgba(28,40,50,0.15) 30%,
-                rgba(28,40,50,0.55) 60%,
-                rgba(28,40,50,0.9) 100%
+                rgba(28,40,50,0.78) 0%,
+                rgba(28,40,50,0.55) 28%,
+                rgba(28,40,50,0.15) 58%,
+                rgba(28,40,50,0) 78%,
+                rgba(28,40,50,0.55) 100%
             );
             color: var(--white);
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            justify-content: space-between;
+            gap: 16px;
         }
+        .hero-overlay-top { display: flex; flex-direction: column; }
+        .hero-overlay-bottom { display: flex; flex-direction: column; }
         .hero-badges {
             display: flex;
             gap: 6px;
@@ -1470,21 +1476,25 @@
 
     <!-- ===== Hero ===== -->
     <div class="hero" id="top">
-        <img src="/resize/images/hero-indigo.png" alt="指輪" class="hero-img">
+        <img src="/resize/images/deskwoman.png" alt="自宅の机で指輪を手に取る女性" class="hero-img">
         <div class="hero-overlay">
-            <div class="hero-badges">
-                <span class="hero-badge-item">国家資格保有の職人</span>
-                <span class="hero-badge-item">0.5号刻み</span>
-                <span class="hero-badge-item">ブランドリング対応</span>
+            <div class="hero-overlay-top">
+                <div class="hero-badges">
+                    <span class="hero-badge-item">国家資格保有の職人</span>
+                    <span class="hero-badge-item">0.5号刻み</span>
+                    <span class="hero-badge-item">ブランドリング対応</span>
+                </div>
+                <h1 class="hero-copy-main">デザインはそのまま、<br>0.5号刻みで<br>あなたの指に仕立て直す。</h1>
+                <p class="hero-copy-sub">思い出はそのままに。<br>今のあなたのための、指輪サイズ直し。</p>
+                <p class="hero-sub">LINEで写真を送るだけ・見積もり無料・全国対応</p>
             </div>
-            <h1 class="hero-copy-main">デザインはそのまま、<br>0.5号刻みで<br>あなたの指に仕立て直す。</h1>
-            <p class="hero-copy-sub">思い出はそのままに。<br>今のあなたのための、指輪サイズ直し。</p>
-            <p class="hero-sub">LINEで写真を送るだけ・見積もり無料・全国対応</p>
+            <div class="hero-overlay-bottom">
             <a href="https://lin.ee/VhCyZEw" class="btn-cta hero-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                 LINEで即日お見積もり
             </a>
             <span class="btn-sub-text btn-sub-text-light">0.5号刻みのリングゲージ プレゼント・往復送料無料</span>
+            </div>
         </div>
     </div>
 
@@ -1559,11 +1569,11 @@
             <div class="case-grid fade-in">
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-diamond-ring.jpg" alt="Pt900 ダイヤモンドリング Before/After" class="case-card-img">
+                        <img src="/resize/images/BA2dia.png" alt="婚約指輪（プラチナ・ダイヤモンド） Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
                         <div class="case-card-label">CASE 01 / サイズ直し + 磨き上げ</div>
-                        <div class="case-card-title">Pt900 ダイヤモンドリング</div>
+                        <div class="case-card-title">婚約指輪（プラチナ・ダイヤモンド）</div>
                         <p class="case-card-story">15年前の婚約指輪。産後のむくみで入らなくなり、2号アップ。磨き上げで購入当時の輝きを取り戻しました。</p>
                         <div class="case-card-price">
                             <span class="case-card-price-label">お仕立て価格</span>
@@ -1574,11 +1584,11 @@
                 </div>
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-hermes-ring.jpg" alt="エルメス リング Before/After" class="case-card-img">
+                        <img src="/resize/images/BA2hermes.png" alt="HERMES シェーヌダンクル Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
                         <div class="case-card-label">CASE 02 / ブランドリング サイズ直し</div>
-                        <div class="case-card-title">エルメス リング</div>
+                        <div class="case-card-title">HERMES シェーヌダンクル</div>
                         <p class="case-card-story">ブランド工房で断られていたリング。国家資格保有の職人が慎重に0.5号単位で調整。刻印も美しく残りました。</p>
                         <div class="case-card-price">
                             <span class="case-card-price-label">お仕立て価格</span>
@@ -1589,11 +1599,11 @@
                 </div>
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-signet-ring.jpg" alt="シグネットリング Before/After" class="case-card-img">
+                        <img src="/resize/images/BA2signet.png" alt="TOMWOOD シグネットリング Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
                         <div class="case-card-label">CASE 03 / サイズ直し + 磨き上げ</div>
-                        <div class="case-card-title">シグネットリング</div>
+                        <div class="case-card-title">TOMWOOD シグネットリング</div>
                         <p class="case-card-story">父から受け継いだシグネットリング。1.5号ダウンして、日常で身につけられる一本に。磨き上げはサービスでお付けしました。</p>
                         <div class="case-card-price">
                             <span class="case-card-price-label">お仕立て価格</span>
@@ -1604,11 +1614,11 @@
                 </div>
                 <div class="case-card">
                     <div class="case-card-img-wrap">
-                        <img src="/resize/images/ba-boucheron-ring.jpg" alt="バンドリング Before/After" class="case-card-img">
+                        <img src="/resize/images/BA2bu.png" alt="ブシュロン キャトルリング Before/After" class="case-card-img">
                     </div>
                     <div class="case-card-body">
                         <div class="case-card-label">CASE 04 / 幅広リング サイズ直し</div>
-                        <div class="case-card-title">バンドリング</div>
+                        <div class="case-card-title">ブシュロン キャトルリング</div>
                         <p class="case-card-story">幅のあるバンドリングは難易度が高い仕立て直し。熟練職人が歪みを出さず、丁寧に仕上げました。</p>
                         <div class="case-card-price">
                             <span class="case-card-price-label">お仕立て価格</span>
