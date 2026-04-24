@@ -1408,85 +1408,6 @@
             .gauge-kit-item-title { font-size: 13px; }
         }
 
-        /* ===== Exit-intent Modal ===== */
-        .exit-modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .exit-modal-overlay.active { display: flex; }
-        .exit-modal {
-            background: var(--white);
-            border-radius: 12px;
-            max-width: 380px;
-            width: 100%;
-            padding: 36px 28px 28px;
-            position: relative;
-            text-align: center;
-        }
-        .exit-modal-close {
-            position: absolute;
-            top: 12px; right: 16px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--text-light);
-            cursor: pointer;
-            line-height: 1;
-        }
-        .exit-modal-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-        .exit-modal-sub {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-        .exit-modal-benefits {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .exit-modal-benefits li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        .exit-modal-benefits li span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px; height: 28px;
-            border-radius: 50%;
-            background: var(--gauge-bg);
-            color: #E0E0E2;
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-        .exit-modal .btn-cta {
-            margin-bottom: 0;
-        }
-        .exit-modal-note {
-            font-size: 11px;
-            color: var(--text-light);
-            margin-top: 12px;
-        }
-
         @media (max-width: 374px) {
             .hero-copy { font-size: 22px; }
             .section-title { font-size: 20px; }
@@ -2311,24 +2232,7 @@
         </a>
     </div>
 
-    <!-- ===== Exit-intent Modal ===== -->
-    <div class="exit-modal-overlay" id="exitModal">
-        <div class="exit-modal">
-            <button class="exit-modal-close" id="exitModalClose">&times;</button>
-            <p class="exit-modal-title">写真を送るだけ、即日お見積もり。</p>
-            <p class="exit-modal-sub">国家資格保有の職人が0.5号刻みで<br>あなたの指に仕立て直します。</p>
-            <ul class="exit-modal-benefits">
-                <li><span>0</span>お見積もり無料</li>
-                <li><span>0</span>往復送料無料</li>
-                <li><span>0</span>磨き上げ無料</li>
-            </ul>
-            <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで即日お見積もり
-            </a>
-            <p class="exit-modal-note">0.5号刻みのリングゲージを無料でお届けします</p>
-        </div>
-    </div>
+    <!-- ===== Exit-intent modal removed ===== -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -2361,56 +2265,6 @@
                     floatingCta.classList.add('visible');
                 } else {
                     floatingCta.classList.remove('visible');
-                }
-            });
-
-            // Exit-intent modal
-            var exitModal = document.getElementById('exitModal');
-            var exitModalClose = document.getElementById('exitModalClose');
-            var exitShown = false;
-
-            // Desktop: mouse leaves viewport top
-            document.addEventListener('mouseout', function(e) {
-                if (exitShown) return;
-                if (e.clientY <= 0 && window.scrollY > 300) {
-                    exitModal.classList.add('active');
-                    exitShown = true;
-                }
-            });
-
-            // Mobile: back button / visibility change
-            document.addEventListener('visibilitychange', function() {
-                if (exitShown) return;
-                if (document.visibilityState === 'hidden' && window.scrollY > 300) {
-                    exitShown = true;
-                }
-            });
-
-            // Mobile: show on rapid scroll-up (intent to leave)
-            var lastScrollY = 0;
-            var scrollUpDistance = 0;
-            window.addEventListener('scroll', function() {
-                if (exitShown) return;
-                var currentY = window.scrollY;
-                if (currentY < lastScrollY) {
-                    scrollUpDistance += lastScrollY - currentY;
-                } else {
-                    scrollUpDistance = 0;
-                }
-                if (scrollUpDistance > 400 && currentY > 300) {
-                    exitModal.classList.add('active');
-                    exitShown = true;
-                }
-                lastScrollY = currentY;
-            });
-
-            // Close modal
-            exitModalClose.addEventListener('click', function() {
-                exitModal.classList.remove('active');
-            });
-            exitModal.addEventListener('click', function(e) {
-                if (e.target === exitModal) {
-                    exitModal.classList.remove('active');
                 }
             });
 
