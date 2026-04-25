@@ -32,8 +32,8 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://tr.line.me/tag.gif?c_t=lap&t_id=YOUR_LINE_TAG_ID&e=pv&noscript=1"/></noscript>
 
-    <title>指輪のサイズ直し 東京｜0.5号刻みで仕立て直す｜LINEで即日お見積もり | RETOLD TOKYO</title>
-    <meta name="description" content="指輪のサイズ直しなら、東京・青山のRETOLD TOKYO。国家資格保有の職人が、0.5号刻みであなたの指に仕立て直します。ブランドリング対応・磨き上げ無料・往復送料無料。全国配送対応。LINEで写真を送るだけで即日お見積もり。">
+    <title>【LINE開設記念15%OFF】指輪のサイズ直し 東京｜0.5号刻みで仕立て直す｜LINEで即日お見積もり | RETOLD TOKYO</title>
+    <meta name="description" content="【公式LINE開設記念｜全プラン15%OFF・5/25まで】指輪のサイズ直しなら、東京・青山のRETOLD TOKYO。国家資格保有の職人が、0.5号刻みであなたの指に仕立て直します。ブランドリング対応・磨き上げ無料・往復送料無料。全国配送対応。LINEで写真を送るだけで即日お見積もり。">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -284,12 +284,15 @@
         /* ===== Hero (full-bleed with bottom text) ===== */
         .hero {
             position: relative;
-            margin-top: 56px;
-            height: 100vh;
-            height: 100svh;
+            margin-top: 92px;
+            height: calc(100vh - 36px);
+            height: calc(100svh - 36px);
             max-height: 780px;
             width: 100%;
             overflow: hidden;
+        }
+        @media (min-width: 600px) {
+            .hero { margin-top: 96px; height: calc(100vh - 40px); height: calc(100svh - 40px); }
         }
         .hero-img {
             width: 100%;
@@ -1253,6 +1256,192 @@
             margin: 0 auto;
         }
 
+        /* ===== Promo Banner (LINE launch 15% OFF) ===== */
+        .promo-banner {
+            position: fixed;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 780px;
+            width: 100%;
+            z-index: 999;
+            background: linear-gradient(135deg, #2a1f1a 0%, #3a2a20 50%, #2a1f1a 100%);
+            border-bottom: 1px solid rgba(160,138,116,0.45);
+            color: #F5E9DC;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 12px;
+            line-height: 1.4;
+            letter-spacing: 0.02em;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+        }
+        .promo-banner-tag {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: #1A1A1A;
+            background: linear-gradient(180deg, #E8C9A6 0%, #C9A074 100%);
+            padding: 3px 8px;
+            border-radius: 2px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .promo-banner-text {
+            font-weight: 600;
+        }
+        .promo-banner-text .promo-banner-strong {
+            color: #F2D9B6;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+        }
+        .promo-banner-text .promo-banner-deadline {
+            display: inline-block;
+            font-size: 10px;
+            opacity: 0.75;
+            margin-left: 4px;
+        }
+        @media (min-width: 600px) {
+            .promo-banner { font-size: 13px; padding: 10px 20px; gap: 14px; }
+            .promo-banner-tag { font-size: 10px; padding: 4px 10px; }
+            .promo-banner-text .promo-banner-strong { font-size: 15px; }
+            .promo-banner-text .promo-banner-deadline { font-size: 11px; }
+        }
+        @media (max-width: 374px) {
+            .promo-banner { font-size: 11px; gap: 6px; padding: 7px 10px; }
+            .promo-banner-tag { font-size: 8px; padding: 2px 6px; letter-spacing: 0.12em; }
+        }
+
+        /* ===== Promo Callout (in-section card) ===== */
+        .promo-callout {
+            position: relative;
+            background: linear-gradient(135deg, #1B2A4A 0%, #2a1f1a 100%);
+            color: #F5E9DC;
+            border: 1px solid rgba(200,160,116,0.35);
+            border-radius: 6px;
+            padding: 22px 22px 24px;
+            margin-bottom: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(28,40,50,0.18);
+        }
+        .promo-callout::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 85% 15%, rgba(232,201,166,0.18) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .promo-callout-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            color: #1A1A1A;
+            background: linear-gradient(180deg, #E8C9A6 0%, #C9A074 100%);
+            padding: 4px 10px;
+            border-radius: 2px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .promo-callout-title {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        .promo-callout-title .promo-callout-pct {
+            color: #F2D9B6;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            margin: 0 2px;
+        }
+        .promo-callout-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 14px 0 12px;
+            position: relative;
+        }
+        .promo-callout-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            padding: 10px 6px;
+            text-align: center;
+        }
+        .promo-callout-item-label {
+            font-size: 10px;
+            opacity: 0.7;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        .promo-callout-item-old {
+            font-size: 11px;
+            text-decoration: line-through;
+            opacity: 0.55;
+            margin-bottom: 2px;
+        }
+        .promo-callout-item-new {
+            font-size: 15px;
+            font-weight: 800;
+            color: #F2D9B6;
+            letter-spacing: 0.01em;
+        }
+        .promo-callout-item-new .promo-callout-item-new-sub {
+            font-size: 9px;
+            font-weight: 600;
+            opacity: 0.8;
+            margin-left: 1px;
+        }
+        .promo-callout-deadline {
+            font-size: 11px;
+            text-align: center;
+            opacity: 0.85;
+            position: relative;
+            letter-spacing: 0.04em;
+        }
+        .promo-callout-deadline strong {
+            color: #F2D9B6;
+            font-weight: 700;
+        }
+        @media (min-width: 600px) {
+            .promo-callout { padding: 28px 32px 30px; }
+            .promo-callout-title { font-size: 21px; }
+            .promo-callout-title .promo-callout-pct { font-size: 30px; }
+            .promo-callout-item-label { font-size: 11px; }
+            .promo-callout-item-new { font-size: 17px; }
+            .promo-callout-deadline { font-size: 12px; }
+        }
+
+        /* ===== Promo sub-text on CTAs ===== */
+        .btn-promo-sub {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #8C6E50;
+            margin-top: 10px;
+            letter-spacing: 0.04em;
+        }
+        .btn-promo-sub::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #C9A074;
+        }
+        .btn-promo-sub.light { color: #E8C9A6; }
+        .btn-promo-sub.light::before { background: #E8C9A6; }
+
         /* ===== Floating CTA ===== */
         .floating-cta {
             position: fixed;
@@ -1487,9 +1676,18 @@
         <div class="logo"><img src="/resize/images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="logo-img"></div>
         <a href="https://lin.ee/VhCyZEw" class="header-cta">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで即日見積
+            15%OFFで見積
         </a>
     </header>
+
+    <!-- Promo Banner: 公式LINEオープン記念 -->
+    <div class="promo-banner" role="note" aria-label="公式LINEオープン記念キャンペーン">
+        <span class="promo-banner-tag">LINE OPEN</span>
+        <span class="promo-banner-text">
+            開設記念｜全プラン<span class="promo-banner-strong">15%OFF</span>
+            <span class="promo-banner-deadline">5/25まで</span>
+        </span>
+    </div>
 
     <!-- ===== Hero ===== -->
     <div class="hero" id="top">
@@ -1507,8 +1705,9 @@
             <div class="hero-overlay-bottom">
             <a href="https://lin.ee/VhCyZEw" class="btn-cta hero-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで即日お見積もり
+                LINEで15%OFFのお見積もり
             </a>
+            <span class="btn-promo-sub light">公式LINE開設記念｜5/25まで限定</span>
             <span class="btn-sub-text btn-sub-text-light">0.5号刻みのリングゲージ プレゼント・往復送料無料</span>
             </div>
         </div>
@@ -1568,8 +1767,9 @@
                 </ul>
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで無料お見積もりへ
+                    LINEで15%OFF見積もりへ
                 </a>
+                <span class="btn-promo-sub light">公式LINE開設記念｜5/25まで限定</span>
                 <p class="gauge-kit-sub">写真を送るだけ・往復送料無料</p>
             </div>
         </div>
@@ -1650,8 +1850,9 @@
             <div class="fade-in" style="text-align: center; margin-top: 24px;">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    他店で断られたリングも無料でお見積もり
+                    他店で断られたリングも、まず無料診断
                 </a>
+                <span class="btn-promo-sub">公式LINE開設記念｜お見積もり15%OFF（5/25まで）</span>
                 <span class="btn-sub-text">国家資格保有の職人がご返答・見積もり完全無料</span>
             </div>
         </div>
@@ -1851,8 +2052,9 @@
             <div style="margin-top: 40px; text-align: center;" class="fade-in">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで即日お見積もり
+                    LINEで15%OFF即日お見積もり
                 </a>
+                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
                 <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
             </div>
         </div>
@@ -1964,6 +2166,35 @@
             <h2 class="section-title fade-in">料金について</h2>
             <p class="section-desc fade-in">お見積もりは無料です。</p>
 
+            <!-- Promo callout: LINE launch 15% OFF -->
+            <div class="promo-callout fade-in">
+                <span class="promo-callout-tag">LINE OPEN COMMEMORATION</span>
+                <p class="promo-callout-title">
+                    公式LINE開設を記念して、<br>
+                    お見積もり<span class="promo-callout-pct">15</span>%OFF。
+                </p>
+                <div class="promo-callout-grid">
+                    <div class="promo-callout-item">
+                        <div class="promo-callout-item-label">シンプル</div>
+                        <div class="promo-callout-item-old">&yen;11,000〜</div>
+                        <div class="promo-callout-item-new">&yen;9,350<span class="promo-callout-item-new-sub">〜</span></div>
+                    </div>
+                    <div class="promo-callout-item">
+                        <div class="promo-callout-item-label">デザイン</div>
+                        <div class="promo-callout-item-old">&yen;15,000〜</div>
+                        <div class="promo-callout-item-new">&yen;12,750<span class="promo-callout-item-new-sub">〜</span></div>
+                    </div>
+                    <div class="promo-callout-item">
+                        <div class="promo-callout-item-label">ブランド</div>
+                        <div class="promo-callout-item-old">&yen;25,000〜</div>
+                        <div class="promo-callout-item-new">&yen;21,250<span class="promo-callout-item-new-sub">〜</span></div>
+                    </div>
+                </div>
+                <p class="promo-callout-deadline">
+                    対象：<strong>2026年5月25日まで</strong>にLINEでお見積もり依頼をいただいた方
+                </p>
+            </div>
+
             <div class="price-table fade-in">
                 <div class="price-row">
                     <div>
@@ -2001,13 +2232,14 @@
                 <span class="price-includes-tag">輸送保険付き</span>
             </div>
 
-            <p class="price-note fade-in">※素材・デザイン・サイズ変更幅により変動します。正式なお見積もりはLINEでお伝えします。<br>※プロの目から見て偽物・イミテーションと判断した場合は、加工をお断りし着払いにて返送させていただきます。</p>
+            <p class="price-note fade-in">※素材・デザイン・サイズ変更幅により変動します。正式なお見積もりはLINEでお伝えします。<br>※プロの目から見て偽物・イミテーションと判断した場合は、加工をお断りし着払いにて返送させていただきます。<br>※公式LINE開設記念15%OFFは、2026年5月25日までにLINEでお見積もり依頼をいただいた方が対象です。他キャンペーンとの併用はできません。</p>
 
             <div class="fade-in" style="text-align: center;">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで即日お見積もり
+                    LINEで15%OFF即日お見積もり
                 </a>
+                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
                 <span class="btn-sub-text">写真を送るだけで、無料でお見積もりします。</span>
             </div>
         </div>
@@ -2057,7 +2289,7 @@
                     料金はどのくらいですか？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text"><strong>指輪のサイズ直しは11,000円〜28,000円（税込）が目安です。</strong>シンプルなリング（甲丸・平打ち等）で11,000円〜、石付きのデザインリングで15,000円〜、ブランドリングや高難度のものは25,000円〜28,000円（税込）。素材・デザイン・サイズ変更幅により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。</p>
+                    <p class="faq-answer-text"><strong>指輪のサイズ直しは11,000円〜28,000円（税込）が目安です。</strong>シンプルなリング（甲丸・平打ち等）で11,000円〜、石付きのデザインリングで15,000円〜、ブランドリングや高難度のものは25,000円〜28,000円（税込）。素材・デザイン・サイズ変更幅により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。<br><br><strong>※2026年5月25日まで、公式LINE開設記念として全プラン15%OFFでお仕立ていたします。</strong></p>
                 </div>
             </div>
 
@@ -2203,8 +2435,9 @@
             <div class="fade-in" style="text-align: center;">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで即日お見積もり
+                    LINEで15%OFF即日お見積もり
                 </a>
+                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
                 <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
             </div>
         </div>
@@ -2212,14 +2445,15 @@
 
     <!-- ===== Final CTA ===== -->
     <div class="cta-section">
-        <div class="cta-badge fade-in">即日お見積もり・見積もり完全無料</div>
-        <h2 class="cta-title fade-in">もう一度、<br>大切な輝きをあなたの指に。</h2>
-        <p class="cta-desc fade-in">国家資格保有の職人が、0.5号刻みで仕立て直します。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
+        <div class="cta-badge fade-in">公式LINE開設記念｜全プラン15%OFF</div>
+        <h2 class="cta-title fade-in">今だけ15%OFFで、<br>あなたの指に仕立て直す。</h2>
+        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>全プラン<strong style="color:#F2D9B6;">15%OFF</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
         <div class="cta-btn-wrapper fade-in">
             <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで即日お見積もり
+                LINEで15%OFF即日お見積もり
             </a>
+            <span class="btn-promo-sub light">5/25まで限定｜お見積もり依頼で適用</span>
             <span class="btn-sub-text btn-sub-text-light">写真を送るだけ・全国対応</span>
         </div>
     </div>
@@ -2250,7 +2484,7 @@
     <div class="floating-cta" id="floatingCta">
         <a href="https://lin.ee/VhCyZEw" class="btn-cta">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで即日お見積もり
+            LINEで15%OFFお見積もり
         </a>
     </div>
 
