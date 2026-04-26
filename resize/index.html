@@ -1257,7 +1257,7 @@
             margin: 0 auto;
         }
 
-        /* ===== Promo Banner (LINE launch 15% OFF) ===== */
+        /* ===== Promo Banner (LINE launch 15% OFF) — white & bold ===== */
         .promo-banner {
             position: fixed;
             top: 56px;
@@ -1266,159 +1266,161 @@
             max-width: 780px;
             width: 100%;
             z-index: 999;
-            background: linear-gradient(135deg, #2a1f1a 0%, #3a2a20 50%, #2a1f1a 100%);
-            border-bottom: 1px solid rgba(160,138,116,0.45);
-            color: #F5E9DC;
-            padding: 8px 16px;
+            background: #FFFFFF;
+            border-bottom: 1px solid rgba(0,0,0,0.10);
+            color: #1A1A1A;
+            padding: 10px 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-size: 12px;
+            font-size: 13px;
             line-height: 1.4;
             letter-spacing: 0.02em;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
         }
         .promo-banner-tag {
             display: inline-block;
-            font-size: 9px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 800;
             letter-spacing: 0.18em;
-            color: #1A1A1A;
-            background: linear-gradient(180deg, #E8C9A6 0%, #C9A074 100%);
-            padding: 3px 8px;
-            border-radius: 2px;
+            color: #FFFFFF;
+            background: var(--line-green);
+            padding: 4px 10px;
+            border-radius: 3px;
             white-space: nowrap;
             flex-shrink: 0;
+            box-shadow: 0 2px 6px rgba(6,199,85,0.30);
         }
         .promo-banner-text {
-            font-weight: 600;
+            font-weight: 700;
+            color: #1A1A1A;
         }
         .promo-banner-text .promo-banner-strong {
-            color: #F2D9B6;
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 0.04em;
+            color: #D7263D;
+            font-weight: 900;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            margin: 0 2px;
         }
         .promo-banner-text .promo-banner-deadline {
             display: inline-block;
-            font-size: 10px;
-            opacity: 0.75;
-            margin-left: 4px;
+            font-size: 11px;
+            color: #6B5739;
+            font-weight: 600;
+            margin-left: 6px;
         }
         @media (min-width: 600px) {
-            .promo-banner { font-size: 13px; padding: 10px 20px; gap: 14px; }
-            .promo-banner-tag { font-size: 10px; padding: 4px 10px; }
-            .promo-banner-text .promo-banner-strong { font-size: 15px; }
-            .promo-banner-text .promo-banner-deadline { font-size: 11px; }
+            .promo-banner { font-size: 14px; padding: 12px 20px; gap: 14px; }
+            .promo-banner-tag { font-size: 11px; padding: 5px 12px; }
+            .promo-banner-text .promo-banner-strong { font-size: 22px; }
+            .promo-banner-text .promo-banner-deadline { font-size: 12px; }
         }
         @media (max-width: 374px) {
-            .promo-banner { font-size: 11px; gap: 6px; padding: 7px 10px; }
-            .promo-banner-tag { font-size: 8px; padding: 2px 6px; letter-spacing: 0.12em; }
+            .promo-banner { font-size: 12px; gap: 6px; padding: 8px 10px; }
+            .promo-banner-tag { font-size: 9px; padding: 3px 7px; letter-spacing: 0.14em; }
+            .promo-banner-text .promo-banner-strong { font-size: 16px; }
         }
 
-        /* ===== Promo Callout (in-section card) ===== */
+        /* ===== Promo Callout (in-section card) — white & bold ===== */
         .promo-callout {
             position: relative;
-            background: linear-gradient(135deg, #1B2A4A 0%, #2a1f1a 100%);
-            color: #F5E9DC;
-            border: 1px solid rgba(200,160,116,0.35);
-            border-radius: 6px;
-            padding: 22px 22px 24px;
+            background: #FFFFFF;
+            color: #1A1A1A;
+            border: 2px solid #D7263D;
+            border-radius: 10px;
+            padding: 24px 22px 26px;
             margin-bottom: 28px;
             overflow: hidden;
-            box-shadow: 0 8px 28px rgba(28,40,50,0.18);
-        }
-        .promo-callout::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 85% 15%, rgba(232,201,166,0.18) 0%, transparent 55%);
-            pointer-events: none;
+            box-shadow: 0 12px 32px rgba(215,38,61,0.10), 0 4px 10px rgba(0,0,0,0.06);
         }
         .promo-callout-tag {
             display: inline-block;
-            font-size: 10px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 800;
             letter-spacing: 0.22em;
-            color: #1A1A1A;
-            background: linear-gradient(180deg, #E8C9A6 0%, #C9A074 100%);
-            padding: 4px 10px;
-            border-radius: 2px;
-            margin-bottom: 14px;
+            color: #FFFFFF;
+            background: var(--line-green);
+            padding: 5px 12px;
+            border-radius: 3px;
+            margin-bottom: 16px;
             position: relative;
+            box-shadow: 0 2px 6px rgba(6,199,85,0.30);
         }
         .promo-callout-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 1.5;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             position: relative;
+            color: #1A1A1A;
         }
         .promo-callout-title .promo-callout-pct {
-            color: #F2D9B6;
-            font-size: 26px;
-            font-weight: 800;
+            color: #D7263D;
+            font-size: 36px;
+            font-weight: 900;
             letter-spacing: 0.02em;
-            margin: 0 2px;
+            margin: 0 4px;
         }
         .promo-callout-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin: 14px 0 12px;
+            gap: 10px;
+            margin: 16px 0 14px;
             position: relative;
         }
         .promo-callout-item {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 4px;
-            padding: 10px 6px;
+            background: #FAFBFC;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 6px;
+            padding: 12px 8px;
             text-align: center;
         }
         .promo-callout-item-label {
             font-size: 10px;
-            opacity: 0.7;
+            color: #6B6B6B;
             margin-bottom: 4px;
             line-height: 1.3;
+            font-weight: 600;
         }
         .promo-callout-item-old {
             font-size: 11px;
             text-decoration: line-through;
-            opacity: 0.55;
+            color: #9A9A9A;
             margin-bottom: 2px;
         }
         .promo-callout-item-new {
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 800;
-            color: #F2D9B6;
+            color: #D7263D;
             letter-spacing: 0.01em;
         }
         .promo-callout-item-new .promo-callout-item-new-sub {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 600;
-            opacity: 0.8;
-            margin-left: 1px;
+            color: #6B6B6B;
+            margin-left: 2px;
         }
         .promo-callout-deadline {
-            font-size: 11px;
+            font-size: 12px;
             text-align: center;
-            opacity: 0.85;
+            color: #4A4A4A;
             position: relative;
             letter-spacing: 0.04em;
+            font-weight: 600;
         }
         .promo-callout-deadline strong {
-            color: #F2D9B6;
-            font-weight: 700;
+            color: #D7263D;
+            font-weight: 800;
         }
         @media (min-width: 600px) {
-            .promo-callout { padding: 28px 32px 30px; }
-            .promo-callout-title { font-size: 21px; }
-            .promo-callout-title .promo-callout-pct { font-size: 30px; }
+            .promo-callout { padding: 30px 34px 32px; }
+            .promo-callout-title { font-size: 23px; }
+            .promo-callout-title .promo-callout-pct { font-size: 42px; }
             .promo-callout-item-label { font-size: 11px; }
-            .promo-callout-item-new { font-size: 17px; }
-            .promo-callout-deadline { font-size: 12px; }
+            .promo-callout-item-new { font-size: 20px; }
+            .promo-callout-deadline { font-size: 13px; }
         }
 
         /* ===== Promo sub-text on CTAs ===== */
