@@ -164,6 +164,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #1B2A4A;
@@ -1492,20 +1493,56 @@
             margin-bottom: 24px;
         }
 
-        /* ===== Ring Gauge Section ===== */
+        /* ===== Ring Gauge — Craft Paper / Letter aesthetic ===== */
         .gauge-section {
-            background-color: var(--gauge-bg);
+            background-color: #EFE7D6;
             background-image:
-                linear-gradient(135deg, rgba(28,40,50,0.6) 0%, rgba(28,40,50,0.95) 100%);
-            color: #E0E4E8;
+                linear-gradient(135deg, rgba(245,238,221,0.92) 0%, rgba(220,206,176,0.95) 100%),
+                url("data:image/svg+xml,%3Csvg width='240' height='240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='kraft'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.36  0 0 0 0 0.27  0 0 0 0 0.16  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23kraft)' opacity='0.55'/%3E%3C/svg%3E");
+            background-blend-mode: multiply;
+            color: #3B2F20;
             padding: 80px 0;
+            position: relative;
         }
+        .gauge-section::before,
+        .gauge-section::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: 12px;
+            background-image: radial-gradient(circle at 8px 0, transparent 0 7px, #EFE7D6 7px 9px, transparent 9px);
+            background-size: 16px 12px;
+            background-repeat: repeat-x;
+            background-position: 0 0;
+        }
+        .gauge-section::before { top: -6px; }
+        .gauge-section::after  { bottom: -6px; transform: rotate(180deg); }
+
         .gauge-img-wrap {
             width: 100%;
+            max-width: 560px;
+            margin: 0 auto 36px;
             height: 280px;
             overflow: hidden;
-            border-radius: 4px;
-            margin-bottom: 32px;
+            background: #FFFFFF;
+            padding: 12px 12px 38px;
+            box-shadow:
+                0 14px 28px rgba(60,42,18,0.18),
+                0 4px 8px rgba(60,42,18,0.10);
+            transform: rotate(-1.1deg);
+            position: relative;
+        }
+        .gauge-img-wrap::after {
+            content: '— a small instrument, with great care —';
+            position: absolute;
+            left: 0; right: 0;
+            bottom: 8px;
+            text-align: center;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            font-style: italic;
+            color: #6B5739;
+            letter-spacing: 0.04em;
         }
         .gauge-img {
             width: 100%;
@@ -1513,111 +1550,185 @@
             object-fit: cover;
         }
         .gauge-label {
-            font-family: inherit;
-            font-size: 10px;
-            letter-spacing: 0.3em;
-            color: var(--gold);
+            font-family: 'Noto Serif JP', serif;
+            font-size: 11px;
+            letter-spacing: 0.34em;
+            color: #8C6F3B;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
         .gauge-title {
-            font-family: inherit;
-            font-size: 22px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 24px;
             font-weight: 700;
-            color: #E0E4E8;
+            color: #3B2F20;
             text-align: center;
-            margin-bottom: 32px;
-            line-height: 1.5;
-        }
-        .gauge-copy {
-            font-size: 14px;
-            line-height: 2.2;
-            color: rgba(224,228,232,0.8);
+            margin-bottom: 36px;
+            line-height: 1.55;
             letter-spacing: 0.04em;
         }
+        .gauge-copy {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 14.5px;
+            line-height: 2.1;
+            color: #4D3F2A;
+            letter-spacing: 0.03em;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .gauge-copy p {
+            text-indent: 1em;
+        }
         .gauge-copy-accent {
-            color: #E0E4E8;
-            font-weight: 500;
+            color: #2E2616;
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, rgba(184,138,51,0.30) 60% 92%, transparent 92%);
+            padding: 0 0.05em;
         }
         .gauge-free {
-            margin-top: 28px;
-            font-family: inherit;
+            margin: 32px auto 0;
+            max-width: 520px;
+            font-family: 'Noto Serif JP', serif;
             font-size: 13px;
             letter-spacing: 0.1em;
-            color: var(--gold);
+            color: #6B5739;
             text-align: center;
-            border-top: 1px solid rgba(160,138,116,0.25);
-            padding-top: 24px;
+            border-top: 1px dashed rgba(139,108,55,0.45);
+            padding-top: 22px;
+            font-style: italic;
         }
 
-        /* ===== Gauge Kit Preview (CTA block) ===== */
+        /* ===== Free Kit Announcement Card ===== */
         .gauge-kit {
-            margin-top: 32px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(160,138,116,0.25);
-            border-radius: 12px;
-            padding: 24px 20px 22px;
+            margin: 44px auto 0;
+            max-width: 560px;
+            background: #FFFDF7;
+            background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.04'/%3E%3C/svg%3E");
+            border: 1.5px solid rgba(139,108,55,0.30);
+            border-radius: 6px;
+            padding: 36px 24px 28px;
+            box-shadow:
+                0 18px 40px rgba(60,42,18,0.18),
+                0 6px 14px rgba(60,42,18,0.10),
+                inset 0 0 0 1px rgba(255,255,255,0.6);
+            position: relative;
         }
-        .gauge-kit-lead {
+        .gauge-kit::before {
+            content: '';
+            position: absolute;
+            left: 12px; right: 12px;
+            top: 12px; bottom: 12px;
+            border: 1px solid rgba(139,108,55,0.18);
+            border-radius: 3px;
+            pointer-events: none;
+        }
+        .gauge-kit-stamp {
+            position: absolute;
+            top: -16px; left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            background: #C8482E;
+            color: #FFF8EA;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
             font-size: 12px;
-            color: #E0E4E8;
-            opacity: 0.8;
+            letter-spacing: 0.18em;
+            padding: 6px 18px;
+            border-radius: 2px;
+            box-shadow: 0 4px 10px rgba(60,42,18,0.30);
+        }
+        .gauge-kit-stamp::before,
+        .gauge-kit-stamp::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #EFE7D6;
+            transform: translateY(-50%);
+        }
+        .gauge-kit-stamp::before { left: -3px; }
+        .gauge-kit-stamp::after  { right: -3px; }
+        .gauge-kit-lead {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 13px;
+            color: #4D3F2A;
             text-align: center;
-            margin-bottom: 18px;
+            margin: 8px 0 20px;
             line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+        .gauge-kit-lead strong {
+            font-size: 17px;
+            color: #2E2616;
+            display: block;
+            margin-top: 4px;
+            letter-spacing: 0.08em;
         }
         .gauge-kit-items {
             list-style: none;
             padding: 0;
             margin: 0 0 22px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
         }
         .gauge-kit-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.04);
-            padding: 12px 14px;
-            border-radius: 8px;
+            gap: 14px;
+            padding: 14px 4px;
+            border-bottom: 1px dashed rgba(139,108,55,0.30);
         }
+        .gauge-kit-item:last-child { border-bottom: none; }
         .gauge-kit-icon {
             flex-shrink: 0;
-            width: 36px; height: 36px;
+            width: 38px; height: 38px;
             border-radius: 50%;
-            background: rgba(6,199,85,0.18);
-            color: #06E060;
+            background: rgba(6,199,85,0.14);
+            color: var(--line-green);
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        .gauge-kit-icon svg { width: 18px; height: 18px; }
+        .gauge-kit-icon svg { width: 19px; height: 19px; }
         .gauge-kit-item-title {
-            font-size: 13px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 14px;
             font-weight: 700;
-            color: #F2F4F6;
+            color: #2E2616;
             line-height: 1.4;
         }
         .gauge-kit-item-sub {
             font-size: 11px;
-            color: rgba(224,228,232,0.65);
-            margin-top: 2px;
+            color: #6B5739;
+            margin-top: 3px;
             line-height: 1.5;
         }
         .gauge-kit-sub {
             text-align: center;
+            font-family: 'Noto Serif JP', serif;
             font-size: 11px;
-            color: rgba(224,228,232,0.55);
-            margin-top: 10px;
+            color: #6B5739;
+            margin-top: 12px;
+            font-style: italic;
         }
         @media (min-width: 600px) {
-            .gauge-kit { padding: 32px 32px 28px; }
-            .gauge-kit-lead { font-size: 13px; }
-            .gauge-kit-items { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-            .gauge-kit-item { flex-direction: column; text-align: center; gap: 8px; padding: 18px 12px; }
-            .gauge-kit-item-title { font-size: 13px; }
+            .gauge-img-wrap { height: 360px; }
+            .gauge-title { font-size: 28px; }
+            .gauge-copy { font-size: 15.5px; }
+            .gauge-kit { padding: 44px 36px 32px; }
+            .gauge-kit-lead { font-size: 14px; }
+            .gauge-kit-lead strong { font-size: 19px; }
+            .gauge-kit-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+            .gauge-kit-item {
+                flex-direction: column; text-align: center; gap: 10px;
+                padding: 18px 12px;
+                border-bottom: none;
+                border-right: 1px dashed rgba(139,108,55,0.30);
+            }
+            .gauge-kit-item:last-child { border-right: none; }
+            .gauge-kit-item-title { font-size: 14px; }
         }
 
         @media (max-width: 374px) {
@@ -1649,11 +1760,7 @@
             .empathy-text { font-size: 14px; }
             .reason-img-wrap { height: 280px; }
             .reason-desc { font-size: 15px; }
-            .gauge-img-wrap { height: 360px; }
-            .gauge-copy { font-size: 15px; }
-            .gauge-title { font-size: 26px; }
             .btn-cta { max-width: 400px; margin-left: auto; margin-right: auto; }
-            .gauge-kit { max-width: 560px; margin-left: auto; margin-right: auto; }
             .pain-scene { max-width: 680px; margin-left: auto; margin-right: auto; margin-bottom: 44px; }
             .voice-marquee { margin: 0 -48px; }
             .voice-card { padding: 22px 24px; min-width: 280px; max-width: 300px; }
@@ -1735,7 +1842,8 @@
             <p class="gauge-free fade-in">リングゲージは無料でお届けいたします。</p>
 
             <div class="gauge-kit fade-in">
-                <p class="gauge-kit-lead">ご自宅にお届けする、<br>無料キットの内容</p>
+                <span class="gauge-kit-stamp">FREE KIT</span>
+                <p class="gauge-kit-lead">ご自宅にお届けする <strong>無料キットのご案内</strong></p>
                 <ul class="gauge-kit-items">
                     <li class="gauge-kit-item">
                         <span class="gauge-kit-icon">
