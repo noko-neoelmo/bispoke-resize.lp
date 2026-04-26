@@ -198,8 +198,8 @@
             width: 100%;
             margin: 0 auto;
             font-family: "游ゴシック体", YuGothic, "Yu Gothic Medium", "Yu Gothic", 'Noto Sans JP', sans-serif;
-            background-color: var(--gauge-bg);
-            color: var(--text-primary);
+            background-color: #FFFFFF;
+            color: var(--navy);
             line-height: 1.8;
             font-weight: 500;
             overflow-x: hidden;
@@ -239,14 +239,14 @@
             max-width: 780px;
             width: 100%;
             height: 56px;
-            background-color: var(--gauge-bg);
-            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+            background-color: #FFFFFF;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(27,42,74,0.10);
+            box-shadow: 0 1px 6px rgba(27,42,74,0.04);
         }
         .logo {
             display: flex;
@@ -255,6 +255,7 @@
         .logo-img {
             height: 20px;
             width: auto;
+            filter: invert(13%) sepia(38%) saturate(900%) hue-rotate(195deg) brightness(95%) contrast(95%);
         }
         .header-cta {
             display: inline-flex;
@@ -1215,29 +1216,30 @@
             margin-bottom: 20px;
         }
         .footer-nav a {
-            color: #888;
+            color: rgba(27,42,74,0.65);
             text-decoration: none;
             font-size: 11px;
             transition: color 0.2s ease;
         }
-        .footer-nav a:hover { color: #bbb; }
+        .footer-nav a:hover { color: var(--navy); }
 
         /* ===== Final CTA ===== */
         .cta-section {
-            background: linear-gradient(135deg, #1C2832 0%, #1a2540 100%);
-            color: var(--white);
+            background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F7 100%);
+            color: var(--navy);
             text-align: center;
             padding: 80px 24px;
+            border-top: 1px solid rgba(27,42,74,0.06);
         }
         .cta-badge {
             display: inline-block;
             font-size: 10px;
             letter-spacing: 0.2em;
-            border: 1px solid rgba(255,255,255,0.25);
+            border: 1px solid rgba(27,42,74,0.30);
+            color: var(--navy);
             padding: 5px 16px;
             border-radius: 2px;
             margin-bottom: 24px;
-            opacity: 0.9;
         }
         .cta-title {
             font-family: inherit;
@@ -1245,10 +1247,11 @@
             font-weight: 700;
             margin-bottom: 16px;
             line-height: 1.55;
+            color: var(--navy);
         }
         .cta-desc {
             font-size: 13px;
-            opacity: 0.8;
+            color: var(--text-secondary);
             margin-bottom: 36px;
             line-height: 1.7;
         }
@@ -1430,7 +1433,7 @@
             gap: 6px;
             font-size: 11px;
             font-weight: 700;
-            color: #8C6E50;
+            color: #D7263D;
             margin-top: 10px;
             letter-spacing: 0.04em;
         }
@@ -1440,10 +1443,10 @@
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: #C9A074;
+            background: #D7263D;
         }
-        .btn-promo-sub.light { color: #E8C9A6; }
-        .btn-promo-sub.light::before { background: #E8C9A6; }
+        .btn-promo-sub.light { color: #FFE8C2; text-shadow: 0 1px 4px rgba(0,0,0,0.45); }
+        .btn-promo-sub.light::before { background: #FFE8C2; }
 
         /* ===== Floating CTA ===== */
         .floating-cta {
@@ -1473,12 +1476,13 @@
 
         /* ===== Footer ===== */
         footer {
-            background-color: #1a1a1a;
-            color: #666;
+            background-color: #FFFFFF;
+            color: var(--navy);
             padding: 48px 24px 40px;
             padding-bottom: calc(100px + env(safe-area-inset-bottom));
             text-align: center;
             font-size: 11px;
+            border-top: 1px solid rgba(27,42,74,0.10);
         }
         .footer-logo {
             margin-bottom: 6px;
@@ -1486,11 +1490,12 @@
         .footer-logo-img {
             height: 22px;
             width: auto;
-            opacity: 0.6;
+            opacity: 0.85;
+            filter: invert(13%) sepia(38%) saturate(900%) hue-rotate(195deg) brightness(95%) contrast(95%);
         }
         .footer-tagline {
             font-size: 10px;
-            color: #555;
+            color: rgba(27,42,74,0.55);
             letter-spacing: 0.1em;
             margin-bottom: 24px;
         }
@@ -2557,14 +2562,14 @@
     <div class="cta-section">
         <div class="cta-badge fade-in">公式LINE開設記念｜全プラン15%OFF</div>
         <h2 class="cta-title fade-in">今だけ15%OFFで、<br>あなたの指に仕立て直す。</h2>
-        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>全プラン<strong style="color:#F2D9B6;">15%OFF</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
+        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>全プラン<strong style="color:#D7263D; font-weight:900;">15%OFF</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
         <div class="cta-btn-wrapper fade-in">
             <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                 LINEで15%OFF即日お見積もり
             </a>
-            <span class="btn-promo-sub light">5/25まで限定｜お見積もり依頼で適用</span>
-            <span class="btn-sub-text btn-sub-text-light">写真を送るだけ・全国対応</span>
+            <span class="btn-promo-sub">5/25まで限定｜お見積もり依頼で適用</span>
+            <span class="btn-sub-text">写真を送るだけ・全国対応</span>
         </div>
     </div>
 
