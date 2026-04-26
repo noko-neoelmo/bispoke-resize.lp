@@ -33,7 +33,7 @@
     src="https://tr.line.me/tag.gif?c_t=lap&t_id=YOUR_LINE_TAG_ID&e=pv&noscript=1"/></noscript>
 
     <title>【LINE開設記念15%OFF】指輪のサイズ直し 東京｜0.5号刻みで仕立て直す｜LINEで即日お見積もり | RETOLD TOKYO</title>
-    <meta name="description" content="【公式LINE開設記念｜全プラン15%OFF・5/25まで】指輪のサイズ直しなら、東京・青山のRETOLD TOKYO。国家資格保有の職人が、0.5号刻みであなたの指に仕立て直します。ブランドリング対応・磨き上げ無料・往復送料無料。全国配送対応。LINEで写真を送るだけで即日お見積もり。">
+    <meta name="description" content="【公式LINE開設記念｜お見積りから15%オフ・5/25まで】指輪のサイズ直しなら、東京・青山のRETOLD TOKYO。国家資格保有の職人が、0.5号刻みであなたの指に仕立て直します。ブランドリング対応・磨き上げ無料・往復送料無料。全国配送対応。LINEで写真を送るだけで即日お見積もり。">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -165,6 +165,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #1B2A4A;
@@ -255,7 +256,7 @@
         .logo-img {
             height: 20px;
             width: auto;
-            filter: invert(13%) sepia(38%) saturate(900%) hue-rotate(195deg) brightness(95%) contrast(95%);
+            filter: brightness(0) saturate(100%) invert(11%) sepia(46%) saturate(2058%) hue-rotate(207deg) brightness(95%) contrast(94%);
         }
         .header-cta {
             display: inline-flex;
@@ -1491,7 +1492,7 @@
             height: 22px;
             width: auto;
             opacity: 0.85;
-            filter: invert(13%) sepia(38%) saturate(900%) hue-rotate(195deg) brightness(95%) contrast(95%);
+            filter: brightness(0) saturate(100%) invert(11%) sepia(46%) saturate(2058%) hue-rotate(207deg) brightness(95%) contrast(94%);
         }
         .footer-tagline {
             font-size: 10px;
@@ -1500,31 +1501,13 @@
             margin-bottom: 24px;
         }
 
-        /* ===== Ring Gauge — Craft Paper / Letter aesthetic ===== */
+        /* ===== Ring Gauge — White bg + Navy + Handwritten ===== */
         .gauge-section {
-            background-color: #EFE7D6;
-            background-image:
-                linear-gradient(135deg, rgba(245,238,221,0.92) 0%, rgba(220,206,176,0.95) 100%),
-                url("data:image/svg+xml,%3Csvg width='240' height='240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='kraft'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.36  0 0 0 0 0.27  0 0 0 0 0.16  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23kraft)' opacity='0.55'/%3E%3C/svg%3E");
-            background-blend-mode: multiply;
-            color: #3B2F20;
+            background-color: #FFFFFF;
+            color: var(--navy);
             padding: 80px 0;
-            position: relative;
+            text-align: center;
         }
-        .gauge-section::before,
-        .gauge-section::after {
-            content: '';
-            position: absolute;
-            left: 0; right: 0;
-            height: 12px;
-            background-image: radial-gradient(circle at 8px 0, transparent 0 7px, #EFE7D6 7px 9px, transparent 9px);
-            background-size: 16px 12px;
-            background-repeat: repeat-x;
-            background-position: 0 0;
-        }
-        .gauge-section::before { top: -6px; }
-        .gauge-section::after  { bottom: -6px; transform: rotate(180deg); }
-
         .gauge-img-wrap {
             width: 100%;
             max-width: 560px;
@@ -1532,24 +1515,12 @@
             height: 280px;
             overflow: hidden;
             background: #FFFFFF;
-            padding: 12px 12px 38px;
+            padding: 12px;
             box-shadow:
-                0 14px 28px rgba(60,42,18,0.18),
-                0 4px 8px rgba(60,42,18,0.10);
-            transform: rotate(-1.1deg);
-            position: relative;
-        }
-        .gauge-img-wrap::after {
-            content: '— a small instrument, with great care —';
-            position: absolute;
-            left: 0; right: 0;
-            bottom: 8px;
-            text-align: center;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 11px;
-            font-style: italic;
-            color: #6B5739;
-            letter-spacing: 0.04em;
+                0 14px 28px rgba(27,42,74,0.10),
+                0 4px 8px rgba(27,42,74,0.06);
+            border: 1px solid rgba(27,42,74,0.08);
+            border-radius: 4px;
         }
         .gauge-img {
             width: 100%;
@@ -1557,53 +1528,52 @@
             object-fit: cover;
         }
         .gauge-label {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 11px;
-            letter-spacing: 0.34em;
-            color: #8C6F3B;
+            font-family: 'Klee One', 'Yusei Magic', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.28em;
+            color: rgba(27,42,74,0.65);
             text-align: center;
             margin-bottom: 12px;
             text-transform: uppercase;
         }
         .gauge-title {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: #3B2F20;
+            font-family: 'Klee One', 'Yusei Magic', sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--navy);
             text-align: center;
-            margin-bottom: 36px;
-            line-height: 1.55;
+            margin-bottom: 32px;
+            line-height: 1.6;
             letter-spacing: 0.04em;
         }
         .gauge-copy {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 14.5px;
+            font-family: 'Klee One', 'Yusei Magic', sans-serif;
+            font-size: 15px;
             line-height: 2.1;
-            color: #4D3F2A;
+            color: var(--navy);
             letter-spacing: 0.03em;
             max-width: 520px;
             margin: 0 auto;
+            text-align: center;
+            font-weight: 400;
         }
-        .gauge-copy p {
-            text-indent: 1em;
-        }
+        .gauge-copy p { text-indent: 0; }
         .gauge-copy-accent {
-            color: #2E2616;
-            font-weight: 700;
-            background: linear-gradient(transparent 60%, rgba(184,138,51,0.30) 60% 92%, transparent 92%);
+            color: var(--navy);
+            font-weight: 600;
+            background: linear-gradient(transparent 65%, rgba(6,199,85,0.22) 65% 92%, transparent 92%);
             padding: 0 0.05em;
         }
         .gauge-free {
             margin: 32px auto 0;
             max-width: 520px;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 13px;
-            letter-spacing: 0.1em;
-            color: #6B5739;
+            font-family: 'Klee One', 'Yusei Magic', sans-serif;
+            font-size: 14px;
+            letter-spacing: 0.06em;
+            color: var(--navy);
             text-align: center;
-            border-top: 1px dashed rgba(139,108,55,0.45);
+            border-top: 1px dashed rgba(27,42,74,0.20);
             padding-top: 22px;
-            font-style: italic;
         }
 
         /* ===== Free Kit Announcement Card ===== */
@@ -1798,7 +1768,7 @@
     <div class="promo-banner" role="note" aria-label="公式LINEオープン記念キャンペーン">
         <span class="promo-banner-tag">LINE OPEN</span>
         <span class="promo-banner-text">
-            開設記念｜全プラン<span class="promo-banner-strong">15%OFF</span>
+            開設記念｜お見積りから<span class="promo-banner-strong">15%オフ</span>
             <span class="promo-banner-deadline">5/25まで</span>
         </span>
     </div>
@@ -1884,8 +1854,6 @@
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                     LINEで15%OFF見積もりへ
                 </a>
-                <span class="btn-promo-sub light">公式LINE開設記念｜5/25まで限定</span>
-                <p class="gauge-kit-sub">写真を送るだけ・往復送料無料</p>
             </div>
         </div>
     </div>
@@ -1968,7 +1936,6 @@
                     他店で断られたリングも、まず無料診断
                 </a>
                 <span class="btn-promo-sub">公式LINE開設記念｜お見積もり15%OFF（5/25まで）</span>
-                <span class="btn-sub-text">国家資格保有の職人がご返答・見積もり完全無料</span>
             </div>
         </div>
     </div>
@@ -2189,39 +2156,6 @@
         </div>
     </div>
 
-    <!-- ===== Trust Signals Section ===== -->
-    <div class="section section-bg-off" id="trust">
-        <div class="container">
-            <p class="section-label fade-in">OUR PROMISE</p>
-            <h2 class="section-title fade-in">安心して、お任せください。</h2>
-            <p class="section-desc fade-in">全国どこからでも、ご自宅で完結します。</p>
-
-            <div class="trust-grid fade-in">
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-                    </div>
-                    <div class="trust-card-title">全国配送対応</div>
-                    <div class="trust-card-desc">保険付き宅配便で<br>安全にお届け</div>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v4H3z"/><path d="M5 11v9h14v-9"/><path d="M12 7v13"/><path d="M8 7c0-1.5 1-3 4-3s4 1.5 4 3"/></svg>
-                    </div>
-                    <div class="trust-card-title">往復送料 無料</div>
-                    <div class="trust-card-desc">お預かり・お届けの<br>送料は当店負担</div>
-                </div>
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="5"/><path d="M9 4l3 4 3-4"/><path d="M7 4h10"/></svg>
-                    </div>
-                    <div class="trust-card-title">0.5号刻みのリングゲージ<br>プレゼント</div>
-                    <div class="trust-card-desc">自宅で正確なサイズ計測<br>申込者全員に無料贈呈</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- ===== Reasons Section ===== -->
     <div class="section section-bg-white" id="reasons">
         <div class="container">
@@ -2404,7 +2338,7 @@
                     料金はどのくらいですか？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text"><strong>指輪のサイズ直しは11,000円〜28,000円（税込）が目安です。</strong>シンプルなリング（甲丸・平打ち等）で11,000円〜、石付きのデザインリングで15,000円〜、ブランドリングや高難度のものは25,000円〜28,000円（税込）。素材・デザイン・サイズ変更幅により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。<br><br><strong>※2026年5月25日まで、公式LINE開設記念として全プラン15%OFFでお仕立ていたします。</strong></p>
+                    <p class="faq-answer-text"><strong>指輪のサイズ直しは11,000円〜28,000円（税込）が目安です。</strong>シンプルなリング（甲丸・平打ち等）で11,000円〜、石付きのデザインリングで15,000円〜、ブランドリングや高難度のものは25,000円〜28,000円（税込）。素材・デザイン・サイズ変更幅により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。<br><br><strong>※2026年5月25日まで、公式LINE開設記念としてお見積りから15%オフでお仕立ていたします。</strong></p>
                 </div>
             </div>
 
@@ -2560,9 +2494,9 @@
 
     <!-- ===== Final CTA ===== -->
     <div class="cta-section">
-        <div class="cta-badge fade-in">公式LINE開設記念｜全プラン15%OFF</div>
+        <div class="cta-badge fade-in">公式LINE開設記念｜お見積りから15%オフ</div>
         <h2 class="cta-title fade-in">今だけ15%OFFで、<br>あなたの指に仕立て直す。</h2>
-        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>全プラン<strong style="color:#D7263D; font-weight:900;">15%OFF</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
+        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>お見積りから<strong style="color:#D7263D; font-weight:900;">15%オフ</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
         <div class="cta-btn-wrapper fade-in">
             <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
@@ -2599,7 +2533,7 @@
     <div class="floating-cta" id="floatingCta">
         <a href="https://lin.ee/VhCyZEw" class="btn-cta">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            LINEで15%OFFお見積もり
+            LINE開設記念！お見積りから15%OFF
         </a>
     </div>
 
