@@ -1771,71 +1771,92 @@
             pointer-events: none;
         }
 
-        /* ----- Hero v2 (replaces .hero on preview) ----- */
+        /* ----- Hero v2 (full-bleed image bg, navy text overlay) ----- */
         .hero-v2 {
             position: relative;
             margin-top: 92px;
-            background: radial-gradient(ellipse at 70% 20%, #1F2D4F 0%, #131C32 55%, #0B1224 100%);
-            color: #F5F5F7;
+            background-color: #EFEAE2;
+            background-image: url('/resize/images/hero-ring-box.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--navy);
             overflow: hidden;
             padding: 0;
+            min-height: 560px;
         }
         @media (min-width: 600px) {
-            .hero-v2 { margin-top: 96px; }
+            .hero-v2 { margin-top: 96px; min-height: 640px; }
         }
+        @media (min-width: 720px) {
+            .hero-v2 { min-height: 680px; }
+        }
+        /* Subtle wash to keep navy text legible on busy areas of the photo */
         .hero-v2::before {
             content: '';
             position: absolute;
             inset: 0;
-            background-image:
-                radial-gradient(circle at 12% 88%, rgba(160,138,116,0.18) 0%, rgba(160,138,116,0) 35%),
-                radial-gradient(circle at 88% 8%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 40%);
+            background: linear-gradient(
+                180deg,
+                rgba(255,255,255,0.55) 0%,
+                rgba(255,255,255,0.30) 35%,
+                rgba(255,255,255,0.10) 65%,
+                rgba(255,255,255,0.35) 100%
+            );
             pointer-events: none;
         }
         .hero-v2-inner {
             position: relative;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 18px;
-            padding: 28px 24px 36px;
-            padding-top: calc(20px + env(safe-area-inset-top));
+            gap: 14px;
+            padding: 32px 24px 36px;
+            padding-top: calc(28px + env(safe-area-inset-top));
             padding-bottom: calc(36px + env(safe-area-inset-bottom));
+            min-height: inherit;
         }
         @media (min-width: 720px) {
             .hero-v2-inner {
-                grid-template-columns: 1.15fr 1fr;
-                gap: 32px;
-                padding: 56px 56px 64px;
-                align-items: center;
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 80px 56px 88px;
+                max-width: 720px;
             }
+        }
+        .hero-v2-text {
+            max-width: 640px;
         }
         .hero-v2-eyebrow {
             font-size: 10px;
             letter-spacing: 0.32em;
-            color: rgba(245,245,247,0.65);
+            color: rgba(27,42,74,0.72);
             margin-bottom: 14px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.6);
         }
         .hero-v2-title {
             font-family: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
-            font-size: clamp(28px, 7.4vw, 44px);
+            font-size: clamp(26px, 7.2vw, 42px);
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.45;
             letter-spacing: 0.01em;
             margin-bottom: 18px;
-            color: #FFFFFF;
-            text-shadow: 0 2px 14px rgba(0,0,0,0.4);
+            color: var(--navy);
+            text-shadow:
+                0 1px 2px rgba(255,255,255,0.55),
+                0 2px 12px rgba(255,255,255,0.35);
         }
         .hero-v2-title .accent {
-            color: #E8C895;
+            color: var(--navy);
         }
         .hero-v2-lead {
             font-size: 14px;
             line-height: 1.85;
-            color: rgba(245,245,247,0.88);
-            margin-bottom: 24px;
-            font-weight: 500;
+            color: rgba(27,42,74,0.92);
+            margin-bottom: 22px;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.6);
         }
         @media (min-width: 600px) {
             .hero-v2-lead { font-size: 15px; }
@@ -1853,18 +1874,19 @@
             font-size: 11px;
             font-weight: 700;
             letter-spacing: 0.02em;
-            padding: 7px 11px;
+            padding: 7px 12px;
             border-radius: 999px;
-            color: #F5F5F7;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(232,200,149,0.35);
+            color: var(--navy);
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(27,42,74,0.18);
             backdrop-filter: blur(4px);
+            box-shadow: 0 2px 8px rgba(27,42,74,0.10);
         }
         .hero-v2-badge::before {
             content: '';
             width: 5px; height: 5px; border-radius: 50%;
-            background: #E8C895;
-            box-shadow: 0 0 6px rgba(232,200,149,0.7);
+            background: var(--gold);
+            box-shadow: 0 0 6px rgba(160,138,116,0.6);
         }
         @media (min-width: 600px) {
             .hero-v2-badge { font-size: 12px; padding: 8px 13px; }
@@ -1879,7 +1901,7 @@
             width: 100%;
             padding: 18px 28px;
             font-size: 15px;
-            box-shadow: 0 10px 28px rgba(6,199,85,0.35);
+            box-shadow: 0 10px 28px rgba(6,199,85,0.30);
         }
         .hero-v2-cta-sub {
             display: flex;
@@ -1887,8 +1909,10 @@
             justify-content: center;
             gap: 10px;
             font-size: 11px;
-            color: rgba(245,245,247,0.7);
+            color: rgba(27,42,74,0.78);
             letter-spacing: 0.04em;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.6);
         }
         .hero-v2-cta-sub span {
             position: relative;
@@ -1898,49 +1922,8 @@
             position: absolute;
             left: -8px; top: 50%;
             width: 1px; height: 10px;
-            background: rgba(245,245,247,0.3);
+            background: rgba(27,42,74,0.3);
             transform: translateY(-50%);
-        }
-
-        /* Hero v2 visual (right column) */
-        .hero-v2-visual {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4 / 3.2;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 18px 48px rgba(0,0,0,0.5);
-            background: #0B1224;
-        }
-        @media (min-width: 720px) {
-            .hero-v2-visual { aspect-ratio: 4 / 4; }
-        }
-        .hero-v2-visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 40%;
-            display: block;
-        }
-        .hero-v2-visual::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(11,18,36,0) 60%, rgba(11,18,36,0.45) 100%);
-            pointer-events: none;
-        }
-        .hero-v2-visual-tag {
-            position: absolute;
-            left: 14px;
-            bottom: 14px;
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            color: rgba(255,255,255,0.85);
-            background: rgba(11,18,36,0.55);
-            padding: 5px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(232,200,149,0.4);
-            text-transform: uppercase;
         }
 
         /* ----- Founder section ----- */
@@ -2109,7 +2092,7 @@
         <div class="hero-v2-inner">
             <div class="hero-v2-text">
                 <p class="hero-v2-eyebrow">RETOLD TOKYO ／ Ring Resize</p>
-                <h1 class="hero-v2-title">断られた指輪を、<br><span class="accent">もう一度あなたの手へ。</span></h1>
+                <h1 class="hero-v2-title">断られた指輪も、<br><span class="accent">もう一度あなたの手へ</span></h1>
                 <p class="hero-v2-lead">他店で「直せない」と言われた指輪も、<br>国家資格を持つ職人が、確かな技術で仕立て直します。</p>
                 <div class="hero-v2-badges">
                     <span class="hero-v2-badge">国家資格保有の職人</span>
@@ -2127,10 +2110,6 @@
                         <span>1年間保証つき</span>
                     </div>
                 </div>
-            </div>
-            <div class="hero-v2-visual">
-                <img src="/resize/images/vintage-ring.png" alt="アンティークの指輪" loading="eager">
-                <span class="hero-v2-visual-tag">Aoyama Atelier</span>
             </div>
         </div>
     </section>
