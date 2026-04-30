@@ -1906,13 +1906,13 @@
             color: var(--navy);
             overflow: hidden;
             padding: 0;
-            min-height: 560px;
+            min-height: 680px;
         }
         @media (min-width: 600px) {
-            .hero-v2 { margin-top: 96px; min-height: 640px; }
+            .hero-v2 { margin-top: 96px; min-height: 760px; }
         }
         @media (min-width: 720px) {
-            .hero-v2 { min-height: 680px; }
+            .hero-v2 { min-height: 820px; }
         }
         /* Hero: no full overlay — text uses a white halo for readability */
         .hero-v2-inner {
@@ -2016,18 +2016,15 @@
         @media (min-width: 600px) {
             .hero-v2-badge { font-size: 12px; padding: 9px 15px; }
         }
-        /* CTA block: badges + button + sub + promo card, all centered */
+        /* CTA block: badges + button + sub + promo card, pinned to the bottom */
         .hero-v2-cta-block {
-            margin: clamp(60px, 22vh, 220px) auto 0;
+            margin: auto auto 0;
             width: 100%;
             max-width: 480px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
-        }
-        @media (min-width: 720px) {
-            .hero-v2-cta-block { margin-top: clamp(80px, 24vh, 260px); }
         }
         .hero-v2-cta-wrap {
             display: flex;
