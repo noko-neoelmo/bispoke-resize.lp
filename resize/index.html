@@ -32,8 +32,8 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://tr.line.me/tag.gif?c_t=lap&t_id=YOUR_LINE_TAG_ID&e=pv&noscript=1"/></noscript>
 
-    <title>【LINE開設記念15%OFF】指輪のサイズ直し 東京｜0.5号刻みで仕立て直す｜LINEで即日お見積もり | RETOLD TOKYO</title>
-    <meta name="description" content="【公式LINE開設記念｜お見積りから15%オフ・5/25まで】指輪のサイズ直しなら、東京・青山のRETOLD TOKYO。国家資格保有の職人が、0.5号刻みであなたの指に仕立て直します。ブランドリング対応・磨き上げ無料・往復送料無料。全国配送対応。LINEで写真を送るだけで即日お見積もり。">
+    <title>【LINE開設記念15%OFF】指輪のサイズ直し 東京｜断られた指輪も、もう一度あなたの手へ｜RETOLD TOKYO</title>
+    <meta name="description" content="【公式LINE開設記念｜お見積りから15%オフ・5/22まで】他店で「直せない」と言われた指輪も、国家資格を持つ職人が確かな技術で仕立て直します。東京・青山のRETOLD TOKYO。ブランドリング対応・磨き上げ無料・往復送料無料。LINEで写真を送るだけで即日無料お見積もり。">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -100,7 +100,7 @@
           "name": "支払い方法は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "銀行振込に対応しております。お見積もり確定後、加工前にお支払いをお願いしております。"
+            "text": "Stripe決済を導入しており、クレジットカード／銀行振込のどちらでもお支払いいただけます。お見積もり確定後、加工前のお支払いをお願いしております。"
           }
         }
       ]
@@ -169,10 +169,20 @@
     <style>
         :root {
             --navy: #1B2A4A;
-            --gold: #A08A74;
-            --gold-light: rgba(160, 138, 116, 0.10);
-            --off-white: #ECEDEF;
-            --warm-white: #E4E5E8;
+            --navy-dark: #131C32;
+            --dusky-blue: #7B96B5;
+            --dusky-blue-light: #DCE5EE;
+            --water-blue: #E0EBF4;
+            --water-blue-2: #CCDCEC;
+            --gold-top: #E8D2A0;
+            --gold: #C9A876;
+            --gold-deep: #9C8456;
+            --pink-shocking: #FF3D8E;
+            --pink-shocking-deep: #E5277A;
+            --pink-soft: #F5E1E5;
+            --gold-light: rgba(123,150,181,0.10);
+            --off-white: #FFFFFF;
+            --warm-white: #F5F7FA;
             --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
             --text-light: #888;
@@ -181,7 +191,7 @@
             --border: #CBCDD0;
             --cta-navy: #1B2A4A;
             --cta-navy-hover: #263A5E;
-            --gauge-bg: #1C2832;
+            --gauge-bg: #1B2A4A;
         }
 
         * {
@@ -461,10 +471,17 @@
         .btn-sub-text-light { color: rgba(255,255,255,0.5); }
 
         /* ===== Section Common ===== */
-        .section { padding: 80px 0; }
+        .section { padding: 56px 0; }
         .section-bg-white { background-color: var(--white); }
-        .section-bg-craft { background-color: #EDEAE4; }
+        .section-bg-craft { background-color: #FFFFFF; }
         .section-bg-off { background-color: var(--off-white); }
+        .section-bg-water {
+            background: linear-gradient(180deg, var(--water-blue) 0%, var(--water-blue-2) 100%);
+            position: relative;
+        }
+        .section-bg-water .section-label { color: var(--pink-shocking); font-weight: 800; }
+        .section-bg-water .section-title { color: var(--navy); }
+        .section-bg-water .section-desc { color: var(--navy); font-weight: 600; }
         .container { padding: 0 24px; }
         .section-label {
             font-family: inherit;
@@ -488,7 +505,7 @@
             font-size: 13px;
             color: var(--text-secondary);
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 32px;
             line-height: 1.8;
         }
         .gold-divider {
@@ -505,12 +522,12 @@
             gap: 12px;
         }
         .case-card {
-            background: #F0EDE7;
+            background: #FFFFFF;
             background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.04'/%3E%3C/svg%3E");
             border-radius: 4px;
             overflow: hidden;
             box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-            border: 1px solid rgba(180,170,155,0.25);
+            border: 1px solid rgba(123,150,181,0.25);
         }
         .case-card-img-wrap {
             width: 100%;
@@ -535,7 +552,7 @@
         .case-card-title {
             font-size: 12px;
             font-weight: 700;
-            color: #2C3028;
+            color: #1B2A4A;
             margin-bottom: 4px;
             line-height: 1.4;
         }
@@ -548,7 +565,7 @@
             display: flex;
             align-items: baseline;
             gap: 6px;
-            border-top: 1px solid rgba(160,150,130,0.2);
+            border-top: 1px solid rgba(123,150,181,0.2);
             padding-top: 8px;
             margin-top: 6px;
         }
@@ -568,7 +585,7 @@
             font-size: 11px;
             color: var(--text-secondary);
             line-height: 1.6;
-            border-top: 1px solid rgba(160,150,130,0.2);
+            border-top: 1px solid rgba(123,150,181,0.2);
             padding-top: 6px;
         }
 
@@ -618,11 +635,11 @@
             font-size: 15px;
             letter-spacing: 0;
         }
-        .voice-avatar-1 { background: #7B9EA8; }
-        .voice-avatar-2 { background: #C28A75; }
-        .voice-avatar-3 { background: #8E7FAF; }
-        .voice-avatar-4 { background: #6B8E6B; }
-        .voice-avatar-5 { background: #B58A3C; }
+        .voice-avatar-1 { background: #7B96B5; }
+        .voice-avatar-2 { background: #D89BA5; }
+        .voice-avatar-3 { background: #7B96B5; }
+        .voice-avatar-4 { background: #7B96B5; }
+        .voice-avatar-5 { background: #7B96B5; }
         .voice-meta {
             flex: 1;
             min-width: 0;
@@ -653,7 +670,7 @@
             margin-bottom: 10px;
         }
         .voice-stars {
-            color: #E8B849;
+            color: #7B96B5;
             font-size: 13px;
             letter-spacing: 1px;
             line-height: 1;
@@ -722,7 +739,7 @@
             border-radius: 8px;
             overflow: hidden;
             aspect-ratio: 3 / 4;
-            background: #E8E6E0;
+            background: #F5F7FA;
         }
         .pain-scene-card img {
             width: 100%;
@@ -869,7 +886,7 @@
 
         /* ===== Inherited Ring Section ===== */
         .inherited-section {
-            background-color: #F5F3EE;
+            background-color: #F5F7FA;
             padding: 80px 0;
         }
         .inherited-lead {
@@ -1014,50 +1031,90 @@
             transform: rotate(-45deg);
         }
 
-        /* ===== Process ===== */
+        /* ===== Process — 3-up horizontal cards with images ===== */
         .process-flow {
-            position: relative;
-            padding-left: 28px;
-            margin-left: 8px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
         }
-        .process-flow::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 8px; bottom: 8px;
-            width: 1px;
-            background: linear-gradient(to bottom, var(--gold), rgba(184,151,126,0.15));
+        @media (min-width: 600px) {
+            .process-flow { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        }
+        @media (min-width: 720px) {
+            .process-flow { gap: 20px; }
         }
         .process-step {
-            margin-bottom: 36px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            border: 1px solid rgba(27,42,74,0.10);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(27,42,74,0.06);
         }
-        .process-step::before {
-            content: '';
-            position: absolute;
-            left: -34px; top: 6px;
-            width: 12px; height: 12px;
-            background-color: var(--white);
-            border: 2px solid var(--gold);
-            border-radius: 50%;
+        .process-step-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: var(--water-blue);
+            overflow: hidden;
         }
-        .process-step:last-child { margin-bottom: 0; }
+        .process-step-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .process-step-body {
+            padding: 14px 16px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 720px) {
+            .process-step-body { padding: 16px 18px 18px; }
+        }
         .process-step-num {
-            font-family: inherit;
-            font-size: 10px;
-            color: var(--gold);
-            letter-spacing: 0.15em;
-            margin-bottom: 4px;
+            display: inline-block;
+            font-family: "Noto Serif JP", serif;
+            font-size: 11px;
+            color: #FFFFFF;
+            background: var(--navy);
+            letter-spacing: 0.18em;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            align-self: flex-start;
         }
         .process-step-title {
             font-weight: 700;
             color: var(--navy);
-            font-size: 15px;
-            margin-bottom: 6px;
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.45;
+        }
+        @media (min-width: 720px) {
+            .process-step-title { font-size: 17px; }
         }
         .process-step-desc {
-            font-size: 13px;
-            color: var(--text-secondary);
+            font-size: 12.5px;
+            color: var(--navy);
+            line-height: 1.75;
+            font-weight: 500;
+        }
+        @media (min-width: 720px) {
+            .process-step-desc { font-size: 13px; }
+        }
+        .process-step-note {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(27,42,74,0.18);
+            font-size: 11px;
+            color: var(--navy);
+            opacity: 0.78;
             line-height: 1.7;
+        }
+        @media (min-width: 720px) {
+            .process-step-note { font-size: 11.5px; }
         }
 
         /* ===== Price ===== */
@@ -1102,15 +1159,23 @@
         .price-includes {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 8px;
-            margin-bottom: 16px;
+            margin: 8px 0 18px;
         }
         .price-includes-tag {
-            font-size: 11px;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 4px 12px;
-            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+            background: #FFFFFF;
+            border: 1.5px solid var(--navy);
+            padding: 7px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 6px rgba(27,42,74,0.08);
+        }
+        @media (min-width: 600px) {
+            .price-includes-tag { font-size: 13px; padding: 8px 16px; }
         }
         .price-note {
             font-size: 12px;
@@ -1118,6 +1183,20 @@
             margin-top: 16px;
             margin-bottom: 36px;
             line-height: 1.8;
+        }
+        /* Centered CTA wrapper used across sections */
+        .cta-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            max-width: 420px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cta-center .btn-cta {
+            width: 100%;
+            max-width: 420px;
         }
 
         /* ===== FAQ ===== */
@@ -1273,58 +1352,53 @@
             background: #FFFFFF;
             border-bottom: 1px solid rgba(0,0,0,0.10);
             color: #1A1A1A;
-            padding: 10px 16px;
+            padding: 8px 12px;
             display: flex;
+            flex-wrap: nowrap;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            font-size: 13px;
-            line-height: 1.4;
-            letter-spacing: 0.02em;
+            gap: 8px;
+            font-size: 12px;
+            line-height: 1.3;
+            letter-spacing: 0;
             text-align: center;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-        }
-        .promo-banner-tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.18em;
-            color: #FFFFFF;
-            background: var(--line-green);
-            padding: 4px 10px;
-            border-radius: 3px;
             white-space: nowrap;
-            flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(6,199,85,0.30);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
         }
         .promo-banner-text {
             font-weight: 700;
-            color: #1A1A1A;
+            color: var(--navy);
+            white-space: nowrap;
         }
         .promo-banner-text .promo-banner-strong {
-            color: #D7263D;
+            color: var(--pink-shocking);
             font-weight: 900;
-            font-size: 18px;
+            font-size: 15px;
             letter-spacing: 0.02em;
-            margin: 0 2px;
+            margin: 0 1px;
+            text-shadow: 0 0 1px rgba(255,61,142,0.30);
         }
-        .promo-banner-text .promo-banner-deadline {
+        .promo-banner-deadline {
             display: inline-block;
             font-size: 11px;
-            color: #6B5739;
-            font-weight: 600;
-            margin-left: 6px;
+            color: #FFFFFF;
+            background: var(--pink-shocking);
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 3px;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         @media (min-width: 600px) {
-            .promo-banner { font-size: 14px; padding: 12px 20px; gap: 14px; }
-            .promo-banner-tag { font-size: 11px; padding: 5px 12px; }
-            .promo-banner-text .promo-banner-strong { font-size: 22px; }
-            .promo-banner-text .promo-banner-deadline { font-size: 12px; }
+            .promo-banner { font-size: 14px; padding: 10px 18px; gap: 12px; }
+            .promo-banner-text .promo-banner-strong { font-size: 20px; }
+            .promo-banner-deadline { font-size: 12px; padding: 4px 10px; }
         }
         @media (max-width: 374px) {
-            .promo-banner { font-size: 12px; gap: 6px; padding: 8px 10px; }
-            .promo-banner-tag { font-size: 9px; padding: 3px 7px; letter-spacing: 0.14em; }
-            .promo-banner-text .promo-banner-strong { font-size: 16px; }
+            .promo-banner { font-size: 11px; gap: 6px; padding: 7px 8px; }
+            .promo-banner-text .promo-banner-strong { font-size: 13px; }
+            .promo-banner-deadline { font-size: 10px; padding: 2px 6px; }
         }
 
         /* ===== Promo Callout (in-section card) — white & bold ===== */
@@ -1332,12 +1406,12 @@
             position: relative;
             background: #FFFFFF;
             color: #1A1A1A;
-            border: 2px solid #D7263D;
+            border: 2px solid var(--pink-shocking);
             border-radius: 10px;
             padding: 24px 22px 26px;
             margin-bottom: 28px;
             overflow: hidden;
-            box-shadow: 0 12px 32px rgba(215,38,61,0.10), 0 4px 10px rgba(0,0,0,0.06);
+            box-shadow: 0 14px 36px rgba(255,61,142,0.18), 0 4px 10px rgba(0,0,0,0.06);
         }
         .promo-callout-tag {
             display: inline-block;
@@ -1361,7 +1435,7 @@
             color: #1A1A1A;
         }
         .promo-callout-title .promo-callout-pct {
-            color: #D7263D;
+            color: var(--pink-shocking);
             font-size: 36px;
             font-weight: 900;
             letter-spacing: 0.02em;
@@ -1375,7 +1449,7 @@
             position: relative;
         }
         .promo-callout-item {
-            background: #FAFBFC;
+            background: #FFFFFF;
             border: 1px solid rgba(0,0,0,0.08);
             border-radius: 6px;
             padding: 12px 8px;
@@ -1397,7 +1471,7 @@
         .promo-callout-item-new {
             font-size: 17px;
             font-weight: 800;
-            color: #D7263D;
+            color: var(--pink-shocking);
             letter-spacing: 0.01em;
         }
         .promo-callout-item-new .promo-callout-item-new-sub {
@@ -1415,7 +1489,7 @@
             font-weight: 600;
         }
         .promo-callout-deadline strong {
-            color: #D7263D;
+            color: var(--pink-shocking);
             font-weight: 800;
         }
         @media (min-width: 600px) {
@@ -1427,6 +1501,55 @@
             .promo-callout-deadline { font-size: 13px; }
         }
 
+        /* Polish callout — navy card with atelier image */
+        .polish-callout {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            align-items: center;
+            gap: 14px;
+            background: var(--navy);
+            color: #FFFFFF;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(27,42,74,0.18);
+        }
+        @media (min-width: 600px) {
+            .polish-callout { grid-template-columns: 120px 1fr; gap: 20px; padding: 18px 22px; }
+        }
+        .polish-image {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.30);
+        }
+        .polish-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .polish-title {
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.5;
+            margin-bottom: 6px;
+            color: #FFFFFF;
+        }
+        @media (min-width: 600px) {
+            .polish-title { font-size: 15px; margin-bottom: 8px; }
+        }
+        .polish-desc {
+            font-size: 11px;
+            line-height: 1.7;
+            color: var(--dusky-blue-light);
+            font-weight: 500;
+        }
+        @media (min-width: 600px) {
+            .polish-desc { font-size: 12.5px; }
+        }
+
         /* ===== Promo sub-text on CTAs ===== */
         .btn-promo-sub {
             display: inline-flex;
@@ -1434,7 +1557,7 @@
             gap: 6px;
             font-size: 11px;
             font-weight: 700;
-            color: #D7263D;
+            color: var(--pink-shocking);
             margin-top: 10px;
             letter-spacing: 0.04em;
         }
@@ -1444,10 +1567,10 @@
             width: 4px;
             height: 4px;
             border-radius: 50%;
-            background: #D7263D;
+            background: #D89BA5;
         }
-        .btn-promo-sub.light { color: #FFE8C2; text-shadow: 0 1px 4px rgba(0,0,0,0.45); }
-        .btn-promo-sub.light::before { background: #FFE8C2; }
+        .btn-promo-sub.light { color: #DCE5EE; text-shadow: 0 1px 4px rgba(0,0,0,0.45); }
+        .btn-promo-sub.light::before { background: #DCE5EE; }
 
         /* ===== Floating CTA ===== */
         .floating-cta {
@@ -1580,9 +1703,9 @@
         .gauge-kit {
             margin: 44px auto 0;
             max-width: 560px;
-            background: #FFFDF7;
+            background: #FFFFFF;
             background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.04'/%3E%3C/svg%3E");
-            border: 1.5px solid rgba(139,108,55,0.30);
+            border: 1.5px solid rgba(123,150,181,0.30);
             border-radius: 6px;
             padding: 36px 24px 28px;
             box-shadow:
@@ -1596,7 +1719,7 @@
             position: absolute;
             left: 12px; right: 12px;
             top: 12px; bottom: 12px;
-            border: 1px solid rgba(139,108,55,0.18);
+            border: 1px solid rgba(123,150,181,0.18);
             border-radius: 3px;
             pointer-events: none;
         }
@@ -1604,8 +1727,8 @@
             position: absolute;
             top: -16px; left: 50%;
             transform: translateX(-50%) rotate(-3deg);
-            background: #C8482E;
-            color: #FFF8EA;
+            background: #D89BA5;
+            color: #F5F7FA;
             font-family: 'Noto Serif JP', serif;
             font-weight: 700;
             font-size: 12px;
@@ -1621,7 +1744,7 @@
             top: 50%;
             width: 6px; height: 6px;
             border-radius: 50%;
-            background: #EFE7D6;
+            background: #DCE5EE;
             transform: translateY(-50%);
         }
         .gauge-kit-stamp::before { left: -3px; }
@@ -1629,7 +1752,7 @@
         .gauge-kit-lead {
             font-family: 'Noto Serif JP', serif;
             font-size: 13px;
-            color: #4D3F2A;
+            color: #1B2A4A;
             text-align: center;
             margin: 8px 0 20px;
             line-height: 1.8;
@@ -1637,7 +1760,7 @@
         }
         .gauge-kit-lead strong {
             font-size: 17px;
-            color: #2E2616;
+            color: #1B2A4A;
             display: block;
             margin-top: 4px;
             letter-spacing: 0.08em;
@@ -1655,7 +1778,7 @@
             align-items: center;
             gap: 14px;
             padding: 14px 4px;
-            border-bottom: 1px dashed rgba(139,108,55,0.30);
+            border-bottom: 1px dashed rgba(123,150,181,0.30);
         }
         .gauge-kit-item:last-child { border-bottom: none; }
         .gauge-kit-icon {
@@ -1673,12 +1796,12 @@
             font-family: 'Noto Serif JP', serif;
             font-size: 14px;
             font-weight: 700;
-            color: #2E2616;
+            color: #1B2A4A;
             line-height: 1.4;
         }
         .gauge-kit-item-sub {
             font-size: 11px;
-            color: #6B5739;
+            color: #1B2A4A;
             margin-top: 3px;
             line-height: 1.5;
         }
@@ -1686,7 +1809,7 @@
             text-align: center;
             font-family: 'Noto Serif JP', serif;
             font-size: 11px;
-            color: #6B5739;
+            color: #1B2A4A;
             margin-top: 12px;
             font-style: italic;
         }
@@ -1702,7 +1825,7 @@
                 flex-direction: column; text-align: center; gap: 10px;
                 padding: 18px 12px;
                 border-bottom: none;
-                border-right: 1px dashed rgba(139,108,55,0.30);
+                border-right: 1px dashed rgba(123,150,181,0.30);
             }
             .gauge-kit-item:last-child { border-right: none; }
             .gauge-kit-item-title { font-size: 14px; }
@@ -1724,7 +1847,7 @@
             .hero-copy-main { font-size: 36px; }
             .hero-copy-sub { font-size: 17px; }
             .hero-overlay { padding: 0 48px 56px; }
-            .section { padding: 100px 0; }
+            .section { padding: 76px 0; }
             .section-title { font-size: 26px; }
             .section-desc { font-size: 14px; }
             .case-grid { gap: 16px; }
@@ -1748,6 +1871,890 @@
             .floating-cta { padding: 16px 48px; }
             .floating-cta .btn-cta { max-width: 400px; }
         }
+
+        /* ============================================================
+           Preview redesign: Hero v2 + Founder section
+           ============================================================ */
+
+        /* ----- Hero v2 (full-bleed image bg, navy text overlay) ----- */
+        .hero-v2 {
+            position: relative;
+            margin-top: 92px;
+            background-color: #FFFFFF;
+            background-image: url('/resize/images/hero-ring-box.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--navy);
+            overflow: hidden;
+            padding: 0;
+            min-height: 680px;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 600px) {
+            .hero-v2 { margin-top: 96px; min-height: 760px; }
+        }
+        @media (min-width: 720px) {
+            .hero-v2 { min-height: 820px; }
+        }
+        /* Hero: no full overlay — text uses a white halo for readability */
+        .hero-v2-inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 32px 24px 36px;
+            padding-top: calc(28px + env(safe-area-inset-top));
+            flex: 1;
+            min-height: 0;
+        }
+        @media (min-width: 720px) {
+            .hero-v2-inner {
+                gap: 18px;
+                padding: 80px 56px 32px;
+                max-width: 760px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+        .hero-v2-text {
+            max-width: 640px;
+        }
+        .hero-v2-eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.32em;
+            color: var(--navy);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow:
+                0 0 4px rgba(255,255,255,0.95),
+                0 0 10px rgba(255,255,255,0.75),
+                0 0 18px rgba(255,255,255,0.55);
+        }
+        .hero-v2-title {
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
+            font-size: clamp(26px, 7.2vw, 42px);
+            font-weight: 700;
+            line-height: 1.45;
+            letter-spacing: 0.01em;
+            margin-bottom: 18px;
+            color: var(--navy);
+            text-shadow:
+                0 0 4px rgba(255,255,255,0.95),
+                0 0 12px rgba(255,255,255,0.85),
+                0 0 24px rgba(255,255,255,0.6),
+                0 1px 2px rgba(255,255,255,0.95);
+        }
+        .hero-v2-title .accent {
+            color: var(--navy);
+        }
+        .hero-v2-lead {
+            font-size: 14px;
+            line-height: 1.85;
+            color: var(--navy);
+            margin-bottom: 22px;
+            font-weight: 700;
+            text-shadow:
+                0 0 4px rgba(255,255,255,0.95),
+                0 0 10px rgba(255,255,255,0.80),
+                0 0 18px rgba(255,255,255,0.55);
+        }
+        @media (min-width: 600px) {
+            .hero-v2-lead { font-size: 15px; }
+        }
+        .hero-v2-badges {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+        }
+        .hero-v2-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            padding: 5px 10px;
+            border-radius: 999px;
+            color: var(--navy);
+            background: linear-gradient(180deg,
+                var(--gold-top) 0%,
+                var(--gold) 55%,
+                var(--gold-deep) 100%);
+            border: 1px solid rgba(255,255,255,0.7);
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.85),
+                inset 0 -1px 1px rgba(27,42,74,0.18),
+                0 2px 6px rgba(27,42,74,0.20),
+                0 6px 14px rgba(27,42,74,0.16);
+            text-shadow: 0 1px 0 rgba(255,255,255,0.55);
+        }
+        .hero-v2-badge::before {
+            content: '';
+            width: 4px; height: 4px; border-radius: 50%;
+            background: var(--navy);
+            box-shadow: 0 0 3px rgba(27,42,74,0.5);
+        }
+        @media (min-width: 600px) {
+            .hero-v2-badges { gap: 6px; }
+            .hero-v2-badge { font-size: 11px; padding: 6px 12px; gap: 5px; }
+        }
+        /* CTA block: badges + button as one tight unit, pinned bottom of inner */
+        .hero-v2-cta-block {
+            margin: auto auto 0;
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero-v2-cta-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            width: 100%;
+        }
+        .hero-v2-cta-wrap .btn-cta {
+            width: 100%;
+            padding: 16px 28px;
+            font-size: 15px;
+            box-shadow:
+                0 8px 22px rgba(6,199,85,0.35),
+                0 0 0 4px rgba(255,255,255,0.55);
+        }
+        .hero-v2-cta-sub {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 11px;
+            color: var(--navy);
+            letter-spacing: 0.04em;
+            font-weight: 700;
+            text-shadow:
+                0 0 4px rgba(255,255,255,0.95),
+                0 0 8px rgba(255,255,255,0.75);
+        }
+        .hero-v2-cta-sub span {
+            position: relative;
+        }
+        .hero-v2-cta-sub span + span::before {
+            content: '';
+            position: absolute;
+            left: -8px; top: 50%;
+            width: 1px; height: 10px;
+            background: rgba(27,42,74,0.35);
+            transform: translateY(-50%);
+        }
+        /* Full-width LINE campaign band at the bottom of the hero */
+        .hero-v2-band {
+            position: relative;
+            width: 100%;
+            background: rgba(255,255,255,0.96);
+            border-top: 1.5px solid var(--navy);
+            border-bottom: 1.5px solid var(--navy);
+            box-shadow: 0 -2px 12px rgba(27,42,74,0.10);
+            backdrop-filter: blur(4px);
+            flex-shrink: 0;
+        }
+        .hero-v2-band-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 16px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        @media (min-width: 600px) {
+            .hero-v2-band-inner { padding: 12px 24px; gap: 12px; }
+        }
+        .hero-v2-promo-flag {
+            display: inline-block;
+            font-family: "Noto Serif JP", serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.10em;
+            color: #FFFFFF;
+            background: var(--navy);
+            padding: 3px 8px;
+            border-radius: 3px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        @media (min-width: 600px) {
+            .hero-v2-promo-flag { font-size: 11px; padding: 4px 10px; }
+        }
+        .hero-v2-promo-prices {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .hero-v2-promo-old {
+            font-size: 11px;
+            color: var(--navy);
+            opacity: 0.55;
+            font-weight: 600;
+            text-decoration: line-through;
+            letter-spacing: 0.01em;
+        }
+        .hero-v2-promo-old .yen-sub { font-size: 9px; }
+        .hero-v2-promo-arrow {
+            color: var(--navy);
+            opacity: 0.5;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .hero-v2-promo-new {
+            color: var(--pink-shocking);
+            font-family: "Noto Serif JP", serif;
+            font-size: 17px;
+            font-weight: 900;
+            letter-spacing: 0.01em;
+            line-height: 1;
+        }
+        .hero-v2-promo-new .yen-sub { font-size: 11px; font-weight: 700; }
+        .hero-v2-promo-pct {
+            font-family: "Noto Serif JP", serif;
+            font-size: 12px;
+            color: var(--pink-shocking);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            border: 1.5px solid var(--pink-shocking);
+            padding: 2px 7px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .hero-v2-promo-deadline {
+            font-size: 10px;
+            color: var(--navy);
+            opacity: 0.72;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+        @media (min-width: 600px) {
+            .hero-v2-promo-old { font-size: 12px; }
+            .hero-v2-promo-new { font-size: 19px; }
+            .hero-v2-promo-pct { font-size: 13px; padding: 3px 9px; }
+            .hero-v2-promo-deadline { font-size: 11px; }
+        }
+
+        /* ----- Contrast section: 悩み → 誇り ----- */
+        .contrast-section {
+            position: relative;
+            background: #F5F7FA;
+            padding: 48px 0 56px;
+            overflow: hidden;
+        }
+        @media (min-width: 720px) {
+            .contrast-section { padding: 64px 0 76px; }
+        }
+        .contrast-section::before,
+        .contrast-section::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0;
+            height: 24px;
+            background: radial-gradient(ellipse at center top, rgba(27,42,74,0.08) 0%, rgba(27,42,74,0) 70%);
+            pointer-events: none;
+        }
+        .contrast-section::before { top: 0; }
+        .contrast-section::after {
+            bottom: 0;
+            background: radial-gradient(ellipse at center bottom, rgba(27,42,74,0.08) 0%, rgba(27,42,74,0) 70%);
+        }
+        .contrast-inner {
+            position: relative;
+            padding: 0 24px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        @media (min-width: 720px) {
+            .contrast-inner { padding: 0 56px; }
+        }
+
+        .worries-block {
+            text-align: center;
+        }
+        .worries-eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.32em;
+            color: var(--gold);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .worries-title {
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 28px;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+        .worries-title strong {
+            position: relative;
+            display: inline-block;
+        }
+        .worries-title strong::after {
+            content: '？';
+            color: var(--pink-shocking);
+            margin-left: 2px;
+        }
+        @media (min-width: 600px) {
+            .worries-title { font-size: 24px; }
+        }
+        @media (min-width: 720px) {
+            .worries-title { font-size: 28px; }
+        }
+        .worries-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        @media (min-width: 600px) {
+            .worries-list { grid-template-columns: 1fr 1fr; gap: 12px; }
+        }
+        .worries-list li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px 10px 10px;
+            background: #FFFFFF;
+            border: 1px solid rgba(216,155,165,0.25);
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1B2A4A;
+            line-height: 1.5;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(27,42,74,0.04);
+        }
+        @media (min-width: 600px) {
+            .worries-list li { font-size: 14px; gap: 14px; padding: 12px 16px 12px 12px; }
+        }
+        .worry-thumb {
+            position: relative;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #DCE5EE;
+        }
+        @media (min-width: 600px) {
+            .worry-thumb { width: 68px; height: 68px; }
+        }
+        .worry-thumb img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: saturate(0.9);
+        }
+        .worry-thumb-x {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #D89BA5;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 1px 4px rgba(27,42,74,0.20);
+        }
+        .worry-thumb-x::before,
+        .worry-thumb-x::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 9px;
+            height: 1.6px;
+            background: #FFFFFF;
+            border-radius: 1px;
+            transform-origin: center;
+        }
+        .worry-thumb-x::before { transform: translate(-50%, -50%) rotate(45deg); }
+        .worry-thumb-x::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+        .worry-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Flat triangle connector with gold title overlaid on the white top */
+        .contrast-triangle {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            margin: 32px auto 0;
+            aspect-ratio: 6 / 2.0;
+        }
+        @media (min-width: 600px) {
+            .contrast-triangle { max-width: 460px; aspect-ratio: 7 / 2.0; }
+        }
+        .contrast-triangle::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                #FFFFFF 0%,
+                rgba(255,255,255,0.95) 22%,
+                var(--dusky-blue-light) 50%,
+                var(--dusky-blue) 78%,
+                var(--navy) 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            filter: drop-shadow(0 8px 12px rgba(27,42,74,0.18));
+        }
+        .triangle-title {
+            position: absolute;
+            top: 12px;
+            left: 0; right: 0;
+            text-align: center;
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
+            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: var(--gold-deep);
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            z-index: 1;
+        }
+        @media (min-width: 600px) {
+            .triangle-title { top: 14px; font-size: 20px; }
+        }
+        .triangle-title-en {
+            display: block;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.34em;
+            color: var(--gold-deep);
+            -webkit-text-fill-color: var(--gold-deep);
+            margin-top: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        @media (min-width: 600px) {
+            .triangle-title-en { font-size: 10px; margin-top: 4px; }
+        }
+
+        /* Pride block — white card, navy frame, water-blue highlight */
+        .pride-block {
+            background: #FFFFFF;
+            color: var(--navy);
+            border-radius: 14px;
+            padding: 26px 22px 24px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--navy);
+            box-shadow: 0 14px 36px rgba(27,42,74,0.10);
+        }
+        @media (min-width: 600px) {
+            .pride-block { padding: 36px 36px 28px; }
+        }
+        .pride-block > * { position: relative; }
+        .pride-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        @media (min-width: 600px) {
+            .pride-content {
+                grid-template-columns: 200px 1fr;
+                gap: 22px;
+                align-items: center;
+            }
+        }
+        @media (min-width: 720px) {
+            .pride-content { grid-template-columns: 240px 1fr; gap: 28px; }
+        }
+        .pride-image {
+            position: relative;
+            width: 100%;
+            max-width: 240px;
+            margin: 0 auto;
+            aspect-ratio: 4 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(27,42,74,0.18);
+            border: 1px solid rgba(27,42,74,0.18);
+        }
+        @media (min-width: 600px) {
+            .pride-image { max-width: 100%; aspect-ratio: 4 / 3.4; }
+        }
+        .pride-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: saturate(0.95) contrast(1.05);
+        }
+        .pride-body {
+            font-size: 14px;
+            line-height: 2;
+            color: var(--navy);
+            font-weight: 500;
+        }
+        .pride-body p {
+            margin-bottom: 14px;
+        }
+        .pride-body p:last-of-type { margin-bottom: 0; }
+        .pride-body strong {
+            color: var(--navy);
+            font-weight: 800;
+            background: linear-gradient(transparent 60%, var(--water-blue-2) 60%, var(--water-blue-2) 92%, transparent 92%);
+            padding: 0 3px;
+        }
+        @media (min-width: 600px) {
+            .pride-body { font-size: 14.5px; line-height: 1.95; }
+        }
+        @media (min-width: 720px) {
+            .pride-body { font-size: 15px; line-height: 2; }
+        }
+
+        /* 仕立ての記録: 2 ring cards, side-by-side, supporting */
+        .pride-cases {
+            margin-top: 22px;
+        }
+        .pride-cases-label {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 0.28em;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: none;
+            position: relative;
+        }
+        .pride-cases-label::before,
+        .pride-cases-label::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 1px;
+            background: var(--dusky-blue);
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+        .pride-cases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        @media (min-width: 600px) {
+            .pride-cases-grid { gap: 16px; }
+        }
+        .pride-case-card {
+            margin: 0;
+            text-align: center;
+        }
+        .pride-case-img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1230 / 550;
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--navy);
+            border: 1px solid rgba(27,42,74,0.10);
+        }
+        .pride-case-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .pride-case-card figcaption {
+            margin-top: 8px;
+            font-size: 11px;
+            line-height: 1.55;
+            color: var(--navy);
+            font-weight: 600;
+        }
+        @media (min-width: 600px) {
+            .pride-case-card figcaption { font-size: 12px; }
+        }
+
+        /* Engraving callout — light surface, gold highlight on key phrase */
+        .pride-engraving {
+            margin-top: 22px;
+            padding: 14px 16px;
+            background: #F5F7FA;
+            border: 1px solid rgba(27,42,74,0.12);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        @media (min-width: 600px) {
+            .pride-engraving { padding: 18px 22px; gap: 18px; }
+        }
+        .pride-engraving-image {
+            position: relative;
+            flex-shrink: 0;
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            box-shadow: 0 6px 14px rgba(201,168,118,0.30);
+        }
+        @media (min-width: 600px) {
+            .pride-engraving-image { width: 92px; height: 92px; }
+        }
+        .pride-engraving-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pride-engraving-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .pride-engraving-text {
+            font-size: 12.5px;
+            line-height: 1.75;
+            color: var(--navy);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        @media (min-width: 600px) {
+            .pride-engraving-text { font-size: 13.5px; }
+        }
+        .pride-engraving-notes {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pride-engraving-notes li {
+            font-size: 10.5px;
+            line-height: 1.65;
+            color: var(--navy);
+            opacity: 0.78;
+            font-weight: 500;
+        }
+        @media (min-width: 600px) {
+            .pride-engraving-notes li { font-size: 11.5px; }
+        }
+        .hl-gold {
+            font-style: normal;
+            font-weight: 800;
+            color: var(--navy);
+            background: linear-gradient(transparent 60%, var(--gold-top) 60%, var(--gold) 92%, transparent 92%);
+            padding: 0 3px;
+        }
+        /* ----- Founder section ----- */
+        .founder-section {
+            position: relative;
+            background: #FFFFFF;
+            color: var(--navy);
+            padding: 48px 0 52px;
+            overflow: hidden;
+        }
+        @media (min-width: 720px) {
+            .founder-section { padding: 72px 0; }
+        }
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 85% 12%, rgba(123,150,181,0.10) 0%, rgba(123,150,181,0) 50%),
+                radial-gradient(circle at 12% 92%, rgba(201,168,118,0.10) 0%, rgba(201,168,118,0) 50%);
+            pointer-events: none;
+        }
+        .founder-inner {
+            position: relative;
+            padding: 0 22px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        @media (min-width: 720px) {
+            .founder-inner { padding: 0 48px; max-width: 760px; }
+        }
+        .founder-head {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        @media (min-width: 720px) {
+            .founder-head { margin-bottom: 32px; }
+        }
+        .founder-label {
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.32em;
+            color: var(--gold-deep);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .founder-title {
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+        }
+        @media (min-width: 600px) {
+            .founder-title { font-size: 26px; }
+        }
+        @media (min-width: 720px) {
+            .founder-title { font-size: 30px; }
+        }
+        .founder-title-sub {
+            display: block;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--dusky-blue);
+            margin-top: 6px;
+        }
+        @media (min-width: 600px) {
+            .founder-title-sub { font-size: 13px; margin-top: 7px; }
+        }
+        @media (min-width: 720px) {
+            .founder-title-sub { font-size: 14px; margin-top: 8px; }
+        }
+        .founder-body {
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 13px;
+            line-height: 1.85;
+            color: var(--navy);
+            font-weight: 500;
+        }
+        .founder-body p {
+            margin-bottom: 14px;
+        }
+        .founder-body p:last-child {
+            margin-bottom: 0;
+        }
+        .founder-body em.mark {
+            font-style: normal;
+            color: var(--navy);
+            font-weight: 700;
+            background: linear-gradient(transparent 60%, var(--water-blue-2) 60%, var(--water-blue-2) 92%, transparent 92%);
+            padding: 0 2px;
+        }
+        .founder-body .founder-quote {
+            font-family: "Noto Serif JP", "Klee One", serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            margin: 8px 0 14px;
+            letter-spacing: 0.04em;
+            position: relative;
+        }
+        .founder-body .founder-quote::before,
+        .founder-body .founder-quote::after {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: var(--dusky-blue);
+            vertical-align: middle;
+            margin: 0 12px 4px;
+        }
+        @media (min-width: 600px) {
+            .founder-body { font-size: 13.5px; line-height: 1.9; }
+            .founder-body p { margin-bottom: 16px; }
+            .founder-body .founder-quote { font-size: 19px; }
+        }
+        @media (min-width: 720px) {
+            .founder-body { font-size: 14.5px; line-height: 1.95; }
+            .founder-body p { margin-bottom: 18px; }
+            .founder-body .founder-quote { font-size: 22px; }
+        }
+        /* PC-only line break helper */
+        .br-pc-only { display: none; }
+        @media (min-width: 720px) {
+            .br-pc-only { display: inline; }
+        }
+        .founder-sign {
+            margin-top: 24px;
+            padding-top: 18px;
+            border-top: 1px dashed rgba(27,42,74,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 14px;
+        }
+        @media (min-width: 720px) {
+            .founder-sign { margin-top: 32px; padding-top: 22px; gap: 18px; }
+        }
+        .founder-sign-meta {
+            text-align: right;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            order: 1;
+        }
+        .founder-sign-portrait {
+            order: 2;
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--water-blue);
+            box-shadow:
+                0 0 0 1px rgba(27,42,74,0.10),
+                0 4px 12px rgba(27,42,74,0.16);
+            border: 2px solid #FFFFFF;
+        }
+        @media (min-width: 600px) {
+            .founder-sign-portrait { width: 64px; height: 64px; }
+        }
+        @media (min-width: 720px) {
+            .founder-sign-portrait { width: 72px; height: 72px; }
+        }
+        .founder-sign-portrait img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+        .founder-sign-role {
+            font-size: 11px;
+            letter-spacing: 0.10em;
+            color: var(--dusky-blue);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        .founder-sign-name {
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+        }
+        @media (min-width: 600px) {
+            .founder-sign-name { font-size: 24px; }
+        }
+        .founder-sign-name small {
+            display: block;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            color: var(--dusky-blue);
+            margin-top: 2px;
+        }
     </style>
 </head>
 <body>
@@ -1766,450 +2773,180 @@
 
     <!-- Promo Banner: 公式LINEオープン記念 -->
     <div class="promo-banner" role="note" aria-label="公式LINEオープン記念キャンペーン">
-        <span class="promo-banner-tag">LINE OPEN</span>
-        <span class="promo-banner-text">
-            開設記念｜お見積りから<span class="promo-banner-strong">15%オフ</span>
-            <span class="promo-banner-deadline">5/25まで</span>
-        </span>
+        <span class="promo-banner-deadline">5/22まで！</span>
+        <span class="promo-banner-text">LINE開設記念｜お見積りから<span class="promo-banner-strong">15%OFF</span></span>
     </div>
 
-    <!-- ===== Hero ===== -->
-    <div class="hero" id="top">
-        <img src="/resize/images/deskwoman.png" alt="自宅の机で指輪を手に取る女性" class="hero-img">
-        <div class="hero-overlay">
-            <div class="hero-overlay-top">
-                <div class="hero-badges">
-                    <span class="hero-badge-item">国家資格保有の職人在籍</span>
-                    <span class="hero-badge-item">全国配送対応</span>
-                    <span class="hero-badge-item">1年間の保証つき</span>
-                </div>
-                <h1 class="hero-copy-main">デザインはそのまま、<br>0.5号刻みで<br>あなたの指に仕立て直す。</h1>
-                <p class="hero-copy-sub">思い出はそのままに。<br>今のあなたのための、指輪サイズ直し。</p>
+    <!-- ===== Hero v2 (Preview) ===== -->
+    <section class="hero-v2" id="top">
+        <div class="hero-v2-inner">
+            <div class="hero-v2-text">
+                <p class="hero-v2-eyebrow">RETOLD TOKYO ／ Ring Resize</p>
+                <h1 class="hero-v2-title">断られた指輪も、<br><span class="accent">もう一度あなたの手へ</span></h1>
+                <p class="hero-v2-lead">他店で「直せない」と言われた指輪も、<br>国家資格を持つ職人が、確かな技術で仕立て直します。</p>
             </div>
-            <div class="hero-overlay-bottom">
-            <a href="https://lin.ee/VhCyZEw" class="btn-cta hero-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで15%OFFのお見積もり
-            </a>
-            <span class="btn-promo-sub light">公式LINE開設記念｜5/25まで限定</span>
-            <span class="btn-sub-text btn-sub-text-light">0.5号刻みのリングゲージ プレゼント・往復送料無料</span>
+            <div class="hero-v2-cta-block">
+                <div class="hero-v2-cta-wrap">
+                    <div class="hero-v2-badges">
+                        <span class="hero-v2-badge">国家資格保有の職人</span>
+                        <span class="hero-v2-badge">ブランドリング対応</span>
+                        <span class="hero-v2-badge">全国・往復送料無料</span>
+                    </div>
+                    <a href="https://lin.ee/VhCyZEw" class="btn-cta hero-cta">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+                        LINEで無料相談する
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- ===== Ring Gauge ===== -->
-    <div class="gauge-section" id="gauge">
-        <div class="container">
-            <p class="gauge-label fade-in">RING GAUGE</p>
-            <h2 class="gauge-title fade-in">特注のリングゲージ</h2>
-
-            <div class="gauge-img-wrap fade-in">
-                <img src="/resize/images/ring-gauge.jpg" alt="特注リングゲージ" class="gauge-img">
+        <div class="hero-v2-band">
+            <div class="hero-v2-band-inner">
+                <span class="hero-v2-promo-flag">LINE開設記念</span>
+                <span class="hero-v2-promo-prices">
+                    <span class="hero-v2-promo-old">¥11,000<span class="yen-sub">〜</span></span>
+                    <span class="hero-v2-promo-arrow" aria-hidden="true">→</span>
+                    <strong class="hero-v2-promo-new">¥9,350<span class="yen-sub">〜</span></strong>
+                </span>
+                <span class="hero-v2-promo-pct">15%OFF</span>
+                <span class="hero-v2-promo-deadline">5/25まで</span>
             </div>
+        </div>
+    </section>
 
-            <div class="gauge-copy fade-in">
-                <p>手には、日々の営みが繊細に刻まれます。</p>
-                <p>パソコンと向き合う時、文字を書く時、<br>料理をする時、誰かを抱きしめる時。</p>
-                <br>
-                <p>ほんの少しの違和感で、つい外してしまったり、<br>そっとタンスにしまってしまったり。</p>
-                <br>
-                <p><span class="gauge-copy-accent">繊細な手元だからこそ、<br>他にはない「0.5号刻み」のリングゲージを<br>お作りしました。</span></p>
-            </div>
-
-            <p class="gauge-free fade-in">リングゲージは無料でお届けいたします。</p>
-
-            <div class="gauge-kit fade-in">
-                <span class="gauge-kit-stamp">FREE KIT</span>
-                <p class="gauge-kit-lead">ご自宅にお届けする <strong>無料キットのご案内</strong></p>
-                <ul class="gauge-kit-items">
-                    <li class="gauge-kit-item">
-                        <span class="gauge-kit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="5"/><path d="M9 4l3 4 3-4"/><path d="M7 4h10"/></svg>
+    <!-- ===== Contrast Section: 悩み → 誇り ===== -->
+    <section class="contrast-section" id="pride">
+        <div class="contrast-inner">
+            <div class="worries-block fade-in">
+                <p class="worries-eyebrow">YOUR CONCERN</p>
+                <h2 class="worries-title">こんなお悩み、<strong>ありませんか</strong></h2>
+                <ul class="worries-list">
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/empathy-jewelry-box.png" alt="ブランドショップで断られた指輪" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
-                        <div>
-                            <div class="gauge-kit-item-title">0.5号刻みのリングゲージ</div>
-                            <div class="gauge-kit-item-sub">自宅で正確にサイズ計測</div>
-                        </div>
+                        <span class="worry-text">ブランドショップで断られてしまった</span>
                     </li>
-                    <li class="gauge-kit-item">
-                        <span class="gauge-kit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4"/><path d="M12 12v8"/></svg>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/hero-morning-ring.png" alt="サイズの差が大きい指輪" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
-                        <div>
-                            <div class="gauge-kit-item-title">専用の梱包材</div>
-                            <div class="gauge-kit-item-sub">指輪を安全に保護</div>
-                        </div>
+                        <span class="worry-text">サイズの差が大きすぎて断られてしまった</span>
                     </li>
-                    <li class="gauge-kit-item">
-                        <span class="gauge-kit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 14h7"/><path d="M9 17h5"/></svg>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/worry-stone-ring.png" alt="石つきのリング" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
-                        <div>
-                            <div class="gauge-kit-item-title">着払伝票</div>
-                            <div class="gauge-kit-item-sub">送料は当店負担・保険付き</div>
-                        </div>
+                        <span class="worry-text">石つきのリングはできないと断られてしまった</span>
+                    </li>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/worry-engraving.png" alt="刻印が消えてしまう指輪" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
+                        </span>
+                        <span class="worry-text">刻印が消えてしまうと断られてしまった</span>
                     </li>
                 </ul>
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで15%OFF見積もりへ
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Case Studies ===== -->
-    <div class="section section-bg-white" id="cases">
-        <div class="container">
-            <p class="section-label fade-in">CASE STUDIES</p>
-            <h2 class="section-title fade-in">仕立ての記録</h2>
-            <p class="section-desc fade-in">一点ずつ、職人が仕立て直した記録です。<br>サイズ直しに加え、磨き上げも無料で。</p>
-
-            <div class="case-grid fade-in">
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2dia.png" alt="婚約指輪（プラチナ・ダイヤモンド） Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 01 / サイズ直し + 磨き上げ</div>
-                        <div class="case-card-title">婚約指輪（プラチナ・ダイヤモンド）</div>
-                        <p class="case-card-story">15年前の婚約指輪。産後のむくみで入らなくなり、1.5号アップ。磨き上げで購入当時の輝きを取り戻しました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;13,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2hermes.png" alt="HERMES シェーヌダンクル Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 02 / ブランドリング サイズ直し</div>
-                        <div class="case-card-title">HERMES シェーヌダンクル</div>
-                        <p class="case-card-story">ブランド工房で断られていたリング。国家資格保有の職人が慎重に0.5号単位で調整。刻印も美しく残りました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;28,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2signet.png" alt="TOMWOOD シグネットリング Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 03 / サイズ直し + 磨き上げ</div>
-                        <div class="case-card-title">TOMWOOD シグネットリング</div>
-                        <p class="case-card-story">父から受け継いだシグネットリング。0.5号アップして、日常で身につけられる一本に。磨き上げはサービスでお付けしました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;11,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2bu.png" alt="ブシュロン キャトルリング Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 04 / 幅広リング サイズ直し</div>
-                        <div class="case-card-title">ブシュロン キャトルリング</div>
-                        <p class="case-card-story">幅のあるバンドリングは難易度が高い仕立て直し。熟練職人が歪みを出さず、丁寧に仕上げました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;26,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
             </div>
 
-            <p class="price-note fade-in" style="text-align: center;">※ 価格は一例です。素材・デザイン・修復内容により変動します。<br>まずはLINEで写真をお送りください。</p>
-
-            <div class="fade-in" style="text-align: center; margin-top: 24px;">
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    他店で断られたリングも、まず無料診断
-                </a>
-                <span class="btn-promo-sub">公式LINE開設記念｜お見積もり15%OFF（5/25まで）</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Voice Section ===== -->
-    <div class="section section-bg-off" id="voice">
-        <div class="container">
-            <p class="section-label fade-in">VOICE</p>
-            <h2 class="section-title fade-in">届いた声</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <div class="voice-marquee fade-in">
-                <div class="voice-track">
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-1" aria-hidden="true">M</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">M.K. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    東京都・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">2 か月前</span>
-                        </div>
-                        <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                        <p class="voice-attr">婚約指輪 / サイズアップ</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-2" aria-hidden="true">Y</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">Y.S. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    神奈川県・40代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">3 か月前</span>
-                        </div>
-                        <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                        <p class="voice-attr">受け継ぎリング / サイズダウン</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-3" aria-hidden="true">A</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">A.T. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    埼玉県・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">1 か月前</span>
-                        </div>
-                        <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。全部オンラインで完結するのが本当にありがたかったです。</p>
-                        <p class="voice-attr">デザインリング / サイズアップ</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-4" aria-hidden="true">N</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">N.H. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    東京都・40代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">2 週間前</span>
-                        </div>
-                        <p class="voice-text">ブランドショップで断られたエルメスのリング。0.5号だけ小さくしていただき、刻印もそのまま。まさかの即日見積もりで助かりました。</p>
-                        <p class="voice-attr">ブランドリング / サイズダウン</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-5" aria-hidden="true">R</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">R.F. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    千葉県・50代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">5 か月前</span>
-                        </div>
-                        <p class="voice-text">祖母から受け継いだ指輪。ずっとサイズが合わずしまいこんでいましたが、職人さんのおかげで毎日つけられるようになりました。ピカピカになって本当に嬉しいです。</p>
-                        <p class="voice-attr">受け継ぎリング / サイズアップ + 磨き上げ</p>
-                    </div>
-                    <!-- duplicate set for seamless loop -->
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-1" aria-hidden="true">M</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">M.K. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    東京都・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">2 か月前</span>
-                        </div>
-                        <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                        <p class="voice-attr">婚約指輪 / サイズアップ</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-2" aria-hidden="true">Y</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">Y.S. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    神奈川県・40代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">3 か月前</span>
-                        </div>
-                        <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                        <p class="voice-attr">受け継ぎリング / サイズダウン</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-3" aria-hidden="true">A</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">A.T. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    埼玉県・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">1 か月前</span>
-                        </div>
-                        <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。全部オンラインで完結するのが本当にありがたかったです。</p>
-                        <p class="voice-attr">デザインリング / サイズアップ</p>
-                    </div>
-                </div>
+            <div class="contrast-triangle fade-in">
+                <span class="triangle-title">RETOLD TOKYOの誇り<span class="triangle-title-en">Our Pride</span></span>
             </div>
 
-            <p class="price-note fade-in" style="text-align: center; margin-top: 16px;">※ いただいたご感想を元に、ご本人の了承の上でお名前はイニシャル表記としています。</p>
-        </div>
-    </div>
-
-    <!-- ===== Pain Points Section ===== -->
-    <div class="section section-bg-off" id="concerns">
-        <div class="container">
-            <p class="section-label fade-in">YOUR CONCERN</p>
-            <h2 class="section-title fade-in">こんなお悩み、<br>ありませんか。</h2>
-            <p class="section-desc fade-in">指にはめられないまま、<br>しまい込まれた指輪たちへ。</p>
-
-            <div class="pain-scene fade-in">
-                <div class="pain-scene-card">
-                    <img src="/resize/images/washstand-ring.png" alt="洗面台に置かれたままの指輪" loading="lazy">
-                    <div class="pain-scene-caption">洗面台に、<br>外したままの指輪</div>
-                </div>
-                <div class="pain-scene-card">
-                    <img src="/resize/images/empathy-drawer-vintage.png" alt="引き出しにしまわれた受け継いだリング" loading="lazy">
-                    <div class="pain-scene-caption">引き出しに、<br>受け継いだリング</div>
-                </div>
-                <div class="pain-scene-card">
-                    <img src="/resize/images/empathy-jewelry-box.png" alt="ジュエリーボックスに眠るリング" loading="lazy">
-                    <div class="pain-scene-caption">ジュエリーボックスに、<br>眠る大切な一本</div>
-                </div>
-            </div>
-
-            <ul class="pain-list fade-in">
-                <li>結婚指輪が、指のむくみ・産後の変化で入らない</li>
-                <li>母や祖母から受け継いだ指輪が、サイズ違いでつけられない</li>
-                <li>ブランドリングだから直せない、と諦めていた</li>
-                <li>年月で黒ずんだ・傷ついた指輪を、もう一度輝かせたい</li>
-                <li>近くに、安心して任せられる工房がない</li>
-            </ul>
-
-            <div style="margin-top: 40px; text-align: center;" class="fade-in">
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで15%OFF即日お見積もり
-                </a>
-                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
-                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Craftsman Message Section ===== -->
-    <div class="section section-bg-white" id="craftsman">
-        <div class="container">
-            <div class="craftsman-msg fade-in">
-                <p class="craftsman-msg-eyebrow">Handcrafted, one by one</p>
-                <h2 class="craftsman-msg-title">あなたの指に合わせて、<br>1点ずつ。</h2>
-                <p class="craftsman-msg-text">
-                    手作りの職人が<strong>0.5号刻み</strong>で、<br>
-                    一本ずつお仕立て直します。
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Reasons Section ===== -->
-    <div class="section section-bg-white" id="reasons">
-        <div class="container">
-            <p class="section-label fade-in">TWO REASONS</p>
-            <h2 class="section-title fade-in">選ばれる、2つの理由。</h2>
-            <p class="section-desc fade-in">サイズ直し専門の職人が、<br>一点ずつ向き合っています。</p>
-
-            <!-- Reason 01 -->
-            <div class="reason-item fade-in">
-                <div class="reason-num">01</div>
-                <h3 class="reason-title">ブランドリングも、<br>断らない。</h3>
-                <div class="reason-img-wrap">
-                    <img src="/resize/images/reason-craftsman-workshop.png" alt="熟練職人の工房" class="reason-img">
-                </div>
-                <div class="reason-desc">
-                    <p><span class="reason-highlight">国家資格を保有する職人だから、できる。</span></p>
-                    <br>
-                    <p>カルティエ・ブルガリ・ティファニー・エルメスなど、ブランドリングのサイズ直しもお任せください。石の状態・金属の特性・デザインの構造を見極めた上で、最適な加工方法を選択します。</p>
-                </div>
-                <div class="reason-history">
-                    他店・ブランドショップで断られたリングも、まずはLINEでお写真をお送りください。対応可否を無料でお伝えします。
-                </div>
-            </div>
-
-            <!-- Reason 02 -->
-            <div class="reason-item fade-in">
-                <div class="reason-num">02</div>
-                <h3 class="reason-title">サイズを変えるだけでは、<br>終わらない。</h3>
-                <div class="ba-container">
-                    <div class="ba-img-wrap">
-                        <img src="https://a.lovart.ai/artifacts/agent/IdC88ijRym3UXNbS.png" alt="Before" class="reason-img">
-                        <span class="ba-label">Before</span>
+            <div class="pride-block fade-in">
+                <div class="pride-content">
+                    <div class="pride-image">
+                        <img src="/resize/images/reason-craftsman-workshop.png" alt="国家資格保有の職人による手作業の工房" loading="lazy">
                     </div>
-                    <div class="ba-img-wrap">
-                        <img src="https://a.lovart.ai/artifacts/agent/zCeiLTFLoc68zxVk.png" alt="After" class="reason-img">
-                        <span class="ba-label">After</span>
+                    <div class="pride-body">
+                        <p><strong>「修理」に特化した国内の職人</strong>が多数在籍。金属加工の<strong>国家資格</strong>を保有し、機械に頼らない<strong>「手作業」</strong>でのお直しができます。</p>
+                        <p>多くの企業では、ジュエリー職人が分業されており、全体を見てモノの状態を正確に判断し、<strong>「修理」ができる職人は希少</strong>です。</p>
                     </div>
                 </div>
-                <div class="reason-desc">
-                    <p><span class="reason-highlight">すべてのリングを、磨き上げ無料で。</span></p>
-                    <br>
-                    <p>サイズを変えるだけでなく、指輪本来の輝きを取り戻す磨き上げまでが、私たちの仕事です。「ピカピカになった！」というお声が、私たちの一番の励みです。</p>
-                    <ul class="reason-checklist">
-                        <li>磨き上げ 無料（全リング）</li>
-                        <li>1年間の品質保証つき</li>
-                        <li>購入当時の輝きを取り戻します</li>
-                    </ul>
+                <div class="pride-cases">
+                    <p class="pride-cases-label">仕立ての記録</p>
+                    <div class="pride-cases-grid">
+                        <figure class="pride-case-card">
+                            <span class="pride-case-img">
+                                <img src="/resize/images/BA2hermes.png" alt="ブランドリングの仕立て直し" loading="lazy">
+                            </span>
+                            <figcaption>ブランドリング<br>1.5号アップ＋新品磨き上げ</figcaption>
+                        </figure>
+                        <figure class="pride-case-card">
+                            <span class="pride-case-img">
+                                <img src="/resize/images/BA2dia.png" alt="婚約指輪の仕立て直し" loading="lazy">
+                            </span>
+                            <figcaption>婚約指輪　ダイヤつき<br>1.5号アップ＋新品磨き上げ</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="pride-engraving">
+                    <div class="pride-engraving-image">
+                        <img src="/resize/images/worry-engraving.png" alt="刻印の例" loading="lazy">
+                    </div>
+                    <div class="pride-engraving-body">
+                        <p class="pride-engraving-text">
+                            修理の過程でどうしても刻印が消えてしまう場合、事前にご要望がありましたら<em class="hl-gold">刻印追加は無料</em>で対応いたします。
+                        </p>
+                        <ul class="pride-engraving-notes">
+                            <li>※ブランドの刻印は追加できません。</li>
+                            <li>※お名前や記念日などは手彫り／レーザーどちらでも対応が可能です。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- ===== Founder Section (創業者の思い) ===== -->
+    <section class="founder-section" id="founder">
+        <div class="founder-inner">
+            <div class="founder-head fade-in">
+                <h2 class="founder-title">創業者の思い</h2>
+            </div>
+            <div class="founder-body fade-in">
+                <p>ジュエリーの真の価値は、<br>
+                <em class="mark">カラット数やブランド名、素材といった<br class="br-pc-only">「目に見える価値」にとどまりません。</em></p>
+
+                <p class="founder-quote">「パールは売れないから」</p>
+
+                <p>実家の整理をしていた際、<br>
+                祖母が愛用していたパールのジュエリーに<br class="br-pc-only">対して言われた一言です。</p>
+
+                <p>確かに傷も凹みも変形もしていて、<br class="br-pc-only">とても売り物にはならない。<br>
+                ただ、それらは同時に<br class="br-pc-only"><em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。</p>
+
+                <p>そこからジュエリーの構造や業界を知っていく中で、<br>
+                「長く愛用されるもの」の尊さを実感しました。</p>
+
+                <p>目に見えない思いが宿るジュエリーを、<br class="br-pc-only">一つでも長く愛用してほしい。<br>
+                <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
+
+                <p>RETOLD TOKYOでお直しをしたジュエリーが、<br>
+                持ち主の日々の営みにそっと寄り添うものであってほしい。</p>
+
+                <p>できるなら<em class="mark">「棺桶に入れて欲しい」</em>と<br class="br-pc-only">言われるくらい、<br>
+                思いが宿るものになってほしい。</p>
+
+                <p>その思いから、<br class="br-pc-only">日本中でジュエリー職人さんと出会い、<br>
+                「自分が任せたいと心から思う」職人さんたちと<br class="br-pc-only">一緒に立ち上げたのが、RETOLD TOKYOです。</p>
+            </div>
+            <div class="founder-sign fade-in">
+                <div class="founder-sign-meta">
+                    <div class="founder-sign-role">代表取締役社長</div>
+                    <div class="founder-sign-name">土屋 沙也加<small>Sayaka Tsuchiya</small></div>
+                </div>
+                <div class="founder-sign-portrait">
+                    <img src="/resize/images/foundericon.png" alt="代表取締役社長 土屋 沙也加" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== Price Section ===== -->
-    <div class="section section-bg-off" id="price">
+    <div class="section section-bg-water" id="price">
         <div class="container">
             <p class="section-label fade-in">PRICING</p>
             <h2 class="section-title fade-in">料金について</h2>
@@ -2219,8 +2956,7 @@
             <div class="promo-callout fade-in">
                 <span class="promo-callout-tag">LINE OPEN COMMEMORATION</span>
                 <p class="promo-callout-title">
-                    公式LINE開設を記念して、<br>
-                    お見積もり<span class="promo-callout-pct">15</span>%OFF。
+                    公式LINE開設を記念して、お見積もり<span class="promo-callout-pct">15</span>%OFF。
                 </p>
                 <div class="promo-callout-grid">
                     <div class="promo-callout-item">
@@ -2244,33 +2980,14 @@
                 </p>
             </div>
 
-            <div class="price-table fade-in">
-                <div class="price-row">
-                    <div>
-                        <div class="price-row-label">シンプルリング</div>
-                        <div class="price-row-sub">甲丸・平打ち等</div>
-                    </div>
-                    <div class="price-row-amount">&yen;11,000<span>〜（税込）</span></div>
+            <div class="polish-callout fade-in">
+                <div class="polish-image">
+                    <img src="/resize/images/hero-atelier-ring.png" alt="職人による磨き上げ作業" loading="lazy">
                 </div>
-                <div class="price-row">
-                    <div>
-                        <div class="price-row-label">デザインリング</div>
-                        <div class="price-row-sub">石付き・透かし等</div>
-                    </div>
-                    <div class="price-row-amount">&yen;15,000<span>〜（税込）</span></div>
+                <div class="polish-text">
+                    <p class="polish-title">全てのリングを新品仕上げの磨き上げでお届けします</p>
+                    <p class="polish-desc">サイズ直しに加え、プロによる磨き上げを無料で施し、新品のような輝きに仕上げます。</p>
                 </div>
-                <div class="price-row">
-                    <div>
-                        <div class="price-row-label">ブランドリング・高難度</div>
-                        <div class="price-row-sub">カルティエ・エルメス等</div>
-                    </div>
-                    <div class="price-row-amount">&yen;25,000<span>〜（税込）</span></div>
-                </div>
-            </div>
-
-            <div style="background: var(--gauge-bg); color: #E0E0E2; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; text-align: center;" class="fade-in">
-                <p style="font-size: 14px; font-weight: 700; margin-bottom: 4px;">全てのリングを新品仕上げの磨き上げでお届けします</p>
-                <p style="font-size: 12px; opacity: 0.7;">サイズ直しに加え、プロによる磨き上げを無料で施し、新品のような輝きに仕上げます。</p>
             </div>
 
             <div class="price-includes fade-in">
@@ -2283,7 +3000,7 @@
 
             <p class="price-note fade-in">※素材・デザイン・サイズ変更幅により変動します。正式なお見積もりはLINEでお伝えします。<br>※プロの目から見て偽物・イミテーションと判断した場合は、加工をお断りし着払いにて返送させていただきます。<br>※公式LINE開設記念15%OFFは、2026年5月25日までにLINEでお見積もり依頼をいただいた方が対象です。他キャンペーンとの併用はできません。</p>
 
-            <div class="fade-in" style="text-align: center;">
+            <div class="cta-center fade-in">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                     LINEで15%OFF即日お見積もり
@@ -2303,24 +3020,36 @@
 
             <div class="process-flow fade-in">
                 <div class="process-step">
-                    <div class="process-step-num">STEP 01</div>
-                    <div class="process-step-title">LINEで写真を送る</div>
-                    <div class="process-step-desc">LINEで指輪の写真を送るだけ。現在のサイズ・希望サイズも添えてお送りください。</div>
+                    <div class="process-step-img">
+                        <img src="/resize/images/process-step1-kit.png" alt="返送用キットの梱包材・リングゲージ・着払い伝票" loading="lazy">
+                    </div>
+                    <div class="process-step-body">
+                        <span class="process-step-num">STEP 1</span>
+                        <h3 class="process-step-title">返送用キットのお届け</h3>
+                        <p class="process-step-desc">写真では判断ができないケースが多いため、一度郵送いただくことを推奨しております。梱包材とリングゲージ、着払い伝票をお届けします。</p>
+                        <p class="process-step-note">※トラブル防止のため、完封シールを同封いたします。ぜひご利用ください。</p>
+                    </div>
                 </div>
                 <div class="process-step">
-                    <div class="process-step-num">STEP 02</div>
-                    <div class="process-step-title">即日お見積もり</div>
-                    <div class="process-step-desc">職人がお写真を確認し、当日中にお見積もりをご返信します。料金もここで確定します。</div>
+                    <div class="process-step-img">
+                        <img src="/resize/images/process-step2-quote.png" alt="LINEでお見積もりをお送りする様子" loading="lazy">
+                    </div>
+                    <div class="process-step-body">
+                        <span class="process-step-num">STEP 2</span>
+                        <h3 class="process-step-title">お見積もり</h3>
+                        <p class="process-step-desc">実際のお品物を拝見し、お見積もりをLINEでお送りします。ご了承いただけてから作業に入ります。</p>
+                        <p class="process-step-note">※お見積もり後キャンセルされた場合は、お客様ご負担の着払いにて返送させていただきます。</p>
+                    </div>
                 </div>
                 <div class="process-step">
-                    <div class="process-step-num">STEP 03</div>
-                    <div class="process-step-title">お預かり</div>
-                    <div class="process-step-desc">0.5号刻みのリングゲージを同封。往復送料無料・保険付き宅配便で、安全にお預かりします。</div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-num">STEP 04</div>
-                    <div class="process-step-title">お届け</div>
-                    <div class="process-step-desc">0.5号刻みで仕立て直し、磨き上げまで。新品同様の輝きでお届けします。</div>
+                    <div class="process-step-img">
+                        <img src="/resize/images/syokuninn.png" alt="工房での仕立て直しの様子" loading="lazy">
+                    </div>
+                    <div class="process-step-body">
+                        <span class="process-step-num">STEP 3</span>
+                        <h3 class="process-step-title">お届けに向けて</h3>
+                        <p class="process-step-desc">工房でのお直し完了後、検品をもってご返送いたします。お支払い方法はカード／銀行振り込みに対応しています。</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2419,91 +3148,9 @@
                     支払い方法は？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text">銀行振込に対応しております。お見積もり確定後、加工前のお支払いをお願いしております。</p>
+                    <p class="faq-answer-text"><strong>Stripe決済</strong>を導入しており、<strong>クレジットカード／銀行振込</strong>のどちらでもお支払いいただけます。お見積もり確定後、加工前のお支払いをお願いしております。</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- ===== For First-Timers (AIO/SEO natural) ===== -->
-    <div class="section section-bg-white" id="about">
-        <div class="container">
-            <p class="section-label fade-in">ABOUT</p>
-            <h2 class="section-title fade-in">RETOLD TOKYOについて</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <div class="summary-block fade-in">
-                <p>RETOLD TOKYO（リトールドトーキョー）は、<strong>東京・青山のアトリエ</strong>を拠点に、国家資格保有の職人が手がける<strong>指輪のサイズ直し</strong>専門ブランドです。</p>
-
-                <p>「指輪 サイズ直し 東京」で探してくださった方へ。0.5号刻みのリングゲージをご自宅に無料でお届けし、0.5号刻みの精密なサイズ直しを行います。都内の方はもちろん、全国どこからでもオンラインで完結。LINEで写真を送るだけで、即日お見積もりをお伝えします。</p>
-
-                <p>K18、Pt900/950、シルバーなど全素材に対応。カルティエ・ブルガリ・ティファニー・エルメスなどブランドリングのサイズ直しも承ります。他店で断られた方も、まずはお気軽にご相談ください。</p>
-
-                <p>往復送料無料・お見積もり無料・磨き上げ無料。サイズ直し完了後は1年間の品質保証付きです。</p>
-
-                <ul class="summary-links">
-                    <li><a href="#price">料金について</a></li>
-                    <li><a href="#process">仕立ての流れ</a></li>
-                    <li><a href="#faq">よくある質問</a></li>
-                    <li><a href="#cases">仕立ての記録</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Inherited Ring Section ===== -->
-    <div class="inherited-section" id="inherited">
-        <div class="container">
-            <p class="section-label fade-in">FOR INHERITED RINGS</p>
-            <h2 class="section-title fade-in">受け継いだ指輪を、<br>もう一度あなたの指に。</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <p class="inherited-lead fade-in">
-                お母さま・お祖母さまから受け継いだ指輪。<br>
-                サイズが合わないから、と<br>
-                仕舞ったままにしていませんか。
-            </p>
-
-            <p class="inherited-emphasis fade-in">
-                私たちがお仕立て直しするのは、<br>
-                「思い出」ごと<br>
-                あなたの指に合わせるという仕事です。
-            </p>
-
-            <ul class="inherited-bullets fade-in">
-                <li>0.5号刻みで、あなたの指にぴったり合わせる</li>
-                <li>刻印・デザインはそのまま。思い出を残して仕立て直し</li>
-                <li>磨き上げ無料で、購入当時の輝きを取り戻す</li>
-            </ul>
-
-            <p class="inherited-closing fade-in">
-                まずは指輪の写真を、LINEで送ってください。<br>
-                即日、お見積もりをお伝えします。
-            </p>
-
-            <div class="fade-in" style="text-align: center;">
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで15%OFF即日お見積もり
-                </a>
-                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
-                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Final CTA ===== -->
-    <div class="cta-section">
-        <div class="cta-badge fade-in">公式LINE開設記念｜お見積りから15%オフ</div>
-        <h2 class="cta-title fade-in">今だけ15%OFFで、<br>あなたの指に仕立て直す。</h2>
-        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>お見積りから<strong style="color:#D7263D; font-weight:900;">15%オフ</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
-        <div class="cta-btn-wrapper fade-in">
-            <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで15%OFF即日お見積もり
-            </a>
-            <span class="btn-promo-sub">5/25まで限定｜お見積もり依頼で適用</span>
-            <span class="btn-sub-text">写真を送るだけ・全国対応</span>
         </div>
     </div>
 
@@ -2512,13 +3159,11 @@
         <div class="footer-logo"><img src="/resize/images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="footer-logo-img"></div>
         <p class="footer-tagline">RING RESIZE — AOYAMA, TOKYO</p>
         <nav class="footer-nav">
-            <a href="#cases">仕立ての記録</a>
-            <a href="#voice">届いた声</a>
-            <a href="#reasons">選ばれる理由</a>
-            <a href="#price">料金</a>
+            <a href="#pride">RETOLD TOKYOの誇り</a>
+            <a href="#founder">創業者の思い</a>
+            <a href="#price">料金について</a>
             <a href="#process">仕立ての流れ</a>
-            <a href="#faq">FAQ</a>
-            <a href="#about">RETOLD TOKYOについて</a>
+            <a href="#faq">よくある質問</a>
         </nav>
         <nav class="footer-nav">
             <a href="/resize/terms">利用規約</a>
@@ -2558,20 +3203,18 @@
 
             // Floating CTA
             var floatingCta = document.getElementById('floatingCta');
-            var hero = document.querySelector('.hero');
-            var ctaSection = document.querySelector('.cta-section');
+            var hero = document.querySelector('.hero-v2') || document.querySelector('.hero');
 
-            window.addEventListener('scroll', function() {
-                var heroBottom = hero.offsetTop + hero.offsetHeight;
-                var ctaTop = ctaSection.offsetTop;
-                var scrollY = window.scrollY + window.innerHeight;
-
-                if (window.scrollY > heroBottom && scrollY < ctaTop + 200) {
-                    floatingCta.classList.add('visible');
-                } else {
-                    floatingCta.classList.remove('visible');
-                }
-            });
+            if (hero && floatingCta) {
+                window.addEventListener('scroll', function() {
+                    var heroBottom = hero.offsetTop + hero.offsetHeight;
+                    if (window.scrollY > heroBottom) {
+                        floatingCta.classList.add('visible');
+                    } else {
+                        floatingCta.classList.remove('visible');
+                    }
+                });
+            }
 
             // ── LP view event ──
             window.dataLayer = window.dataLayer || [];
@@ -2584,6 +3227,7 @@
                     window.dataLayer.push({
                         event: 'line_cta_click',
                         cta_location: el.closest('.floating-cta') ? 'floating' :
+                                      el.closest('.hero-v2') ? 'hero' :
                                       el.closest('.hero') ? 'hero' :
                                       el.closest('.cta-section') ? 'cta_section' : 'other'
                     });
