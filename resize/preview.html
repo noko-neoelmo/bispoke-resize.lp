@@ -101,7 +101,7 @@
           "name": "支払い方法は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "銀行振込に対応しております。お見積もり確定後、加工前にお支払いをお願いしております。"
+            "text": "Stripe決済を導入しており、クレジットカード／銀行振込のどちらでもお支払いいただけます。お見積もり確定後、加工前のお支払いをお願いしております。"
           }
         }
       ]
@@ -472,7 +472,7 @@
         .btn-sub-text-light { color: rgba(255,255,255,0.5); }
 
         /* ===== Section Common ===== */
-        .section { padding: 80px 0; }
+        .section { padding: 56px 0; }
         .section-bg-white { background-color: var(--white); }
         .section-bg-craft { background-color: #FFFFFF; }
         .section-bg-off { background-color: var(--off-white); }
@@ -506,7 +506,7 @@
             font-size: 13px;
             color: var(--text-secondary);
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 32px;
             line-height: 1.8;
         }
         .gold-divider {
@@ -1854,7 +1854,7 @@
             .hero-copy-main { font-size: 36px; }
             .hero-copy-sub { font-size: 17px; }
             .hero-overlay { padding: 0 48px 56px; }
-            .section { padding: 100px 0; }
+            .section { padding: 76px 0; }
             .section-title { font-size: 26px; }
             .section-desc { font-size: 14px; }
             .case-grid { gap: 16px; }
@@ -2074,85 +2074,106 @@
             background: rgba(27,42,74,0.35);
             transform: translateY(-50%);
         }
-        /* In-hero LINE promo card — no overlapping flag */
+        /* In-hero LINE campaign band — compact strip, before→after pricing */
         .hero-v2-promo {
-            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 6px;
-            padding: 14px 22px 14px;
-            background: rgba(255,255,255,0.94);
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.96);
             border: 1.5px solid var(--navy);
-            border-radius: 10px;
-            box-shadow:
-                0 1px 0 rgba(255,255,255,0.85) inset,
-                0 8px 22px rgba(27,42,74,0.18);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(27,42,74,0.15);
             backdrop-filter: blur(4px);
-            min-width: min(280px, 100%);
-            max-width: 360px;
+            width: 100%;
+            max-width: 420px;
+        }
+        @media (min-width: 600px) {
+            .hero-v2-promo { padding: 9px 16px; gap: 10px; }
         }
         .hero-v2-promo-flag {
             display: inline-block;
             font-family: "Noto Serif JP", serif;
             font-size: 10px;
             font-weight: 800;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.10em;
             color: #FFFFFF;
             background: var(--navy);
-            padding: 4px 14px;
-            border-radius: 999px;
+            padding: 3px 8px;
+            border-radius: 3px;
             white-space: nowrap;
+            flex-shrink: 0;
         }
         @media (min-width: 600px) {
-            .hero-v2-promo-flag { font-size: 11px; padding: 5px 16px; }
+            .hero-v2-promo-flag { font-size: 11px; padding: 4px 10px; }
         }
-        .hero-v2-promo-main {
+        .hero-v2-promo-prices {
             display: inline-flex;
             align-items: baseline;
-            gap: 4px;
-            font-size: 13px;
-            color: var(--navy);
-            font-weight: 700;
-            letter-spacing: 0.02em;
+            gap: 6px;
             white-space: nowrap;
         }
-        .hero-v2-promo-main strong {
-            color: var(--pink-shocking);
-            font-size: 26px;
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: 0.02em;
-            font-family: "Noto Serif JP", serif;
+        .hero-v2-promo-old {
+            font-size: 11px;
+            color: var(--navy);
+            opacity: 0.55;
+            font-weight: 600;
+            text-decoration: line-through;
+            letter-spacing: 0.01em;
         }
-        .hero-v2-promo-main .off {
+        .hero-v2-promo-old .yen-sub { font-size: 9px; }
+        .hero-v2-promo-arrow {
+            color: var(--navy);
+            opacity: 0.5;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .hero-v2-promo-new {
             color: var(--pink-shocking);
-            font-size: 14px;
+            font-family: "Noto Serif JP", serif;
+            font-size: 17px;
             font-weight: 900;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.01em;
+            line-height: 1;
+        }
+        .hero-v2-promo-new .yen-sub { font-size: 11px; font-weight: 700; }
+        .hero-v2-promo-pct {
+            font-family: "Noto Serif JP", serif;
+            font-size: 12px;
+            color: var(--pink-shocking);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            border: 1.5px solid var(--pink-shocking);
+            padding: 2px 7px;
+            border-radius: 4px;
+            white-space: nowrap;
         }
         .hero-v2-promo-deadline {
-            font-size: 10.5px;
+            font-size: 10px;
             color: var(--navy);
             opacity: 0.72;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.04em;
             white-space: nowrap;
         }
         @media (min-width: 600px) {
-            .hero-v2-promo { padding: 16px 26px 16px; gap: 8px; }
-            .hero-v2-promo-main { font-size: 14px; }
-            .hero-v2-promo-main strong { font-size: 32px; }
-            .hero-v2-promo-main .off { font-size: 16px; }
-            .hero-v2-promo-deadline { font-size: 11.5px; }
+            .hero-v2-promo-old { font-size: 12px; }
+            .hero-v2-promo-new { font-size: 19px; }
+            .hero-v2-promo-pct { font-size: 13px; padding: 3px 9px; }
+            .hero-v2-promo-deadline { font-size: 11px; }
         }
 
         /* ----- Contrast section: 悩み → 誇り ----- */
         .contrast-section {
             position: relative;
             background: #F5F7FA;
-            padding: 64px 0 80px;
+            padding: 48px 0 56px;
             overflow: hidden;
+        }
+        @media (min-width: 720px) {
+            .contrast-section { padding: 64px 0 76px; }
         }
         .contrast-section::before,
         .contrast-section::after {
@@ -2559,11 +2580,11 @@
             position: relative;
             background: #FFFFFF;
             color: var(--navy);
-            padding: 56px 0 64px;
+            padding: 48px 0 52px;
             overflow: hidden;
         }
         @media (min-width: 720px) {
-            .founder-section { padding: 96px 0; }
+            .founder-section { padding: 72px 0; }
         }
         .founder-section::before {
             content: '';
@@ -2630,13 +2651,13 @@
         }
         .founder-body {
             font-family: "Klee One", "Noto Serif JP", serif;
-            font-size: 14px;
-            line-height: 1.75;
+            font-size: 13px;
+            line-height: 1.85;
             color: var(--navy);
             font-weight: 500;
         }
         .founder-body p {
-            margin-bottom: 10px;
+            margin-bottom: 14px;
         }
         .founder-body p:last-child {
             margin-bottom: 0;
@@ -2648,13 +2669,40 @@
             background: linear-gradient(transparent 60%, var(--water-blue-2) 60%, var(--water-blue-2) 92%, transparent 92%);
             padding: 0 2px;
         }
+        .founder-body .founder-quote {
+            font-family: "Noto Serif JP", "Klee One", serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            margin: 8px 0 14px;
+            letter-spacing: 0.04em;
+            position: relative;
+        }
+        .founder-body .founder-quote::before,
+        .founder-body .founder-quote::after {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: var(--dusky-blue);
+            vertical-align: middle;
+            margin: 0 12px 4px;
+        }
         @media (min-width: 600px) {
-            .founder-body { font-size: 14.5px; line-height: 1.85; }
-            .founder-body p { margin-bottom: 12px; }
+            .founder-body { font-size: 13.5px; line-height: 1.9; }
+            .founder-body p { margin-bottom: 16px; }
+            .founder-body .founder-quote { font-size: 19px; }
         }
         @media (min-width: 720px) {
-            .founder-body { font-size: 15.5px; line-height: 1.9; }
-            .founder-body p { margin-bottom: 14px; }
+            .founder-body { font-size: 14.5px; line-height: 1.95; }
+            .founder-body p { margin-bottom: 18px; }
+            .founder-body .founder-quote { font-size: 22px; }
+        }
+        /* PC-only line break helper */
+        .br-pc-only { display: none; }
+        @media (min-width: 720px) {
+            .br-pc-only { display: inline; }
         }
         .founder-sign {
             margin-top: 24px;
@@ -2775,8 +2823,13 @@
                 </div>
                 <div class="hero-v2-promo">
                     <span class="hero-v2-promo-flag">LINE開設記念</span>
-                    <span class="hero-v2-promo-main">お見積りから<strong>15%</strong><span class="off">OFF</span></span>
-                    <span class="hero-v2-promo-deadline">2026/5/25まで</span>
+                    <span class="hero-v2-promo-prices">
+                        <span class="hero-v2-promo-old">¥11,000<span class="yen-sub">〜</span></span>
+                        <span class="hero-v2-promo-arrow" aria-hidden="true">→</span>
+                        <strong class="hero-v2-promo-new">¥9,350<span class="yen-sub">〜</span></strong>
+                    </span>
+                    <span class="hero-v2-promo-pct">15%OFF</span>
+                    <span class="hero-v2-promo-deadline">5/25まで</span>
                 </div>
             </div>
         </div>
@@ -2877,18 +2930,31 @@
                 <h2 class="founder-title">創業者の思い</h2>
             </header>
             <div class="founder-body fade-in">
-                <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
+                <p>ジュエリーの真の価値は、<br>
+                <em class="mark">カラット数やブランド名、素材といった<br class="br-pc-only">「目に見える価値」にとどまりません。</em></p>
 
-                <p>「パールは売れないから」<br>
-                実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
+                <p class="founder-quote">「パールは売れないから」</p>
 
-                <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
+                <p>実家の整理をしていた際、<br>
+                祖母が愛用していたパールのジュエリーに<br class="br-pc-only">対して言われた一言です。</p>
 
-                <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
+                <p>確かに傷も凹みも変形もしていて、<br class="br-pc-only">とても売り物にはならない。<br>
+                ただ、それらは同時に<br class="br-pc-only"><em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。</p>
 
-                <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
+                <p>そこからジュエリーの構造や業界を知っていく中で、<br>
+                「長く愛用されるもの」の尊さを実感しました。</p>
 
-                <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
+                <p>目に見えない思いが宿るジュエリーを、<br class="br-pc-only">一つでも長く愛用してほしい。<br>
+                <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
+
+                <p>RETOLD TOKYOでお直しをしたジュエリーが、<br>
+                持ち主の日々の営みにそっと寄り添うものであってほしい。</p>
+
+                <p>できるなら<em class="mark">「棺桶に入れて欲しい」</em>と<br class="br-pc-only">言われるくらい、<br>
+                思いが宿るものになってほしい。</p>
+
+                <p>その思いから、<br class="br-pc-only">日本中でジュエリー職人さんと出会い、<br>
+                「自分が任せたいと心から思う」職人さんたちと<br class="br-pc-only">一緒に立ち上げたのが、RETOLD TOKYOです。</p>
             </div>
             <div class="founder-sign fade-in">
                 <div class="founder-sign-meta">
@@ -2913,8 +2979,7 @@
             <div class="promo-callout fade-in">
                 <span class="promo-callout-tag">LINE OPEN COMMEMORATION</span>
                 <p class="promo-callout-title">
-                    公式LINE開設を記念して、<br>
-                    お見積もり<span class="promo-callout-pct">15</span>%OFF。
+                    公式LINE開設を記念して、お見積もり<span class="promo-callout-pct">15</span>%OFF。
                 </p>
                 <div class="promo-callout-grid">
                     <div class="promo-callout-item">
@@ -3106,7 +3171,7 @@
                     支払い方法は？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text">銀行振込に対応しております。お見積もり確定後、加工前のお支払いをお願いしております。</p>
+                    <p class="faq-answer-text"><strong>Stripe決済</strong>を導入しており、<strong>クレジットカード／銀行振込</strong>のどちらでもお支払いいただけます。お見積もり確定後、加工前のお支払いをお願いしております。</p>
                 </div>
             </div>
         </div>
