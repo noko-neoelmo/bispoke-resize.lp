@@ -1120,15 +1120,23 @@
         .price-includes {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 8px;
-            margin-bottom: 16px;
+            margin: 8px 0 18px;
         }
         .price-includes-tag {
-            font-size: 11px;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 4px 12px;
-            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+            background: #FFFFFF;
+            border: 1.5px solid var(--navy);
+            padding: 7px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 6px rgba(27,42,74,0.08);
+        }
+        @media (min-width: 600px) {
+            .price-includes-tag { font-size: 13px; padding: 8px 16px; }
         }
         .price-note {
             font-size: 12px;
@@ -1136,6 +1144,20 @@
             margin-top: 16px;
             margin-bottom: 36px;
             line-height: 1.8;
+        }
+        /* Centered CTA wrapper used across sections */
+        .cta-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            max-width: 420px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .cta-center .btn-cta {
+            width: 100%;
+            max-width: 420px;
         }
 
         /* ===== FAQ ===== */
@@ -2012,54 +2034,82 @@
             background: rgba(27,42,74,0.35);
             transform: translateY(-50%);
         }
-        /* In-hero LINE promo card */
+        /* In-hero LINE promo card — refined ribbon */
         .hero-v2-promo {
-            display: inline-flex;
+            position: relative;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            padding: 8px 14px;
-            background: rgba(255,255,255,0.92);
+            gap: 4px;
+            padding: 10px 22px 12px;
+            background: rgba(255,255,255,0.94);
             border: 1.5px solid var(--navy);
-            border-radius: 999px;
-            box-shadow: 0 6px 18px rgba(27,42,74,0.18);
+            border-radius: 8px;
+            box-shadow:
+                0 1px 0 rgba(255,255,255,0.85) inset,
+                0 8px 22px rgba(27,42,74,0.18);
             backdrop-filter: blur(4px);
+            min-width: min(280px, 100%);
+            max-width: 360px;
         }
-        .hero-v2-promo-tag {
-            display: inline-block;
-            font-size: 9px;
+        .hero-v2-promo-flag {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: "Noto Serif JP", serif;
+            font-size: 10px;
             font-weight: 800;
             letter-spacing: 0.16em;
             color: #FFFFFF;
-            background: var(--line-green);
-            padding: 3px 8px;
-            border-radius: 3px;
+            background: var(--navy);
+            padding: 4px 14px;
+            border-radius: 999px;
+            white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(27,42,74,0.30);
         }
-        .hero-v2-promo-text {
-            font-size: 11.5px;
+        @media (min-width: 600px) {
+            .hero-v2-promo-flag { font-size: 11px; padding: 5px 16px; }
+        }
+        .hero-v2-promo-main {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 4px;
+            font-size: 13px;
             color: var(--navy);
             font-weight: 700;
             letter-spacing: 0.02em;
             white-space: nowrap;
+            margin-top: 2px;
         }
-        .hero-v2-promo-text strong {
+        .hero-v2-promo-main strong {
+            color: var(--pink-shocking);
+            font-size: 26px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            font-family: "Noto Serif JP", serif;
+        }
+        .hero-v2-promo-main .off {
             color: var(--pink-shocking);
             font-size: 14px;
             font-weight: 900;
-            margin: 0 1px;
+            letter-spacing: 0.04em;
         }
         .hero-v2-promo-deadline {
-            font-size: 10px;
+            font-size: 10.5px;
             color: var(--navy);
-            opacity: 0.65;
+            opacity: 0.72;
             font-weight: 600;
+            letter-spacing: 0.04em;
             white-space: nowrap;
         }
         @media (min-width: 600px) {
-            .hero-v2-promo { padding: 10px 18px; gap: 12px; }
-            .hero-v2-promo-tag { font-size: 10px; padding: 4px 10px; }
-            .hero-v2-promo-text { font-size: 13px; }
-            .hero-v2-promo-text strong { font-size: 16px; }
-            .hero-v2-promo-deadline { font-size: 11px; }
+            .hero-v2-promo { padding: 12px 26px 14px; }
+            .hero-v2-promo-main { font-size: 14px; }
+            .hero-v2-promo-main strong { font-size: 32px; }
+            .hero-v2-promo-main .off { font-size: 16px; }
+            .hero-v2-promo-deadline { font-size: 11.5px; }
         }
 
         /* ----- Contrast section: 悩み → 誇り ----- */
@@ -2206,49 +2256,16 @@
             min-width: 0;
         }
 
-        /* Pride header: gold title above a flat navy triangle */
-        .pride-header {
-            text-align: center;
-            margin: 32px 0 0;
-        }
-        .pride-header-title {
-            display: inline-block;
-            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
-            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 50%, var(--gold-deep) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: var(--gold-deep);
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-        }
-        @media (min-width: 600px) {
-            .pride-header-title { font-size: 24px; margin-bottom: 10px; }
-        }
-        .pride-header-en {
-            display: block;
-            font-size: 9px;
-            letter-spacing: 0.36em;
-            color: var(--gold-deep);
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-top: 2px;
-        }
-        @media (min-width: 600px) {
-            .pride-header-en { font-size: 10px; }
-        }
-        /* Flat triangle connector — white at the top, navy at the point */
+        /* Flat triangle connector with gold title overlaid on the white top */
         .contrast-triangle {
             position: relative;
             width: 100%;
-            max-width: 360px;
-            margin: 8px auto 0;
-            aspect-ratio: 6 / 1.4;
+            max-width: 380px;
+            margin: 32px auto 0;
+            aspect-ratio: 6 / 2.0;
         }
         @media (min-width: 600px) {
-            .contrast-triangle { max-width: 440px; aspect-ratio: 7 / 1.4; }
+            .contrast-triangle { max-width: 460px; aspect-ratio: 7 / 2.0; }
         }
         .contrast-triangle::before {
             content: '';
@@ -2256,12 +2273,46 @@
             inset: 0;
             background: linear-gradient(180deg,
                 #FFFFFF 0%,
-                rgba(255,255,255,0.6) 18%,
-                var(--dusky-blue-light) 45%,
-                var(--dusky-blue) 75%,
+                rgba(255,255,255,0.95) 22%,
+                var(--dusky-blue-light) 50%,
+                var(--dusky-blue) 78%,
                 var(--navy) 100%);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             filter: drop-shadow(0 8px 12px rgba(27,42,74,0.18));
+        }
+        .triangle-title {
+            position: absolute;
+            top: 12px;
+            left: 0; right: 0;
+            text-align: center;
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
+            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: var(--gold-deep);
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            line-height: 1.3;
+            z-index: 1;
+        }
+        @media (min-width: 600px) {
+            .triangle-title { top: 14px; font-size: 20px; }
+        }
+        .triangle-title-en {
+            display: block;
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.34em;
+            color: var(--gold-deep);
+            -webkit-text-fill-color: var(--gold-deep);
+            margin-top: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        @media (min-width: 600px) {
+            .triangle-title-en { font-size: 10px; margin-top: 4px; }
         }
 
         /* Pride block — white card, navy frame, water-blue highlight */
@@ -2377,15 +2428,16 @@
         .pride-case-img {
             display: block;
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 1230 / 550;
             border-radius: 6px;
             overflow: hidden;
-            background: var(--water-blue);
+            background: var(--navy);
             border: 1px solid rgba(27,42,74,0.10);
         }
         .pride-case-img img {
             width: 100%; height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
         }
         .pride-case-card figcaption {
@@ -2399,67 +2451,55 @@
             .pride-case-card figcaption { font-size: 12px; }
         }
 
-        /* Prominent NOTE: navy block with gold accents */
-        .pride-note {
+        /* Engraving callout — light surface, gold highlight on key phrase */
+        .pride-engraving {
             margin-top: 22px;
-            padding: 16px 16px;
-            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
-            color: #FFFFFF;
-            border: 1px solid var(--navy);
+            padding: 14px 16px;
+            background: #F5F7FA;
+            border: 1px solid rgba(27,42,74,0.12);
             border-radius: 10px;
             display: flex;
             align-items: center;
             gap: 14px;
-            box-shadow: 0 10px 24px rgba(27,42,74,0.20);
         }
         @media (min-width: 600px) {
-            .pride-note { padding: 20px 22px; gap: 18px; }
+            .pride-engraving { padding: 18px 22px; gap: 18px; }
         }
-        .pride-note-image {
+        .pride-engraving-image {
             position: relative;
             flex-shrink: 0;
-            width: 80px;
-            height: 80px;
+            width: 76px;
+            height: 76px;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--gold);
-            box-shadow:
-                0 0 0 1px rgba(255,255,255,0.10),
-                0 6px 16px rgba(201,168,118,0.30);
+            box-shadow: 0 6px 14px rgba(201,168,118,0.30);
         }
         @media (min-width: 600px) {
-            .pride-note-image { width: 96px; height: 96px; }
+            .pride-engraving-image { width: 92px; height: 92px; }
         }
-        .pride-note-image img {
+        .pride-engraving-image img {
             width: 100%; height: 100%;
             object-fit: cover;
             display: block;
         }
-        .pride-note-text {
+        .pride-engraving-text {
             flex: 1;
             min-width: 0;
             font-size: 12.5px;
             line-height: 1.85;
-            color: #FFFFFF;
+            color: var(--navy);
             font-weight: 500;
         }
         @media (min-width: 600px) {
-            .pride-note-text { font-size: 13.5px; }
+            .pride-engraving-text { font-size: 13.5px; }
         }
-        .pride-note-text .note-tag {
-            display: inline-block;
-            font-size: 10px;
+        .hl-gold {
+            font-style: normal;
             font-weight: 800;
-            letter-spacing: 0.18em;
             color: var(--navy);
-            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 50%, var(--gold-deep) 100%);
-            padding: 3px 10px;
-            border-radius: 3px;
-            margin-right: 8px;
-            vertical-align: 2px;
-            box-shadow:
-                inset 0 1px 0 rgba(255,255,255,0.6),
-                0 2px 6px rgba(0,0,0,0.30);
+            background: linear-gradient(transparent 60%, var(--gold-top) 60%, var(--gold) 92%, transparent 92%);
+            padding: 0 3px;
         }
         /* ----- Founder section ----- */
         .founder-section {
@@ -2484,44 +2524,45 @@
         .founder-inner {
             position: relative;
             padding: 0 22px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+            max-width: 720px;
+            margin: 0 auto;
         }
         @media (min-width: 720px) {
-            .founder-inner {
-                grid-template-columns: 0.85fr 1.15fr;
-                gap: 48px;
-                padding: 0 48px;
-                align-items: center;
-            }
+            .founder-inner { padding: 0 48px; max-width: 760px; }
+        }
+        .founder-head {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        @media (min-width: 720px) {
+            .founder-head { margin-bottom: 32px; }
         }
         .founder-label {
-            font-family: "Klee One", "Yusei Magic", "Noto Serif JP", serif;
+            font-family: "Noto Sans JP", sans-serif;
             font-size: 11px;
-            letter-spacing: 0.20em;
+            letter-spacing: 0.32em;
             color: var(--gold-deep);
             margin-bottom: 8px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
         }
         .founder-title {
-            font-family: "Yusei Magic", "Klee One", "Noto Serif JP", serif;
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
             font-size: 22px;
             font-weight: 700;
             line-height: 1.5;
-            margin-bottom: 18px;
             color: var(--navy);
+            letter-spacing: 0.02em;
         }
         @media (min-width: 600px) {
-            .founder-title { font-size: 26px; margin-bottom: 22px; }
+            .founder-title { font-size: 26px; }
         }
         @media (min-width: 720px) {
-            .founder-title { font-size: 30px; margin-bottom: 28px; }
+            .founder-title { font-size: 30px; }
         }
         .founder-title-sub {
             display: block;
-            font-family: "Klee One", "Yusei Magic", serif;
+            font-family: "Klee One", "Noto Serif JP", serif;
             font-size: 12px;
             font-weight: 600;
             letter-spacing: 0.06em;
@@ -2534,39 +2575,15 @@
         @media (min-width: 720px) {
             .founder-title-sub { font-size: 14px; margin-top: 8px; }
         }
-        .founder-portrait {
-            position: relative;
-            width: 100%;
-            max-width: 200px;
-            margin: 0 auto;
-            aspect-ratio: 1 / 1;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow:
-                0 0 0 1px rgba(27,42,74,0.08),
-                0 14px 28px rgba(27,42,74,0.18);
-            background: var(--water-blue);
-        }
-        @media (min-width: 600px) {
-            .founder-portrait { max-width: 220px; }
-        }
-        @media (min-width: 720px) {
-            .founder-portrait { max-width: 260px; }
-        }
-        .founder-portrait img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            display: block;
-        }
         .founder-body {
-            font-family: "Klee One", "Yusei Magic", "Noto Serif JP", serif;
-            font-size: 13.5px;
-            line-height: 1.95;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 14px;
+            line-height: 2;
             color: var(--navy);
             font-weight: 500;
         }
         .founder-body p {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .founder-body p:last-child {
             margin-bottom: 0;
@@ -2579,28 +2596,49 @@
             padding: 0 2px;
         }
         @media (min-width: 600px) {
-            .founder-body { font-size: 14.5px; line-height: 2; }
-            .founder-body p { margin-bottom: 14px; }
+            .founder-body { font-size: 14.5px; line-height: 2.05; }
+            .founder-body p { margin-bottom: 16px; }
         }
         @media (min-width: 720px) {
-            .founder-body { font-size: 15.5px; line-height: 2.05; }
+            .founder-body { font-size: 15.5px; line-height: 2.1; }
             .founder-body p { margin-bottom: 18px; }
         }
         .founder-sign {
-            margin-top: 18px;
-            padding-top: 14px;
+            margin-top: 24px;
+            padding-top: 18px;
             border-top: 1px dashed rgba(27,42,74,0.25);
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            gap: 12px;
+            gap: 14px;
         }
         @media (min-width: 720px) {
-            .founder-sign { margin-top: 28px; padding-top: 20px; }
+            .founder-sign { margin-top: 32px; padding-top: 22px; gap: 18px; }
         }
         .founder-sign-meta {
             text-align: right;
-            font-family: "Klee One", "Yusei Magic", serif;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            order: 1;
+        }
+        .founder-sign-portrait {
+            order: 2;
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--water-blue);
+            box-shadow:
+                0 0 0 1px rgba(27,42,74,0.08),
+                0 6px 14px rgba(27,42,74,0.18);
+        }
+        @media (min-width: 720px) {
+            .founder-sign-portrait { width: 80px; height: 80px; }
+        }
+        .founder-sign-portrait img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .founder-sign-role {
             font-size: 11px;
@@ -2610,19 +2648,20 @@
             font-weight: 600;
         }
         .founder-sign-name {
-            font-family: "Yusei Magic", "Klee One", serif;
-            font-size: 20px;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 22px;
             font-weight: 700;
             color: var(--navy);
             letter-spacing: 0.04em;
+            line-height: 1.3;
         }
         @media (min-width: 600px) {
-            .founder-sign-name { font-size: 22px; }
+            .founder-sign-name { font-size: 24px; }
         }
         .founder-sign-name small {
             display: block;
-            font-family: "Klee One", "Yusei Magic", serif;
-            font-size: 10px;
+            font-family: "Klee One", "Noto Serif JP", serif;
+            font-size: 10.5px;
             font-weight: 500;
             letter-spacing: 0.18em;
             color: var(--dusky-blue);
@@ -2675,16 +2714,11 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                         LINEで無料相談する
                     </a>
-                    <div class="hero-v2-cta-sub">
-                        <span>写真を送るだけ</span>
-                        <span>見積もり完全無料</span>
-                        <span>1年間保証つき</span>
-                    </div>
                 </div>
                 <div class="hero-v2-promo">
-                    <span class="hero-v2-promo-tag">LINE OPEN</span>
-                    <span class="hero-v2-promo-text">開設記念｜<strong>15%</strong>オフ</span>
-                    <span class="hero-v2-promo-deadline">5/25まで</span>
+                    <span class="hero-v2-promo-flag">LINE開設記念</span>
+                    <span class="hero-v2-promo-main">お見積りから<strong>15%</strong><span class="off">OFF</span></span>
+                    <span class="hero-v2-promo-deadline">2026/5/25まで</span>
                 </div>
             </div>
         </div>
@@ -2728,10 +2762,9 @@
                 </ul>
             </div>
 
-            <header class="pride-header fade-in">
-                <span class="pride-header-title">RETOLD TOKYOの誇り<span class="pride-header-en">Our Pride</span></span>
-            </header>
-            <div class="contrast-triangle fade-in" aria-hidden="true"></div>
+            <div class="contrast-triangle fade-in">
+                <span class="triangle-title">RETOLD TOKYOの誇り<span class="triangle-title-en">Our Pride</span></span>
+            </div>
 
             <div class="pride-block fade-in">
                 <div class="pride-content">
@@ -2760,12 +2793,12 @@
                         </figure>
                     </div>
                 </div>
-                <div class="pride-note">
-                    <div class="pride-note-image">
+                <div class="pride-engraving">
+                    <div class="pride-engraving-image">
                         <img src="/resize/images/worry-engraving.png" alt="刻印の例" loading="lazy">
                     </div>
-                    <p class="pride-note-text">
-                        <span class="note-tag">NOTE</span>修理の過程でどうしても刻印が消えてしまう場合、刻印追加は無料で対応いたします。<br>（ブランド刻印はNG。お名前や記念日などは手彫り／レーザーどちらも可能です。）
+                    <p class="pride-engraving-text">
+                        修理の過程でどうしても刻印が消えてしまう場合、<em class="hl-gold">刻印追加は無料</em>で対応いたします。<br>（ブランド刻印はNG。お名前や記念日などは手彫り／レーザーどちらも可能です。）
                     </p>
                 </div>
             </div>
@@ -2775,35 +2808,31 @@
     <!-- ===== Founder Section (創業者の思い) ===== -->
     <section class="founder-section" id="founder">
         <div class="founder-inner">
-            <div class="founder-portrait fade-in">
-                <img src="/resize/images/foundericon.png" alt="RETOLD TOKYO 代表取締役社長 土屋沙也加" loading="lazy">
-            </div>
-            <div class="founder-text fade-in">
+            <header class="founder-head fade-in">
                 <p class="founder-label">FOUNDER&apos;S NOTE</p>
                 <h2 class="founder-title">創業者の思い<small class="founder-title-sub">なぜ、RETOLD TOKYOをはじめたのか</small></h2>
-                <div class="founder-body">
-                    <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
+            </header>
+            <div class="founder-body fade-in">
+                <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
 
-                    <p>「パールは売れないから」<br>
-                    実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
+                <p>「パールは売れないから」<br>
+                実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
 
-                    <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。<br>
-                    ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。<br>
-                    そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
+                <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
 
-                    <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<br>
-                    <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
+                <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
 
-                    <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。<br>
-                    できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
+                <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
 
-                    <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
+                <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
+            </div>
+            <div class="founder-sign fade-in">
+                <div class="founder-sign-meta">
+                    <div class="founder-sign-role">代表取締役社長</div>
+                    <div class="founder-sign-name">土屋 沙也加<small>Sayaka Tsuchiya</small></div>
                 </div>
-                <div class="founder-sign">
-                    <div class="founder-sign-meta">
-                        <div class="founder-sign-role">代表取締役社長</div>
-                        <div class="founder-sign-name">土屋 沙也加<small>Sayaka Tsuchiya</small></div>
-                    </div>
+                <div class="founder-sign-portrait">
+                    <img src="/resize/images/foundericon.png" alt="代表取締役社長 土屋 沙也加" loading="lazy">
                 </div>
             </div>
         </div>
@@ -2865,7 +2894,7 @@
 
             <p class="price-note fade-in">※素材・デザイン・サイズ変更幅により変動します。正式なお見積もりはLINEでお伝えします。<br>※プロの目から見て偽物・イミテーションと判断した場合は、加工をお断りし着払いにて返送させていただきます。<br>※公式LINE開設記念15%OFFは、2026年5月25日までにLINEでお見積もり依頼をいただいた方が対象です。他キャンペーンとの併用はできません。</p>
 
-            <div class="fade-in" style="text-align: center;">
+            <div class="cta-center fade-in">
                 <a href="https://lin.ee/VhCyZEw" class="btn-cta">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
                     LINEで15%OFF即日お見積もり
