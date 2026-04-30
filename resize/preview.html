@@ -1032,50 +1032,90 @@
             transform: rotate(-45deg);
         }
 
-        /* ===== Process ===== */
+        /* ===== Process — 3-up horizontal cards with images ===== */
         .process-flow {
-            position: relative;
-            padding-left: 28px;
-            margin-left: 8px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
         }
-        .process-flow::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 8px; bottom: 8px;
-            width: 1px;
-            background: linear-gradient(to bottom, var(--gold), rgba(123,150,181,0.15));
+        @media (min-width: 600px) {
+            .process-flow { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        }
+        @media (min-width: 720px) {
+            .process-flow { gap: 20px; }
         }
         .process-step {
-            margin-bottom: 36px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF;
+            border: 1px solid rgba(27,42,74,0.10);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(27,42,74,0.06);
         }
-        .process-step::before {
-            content: '';
-            position: absolute;
-            left: -34px; top: 6px;
-            width: 12px; height: 12px;
-            background-color: var(--white);
-            border: 2px solid var(--gold);
-            border-radius: 50%;
+        .process-step-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: var(--water-blue);
+            overflow: hidden;
         }
-        .process-step:last-child { margin-bottom: 0; }
+        .process-step-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .process-step-body {
+            padding: 14px 16px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 720px) {
+            .process-step-body { padding: 16px 18px 18px; }
+        }
         .process-step-num {
-            font-family: inherit;
-            font-size: 10px;
-            color: var(--gold);
-            letter-spacing: 0.15em;
-            margin-bottom: 4px;
+            display: inline-block;
+            font-family: "Noto Serif JP", serif;
+            font-size: 11px;
+            color: #FFFFFF;
+            background: var(--navy);
+            letter-spacing: 0.18em;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            align-self: flex-start;
         }
         .process-step-title {
             font-weight: 700;
             color: var(--navy);
-            font-size: 15px;
-            margin-bottom: 6px;
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.45;
+        }
+        @media (min-width: 720px) {
+            .process-step-title { font-size: 17px; }
         }
         .process-step-desc {
-            font-size: 13px;
-            color: var(--text-secondary);
+            font-size: 12.5px;
+            color: var(--navy);
+            line-height: 1.75;
+            font-weight: 500;
+        }
+        @media (min-width: 720px) {
+            .process-step-desc { font-size: 13px; }
+        }
+        .process-step-note {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(27,42,74,0.18);
+            font-size: 11px;
+            color: var(--navy);
+            opacity: 0.78;
             line-height: 1.7;
+        }
+        @media (min-width: 720px) {
+            .process-step-note { font-size: 11.5px; }
         }
 
         /* ===== Price ===== */
@@ -2034,17 +2074,17 @@
             background: rgba(27,42,74,0.35);
             transform: translateY(-50%);
         }
-        /* In-hero LINE promo card — refined ribbon */
+        /* In-hero LINE promo card — no overlapping flag */
         .hero-v2-promo {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            padding: 10px 22px 12px;
+            gap: 6px;
+            padding: 14px 22px 14px;
             background: rgba(255,255,255,0.94);
             border: 1.5px solid var(--navy);
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow:
                 0 1px 0 rgba(255,255,255,0.85) inset,
                 0 8px 22px rgba(27,42,74,0.18);
@@ -2053,10 +2093,7 @@
             max-width: 360px;
         }
         .hero-v2-promo-flag {
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: inline-block;
             font-family: "Noto Serif JP", serif;
             font-size: 10px;
             font-weight: 800;
@@ -2066,7 +2103,6 @@
             padding: 4px 14px;
             border-radius: 999px;
             white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(27,42,74,0.30);
         }
         @media (min-width: 600px) {
             .hero-v2-promo-flag { font-size: 11px; padding: 5px 16px; }
@@ -2080,7 +2116,6 @@
             font-weight: 700;
             letter-spacing: 0.02em;
             white-space: nowrap;
-            margin-top: 2px;
         }
         .hero-v2-promo-main strong {
             color: var(--pink-shocking);
@@ -2105,7 +2140,7 @@
             white-space: nowrap;
         }
         @media (min-width: 600px) {
-            .hero-v2-promo { padding: 12px 26px 14px; }
+            .hero-v2-promo { padding: 16px 26px 16px; gap: 8px; }
             .hero-v2-promo-main { font-size: 14px; }
             .hero-v2-promo-main strong { font-size: 32px; }
             .hero-v2-promo-main .off { font-size: 16px; }
@@ -2483,16 +2518,34 @@
             object-fit: cover;
             display: block;
         }
-        .pride-engraving-text {
+        .pride-engraving-body {
             flex: 1;
             min-width: 0;
+        }
+        .pride-engraving-text {
             font-size: 12.5px;
-            line-height: 1.85;
+            line-height: 1.75;
             color: var(--navy);
             font-weight: 500;
+            margin-bottom: 8px;
         }
         @media (min-width: 600px) {
             .pride-engraving-text { font-size: 13.5px; }
+        }
+        .pride-engraving-notes {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pride-engraving-notes li {
+            font-size: 10.5px;
+            line-height: 1.65;
+            color: var(--navy);
+            opacity: 0.78;
+            font-weight: 500;
+        }
+        @media (min-width: 600px) {
+            .pride-engraving-notes li { font-size: 11.5px; }
         }
         .hl-gold {
             font-style: normal;
@@ -2578,12 +2631,12 @@
         .founder-body {
             font-family: "Klee One", "Noto Serif JP", serif;
             font-size: 14px;
-            line-height: 2;
+            line-height: 1.75;
             color: var(--navy);
             font-weight: 500;
         }
         .founder-body p {
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
         .founder-body p:last-child {
             margin-bottom: 0;
@@ -2596,12 +2649,12 @@
             padding: 0 2px;
         }
         @media (min-width: 600px) {
-            .founder-body { font-size: 14.5px; line-height: 2.05; }
-            .founder-body p { margin-bottom: 16px; }
+            .founder-body { font-size: 14.5px; line-height: 1.85; }
+            .founder-body p { margin-bottom: 12px; }
         }
         @media (min-width: 720px) {
-            .founder-body { font-size: 15.5px; line-height: 2.1; }
-            .founder-body p { margin-bottom: 18px; }
+            .founder-body { font-size: 15.5px; line-height: 1.9; }
+            .founder-body p { margin-bottom: 14px; }
         }
         .founder-sign {
             margin-top: 24px;
@@ -2623,21 +2676,26 @@
         .founder-sign-portrait {
             order: 2;
             flex-shrink: 0;
-            width: 64px;
-            height: 64px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             overflow: hidden;
             background: var(--water-blue);
             box-shadow:
-                0 0 0 1px rgba(27,42,74,0.08),
-                0 6px 14px rgba(27,42,74,0.18);
+                0 0 0 1px rgba(27,42,74,0.10),
+                0 4px 12px rgba(27,42,74,0.16);
+            border: 2px solid #FFFFFF;
+        }
+        @media (min-width: 600px) {
+            .founder-sign-portrait { width: 64px; height: 64px; }
         }
         @media (min-width: 720px) {
-            .founder-sign-portrait { width: 80px; height: 80px; }
+            .founder-sign-portrait { width: 72px; height: 72px; }
         }
         .founder-sign-portrait img {
             width: 100%; height: 100%;
             object-fit: cover;
+            object-position: center top;
             display: block;
         }
         .founder-sign-role {
@@ -2797,9 +2855,15 @@
                     <div class="pride-engraving-image">
                         <img src="/resize/images/worry-engraving.png" alt="刻印の例" loading="lazy">
                     </div>
-                    <p class="pride-engraving-text">
-                        修理の過程でどうしても刻印が消えてしまう場合、<em class="hl-gold">刻印追加は無料</em>で対応いたします。<br>（ブランド刻印はNG。お名前や記念日などは手彫り／レーザーどちらも可能です。）
-                    </p>
+                    <div class="pride-engraving-body">
+                        <p class="pride-engraving-text">
+                            修理の過程でどうしても刻印が消えてしまう場合、事前にご要望がありましたら<em class="hl-gold">刻印追加は無料</em>で対応いたします。
+                        </p>
+                        <ul class="pride-engraving-notes">
+                            <li>※ブランドの刻印は追加できません。</li>
+                            <li>※お名前や記念日などは手彫り／レーザーどちらでも対応が可能です。</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2810,7 +2874,7 @@
         <div class="founder-inner">
             <header class="founder-head fade-in">
                 <p class="founder-label">FOUNDER&apos;S NOTE</p>
-                <h2 class="founder-title">創業者の思い<small class="founder-title-sub">なぜ、RETOLD TOKYOをはじめたのか</small></h2>
+                <h2 class="founder-title">創業者の思い</h2>
             </header>
             <div class="founder-body fade-in">
                 <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
@@ -2914,24 +2978,36 @@
 
             <div class="process-flow fade-in">
                 <div class="process-step">
-                    <div class="process-step-num">STEP 01</div>
-                    <div class="process-step-title">LINEで写真を送る</div>
-                    <div class="process-step-desc">LINEで指輪の写真を送るだけ。現在のサイズ・希望サイズも添えてお送りください。</div>
+                    <div class="process-step-img">
+                        <img src="/resize/images/process-step1-kit.png" alt="返送用キットの梱包材・リングゲージ・着払い伝票" loading="lazy">
+                    </div>
+                    <div class="process-step-body">
+                        <span class="process-step-num">STEP 1</span>
+                        <h3 class="process-step-title">返送用キットのお届け</h3>
+                        <p class="process-step-desc">写真では判断ができないケースが多いため、一度郵送いただくことを推奨しております。梱包材とリングゲージ、着払い伝票をお届けします。</p>
+                        <p class="process-step-note">※トラブル防止のため、完封シールを同封いたします。ぜひご利用ください。</p>
+                    </div>
                 </div>
                 <div class="process-step">
-                    <div class="process-step-num">STEP 02</div>
-                    <div class="process-step-title">即日お見積もり</div>
-                    <div class="process-step-desc">職人がお写真を確認し、当日中にお見積もりをご返信します。料金もここで確定します。</div>
+                    <div class="process-step-img">
+                        <img src="/resize/images/process-step2-quote.png" alt="LINEでお見積もりをお送りする様子" loading="lazy">
+                    </div>
+                    <div class="process-step-body">
+                        <span class="process-step-num">STEP 2</span>
+                        <h3 class="process-step-title">お見積もり</h3>
+                        <p class="process-step-desc">実際のお品物を拝見し、お見積もりをLINEでお送りします。ご了承いただけてから作業に入ります。</p>
+                        <p class="process-step-note">※お見積もり後キャンセルされた場合は、お客様ご負担の着払いにて返送させていただきます。</p>
+                    </div>
                 </div>
                 <div class="process-step">
-                    <div class="process-step-num">STEP 03</div>
-                    <div class="process-step-title">お預かり</div>
-                    <div class="process-step-desc">0.5号刻みのリングゲージを同封。往復送料無料・保険付き宅配便で、安全にお預かりします。</div>
-                </div>
-                <div class="process-step">
-                    <div class="process-step-num">STEP 04</div>
-                    <div class="process-step-title">お届け</div>
-                    <div class="process-step-desc">0.5号刻みで仕立て直し、磨き上げまで。新品同様の輝きでお届けします。</div>
+                    <div class="process-step-img">
+                        <img src="/resize/images/syokuninn.png" alt="工房での仕立て直しの様子" loading="lazy">
+                    </div>
+                    <div class="process-step-body">
+                        <span class="process-step-num">STEP 3</span>
+                        <h3 class="process-step-title">お届けに向けて</h3>
+                        <p class="process-step-desc">工房でのお直し完了後、検品をもってご返送いたします。お支払い方法はカード／銀行振り込みに対応しています。</p>
+                    </div>
                 </div>
             </div>
         </div>
