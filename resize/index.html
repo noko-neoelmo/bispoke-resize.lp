@@ -356,6 +356,7 @@
             height: 100%;
             min-height: 98px;
             object-fit: cover;
+            object-position: center;
         }
 
         .worry-card p {
@@ -487,17 +488,23 @@
             align-items: center;
         }
 
+        .before-after.single {
+            display: block;
+        }
+
         .ba-card {
             position: relative;
             overflow: hidden;
             border-radius: 7px;
             border: 1px solid var(--border);
+            background: #f8f4ec;
         }
 
         .ba-card img {
             width: 100%;
-            aspect-ratio: 16 / 8;
+            aspect-ratio: 123 / 55;
             object-fit: cover;
+            background: #f8f4ec;
         }
 
         .ba-label {
@@ -598,8 +605,9 @@
 
         .example img {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            height: 132px;
             object-fit: cover;
+            object-position: center;
             border-radius: 4px;
         }
 
@@ -765,6 +773,9 @@
             .examples {
                 grid-template-columns: repeat(4, 1fr);
             }
+            .example img {
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -803,7 +814,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
                     <p>サイズの差が大きすぎて断られてしまった</p>
                 </article>
                 <article class="worry-card">
-                    <img src="/resize/images/ba-diamond-ring.jpg" alt="石付きの指輪" width="1584" height="672" loading="lazy">
+                    <img src="/resize/images/hero-morning-ring.png" alt="石付きの指輪" width="1024" height="1024" loading="lazy">
                     <p>石付きの指輪でサイズ直しを断られた</p>
                 </article>
                 <article class="worry-card">
@@ -811,7 +822,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
                     <p>刻印やデザインが消えてしまうのが不安</p>
                 </article>
                 <article class="worry-card">
-                    <img src="/resize/images/ba-boucheron-ring.jpg" alt="思い入れのある指輪" width="1584" height="672" loading="lazy">
+                    <img src="/resize/images/empathy-jewelry-box.png" alt="思い入れのある指輪" width="1024" height="1024" loading="lazy">
                     <p>思い入れのある大切な指輪を手放したくない</p>
                 </article>
             </div>
@@ -873,17 +884,10 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
 
         <section class="section dark">
             <h2 class="section-title ornament">眠っていた指輪が、また輝きはじめる</h2>
-            <div class="before-after">
+            <div class="before-after single">
                 <article class="ba-card">
-                    <img src="/resize/images/BA2dia.png" alt="サイズ直し前の指輪" width="1230" height="550" loading="lazy">
-                    <span class="ba-label">Before</span>
-                    <span class="ba-caption">使えずにしまい込んでいた指輪</span>
-                </article>
-                <div class="ba-arrow">▶</div>
-                <article class="ba-card">
-                    <img src="/resize/images/ba-diamond-ring.jpg" alt="サイズ直し後の指輪" width="1584" height="672" loading="lazy">
-                    <span class="ba-label">After</span>
-                    <span class="ba-caption">もう一度、日常に寄り添うリングへ</span>
+                    <img src="/resize/images/BA2dia.png" alt="サイズ直し前後の指輪" width="1230" height="550" loading="lazy">
+                    <span class="ba-caption">使えずにしまい込んでいた指輪が、もう一度、日常に寄り添うリングへ</span>
                 </article>
             </div>
         </section>
@@ -933,7 +937,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
                     <p>シンプルなリング</p>
                 </article>
                 <article class="example">
-                    <img src="/resize/images/ba-diamond-ring.jpg" alt="石付きリング" width="1584" height="672" loading="lazy">
+                    <img src="/resize/images/hero-morning-ring.png" alt="石付きリング" width="1024" height="1024" loading="lazy">
                     <p>石付きリング</p>
                 </article>
                 <article class="example">
@@ -941,7 +945,7 @@ height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Ma
                     <p>ヴィンテージ・変形リング</p>
                 </article>
                 <article class="example">
-                    <img src="/resize/images/BA2hermes.png" alt="ブランドリング" width="1230" height="550" loading="lazy">
+                    <img src="/resize/images/hero-atelier-ring.png" alt="ブランドリング" width="686" height="1076" loading="lazy">
                     <p>ブランドリング</p>
                 </article>
             </div>
