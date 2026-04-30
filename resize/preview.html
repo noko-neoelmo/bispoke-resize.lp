@@ -2168,8 +2168,11 @@
             position: relative;
             background: #131C32;
             color: #F5F5F7;
-            padding: 80px 0;
+            padding: 56px 0 64px;
             overflow: hidden;
+        }
+        @media (min-width: 720px) {
+            .founder-section { padding: 96px 0; }
         }
         .founder-section::before {
             content: '';
@@ -2182,10 +2185,10 @@
         }
         .founder-inner {
             position: relative;
-            padding: 0 24px;
+            padding: 0 22px;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 28px;
+            gap: 20px;
         }
         @media (min-width: 720px) {
             .founder-inner {
@@ -2199,30 +2202,51 @@
             font-size: 10px;
             letter-spacing: 0.32em;
             color: #E8C895;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             font-weight: 500;
         }
         .founder-title {
             font-family: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 1.5;
-            margin-bottom: 28px;
+            margin-bottom: 18px;
             color: #FFFFFF;
         }
         @media (min-width: 600px) {
-            .founder-title { font-size: 28px; }
+            .founder-title { font-size: 24px; margin-bottom: 22px; }
+        }
+        @media (min-width: 720px) {
+            .founder-title { font-size: 28px; margin-bottom: 28px; }
+        }
+        .founder-title-sub {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: rgba(245,245,247,0.65);
+            margin-top: 6px;
+            font-family: inherit;
+        }
+        @media (min-width: 600px) {
+            .founder-title-sub { font-size: 12px; margin-top: 7px; }
+        }
+        @media (min-width: 720px) {
+            .founder-title-sub { font-size: 13px; margin-top: 8px; }
         }
         .founder-portrait {
             position: relative;
             width: 100%;
-            max-width: 320px;
+            max-width: 220px;
             margin: 0 auto;
             aspect-ratio: 4 / 5;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 18px 48px rgba(0,0,0,0.5);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+        }
+        @media (min-width: 600px) {
+            .founder-portrait { max-width: 280px; }
         }
         @media (min-width: 720px) {
             .founder-portrait { max-width: 100%; }
@@ -2241,13 +2265,13 @@
         }
         .founder-body {
             font-family: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
-            font-size: 14.5px;
-            line-height: 2;
+            font-size: 13.5px;
+            line-height: 1.85;
             color: rgba(245,245,247,0.92);
             font-weight: 500;
         }
         .founder-body p {
-            margin-bottom: 18px;
+            margin-bottom: 12px;
         }
         .founder-body p:last-child {
             margin-bottom: 0;
@@ -2260,16 +2284,24 @@
             padding: 0 2px;
         }
         @media (min-width: 600px) {
-            .founder-body { font-size: 15px; }
+            .founder-body { font-size: 14px; line-height: 1.95; }
+            .founder-body p { margin-bottom: 14px; }
+        }
+        @media (min-width: 720px) {
+            .founder-body { font-size: 15px; line-height: 2; }
+            .founder-body p { margin-bottom: 18px; }
         }
         .founder-sign {
-            margin-top: 28px;
-            padding-top: 20px;
+            margin-top: 18px;
+            padding-top: 14px;
             border-top: 1px solid rgba(232,200,149,0.25);
             display: flex;
             align-items: center;
             justify-content: flex-end;
             gap: 12px;
+        }
+        @media (min-width: 720px) {
+            .founder-sign { margin-top: 28px; padding-top: 20px; }
         }
         .founder-sign-meta {
             text-align: right;
@@ -2385,454 +2417,6 @@
         </div>
     </section>
 
-    <!-- ===== Ring Gauge ===== -->
-    <div class="gauge-section" id="gauge">
-        <div class="container">
-            <p class="gauge-label fade-in">RING GAUGE</p>
-            <h2 class="gauge-title fade-in">特注のリングゲージ</h2>
-
-            <div class="gauge-img-wrap fade-in">
-                <img src="/resize/images/ring-gauge.jpg" alt="特注リングゲージ" class="gauge-img">
-            </div>
-
-            <div class="gauge-copy fade-in">
-                <p>手には、日々の営みが繊細に刻まれます。</p>
-                <p>パソコンと向き合う時、文字を書く時、<br>料理をする時、誰かを抱きしめる時。</p>
-                <br>
-                <p>ほんの少しの違和感で、つい外してしまったり、<br>そっとタンスにしまってしまったり。</p>
-                <br>
-                <p><span class="gauge-copy-accent">繊細な手元だからこそ、<br>他にはない「0.5号刻み」のリングゲージを<br>お作りしました。</span></p>
-            </div>
-
-            <p class="gauge-free fade-in">リングゲージは無料でお届けいたします。</p>
-
-            <div class="gauge-kit fade-in">
-                <span class="gauge-kit-stamp">FREE KIT</span>
-                <p class="gauge-kit-lead">ご自宅にお届けする <strong>無料キットのご案内</strong></p>
-                <ul class="gauge-kit-items">
-                    <li class="gauge-kit-item">
-                        <span class="gauge-kit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="5"/><path d="M9 4l3 4 3-4"/><path d="M7 4h10"/></svg>
-                        </span>
-                        <div>
-                            <div class="gauge-kit-item-title">0.5号刻みのリングゲージ</div>
-                            <div class="gauge-kit-item-sub">自宅で正確にサイズ計測</div>
-                        </div>
-                    </li>
-                    <li class="gauge-kit-item">
-                        <span class="gauge-kit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4"/><path d="M12 12v8"/></svg>
-                        </span>
-                        <div>
-                            <div class="gauge-kit-item-title">専用の梱包材</div>
-                            <div class="gauge-kit-item-sub">指輪を安全に保護</div>
-                        </div>
-                    </li>
-                    <li class="gauge-kit-item">
-                        <span class="gauge-kit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 14h7"/><path d="M9 17h5"/></svg>
-                        </span>
-                        <div>
-                            <div class="gauge-kit-item-title">着払伝票</div>
-                            <div class="gauge-kit-item-sub">送料は当店負担・保険付き</div>
-                        </div>
-                    </li>
-                </ul>
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで15%OFF見積もりへ
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Case Studies ===== -->
-    <div class="section section-bg-white" id="cases">
-        <div class="container">
-            <p class="section-label fade-in">CASE STUDIES</p>
-            <h2 class="section-title fade-in">仕立ての記録</h2>
-            <p class="section-desc fade-in">一点ずつ、職人が仕立て直した記録です。<br>サイズ直しに加え、磨き上げも無料で。</p>
-
-            <div class="case-grid fade-in">
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2dia.png" alt="婚約指輪（プラチナ・ダイヤモンド） Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 01 / サイズ直し + 磨き上げ</div>
-                        <div class="case-card-title">婚約指輪（プラチナ・ダイヤモンド）</div>
-                        <p class="case-card-story">15年前の婚約指輪。産後のむくみで入らなくなり、1.5号アップ。磨き上げで購入当時の輝きを取り戻しました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;13,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2hermes.png" alt="HERMES シェーヌダンクル Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 02 / ブランドリング サイズ直し</div>
-                        <div class="case-card-title">HERMES シェーヌダンクル</div>
-                        <p class="case-card-story">ブランド工房で断られていたリング。国家資格保有の職人が慎重に0.5号単位で調整。刻印も美しく残りました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;28,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2signet.png" alt="TOMWOOD シグネットリング Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 03 / サイズ直し + 磨き上げ</div>
-                        <div class="case-card-title">TOMWOOD シグネットリング</div>
-                        <p class="case-card-story">父から受け継いだシグネットリング。0.5号アップして、日常で身につけられる一本に。磨き上げはサービスでお付けしました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;11,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-card-img-wrap">
-                        <img src="/resize/images/BA2bu.png" alt="ブシュロン キャトルリング Before/After" class="case-card-img">
-                    </div>
-                    <div class="case-card-body">
-                        <div class="case-card-label">CASE 04 / 幅広リング サイズ直し</div>
-                        <div class="case-card-title">ブシュロン キャトルリング</div>
-                        <p class="case-card-story">幅のあるバンドリングは難易度が高い仕立て直し。熟練職人が歪みを出さず、丁寧に仕上げました。</p>
-                        <div class="case-card-price">
-                            <span class="case-card-price-label">お仕立て価格</span>
-                            &yen;26,000
-                            <span class="case-card-price-tax">税込</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="price-note fade-in" style="text-align: center;">※ 価格は一例です。素材・デザイン・修復内容により変動します。<br>まずはLINEで写真をお送りください。</p>
-
-            <div class="fade-in" style="text-align: center; margin-top: 24px;">
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    他店で断られたリングも、まず無料診断
-                </a>
-                <span class="btn-promo-sub">公式LINE開設記念｜お見積もり15%OFF（5/25まで）</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Voice Section ===== -->
-    <div class="section section-bg-off" id="voice">
-        <div class="container">
-            <p class="section-label fade-in">VOICE</p>
-            <h2 class="section-title fade-in">届いた声</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <div class="voice-marquee fade-in">
-                <div class="voice-track">
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-1" aria-hidden="true">M</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">M.K. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    東京都・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">2 か月前</span>
-                        </div>
-                        <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                        <p class="voice-attr">婚約指輪 / サイズアップ</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-2" aria-hidden="true">Y</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">Y.S. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    神奈川県・40代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">3 か月前</span>
-                        </div>
-                        <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                        <p class="voice-attr">受け継ぎリング / サイズダウン</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-3" aria-hidden="true">A</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">A.T. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    埼玉県・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">1 か月前</span>
-                        </div>
-                        <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。全部オンラインで完結するのが本当にありがたかったです。</p>
-                        <p class="voice-attr">デザインリング / サイズアップ</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-4" aria-hidden="true">N</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">N.H. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    東京都・40代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">2 週間前</span>
-                        </div>
-                        <p class="voice-text">ブランドショップで断られたエルメスのリング。0.5号だけ小さくしていただき、刻印もそのまま。まさかの即日見積もりで助かりました。</p>
-                        <p class="voice-attr">ブランドリング / サイズダウン</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-5" aria-hidden="true">R</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">R.F. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    千葉県・50代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">5 か月前</span>
-                        </div>
-                        <p class="voice-text">祖母から受け継いだ指輪。ずっとサイズが合わずしまいこんでいましたが、職人さんのおかげで毎日つけられるようになりました。ピカピカになって本当に嬉しいです。</p>
-                        <p class="voice-attr">受け継ぎリング / サイズアップ + 磨き上げ</p>
-                    </div>
-                    <!-- duplicate set for seamless loop -->
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-1" aria-hidden="true">M</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">M.K. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    東京都・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">2 か月前</span>
-                        </div>
-                        <p class="voice-text">出産後ずっとしまっていた婚約指輪が、ぴったりのサイズで戻ってきました。磨き上げも丁寧で、新品のような輝きに感動です。</p>
-                        <p class="voice-attr">婚約指輪 / サイズアップ</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-2" aria-hidden="true">Y</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">Y.S. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    神奈川県・40代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">3 か月前</span>
-                        </div>
-                        <p class="voice-text">母から受け継いだリングを近所のお店に持っていったら断られてしまい、途方に暮れていました。仕上がりも完璧。LINEでのやり取りもスムーズでした。</p>
-                        <p class="voice-attr">受け継ぎリング / サイズダウン</p>
-                    </div>
-                    <div class="voice-card">
-                        <div class="voice-head">
-                            <span class="voice-avatar voice-avatar-3" aria-hidden="true">A</span>
-                            <div class="voice-meta">
-                                <div class="voice-name">A.T. さん</div>
-                                <div class="voice-location">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.8 8 12 8 12s8-6.2 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
-                                    埼玉県・30代女性
-                                </div>
-                            </div>
-                        </div>
-                        <div class="voice-stars-row">
-                            <span class="voice-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="voice-when">1 か月前</span>
-                        </div>
-                        <p class="voice-text">リングゲージが届いて、自宅で簡単にサイズを測れました。全部オンラインで完結するのが本当にありがたかったです。</p>
-                        <p class="voice-attr">デザインリング / サイズアップ</p>
-                    </div>
-                </div>
-            </div>
-
-            <p class="price-note fade-in" style="text-align: center; margin-top: 16px;">※ いただいたご感想を元に、ご本人の了承の上でお名前はイニシャル表記としています。</p>
-        </div>
-    </div>
-
-    <!-- ===== Pain Points Section ===== -->
-    <div class="section section-bg-off" id="concerns">
-        <div class="container">
-            <p class="section-label fade-in">YOUR CONCERN</p>
-            <h2 class="section-title fade-in">こんなお悩み、<br>ありませんか。</h2>
-            <p class="section-desc fade-in">指にはめられないまま、<br>しまい込まれた指輪たちへ。</p>
-
-            <div class="pain-scene fade-in">
-                <div class="pain-scene-card">
-                    <img src="/resize/images/washstand-ring.png" alt="洗面台に置かれたままの指輪" loading="lazy">
-                    <div class="pain-scene-caption">洗面台に、<br>外したままの指輪</div>
-                </div>
-                <div class="pain-scene-card">
-                    <img src="/resize/images/empathy-drawer-vintage.png" alt="引き出しにしまわれた受け継いだリング" loading="lazy">
-                    <div class="pain-scene-caption">引き出しに、<br>受け継いだリング</div>
-                </div>
-                <div class="pain-scene-card">
-                    <img src="/resize/images/empathy-jewelry-box.png" alt="ジュエリーボックスに眠るリング" loading="lazy">
-                    <div class="pain-scene-caption">ジュエリーボックスに、<br>眠る大切な一本</div>
-                </div>
-            </div>
-
-            <ul class="pain-list fade-in">
-                <li>結婚指輪が、指のむくみ・産後の変化で入らない</li>
-                <li>母や祖母から受け継いだ指輪が、サイズ違いでつけられない</li>
-                <li>ブランドリングだから直せない、と諦めていた</li>
-                <li>年月で黒ずんだ・傷ついた指輪を、もう一度輝かせたい</li>
-                <li>近くに、安心して任せられる工房がない</li>
-            </ul>
-
-            <div style="margin-top: 40px; text-align: center;" class="fade-in">
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで15%OFF即日お見積もり
-                </a>
-                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
-                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Craftsman Message Section ===== -->
-    <div class="section section-bg-white" id="craftsman">
-        <div class="container">
-            <div class="craftsman-msg fade-in">
-                <p class="craftsman-msg-eyebrow">Handcrafted, one by one</p>
-                <h2 class="craftsman-msg-title">あなたの指に合わせて、<br>1点ずつ。</h2>
-                <p class="craftsman-msg-text">
-                    手作りの職人が<strong>0.5号刻み</strong>で、<br>
-                    一本ずつお仕立て直します。
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Reasons Section ===== -->
-    <div class="section section-bg-white" id="reasons">
-        <div class="container">
-            <p class="section-label fade-in">TWO REASONS</p>
-            <h2 class="section-title fade-in">選ばれる、2つの理由。</h2>
-            <p class="section-desc fade-in">サイズ直し専門の職人が、<br>一点ずつ向き合っています。</p>
-
-            <!-- Reason 01 -->
-            <div class="reason-item fade-in">
-                <div class="reason-num">01</div>
-                <h3 class="reason-title">ブランドリングも、<br>断らない。</h3>
-                <div class="reason-img-wrap">
-                    <img src="/resize/images/reason-craftsman-workshop.png" alt="熟練職人の工房" class="reason-img">
-                </div>
-                <div class="reason-desc">
-                    <p><span class="reason-highlight">国家資格を保有する職人だから、できる。</span></p>
-                    <br>
-                    <p>カルティエ・ブルガリ・ティファニー・エルメスなど、ブランドリングのサイズ直しもお任せください。石の状態・金属の特性・デザインの構造を見極めた上で、最適な加工方法を選択します。</p>
-                </div>
-                <div class="reason-history">
-                    他店・ブランドショップで断られたリングも、まずはLINEでお写真をお送りください。対応可否を無料でお伝えします。
-                </div>
-            </div>
-
-            <!-- Reason 02 -->
-            <div class="reason-item fade-in">
-                <div class="reason-num">02</div>
-                <h3 class="reason-title">サイズを変えるだけでは、<br>終わらない。</h3>
-                <div class="ba-container">
-                    <div class="ba-img-wrap">
-                        <img src="https://a.lovart.ai/artifacts/agent/IdC88ijRym3UXNbS.png" alt="Before" class="reason-img">
-                        <span class="ba-label">Before</span>
-                    </div>
-                    <div class="ba-img-wrap">
-                        <img src="https://a.lovart.ai/artifacts/agent/zCeiLTFLoc68zxVk.png" alt="After" class="reason-img">
-                        <span class="ba-label">After</span>
-                    </div>
-                </div>
-                <div class="reason-desc">
-                    <p><span class="reason-highlight">すべてのリングを、磨き上げ無料で。</span></p>
-                    <br>
-                    <p>サイズを変えるだけでなく、指輪本来の輝きを取り戻す磨き上げまでが、私たちの仕事です。「ピカピカになった！」というお声が、私たちの一番の励みです。</p>
-                    <ul class="reason-checklist">
-                        <li>磨き上げ 無料（全リング）</li>
-                        <li>1年間の品質保証つき</li>
-                        <li>購入当時の輝きを取り戻します</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Founder Section (創業者の思い) ===== -->
-    <section class="founder-section" id="founder">
-        <div class="founder-inner">
-            <div class="founder-portrait fade-in">
-                <img src="/resize/images/deskwoman.png" alt="RETOLD TOKYO 創業者 牧野 千夏" loading="lazy">
-            </div>
-            <div class="founder-text fade-in">
-                <p class="founder-label">FOUNDER&apos;S NOTE</p>
-                <h2 class="founder-title">創業者の思い<br><small style="display:block; font-size:13px; font-weight:500; letter-spacing:0.04em; color:rgba(245,245,247,0.7); margin-top:8px;">なぜ、RETOLD TOKYOをはじめたのか</small></h2>
-                <div class="founder-body">
-                    <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
-
-                    <p>「パールは売れないから」<br>
-                    実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
-
-                    <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。<br>
-                    ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。<br>
-                    そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
-
-                    <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<br>
-                    <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
-
-                    <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。<br>
-                    できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
-
-                    <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
-                </div>
-                <div class="founder-sign">
-                    <div class="founder-sign-meta">
-                        <div class="founder-sign-role">FOUNDER ／ JEWELRY RESTORE AMBASSADOR</div>
-                        <div class="founder-sign-name">牧野 千夏<small>Chinatsu Makino</small></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ===== Price Section ===== -->
     <div class="section section-bg-off" id="price">
         <div class="container">
@@ -2918,6 +2502,43 @@
             </div>
         </div>
     </div>
+
+    <!-- ===== Founder Section (創業者の思い) ===== -->
+    <section class="founder-section" id="founder">
+        <div class="founder-inner">
+            <div class="founder-portrait fade-in">
+                <img src="/resize/images/deskwoman.png" alt="RETOLD TOKYO 創業者 牧野 千夏" loading="lazy">
+            </div>
+            <div class="founder-text fade-in">
+                <p class="founder-label">FOUNDER&apos;S NOTE</p>
+                <h2 class="founder-title">創業者の思い<small class="founder-title-sub">なぜ、RETOLD TOKYOをはじめたのか</small></h2>
+                <div class="founder-body">
+                    <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
+
+                    <p>「パールは売れないから」<br>
+                    実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
+
+                    <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。<br>
+                    ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。<br>
+                    そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
+
+                    <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<br>
+                    <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
+
+                    <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。<br>
+                    できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
+
+                    <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
+                </div>
+                <div class="founder-sign">
+                    <div class="founder-sign-meta">
+                        <div class="founder-sign-role">FOUNDER ／ JEWELRY RESTORE AMBASSADOR</div>
+                        <div class="founder-sign-name">牧野 千夏<small>Chinatsu Makino</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== Process Section ===== -->
     <div class="section section-bg-white" id="process">
@@ -3050,88 +2671,6 @@
         </div>
     </div>
 
-    <!-- ===== For First-Timers (AIO/SEO natural) ===== -->
-    <div class="section section-bg-white" id="about">
-        <div class="container">
-            <p class="section-label fade-in">ABOUT</p>
-            <h2 class="section-title fade-in">RETOLD TOKYOについて</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <div class="summary-block fade-in">
-                <p>RETOLD TOKYO（リトールドトーキョー）は、<strong>東京・青山のアトリエ</strong>を拠点に、国家資格保有の職人が手がける<strong>指輪のサイズ直し</strong>専門ブランドです。</p>
-
-                <p>「指輪 サイズ直し 東京」で探してくださった方へ。0.5号刻みのリングゲージをご自宅に無料でお届けし、0.5号刻みの精密なサイズ直しを行います。都内の方はもちろん、全国どこからでもオンラインで完結。LINEで写真を送るだけで、即日お見積もりをお伝えします。</p>
-
-                <p>K18、Pt900/950、シルバーなど全素材に対応。カルティエ・ブルガリ・ティファニー・エルメスなどブランドリングのサイズ直しも承ります。他店で断られた方も、まずはお気軽にご相談ください。</p>
-
-                <p>往復送料無料・お見積もり無料・磨き上げ無料。サイズ直し完了後は1年間の品質保証付きです。</p>
-
-                <ul class="summary-links">
-                    <li><a href="#price">料金について</a></li>
-                    <li><a href="#process">仕立ての流れ</a></li>
-                    <li><a href="#faq">よくある質問</a></li>
-                    <li><a href="#cases">仕立ての記録</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Inherited Ring Section ===== -->
-    <div class="inherited-section" id="inherited">
-        <div class="container">
-            <p class="section-label fade-in">FOR INHERITED RINGS</p>
-            <h2 class="section-title fade-in">受け継いだ指輪を、<br>もう一度あなたの指に。</h2>
-            <div class="gold-divider fade-in"></div>
-
-            <p class="inherited-lead fade-in">
-                お母さま・お祖母さまから受け継いだ指輪。<br>
-                サイズが合わないから、と<br>
-                仕舞ったままにしていませんか。
-            </p>
-
-            <p class="inherited-emphasis fade-in">
-                私たちがお仕立て直しするのは、<br>
-                「思い出」ごと<br>
-                あなたの指に合わせるという仕事です。
-            </p>
-
-            <ul class="inherited-bullets fade-in">
-                <li>0.5号刻みで、あなたの指にぴったり合わせる</li>
-                <li>刻印・デザインはそのまま。思い出を残して仕立て直し</li>
-                <li>磨き上げ無料で、購入当時の輝きを取り戻す</li>
-            </ul>
-
-            <p class="inherited-closing fade-in">
-                まずは指輪の写真を、LINEで送ってください。<br>
-                即日、お見積もりをお伝えします。
-            </p>
-
-            <div class="fade-in" style="text-align: center;">
-                <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                    LINEで15%OFF即日お見積もり
-                </a>
-                <span class="btn-promo-sub">公式LINE開設記念｜5/25まで限定</span>
-                <span class="btn-sub-text">写真を送るだけ・見積もり無料</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== Final CTA ===== -->
-    <div class="cta-section">
-        <div class="cta-badge fade-in">公式LINE開設記念｜お見積りから15%オフ</div>
-        <h2 class="cta-title fade-in">今だけ15%OFFで、<br>あなたの指に仕立て直す。</h2>
-        <p class="cta-desc fade-in">公式LINE開設を記念して、2026年5月25日までにお見積もり依頼をいただいた方は、<br>お見積りから<strong style="color:#D7263D; font-weight:900;">15%オフ</strong>でお仕立てします。<br>往復送料無料・0.5号刻みのリングゲージ付き・見積もり完全無料。</p>
-        <div class="cta-btn-wrapper fade-in">
-            <a href="https://lin.ee/VhCyZEw" class="btn-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-                LINEで15%OFF即日お見積もり
-            </a>
-            <span class="btn-promo-sub">5/25まで限定｜お見積もり依頼で適用</span>
-            <span class="btn-sub-text">写真を送るだけ・全国対応</span>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer>
         <div class="footer-logo"><img src="/resize/images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="footer-logo-img"></div>
@@ -3184,15 +2723,11 @@
             // Floating CTA
             var floatingCta = document.getElementById('floatingCta');
             var hero = document.querySelector('.hero-v2') || document.querySelector('.hero');
-            var ctaSection = document.querySelector('.cta-section');
 
-            if (hero && ctaSection && floatingCta) {
+            if (hero && floatingCta) {
                 window.addEventListener('scroll', function() {
                     var heroBottom = hero.offsetTop + hero.offsetHeight;
-                    var ctaTop = ctaSection.offsetTop;
-                    var scrollY = window.scrollY + window.innerHeight;
-
-                    if (window.scrollY > heroBottom && scrollY < ctaTop + 200) {
+                    if (window.scrollY > heroBottom) {
                         floatingCta.classList.add('visible');
                     } else {
                         floatingCta.classList.remove('visible');
