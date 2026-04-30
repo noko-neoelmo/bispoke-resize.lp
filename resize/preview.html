@@ -1353,59 +1353,53 @@
             background: #FFFFFF;
             border-bottom: 1px solid rgba(0,0,0,0.10);
             color: #1A1A1A;
-            padding: 10px 16px;
+            padding: 8px 12px;
             display: flex;
+            flex-wrap: nowrap;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            font-size: 13px;
-            line-height: 1.4;
-            letter-spacing: 0.02em;
+            gap: 8px;
+            font-size: 12px;
+            line-height: 1.3;
+            letter-spacing: 0;
             text-align: center;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-        }
-        .promo-banner-tag {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.18em;
-            color: #FFFFFF;
-            background: var(--line-green);
-            padding: 4px 10px;
-            border-radius: 3px;
             white-space: nowrap;
-            flex-shrink: 0;
-            box-shadow: 0 2px 6px rgba(6,199,85,0.30);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
         }
         .promo-banner-text {
             font-weight: 700;
-            color: #1A1A1A;
+            color: var(--navy);
+            white-space: nowrap;
         }
         .promo-banner-text .promo-banner-strong {
             color: var(--pink-shocking);
             font-weight: 900;
-            font-size: 18px;
+            font-size: 15px;
             letter-spacing: 0.02em;
-            margin: 0 2px;
+            margin: 0 1px;
             text-shadow: 0 0 1px rgba(255,61,142,0.30);
         }
-        .promo-banner-text .promo-banner-deadline {
+        .promo-banner-deadline {
             display: inline-block;
             font-size: 11px;
-            color: #1B2A4A;
-            font-weight: 600;
-            margin-left: 6px;
+            color: #FFFFFF;
+            background: var(--pink-shocking);
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 3px;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
         @media (min-width: 600px) {
-            .promo-banner { font-size: 14px; padding: 12px 20px; gap: 14px; }
-            .promo-banner-tag { font-size: 11px; padding: 5px 12px; }
-            .promo-banner-text .promo-banner-strong { font-size: 22px; }
-            .promo-banner-text .promo-banner-deadline { font-size: 12px; }
+            .promo-banner { font-size: 14px; padding: 10px 18px; gap: 12px; }
+            .promo-banner-text .promo-banner-strong { font-size: 20px; }
+            .promo-banner-deadline { font-size: 12px; padding: 4px 10px; }
         }
         @media (max-width: 374px) {
-            .promo-banner { font-size: 12px; gap: 6px; padding: 8px 10px; }
-            .promo-banner-tag { font-size: 9px; padding: 3px 7px; letter-spacing: 0.14em; }
-            .promo-banner-text .promo-banner-strong { font-size: 16px; }
+            .promo-banner { font-size: 11px; gap: 6px; padding: 7px 8px; }
+            .promo-banner-text .promo-banner-strong { font-size: 13px; }
+            .promo-banner-deadline { font-size: 10px; padding: 2px 6px; }
         }
 
         /* ===== Promo Callout (in-section card) — white & bold ===== */
@@ -2794,11 +2788,8 @@
 
     <!-- Promo Banner: 公式LINEオープン記念 -->
     <div class="promo-banner" role="note" aria-label="公式LINEオープン記念キャンペーン">
-        <span class="promo-banner-tag">LINE OPEN</span>
-        <span class="promo-banner-text">
-            開設記念｜お見積りから<span class="promo-banner-strong">15%オフ</span>
-            <span class="promo-banner-deadline">5/25まで</span>
-        </span>
+        <span class="promo-banner-deadline">5/22まで！</span>
+        <span class="promo-banner-text">LINE開設記念｜お見積りから<span class="promo-banner-strong">15%OFF</span></span>
     </div>
 
     <!-- ===== Hero v2 (Preview) ===== -->
@@ -2926,7 +2917,6 @@
     <section class="founder-section" id="founder">
         <div class="founder-inner">
             <header class="founder-head fade-in">
-                <p class="founder-label">FOUNDER&apos;S NOTE</p>
                 <h2 class="founder-title">創業者の思い</h2>
             </header>
             <div class="founder-body fade-in">
