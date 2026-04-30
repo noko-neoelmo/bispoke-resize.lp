@@ -2001,46 +2001,70 @@
         }
         .worries-list li {
             position: relative;
-            padding: 16px 18px 16px 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px 10px 10px;
             background: #FFFFFF;
             border: 1px solid rgba(216,155,165,0.25);
             border-radius: 10px;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
             color: #1B2A4A;
-            line-height: 1.55;
+            line-height: 1.5;
             text-align: left;
-            box-shadow: 0 2px 8px rgba(58,47,47,0.05);
+            box-shadow: 0 2px 8px rgba(27,42,74,0.04);
         }
-        .worries-list li::before {
-            content: '';
+        @media (min-width: 600px) {
+            .worries-list li { font-size: 14px; gap: 14px; padding: 12px 16px 12px 12px; }
+        }
+        .worry-thumb {
+            position: relative;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #DCE5EE;
+        }
+        @media (min-width: 600px) {
+            .worry-thumb { width: 68px; height: 68px; }
+        }
+        .worry-thumb img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: saturate(0.9);
+        }
+        .worry-thumb-x {
             position: absolute;
-            left: 16px; top: 50%;
-            transform: translateY(-50%);
-            width: 22px; height: 22px;
+            top: -4px;
+            right: -4px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            background: #F5E1E5;
-            border: 1px solid #E8C2CB;
+            background: #D89BA5;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 1px 4px rgba(27,42,74,0.20);
         }
-        .worries-list li .x-mark {
-            position: absolute;
-            left: 22px; top: 50%;
-            transform: translateY(-50%);
-            width: 10px; height: 10px;
-            display: inline-block;
-            pointer-events: none;
-        }
-        .worries-list li .x-mark::before,
-        .worries-list li .x-mark::after {
+        .worry-thumb-x::before,
+        .worry-thumb-x::after {
             content: '';
             position: absolute;
-            left: 0; top: 50%;
-            width: 10px; height: 2px;
-            background: #D89BA5;
+            left: 50%;
+            top: 50%;
+            width: 9px;
+            height: 1.6px;
+            background: #FFFFFF;
             border-radius: 1px;
+            transform-origin: center;
         }
-        .worries-list li .x-mark::before { transform: translateY(-50%) rotate(45deg); }
-        .worries-list li .x-mark::after { transform: translateY(-50%) rotate(-45deg); }
+        .worry-thumb-x::before { transform: translate(-50%, -50%) rotate(45deg); }
+        .worry-thumb-x::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+        .worry-text {
+            flex: 1;
+            min-width: 0;
+        }
 
         /* Down arrow connector */
         .contrast-arrow {
@@ -2119,6 +2143,48 @@
         .pride-title .accent {
             color: #7B96B5;
         }
+        .pride-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        @media (min-width: 600px) {
+            .pride-content {
+                grid-template-columns: 200px 1fr;
+                gap: 22px;
+                align-items: center;
+            }
+        }
+        @media (min-width: 720px) {
+            .pride-content { grid-template-columns: 240px 1fr; gap: 28px; }
+        }
+        .pride-image {
+            position: relative;
+            width: 100%;
+            max-width: 240px;
+            margin: 0 auto;
+            aspect-ratio: 4 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.30);
+            border: 1px solid rgba(123,150,181,0.30);
+        }
+        @media (min-width: 600px) {
+            .pride-image { max-width: 100%; aspect-ratio: 4 / 3.4; }
+        }
+        .pride-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: saturate(0.85) contrast(1.05);
+        }
+        .pride-image::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(19,28,50,0) 60%, rgba(19,28,50,0.30) 100%);
+            pointer-events: none;
+        }
         .pride-body {
             font-size: 14px;
             line-height: 2;
@@ -2136,7 +2202,10 @@
             padding: 0 2px;
         }
         @media (min-width: 600px) {
-            .pride-body { font-size: 15px; }
+            .pride-body { font-size: 14.5px; line-height: 1.95; }
+        }
+        @media (min-width: 720px) {
+            .pride-body { font-size: 15px; line-height: 2; }
         }
         .pride-note {
             margin-top: 22px;
@@ -2390,10 +2459,34 @@
                 <p class="worries-eyebrow">YOUR CONCERN</p>
                 <h2 class="worries-title">こんなお悩み、<br><strong>ありませんか</strong></h2>
                 <ul class="worries-list">
-                    <li><span class="x-mark"></span>ブランドショップで断られてしまった</li>
-                    <li><span class="x-mark"></span>サイズの差が大きすぎて断られてしまった</li>
-                    <li><span class="x-mark"></span>石つきのリングはできないと断られてしまった</li>
-                    <li><span class="x-mark"></span>刻印が消えてしまうと断られてしまった</li>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/empathy-jewelry-box.png" alt="ブランドショップで断られた指輪" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
+                        </span>
+                        <span class="worry-text">ブランドショップで断られてしまった</span>
+                    </li>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/hero-morning-ring.png" alt="サイズの差が大きい指輪" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
+                        </span>
+                        <span class="worry-text">サイズの差が大きすぎて断られてしまった</span>
+                    </li>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/worry-stone-ring.png" alt="石つきのリング" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
+                        </span>
+                        <span class="worry-text">石つきのリングはできないと断られてしまった</span>
+                    </li>
+                    <li>
+                        <span class="worry-thumb">
+                            <img src="/resize/images/worry-engraving.png" alt="刻印が消えてしまう指輪" loading="lazy">
+                            <span class="worry-thumb-x" aria-hidden="true"></span>
+                        </span>
+                        <span class="worry-text">刻印が消えてしまうと断られてしまった</span>
+                    </li>
                 </ul>
             </div>
 
@@ -2406,9 +2499,14 @@
             <div class="pride-block fade-in">
                 <p class="pride-eyebrow">RETOLD TOKYO&apos;S PRIDE</p>
                 <h2 class="pride-title">RETOLD TOKYO<span class="accent">の誇り</span></h2>
-                <div class="pride-body">
-                    <p><strong>「修理」に特化した国内の職人</strong>が多数在籍。金属加工の<strong>国家資格</strong>を保有し、機械に頼らない<strong>「手作業」</strong>でのお直しができます。</p>
-                    <p>多くの企業では、ジュエリー職人が分業されており、全体を見てモノの状態を正確に判断し、<strong>「修理」ができる職人は希少</strong>です。</p>
+                <div class="pride-content">
+                    <div class="pride-image">
+                        <img src="/resize/images/reason-craftsman-workshop.png" alt="国家資格保有の職人による手作業の工房" loading="lazy">
+                    </div>
+                    <div class="pride-body">
+                        <p><strong>「修理」に特化した国内の職人</strong>が多数在籍。金属加工の<strong>国家資格</strong>を保有し、機械に頼らない<strong>「手作業」</strong>でのお直しができます。</p>
+                        <p>多くの企業では、ジュエリー職人が分業されており、全体を見てモノの状態を正確に判断し、<strong>「修理」ができる職人は希少</strong>です。</p>
+                    </div>
                 </div>
                 <p class="pride-note">
                     <span class="note-tag">NOTE</span>修理の過程でどうしても刻印が消えてしまう場合、刻印追加は無料で対応いたします。<br>（ブランド刻印はNG。お名前や記念日などは手彫り／レーザーどちらも可能です。）
