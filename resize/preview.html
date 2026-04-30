@@ -1926,7 +1926,8 @@
             display: flex;
             gap: 7px;
             flex-wrap: wrap;
-            margin-bottom: 22px;
+            justify-content: center;
+            margin-bottom: 0;
         }
         .hero-v2-badge {
             display: inline-flex;
@@ -1959,15 +1960,25 @@
         @media (min-width: 600px) {
             .hero-v2-badge { font-size: 12px; padding: 9px 15px; }
         }
+        /* CTA block: badges + button + sub + promo card, all centered */
+        .hero-v2-cta-block {
+            margin: clamp(60px, 22vh, 220px) auto 0;
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        @media (min-width: 720px) {
+            .hero-v2-cta-block { margin-top: clamp(80px, 24vh, 260px); }
+        }
         .hero-v2-cta-wrap {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 8px;
-            max-width: 420px;
-            margin-top: clamp(40px, 18vh, 180px);
-        }
-        @media (min-width: 720px) {
-            .hero-v2-cta-wrap { margin-top: clamp(80px, 22vh, 220px); }
+            width: 100%;
         }
         .hero-v2-cta-wrap .btn-cta {
             width: 100%;
@@ -2000,6 +2011,55 @@
             width: 1px; height: 10px;
             background: rgba(27,42,74,0.35);
             transform: translateY(-50%);
+        }
+        /* In-hero LINE promo card */
+        .hero-v2-promo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            background: rgba(255,255,255,0.92);
+            border: 1.5px solid var(--navy);
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(27,42,74,0.18);
+            backdrop-filter: blur(4px);
+        }
+        .hero-v2-promo-tag {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            color: #FFFFFF;
+            background: var(--line-green);
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+        .hero-v2-promo-text {
+            font-size: 11.5px;
+            color: var(--navy);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .hero-v2-promo-text strong {
+            color: var(--pink-shocking);
+            font-size: 14px;
+            font-weight: 900;
+            margin: 0 1px;
+        }
+        .hero-v2-promo-deadline {
+            font-size: 10px;
+            color: var(--navy);
+            opacity: 0.65;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        @media (min-width: 600px) {
+            .hero-v2-promo { padding: 10px 18px; gap: 12px; }
+            .hero-v2-promo-tag { font-size: 10px; padding: 4px 10px; }
+            .hero-v2-promo-text { font-size: 13px; }
+            .hero-v2-promo-text strong { font-size: 16px; }
+            .hero-v2-promo-deadline { font-size: 11px; }
         }
 
         /* ----- Contrast section: 悩み → 誇り ----- */
@@ -2046,11 +2106,12 @@
         }
         .worries-title {
             font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
-            font-size: 22px;
+            font-size: 19px;
             font-weight: 700;
             color: var(--navy);
             margin-bottom: 28px;
-            line-height: 1.5;
+            line-height: 1.4;
+            white-space: nowrap;
         }
         .worries-title strong {
             position: relative;
@@ -2062,7 +2123,10 @@
             margin-left: 2px;
         }
         @media (min-width: 600px) {
-            .worries-title { font-size: 26px; }
+            .worries-title { font-size: 24px; }
+        }
+        @media (min-width: 720px) {
+            .worries-title { font-size: 28px; }
         }
         .worries-list {
             list-style: none;
@@ -2142,92 +2206,79 @@
             min-width: 0;
         }
 
-        /* Triangle connector with overlaid label */
+        /* Pride header: gold title above a flat navy triangle */
+        .pride-header {
+            text-align: center;
+            margin: 32px 0 0;
+        }
+        .pride-header-title {
+            display: inline-block;
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
+            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: var(--gold-deep);
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        @media (min-width: 600px) {
+            .pride-header-title { font-size: 24px; margin-bottom: 10px; }
+        }
+        .pride-header-en {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 0.36em;
+            color: var(--gold-deep);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        @media (min-width: 600px) {
+            .pride-header-en { font-size: 10px; }
+        }
+        /* Flat triangle connector — white at the top, navy at the point */
         .contrast-triangle {
             position: relative;
             width: 100%;
-            max-width: 320px;
-            margin: 28px auto 8px;
-            aspect-ratio: 5 / 3;
+            max-width: 360px;
+            margin: 8px auto 0;
+            aspect-ratio: 6 / 1.4;
         }
         @media (min-width: 600px) {
-            .contrast-triangle { max-width: 380px; aspect-ratio: 5 / 2.6; }
+            .contrast-triangle { max-width: 440px; aspect-ratio: 7 / 1.4; }
         }
         .contrast-triangle::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+            background: linear-gradient(180deg,
+                #FFFFFF 0%,
+                rgba(255,255,255,0.6) 18%,
+                var(--dusky-blue-light) 45%,
+                var(--dusky-blue) 75%,
+                var(--navy) 100%);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
-            box-shadow: 0 14px 28px rgba(27,42,74,0.18);
-        }
-        .triangle-label {
-            position: absolute;
-            top: 18px;
-            left: 0; right: 0;
-            text-align: center;
-            color: #FFFFFF;
-            font-weight: 800;
-            font-size: 15px;
-            letter-spacing: 0.06em;
-            line-height: 1.4;
-            z-index: 1;
-        }
-        @media (min-width: 600px) {
-            .triangle-label { top: 22px; font-size: 17px; }
-        }
-        .triangle-label-en {
-            display: block;
-            font-size: 9px;
-            letter-spacing: 0.32em;
-            color: rgba(255,255,255,0.7);
-            margin-top: 4px;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        @media (min-width: 600px) {
-            .triangle-label-en { font-size: 10px; }
+            filter: drop-shadow(0 8px 12px rgba(27,42,74,0.18));
         }
 
-        /* Pride block — white card, navy frame, shocking-pink accents */
+        /* Pride block — white card, navy frame, water-blue highlight */
         .pride-block {
             background: #FFFFFF;
             color: var(--navy);
             border-radius: 14px;
-            padding: 30px 22px 26px;
+            padding: 26px 22px 24px;
             position: relative;
             overflow: hidden;
             border: 2px solid var(--navy);
             box-shadow: 0 14px 36px rgba(27,42,74,0.10);
         }
         @media (min-width: 600px) {
-            .pride-block { padding: 40px 36px 32px; }
+            .pride-block { padding: 36px 36px 28px; }
         }
         .pride-block > * { position: relative; }
-        .pride-eyebrow {
-            font-size: 10px;
-            letter-spacing: 0.32em;
-            color: var(--pink-shocking);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-weight: 700;
-            text-align: center;
-        }
-        .pride-title {
-            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 22px;
-            line-height: 1.5;
-            text-align: center;
-        }
-        @media (min-width: 600px) {
-            .pride-title { font-size: 26px; }
-        }
-        .pride-title .accent {
-            color: var(--pink-shocking);
-        }
         .pride-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -2275,10 +2326,10 @@
         }
         .pride-body p:last-of-type { margin-bottom: 0; }
         .pride-body strong {
-            color: var(--pink-shocking);
+            color: var(--navy);
             font-weight: 800;
-            background: linear-gradient(transparent 65%, rgba(255,61,142,0.18) 65%);
-            padding: 0 2px;
+            background: linear-gradient(transparent 60%, var(--water-blue-2) 60%, var(--water-blue-2) 92%, transparent 92%);
+            padding: 0 3px;
         }
         @media (min-width: 600px) {
             .pride-body { font-size: 14.5px; line-height: 1.95; }
@@ -2286,32 +2337,98 @@
         @media (min-width: 720px) {
             .pride-body { font-size: 15px; line-height: 2; }
         }
+
+        /* 仕立ての記録: 2 ring cards, side-by-side, supporting */
+        .pride-cases {
+            margin-top: 22px;
+        }
+        .pride-cases-label {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 0.28em;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: none;
+            position: relative;
+        }
+        .pride-cases-label::before,
+        .pride-cases-label::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 1px;
+            background: var(--dusky-blue);
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+        .pride-cases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        @media (min-width: 600px) {
+            .pride-cases-grid { gap: 16px; }
+        }
+        .pride-case-card {
+            margin: 0;
+            text-align: center;
+        }
+        .pride-case-img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 6px;
+            overflow: hidden;
+            background: var(--water-blue);
+            border: 1px solid rgba(27,42,74,0.10);
+        }
+        .pride-case-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pride-case-card figcaption {
+            margin-top: 8px;
+            font-size: 11px;
+            line-height: 1.55;
+            color: var(--navy);
+            font-weight: 600;
+        }
+        @media (min-width: 600px) {
+            .pride-case-card figcaption { font-size: 12px; }
+        }
+
+        /* Prominent NOTE: navy block with gold accents */
         .pride-note {
             margin-top: 22px;
-            padding: 14px 16px;
-            background: #F5F7FA;
-            border: 1px solid rgba(27,42,74,0.10);
-            border-left: 3px solid var(--pink-shocking);
-            border-radius: 8px;
+            padding: 16px 16px;
+            background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: #FFFFFF;
+            border: 1px solid var(--navy);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             gap: 14px;
+            box-shadow: 0 10px 24px rgba(27,42,74,0.20);
         }
         @media (min-width: 600px) {
-            .pride-note { padding: 18px 20px; gap: 18px; }
+            .pride-note { padding: 20px 22px; gap: 18px; }
         }
         .pride-note-image {
             position: relative;
             flex-shrink: 0;
-            width: 76px;
-            height: 76px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid var(--pink-shocking);
-            box-shadow: 0 4px 12px rgba(255,61,142,0.22);
+            border: 3px solid var(--gold);
+            box-shadow:
+                0 0 0 1px rgba(255,255,255,0.10),
+                0 6px 16px rgba(201,168,118,0.30);
         }
         @media (min-width: 600px) {
-            .pride-note-image { width: 92px; height: 92px; }
+            .pride-note-image { width: 96px; height: 96px; }
         }
         .pride-note-image img {
             width: 100%; height: 100%;
@@ -2321,32 +2438,34 @@
         .pride-note-text {
             flex: 1;
             min-width: 0;
-            font-size: 12px;
+            font-size: 12.5px;
             line-height: 1.85;
-            color: var(--navy);
+            color: #FFFFFF;
             font-weight: 500;
         }
         @media (min-width: 600px) {
-            .pride-note-text { font-size: 13px; }
+            .pride-note-text { font-size: 13.5px; }
         }
         .pride-note-text .note-tag {
             display: inline-block;
             font-size: 10px;
             font-weight: 800;
-            letter-spacing: 0.16em;
-            color: #FFFFFF;
-            background: var(--pink-shocking);
-            padding: 2px 9px;
-            border-radius: 999px;
+            letter-spacing: 0.18em;
+            color: var(--navy);
+            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 50%, var(--gold-deep) 100%);
+            padding: 3px 10px;
+            border-radius: 3px;
             margin-right: 8px;
             vertical-align: 2px;
-            box-shadow: 0 2px 6px rgba(255,61,142,0.30);
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.6),
+                0 2px 6px rgba(0,0,0,0.30);
         }
         /* ----- Founder section ----- */
         .founder-section {
             position: relative;
-            background: #131C32;
-            color: #F5F5F7;
+            background: #FFFFFF;
+            color: var(--navy);
             padding: 56px 0 64px;
             overflow: hidden;
         }
@@ -2358,8 +2477,8 @@
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 80% 20%, rgba(123,150,181,0.10) 0%, rgba(123,150,181,0) 50%),
-                radial-gradient(circle at 10% 90%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 45%);
+                radial-gradient(circle at 85% 12%, rgba(123,150,181,0.10) 0%, rgba(123,150,181,0) 50%),
+                radial-gradient(circle at 12% 92%, rgba(201,168,118,0.10) 0%, rgba(201,168,118,0) 50%);
             pointer-events: none;
         }
         .founder-inner {
@@ -2378,75 +2497,72 @@
             }
         }
         .founder-label {
-            font-size: 10px;
-            letter-spacing: 0.32em;
-            color: #7B96B5;
+            font-family: "Klee One", "Yusei Magic", "Noto Serif JP", serif;
+            font-size: 11px;
+            letter-spacing: 0.20em;
+            color: var(--gold-deep);
             margin-bottom: 8px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
         }
         .founder-title {
-            font-family: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
-            font-size: 20px;
+            font-family: "Yusei Magic", "Klee One", "Noto Serif JP", serif;
+            font-size: 22px;
             font-weight: 700;
             line-height: 1.5;
             margin-bottom: 18px;
-            color: #FFFFFF;
+            color: var(--navy);
         }
         @media (min-width: 600px) {
-            .founder-title { font-size: 24px; margin-bottom: 22px; }
+            .founder-title { font-size: 26px; margin-bottom: 22px; }
         }
         @media (min-width: 720px) {
-            .founder-title { font-size: 28px; margin-bottom: 28px; }
+            .founder-title { font-size: 30px; margin-bottom: 28px; }
         }
         .founder-title-sub {
             display: block;
-            font-size: 11px;
-            font-weight: 500;
+            font-family: "Klee One", "Yusei Magic", serif;
+            font-size: 12px;
+            font-weight: 600;
             letter-spacing: 0.06em;
-            color: rgba(245,245,247,0.65);
+            color: var(--dusky-blue);
             margin-top: 6px;
-            font-family: inherit;
         }
         @media (min-width: 600px) {
-            .founder-title-sub { font-size: 12px; margin-top: 7px; }
+            .founder-title-sub { font-size: 13px; margin-top: 7px; }
         }
         @media (min-width: 720px) {
-            .founder-title-sub { font-size: 13px; margin-top: 8px; }
+            .founder-title-sub { font-size: 14px; margin-top: 8px; }
         }
         .founder-portrait {
             position: relative;
             width: 100%;
-            max-width: 220px;
+            max-width: 200px;
             margin: 0 auto;
-            aspect-ratio: 4 / 5;
-            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+            box-shadow:
+                0 0 0 1px rgba(27,42,74,0.08),
+                0 14px 28px rgba(27,42,74,0.18);
+            background: var(--water-blue);
         }
         @media (min-width: 600px) {
-            .founder-portrait { max-width: 280px; }
+            .founder-portrait { max-width: 220px; }
         }
         @media (min-width: 720px) {
-            .founder-portrait { max-width: 100%; }
+            .founder-portrait { max-width: 260px; }
         }
         .founder-portrait img {
             width: 100%; height: 100%;
             object-fit: cover;
             display: block;
-            filter: saturate(0.85) contrast(1.05);
-        }
-        .founder-portrait::after {
-            content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(180deg, rgba(19,28,50,0) 65%, rgba(19,28,50,0.35) 100%);
-            pointer-events: none;
         }
         .founder-body {
-            font-family: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
+            font-family: "Klee One", "Yusei Magic", "Noto Serif JP", serif;
             font-size: 13.5px;
-            line-height: 1.85;
-            color: rgba(245,245,247,0.92);
+            line-height: 1.95;
+            color: var(--navy);
             font-weight: 500;
         }
         .founder-body p {
@@ -2457,23 +2573,23 @@
         }
         .founder-body em.mark {
             font-style: normal;
-            color: #7B96B5;
+            color: var(--navy);
             font-weight: 700;
-            background: linear-gradient(transparent 65%, rgba(123,150,181,0.18) 65%);
+            background: linear-gradient(transparent 60%, var(--water-blue-2) 60%, var(--water-blue-2) 92%, transparent 92%);
             padding: 0 2px;
         }
         @media (min-width: 600px) {
-            .founder-body { font-size: 14px; line-height: 1.95; }
+            .founder-body { font-size: 14.5px; line-height: 2; }
             .founder-body p { margin-bottom: 14px; }
         }
         @media (min-width: 720px) {
-            .founder-body { font-size: 15px; line-height: 2; }
+            .founder-body { font-size: 15.5px; line-height: 2.05; }
             .founder-body p { margin-bottom: 18px; }
         }
         .founder-sign {
             margin-top: 18px;
             padding-top: 14px;
-            border-top: 1px solid rgba(123,150,181,0.25);
+            border-top: 1px dashed rgba(27,42,74,0.25);
             display: flex;
             align-items: center;
             justify-content: flex-end;
@@ -2484,27 +2600,32 @@
         }
         .founder-sign-meta {
             text-align: right;
+            font-family: "Klee One", "Yusei Magic", serif;
         }
         .founder-sign-role {
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            color: rgba(123,150,181,0.85);
+            font-size: 11px;
+            letter-spacing: 0.10em;
+            color: var(--dusky-blue);
             margin-bottom: 4px;
-            text-transform: uppercase;
+            font-weight: 600;
         }
         .founder-sign-name {
-            font-family: "Noto Serif JP", serif;
-            font-size: 18px;
+            font-family: "Yusei Magic", "Klee One", serif;
+            font-size: 20px;
             font-weight: 700;
-            color: #FFFFFF;
+            color: var(--navy);
             letter-spacing: 0.04em;
+        }
+        @media (min-width: 600px) {
+            .founder-sign-name { font-size: 22px; }
         }
         .founder-sign-name small {
             display: block;
+            font-family: "Klee One", "Yusei Magic", serif;
             font-size: 10px;
             font-weight: 500;
             letter-spacing: 0.18em;
-            color: rgba(245,245,247,0.55);
+            color: var(--dusky-blue);
             margin-top: 2px;
         }
     </style>
@@ -2542,6 +2663,8 @@
                 <p class="hero-v2-eyebrow">RETOLD TOKYO ／ Ring Resize</p>
                 <h1 class="hero-v2-title">断られた指輪も、<br><span class="accent">もう一度あなたの手へ</span></h1>
                 <p class="hero-v2-lead">他店で「直せない」と言われた指輪も、<br>国家資格を持つ職人が、確かな技術で仕立て直します。</p>
+            </div>
+            <div class="hero-v2-cta-block">
                 <div class="hero-v2-badges">
                     <span class="hero-v2-badge">国家資格保有の職人</span>
                     <span class="hero-v2-badge">ブランドリング対応</span>
@@ -2558,6 +2681,11 @@
                         <span>1年間保証つき</span>
                     </div>
                 </div>
+                <div class="hero-v2-promo">
+                    <span class="hero-v2-promo-tag">LINE OPEN</span>
+                    <span class="hero-v2-promo-text">開設記念｜<strong>15%</strong>オフ</span>
+                    <span class="hero-v2-promo-deadline">5/25まで</span>
+                </div>
             </div>
         </div>
     </section>
@@ -2567,7 +2695,7 @@
         <div class="contrast-inner">
             <div class="worries-block fade-in">
                 <p class="worries-eyebrow">YOUR CONCERN</p>
-                <h2 class="worries-title">こんなお悩み、<br><strong>ありませんか</strong></h2>
+                <h2 class="worries-title">こんなお悩み、<strong>ありませんか</strong></h2>
                 <ul class="worries-list">
                     <li>
                         <span class="worry-thumb">
@@ -2600,13 +2728,12 @@
                 </ul>
             </div>
 
-            <div class="contrast-triangle fade-in" aria-hidden="false">
-                <span class="triangle-label">RETOLD TOKYOのプライド<span class="triangle-label-en">Our Pride</span></span>
-            </div>
+            <header class="pride-header fade-in">
+                <span class="pride-header-title">RETOLD TOKYOの誇り<span class="pride-header-en">Our Pride</span></span>
+            </header>
+            <div class="contrast-triangle fade-in" aria-hidden="true"></div>
 
             <div class="pride-block fade-in">
-                <p class="pride-eyebrow">RETOLD TOKYO&apos;S PRIDE</p>
-                <h2 class="pride-title">RETOLD TOKYO<span class="accent">の誇り</span></h2>
                 <div class="pride-content">
                     <div class="pride-image">
                         <img src="/resize/images/reason-craftsman-workshop.png" alt="国家資格保有の職人による手作業の工房" loading="lazy">
@@ -2616,6 +2743,23 @@
                         <p>多くの企業では、ジュエリー職人が分業されており、全体を見てモノの状態を正確に判断し、<strong>「修理」ができる職人は希少</strong>です。</p>
                     </div>
                 </div>
+                <div class="pride-cases">
+                    <p class="pride-cases-label">仕立ての記録</p>
+                    <div class="pride-cases-grid">
+                        <figure class="pride-case-card">
+                            <span class="pride-case-img">
+                                <img src="/resize/images/BA2hermes.png" alt="ブランドリングの仕立て直し" loading="lazy">
+                            </span>
+                            <figcaption>ブランドリング<br>1.5号アップ＋新品磨き上げ</figcaption>
+                        </figure>
+                        <figure class="pride-case-card">
+                            <span class="pride-case-img">
+                                <img src="/resize/images/BA2dia.png" alt="婚約指輪の仕立て直し" loading="lazy">
+                            </span>
+                            <figcaption>婚約指輪　ダイヤつき<br>1.5号アップ＋新品磨き上げ</figcaption>
+                        </figure>
+                    </div>
+                </div>
                 <div class="pride-note">
                     <div class="pride-note-image">
                         <img src="/resize/images/worry-engraving.png" alt="刻印の例" loading="lazy">
@@ -2623,6 +2767,43 @@
                     <p class="pride-note-text">
                         <span class="note-tag">NOTE</span>修理の過程でどうしても刻印が消えてしまう場合、刻印追加は無料で対応いたします。<br>（ブランド刻印はNG。お名前や記念日などは手彫り／レーザーどちらも可能です。）
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Founder Section (創業者の思い) ===== -->
+    <section class="founder-section" id="founder">
+        <div class="founder-inner">
+            <div class="founder-portrait fade-in">
+                <img src="/resize/images/foundericon.png" alt="RETOLD TOKYO 代表取締役社長 土屋沙也加" loading="lazy">
+            </div>
+            <div class="founder-text fade-in">
+                <p class="founder-label">FOUNDER&apos;S NOTE</p>
+                <h2 class="founder-title">創業者の思い<small class="founder-title-sub">なぜ、RETOLD TOKYOをはじめたのか</small></h2>
+                <div class="founder-body">
+                    <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
+
+                    <p>「パールは売れないから」<br>
+                    実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
+
+                    <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。<br>
+                    ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。<br>
+                    そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
+
+                    <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<br>
+                    <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
+
+                    <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。<br>
+                    できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
+
+                    <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
+                </div>
+                <div class="founder-sign">
+                    <div class="founder-sign-meta">
+                        <div class="founder-sign-role">代表取締役社長</div>
+                        <div class="founder-sign-name">土屋 沙也加<small>Sayaka Tsuchiya</small></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2694,43 +2875,6 @@
             </div>
         </div>
     </div>
-
-    <!-- ===== Founder Section (創業者の思い) ===== -->
-    <section class="founder-section" id="founder">
-        <div class="founder-inner">
-            <div class="founder-portrait fade-in">
-                <img src="/resize/images/deskwoman.png" alt="RETOLD TOKYO 創業者 牧野 千夏" loading="lazy">
-            </div>
-            <div class="founder-text fade-in">
-                <p class="founder-label">FOUNDER&apos;S NOTE</p>
-                <h2 class="founder-title">創業者の思い<small class="founder-title-sub">なぜ、RETOLD TOKYOをはじめたのか</small></h2>
-                <div class="founder-body">
-                    <p>ジュエリーの真の価値は、<em class="mark">カラット数やブランド名、素材といった「目に見える価値」にとどまりません。</em></p>
-
-                    <p>「パールは売れないから」<br>
-                    実家の整理をしていた際、祖母が愛用していたパールのジュエリーに対して言われた一言です。</p>
-
-                    <p>確かに傷も凹みも変形もしていて、とても売り物にはならない。<br>
-                    ただ、それらは同時に<em class="mark">祖母の日々の営みが感じられる愛おしいもの</em>でした。<br>
-                    そこからジュエリーの構造や業界を知っていく中で、「長く愛用されるもの」の尊さを実感しました。</p>
-
-                    <p>目に見えない思いが宿るジュエリーを、一つでも長く愛用してほしい。<br>
-                    <em class="mark">「売る」以外の選択肢を、もっと日本中に広げたい。</em></p>
-
-                    <p>RETOLD TOKYOでお直しをしたジュエリーが、持ち主の日々の営みにそっと寄り添うものであってほしい。<br>
-                    できるなら<em class="mark">「棺桶に入れて欲しい」と言われるくらい思いが宿るもの</em>になってほしい。</p>
-
-                    <p>その思いから、日本中でジュエリー職人さんと出会い、「自分が任せたいと心から思う」職人さんたちと一緒に立ち上げたのが、RETOLD TOKYOです。</p>
-                </div>
-                <div class="founder-sign">
-                    <div class="founder-sign-meta">
-                        <div class="founder-sign-role">FOUNDER ／ JEWELRY RESTORE AMBASSADOR</div>
-                        <div class="founder-sign-name">牧野 千夏<small>Chinatsu Makino</small></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ===== Process Section ===== -->
     <div class="section section-bg-white" id="process">
