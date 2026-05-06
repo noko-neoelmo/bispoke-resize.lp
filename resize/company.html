@@ -180,6 +180,22 @@
         }
         .footer-nav a:hover { color: #bbb; }
     </style>
+    <script>
+    (function () {
+        var sp = new URLSearchParams(window.location.search);
+        var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','yclid'];
+        var carry = new URLSearchParams();
+        keys.forEach(function (k) { var v = sp.get(k); if (v) carry.set(k, v); });
+        if (!carry.toString()) return;
+        document.querySelectorAll('a[data-cta]').forEach(function (a) {
+            try {
+                var url = new URL(a.href, window.location.origin);
+                carry.forEach(function (v, k) { url.searchParams.set(k, v); });
+                a.href = url.toString();
+            } catch (e) {}
+        });
+    })();
+    </script>
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS23VNZH"
@@ -226,7 +242,7 @@
             </tr>
             <tr>
                 <th>お問い合わせ</th>
-                <td><a href="https://lin.ee/VhCyZEw">LINEでお問い合わせ</a></td>
+                <td><a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta>LINEでお問い合わせ</a></td>
             </tr>
         </table>
     </div>
