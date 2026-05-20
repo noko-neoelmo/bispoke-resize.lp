@@ -56,7 +56,7 @@ content = content.replace(
 
 # ── 3. CTA button text (after pricing) ──
 content = content.replace(
-    'LINEで15%OFF即日お見積もり',
+    'LINEで15%OFFお見積もり',
     'LINEで無料お見積もり',
 )
 content = content.replace(
