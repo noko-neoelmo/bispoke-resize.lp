@@ -13,5 +13,13 @@
   "redirects": [
     { "source": "/", "destination": "/resize", "permanent": false }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "index, follow" }
+      ]
+    }
+  ]
 }
