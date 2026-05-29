@@ -1898,10 +1898,10 @@
         .hero-v2 {
             position: relative;
             margin-top: 92px;
-            background-color: #FFFFFF;
-            background-image: url('/resize/images/hero-ring-box.jpg');
+            background-color: #EDE7DD;
+            background-image: url('/resize/images/hero-atelier-ring.png');
             background-size: cover;
-            background-position: center;
+            background-position: center 28%;
             background-repeat: no-repeat;
             color: var(--navy);
             overflow: hidden;
@@ -1909,6 +1909,22 @@
             min-height: 680px;
             display: flex;
             flex-direction: column;
+        }
+        /* Readability scrim: light wash at top for the navy title,
+           subtle dark anchor at the bottom for the CTA/promo band. */
+        .hero-v2::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(180deg,
+                    rgba(248,245,239,0.72) 0%,
+                    rgba(248,245,239,0.40) 22%,
+                    rgba(248,245,239,0.05) 42%,
+                    rgba(27,42,74,0.00) 62%,
+                    rgba(27,42,74,0.28) 100%);
         }
         @media (min-width: 600px) {
             .hero-v2 { margin-top: 96px; min-height: 760px; }
@@ -1919,6 +1935,7 @@
         /* Hero: no full overlay — text uses a white halo for readability */
         .hero-v2-inner {
             position: relative;
+            z-index: 1;
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -2811,7 +2828,7 @@
         <div class="hero-v2-inner">
             <div class="hero-v2-text">
                 <p class="hero-v2-eyebrow">RETOLD TOKYO ／ Ring Resize</p>
-                <h1 class="hero-v2-title">指輪のお仕立て<br><span class="accent">5,500円〜・0.5号刻み</span></h1>
+                <h1 class="hero-v2-title">0.5号刻みの指輪サイズ直し<br><span class="accent">5,500円〜</span></h1>
                 <p class="hero-v2-lead">他店で断られたブランドリングも対応。<br>国家資格を持つ職人が、全国送料無料で仕立て直します。</p>
             </div>
             <div class="hero-v2-cta-block">
