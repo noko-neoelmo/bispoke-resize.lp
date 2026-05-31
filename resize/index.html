@@ -1914,7 +1914,7 @@
             position: relative;
             margin-top: 104px;
             background-color: #FFFEFB;
-            background-image: url('images/hero-resize-hand-gauge-v2.png');
+            background-image: url('/resize/images/hero-resize-hand-gauge-v2.png');
             background-size: auto 100%;
             background-position: right top;
             background-repeat: no-repeat;
@@ -3106,6 +3106,13 @@
             } catch (e) {}
         });
     })();
+    (function () {
+        if (window.location.protocol !== 'file:') return;
+        window.addEventListener('DOMContentLoaded', function () {
+            var hero = document.querySelector('.hero-v2');
+            if (hero) hero.style.backgroundImage = "url('images/hero-resize-hand-gauge-v2.png')";
+        });
+    })();
     </script>
 </head>
 <body>
@@ -3115,7 +3122,7 @@
 
     <!-- Header -->
     <header>
-        <div class="logo"><img src="images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="logo-img"></div>
+        <div class="logo"><img src="/resize/images/RETOLD_logo_WHT.png" onerror="this.onerror=null;this.src='images/RETOLD_logo_WHT.png';" alt="RETOLD TOKYO" class="logo-img"></div>
     </header>
 
     <!-- Promo Banner: 公式LINEオープン記念 -->
@@ -3162,7 +3169,7 @@
                     </a>
                     <div class="hero-v2-gauge-card" aria-label="0.5号刻みのリングゲージ無料送付">
                         <div class="hero-v2-gauge-image">
-                            <img src="images/ring-gauge.jpg" alt="0.5号刻みのリングゲージ" loading="eager">
+                            <img src="/resize/images/ring-gauge.jpg" onerror="this.onerror=null;this.src='images/ring-gauge.jpg';" alt="0.5号刻みのリングゲージ" loading="eager">
                         </div>
                         <div class="hero-v2-gauge-copy">
                             <p class="hero-v2-gauge-title">サイズが分からなくてもOK</p>
