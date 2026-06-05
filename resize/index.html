@@ -172,6 +172,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- LCP: FVヒーロー背景画像を最優先で先読み（CSS background のため preload で発見を早める） -->
+    <link rel="preload" as="image" href="/resize/images/hero-resize-hand-gauge-v2.webp" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
@@ -1914,7 +1916,7 @@
             position: relative;
             margin-top: 104px;
             background-color: #FFFEFB;
-            background-image: url('/resize/images/hero-resize-hand-gauge-v2.png');
+            background-image: url('/resize/images/hero-resize-hand-gauge-v2.webp');
             background-size: auto 100%;
             background-position: right top;
             background-repeat: no-repeat;
@@ -3110,7 +3112,7 @@
         if (window.location.protocol !== 'file:') return;
         window.addEventListener('DOMContentLoaded', function () {
             var hero = document.querySelector('.hero-v2');
-            if (hero) hero.style.backgroundImage = "url('images/hero-resize-hand-gauge-v2.png')";
+            if (hero) hero.style.backgroundImage = "url('images/hero-resize-hand-gauge-v2.webp')";
         });
     })();
     </script>
@@ -3122,7 +3124,7 @@
 
     <!-- Header -->
     <header>
-        <div class="logo"><img src="/resize/images/RETOLD_logo_WHT.png" onerror="this.onerror=null;this.src='images/RETOLD_logo_WHT.png';" alt="RETOLD TOKYO" class="logo-img"></div>
+        <div class="logo"><img src="/resize/images/RETOLD_logo_WHT.webp" onerror="this.onerror=null;this.src='images/RETOLD_logo_WHT.webp';" alt="RETOLD TOKYO" class="logo-img"></div>
     </header>
 
     <!-- Promo Banner: 公式LINEオープン記念 -->
@@ -3169,7 +3171,7 @@
                     </a>
                     <div class="hero-v2-gauge-card" aria-label="0.5号刻みのリングゲージ無料送付">
                         <div class="hero-v2-gauge-image">
-                            <img src="/resize/images/ring-gauge.jpg" onerror="this.onerror=null;this.src='images/ring-gauge.jpg';" alt="0.5号刻みのリングゲージ" loading="eager">
+                            <img src="/resize/images/ring-gauge.webp" onerror="this.onerror=null;this.src='images/ring-gauge.webp';" alt="0.5号刻みのリングゲージ" loading="eager">
                         </div>
                         <div class="hero-v2-gauge-copy">
                             <p class="hero-v2-gauge-title">サイズが分からなくてもOK</p>
@@ -3204,28 +3206,28 @@
                 <ul class="worries-list">
                     <li>
                         <span class="worry-thumb">
-                            <img src="/resize/images/empathy-jewelry-box.png" alt="ブランドショップで断られた指輪" loading="lazy">
+                            <img src="/resize/images/empathy-jewelry-box.webp" alt="ブランドショップで断られた指輪" loading="lazy">
                             <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
                         <span class="worry-text">ブランドショップで断られてしまった</span>
                     </li>
                     <li>
                         <span class="worry-thumb">
-                            <img src="/resize/images/hero-morning-ring.png" alt="サイズの差が大きい指輪" loading="lazy">
+                            <img src="/resize/images/hero-morning-ring.webp" alt="サイズの差が大きい指輪" loading="lazy">
                             <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
                         <span class="worry-text">サイズの差が大きすぎて断られてしまった</span>
                     </li>
                     <li>
                         <span class="worry-thumb">
-                            <img src="/resize/images/worry-stone-ring.png" alt="石つきのリング" loading="lazy">
+                            <img src="/resize/images/worry-stone-ring.webp" alt="石つきのリング" loading="lazy">
                             <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
                         <span class="worry-text">石つきのリングはできないと断られてしまった</span>
                     </li>
                     <li>
                         <span class="worry-thumb">
-                            <img src="/resize/images/worry-engraving.png" alt="刻印が消えてしまう指輪" loading="lazy">
+                            <img src="/resize/images/worry-engraving.webp" alt="刻印が消えてしまう指輪" loading="lazy">
                             <span class="worry-thumb-x" aria-hidden="true"></span>
                         </span>
                         <span class="worry-text">刻印が消えてしまうと断られてしまった</span>
@@ -3240,7 +3242,7 @@
             <div class="pride-block fade-in">
                 <div class="pride-content">
                     <div class="pride-image">
-                        <img src="/resize/images/reason-craftsman-workshop.png" alt="国家資格保有の職人による手作業の工房" loading="lazy">
+                        <img src="/resize/images/reason-craftsman-workshop.webp" alt="国家資格保有の職人による手作業の工房" loading="lazy">
                     </div>
                     <div class="pride-body">
                         <p><strong>「修理」に特化した国内の職人</strong>が多数在籍。金属加工の<strong>国家資格</strong>を保有し、機械に頼らない<strong>「手作業」</strong>でのお直しができます。</p>
@@ -3252,13 +3254,13 @@
                     <div class="pride-cases-grid">
                         <figure class="pride-case-card">
                             <span class="pride-case-img">
-                                <img src="/resize/images/BA2hermes.png" alt="ブランドリングの仕立て直し" loading="lazy">
+                                <img src="/resize/images/BA2hermes.webp" alt="ブランドリングの仕立て直し" loading="lazy">
                             </span>
                             <figcaption>ブランドリング（K18）<br>1.5号アップ＋新品磨き上げ<br><span style="font-size:.8em;color:#8a7a5a;">サイズ直し ¥25,000〜｜約3週間</span></figcaption>
                         </figure>
                         <figure class="pride-case-card">
                             <span class="pride-case-img">
-                                <img src="/resize/images/BA2dia.png" alt="婚約指輪の仕立て直し" loading="lazy">
+                                <img src="/resize/images/BA2dia.webp" alt="婚約指輪の仕立て直し" loading="lazy">
                             </span>
                             <figcaption>婚約指輪　ダイヤつき（Pt900）<br>1.5号アップ＋新品磨き上げ<br><span style="font-size:.8em;color:#8a7a5a;">サイズ直し ¥15,000〜｜約3週間</span></figcaption>
                         </figure>
@@ -3266,7 +3268,7 @@
                 </div>
                 <div class="pride-engraving">
                     <div class="pride-engraving-image">
-                        <img src="/resize/images/worry-engraving.png" alt="刻印の例" loading="lazy">
+                        <img src="/resize/images/worry-engraving.webp" alt="刻印の例" loading="lazy">
                     </div>
                     <div class="pride-engraving-body">
                         <p class="pride-engraving-text">
@@ -3321,7 +3323,7 @@
                     <div class="founder-sign-name">土屋 沙也加<small>Sayaka Tsuchiya</small></div>
                 </div>
                 <div class="founder-sign-portrait">
-                    <img src="/resize/images/foundericon.png" alt="代表取締役社長 土屋 沙也加" loading="lazy">
+                    <img src="/resize/images/foundericon.webp" alt="代表取締役社長 土屋 沙也加" loading="lazy">
                 </div>
             </div>
         </div>
@@ -3370,7 +3372,7 @@
 
             <div class="polish-callout fade-in">
                 <div class="polish-image">
-                    <img src="/resize/images/hero-atelier-ring.png" alt="職人による磨き上げ作業" loading="lazy">
+                    <img src="/resize/images/hero-atelier-ring.webp" alt="職人による磨き上げ作業" loading="lazy">
                 </div>
                 <div class="polish-text">
                     <p class="polish-title">全てのリングを新品仕上げの磨き上げでお届けします</p>
@@ -3443,7 +3445,7 @@
             <div class="process-flow fade-in">
                 <div class="process-step">
                     <div class="process-step-img">
-                        <img src="/resize/images/process-step1-kit.png" alt="返送用キットの梱包材・リングゲージ・着払い伝票" loading="lazy">
+                        <img src="/resize/images/process-step1-kit.webp" alt="返送用キットの梱包材・リングゲージ・着払い伝票" loading="lazy">
                     </div>
                     <div class="process-step-body">
                         <span class="process-step-num">STEP 1</span>
@@ -3454,7 +3456,7 @@
                 </div>
                 <div class="process-step">
                     <div class="process-step-img">
-                        <img src="/resize/images/process-step2-quote.png" alt="LINEでお見積もりをお送りする様子" loading="lazy">
+                        <img src="/resize/images/process-step2-quote.webp" alt="LINEでお見積もりをお送りする様子" loading="lazy">
                     </div>
                     <div class="process-step-body">
                         <span class="process-step-num">STEP 2</span>
@@ -3465,7 +3467,7 @@
                 </div>
                 <div class="process-step">
                     <div class="process-step-img">
-                        <img src="/resize/images/syokuninn.png" alt="工房での仕立て直しの様子" loading="lazy">
+                        <img src="/resize/images/syokuninn.webp" alt="工房での仕立て直しの様子" loading="lazy">
                     </div>
                     <div class="process-step-body">
                         <span class="process-step-num">STEP 3</span>
@@ -3587,7 +3589,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-logo"><img src="/resize/images/RETOLD_logo_WHT.png" alt="RETOLD TOKYO" class="footer-logo-img"></div>
+        <div class="footer-logo"><img src="/resize/images/RETOLD_logo_WHT.webp" alt="RETOLD TOKYO" class="footer-logo-img"></div>
         <p class="footer-tagline">RING RESIZE — AOYAMA, TOKYO</p>
         <nav class="footer-nav">
             <a href="#pride">RETOLD TOKYOの誇り</a>
@@ -3602,6 +3604,13 @@
             <a href="/resize/company">運営情報</a>
             <a href="/resize/legal">特定商取引法に基づく表記</a>
         </nav>
+        <div class="footer-bizinfo" style="max-width:680px;margin:24px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);font-size:12px;line-height:1.9;opacity:.8;text-align:left;">
+            <p style="margin:0 0 6px;">運営会社：株式会社BiSPOKE（ブランド：RETOLD TOKYO）</p>
+            <p style="margin:0 0 6px;">所在地：〒107-0062 東京都港区南青山2-5-17</p>
+            <p style="margin:0 0 6px;">お問い合わせ：03-6820-3026 ／ LINEでも承ります</p>
+            <p style="margin:0 0 6px;">送料：往復送料無料（当社負担）。お見積もり用ジュエリーの返送は同封の着払い伝票をご利用ください。※お見積もり後にキャンセルされる場合のご返送のみ、お客様の着払いとなります。</p>
+            <p style="margin:0;">品質保証：サイズ直し完了後1年間の無償保証付き。</p>
+        </div>
         <p>&copy; 2025 RETOLD TOKYO / 株式会社BiSPOKE. All Rights Reserved.</p>
     </footer>
 
