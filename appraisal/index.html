@@ -438,6 +438,36 @@
             color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px;
         }
 
+        /* ── Brand story ── */
+        .story { background: var(--warm-white); position: relative; overflow: hidden; }
+        .story::before {
+            content: "RETOLD"; position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
+            font-family: var(--en); font-size: 120px; letter-spacing: 0.2em;
+            color: rgba(27,42,74,0.045); white-space: nowrap; pointer-events: none;
+        }
+        .story-quote {
+            font-family: var(--serif); font-size: clamp(22px, 4.6vw, 30px); font-weight: 600;
+            color: var(--navy); text-align: center; letter-spacing: 0.06em; margin-bottom: 10px;
+        }
+        .story-quote-sub { text-align: center; font-size: 13.5px; color: var(--gold-deep); margin-bottom: 36px; letter-spacing: 0.08em; }
+        .story-body { max-width: 620px; margin: 0 auto; font-size: 14.5px; color: var(--text-secondary); }
+        .story-body p { margin-bottom: 18px; }
+        .story-body em.mark { font-style: normal; font-weight: 600; color: var(--navy); background: linear-gradient(transparent 68%, rgba(201,168,118,0.45) 68%); }
+        .story-meaning {
+            max-width: 620px; margin: 28px auto; padding: 18px 24px; text-align: center;
+            border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold);
+        }
+        .story-meaning .en { font-family: var(--en); font-size: 20px; letter-spacing: 0.34em; color: var(--navy); display: block; margin-bottom: 4px; }
+        .story-meaning .ja { font-family: var(--serif); font-size: 14px; color: var(--gold-deep); letter-spacing: 0.1em; }
+        .story-sign {
+            max-width: 620px; margin: 30px auto 0; display: flex; align-items: center;
+            justify-content: flex-end; gap: 16px;
+        }
+        .story-sign img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 3px 12px rgba(27,42,74,0.18); }
+        .story-sign .role { font-size: 11px; color: var(--text-light); letter-spacing: 0.1em; }
+        .story-sign .name { font-family: var(--serif); font-size: 19px; color: var(--navy); font-weight: 600; letter-spacing: 0.12em; }
+        .footer-logo { width: 150px; margin: 0 auto 16px; opacity: 0.9; }
+
         /* ── Imagery ── */
         .section-figure { margin: 0 auto 40px; max-width: 720px; }
         .section-figure img {
@@ -661,6 +691,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <!-- ══ Brand Story ══ -->
+    <section class="story" id="story">
+        <div class="container">
+            <p class="section-label">Our Story</p>
+            <p class="story-quote">「パールは、売れないから」</p>
+            <p class="story-quote-sub">——RETOLD TOKYOは、その一言から生まれました。</p>
+            <div class="story-body">
+                <p>創業者が実家の整理をしていたとき、祖母が愛用していたパールのジュエリーに向けられた言葉です。確かに傷も凹みもあり、売り物にはなりません。けれどそれは、祖母の日々の営みがそのまま感じられる、愛おしいものでした。</p>
+                <p>ジュエリーの価値は、カラット数やブランド名といった「目に見える価値」だけでは測れません。だからこそ、まず<em class="mark">確かめる</em>。そのうえで、直して使う、作り替えて受け継ぐ——<em class="mark">「売る」以外の選択肢</em>を、日本中に広げていきたいと考えています。</p>
+                <p>その思いから、「自分が任せたい」と心から思える職人たちと立ち上げたのが、RETOLD TOKYOです。受け継いだジュエリーの素性を確かめることは、その物語をもう一度語り始めるための、最初の一歩だと信じています。</p>
+            </div>
+            <div class="story-meaning">
+                <span class="en">RETOLD</span>
+                <span class="ja">もう一度、語られる。受け継いだ物語を、つぎの日々へ。</span>
+            </div>
+            <div class="story-sign">
+                <div>
+                    <p class="role">RETOLD TOKYO 代表取締役社長</p>
+                    <p class="name">土屋 沙也加</p>
+                </div>
+                <img src="/appraisal/images/foundericon.webp" alt="代表取締役社長 土屋沙也加" loading="lazy" width="64" height="64">
+            </div>
+        </div>
+    </section>
+
     <!-- ══ Pricing ══ -->
     <section class="pricing" id="price">
         <div class="container">
@@ -822,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ══ Footer ══ -->
     <footer class="footer">
         <div class="footer-inner">
-            <p class="brand">RETOLD TOKYO</p>
+            <img class="footer-logo" src="/appraisal/images/RETOLD_logo_WHT.webp" alt="RETOLD TOKYO" loading="lazy" width="150" height="42">
             <nav>
                 <a href="/resize">指輪のサイズ直し</a>
                 <a href="/resize/company">会社概要</a>
