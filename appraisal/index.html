@@ -21,13 +21,13 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.net/tr?id=956051253500043&ev=PageView&noscript=1"/></noscript>
 
-    <title>【遺品整理・相続に】ダイヤモンド・宝石の鑑定書発行サービス｜1点6,600円〜・郵送完結｜RETOLD TOKYO</title>
-    <meta name="description" content="遺品整理や相続で見つかったダイヤモンド・色石の価値を確かなかたちに。提携する国内の宝石鑑別機関による鑑定書・鑑別書の発行を郵送完結で代行。1点6,600円(税込)〜、3点以上で10%OFF。全国対応・保険付き配送。LINEで写真を送るだけの無料相談。">
+    <title>【遺品整理・相続に】ダイヤ・宝石の鑑定書発行｜箱ごとまとめて送るだけ・仕分け無料｜RETOLD TOKYO</title>
+    <meta name="description" content="遺品整理や相続で見つかったジュエリーを、箱ごとまとめてお送りください。職人が1点ずつ仕分け（無料）し、価値あるものだけ鑑定書・鑑別書を発行（1点6,600円税込〜）。お直し・リフォーム・損をしない手放し方のご提案まで。全国対応・保険付き配送。">
     <link rel="canonical" href="https://retold.tokyo/appraisal">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="【遺品整理・相続に】ダイヤモンド・宝石の鑑定書発行サービス｜RETOLD TOKYO">
-    <meta property="og:description" content="受け継いだ宝石の価値を、確かなかたちに。鑑定書・鑑別書の発行を郵送完結で代行。1点6,600円(税込)〜、全国対応・保険付き配送。">
+    <meta property="og:title" content="【遺品整理・相続に】形見のジュエリー、箱ごとお送りください｜鑑定書発行 RETOLD TOKYO">
+    <meta property="og:description" content="職人が1点ずつ仕分け（無料）し、価値あるものだけ鑑定書を発行。直す・リフォームする・手放す——これからのご提案までお渡しします。">
     <meta property="og:url" content="https://retold.tokyo/appraisal">
     <meta property="og:site_name" content="RETOLD TOKYO">
 
@@ -57,7 +57,7 @@
           "name": "遺品のジュエリーをまとめて鑑定してもらえますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい、何点でもまとめてお預かりできます。3点以上で全体から10%OFFになります。どれを鑑定すべきか分からない場合も、LINEで写真をお送りいただければ、鑑定する価値のあるお品の見分け方からご案内します。"
+            "text": "はい、箱ごとまとめてお送りいただく形を基本としています。職人が1点ずつ仕分け（無料）し、鑑定する価値のあるものだけお見積もりのうえ、ご承認後に鑑定へ進みます。3点以上の鑑定で10%OFFになります。"
           }
         },
         {
@@ -341,7 +341,7 @@
 
         /* ── Process ── */
         .process { background: var(--warm-white); }
-        .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
         .process-step {
             background: #fff; border-radius: 14px; padding: 30px 22px 26px;
             border: 1px solid var(--dusky-blue-light); text-align: center; position: relative;
@@ -414,6 +414,30 @@
         .floating-cta.visible { transform: translateY(0); }
         .floating-cta .btn-cta { width: 100%; max-width: 480px; padding: 14px 20px; font-size: 15px; }
 
+        /* ── Persona cards ── */
+        .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .persona-card {
+            background: #fff; border: 1px solid var(--dusky-blue-light);
+            border-radius: 14px; overflow: hidden;
+            box-shadow: 0 4px 18px rgba(27,42,74,0.05);
+        }
+        .persona-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+        .persona-card .body { padding: 20px; }
+        .persona-card .scene-tag {
+            display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+            color: var(--gold-deep); border: 1px solid var(--gold);
+            border-radius: 999px; padding: 2px 12px; margin-bottom: 12px;
+        }
+        .persona-card .quote {
+            font-family: var(--serif); font-size: 14.5px; color: var(--navy);
+            line-height: 1.9; margin-bottom: 10px;
+        }
+        .persona-card .who { font-size: 12px; color: var(--text-light); }
+        .reason-card .more {
+            display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600;
+            color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px;
+        }
+
         /* ── Imagery ── */
         .section-figure { margin: 0 auto 40px; max-width: 720px; }
         .section-figure img {
@@ -425,7 +449,7 @@
             margin: -28px -22px 18px; border-radius: 13px 13px 0 0;
         }
         .process-step img {
-            display: block; width: calc(100% + 44px); height: 160px; object-fit: cover;
+            display: block; width: calc(100% + 44px); height: 140px; object-fit: cover;
             margin: -30px -22px 16px; border-radius: 13px 13px 0 0;
         }
         .safety-figure { margin: 0 0 28px; }
@@ -440,7 +464,7 @@
             .sp-only { display: inline; }
             section { padding: 60px 20px; }
             .concern-grid, .safety-grid { grid-template-columns: 1fr; }
-            .reason-grid, .service-grid, .process-steps { grid-template-columns: 1fr; }
+            .reason-grid, .service-grid, .process-steps, .persona-grid { grid-template-columns: 1fr; }
             .service-grid { gap: 22px; }
             .hero { padding: 108px 20px 56px; }
             .hero-lead { font-size: 14px; }
@@ -472,16 +496,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-inner">
             <p class="hero-label">Diamond &amp; Gemstone Appraisal</p>
             <p class="hero-service">ダイヤモンド・色石の鑑定書発行サービス</p>
-            <h1>受け継いだ宝石の価値を、<br><span class="gold">確かなかたち</span>に。</h1>
-            <p class="hero-lead">遺品整理や相続で見つかった指輪やネックレス。「本物なのか」「どれほどのものなのか」——その答えを、提携する国内の宝石鑑別機関による鑑定書・鑑別書でお渡しします。箱に詰めて送るだけ、全国どこからでも郵送で完結します。</p>
+            <h1>形見のジュエリーは、<br><span class="gold">箱ごと</span>お送りください。</h1>
+            <p class="hero-lead">遺品整理や相続で見つかった指輪やネックレス。どれに価値があるのか、分からないままで大丈夫です。職人が1点ずつ仕分けし、価値あるものには提携鑑別機関による鑑定書・鑑別書を発行。そのうえで「直して使う」「リフォームする」「手放す」——これからの選択肢までご提案します。全国どこからでも郵送で完結します。</p>
             <div class="hero-badges">
+                <span>仕分け・お見積もり無料</span>
                 <span>郵送完結・全国対応</span>
                 <span>全行程 保険付き配送</span>
                 <span>お届けまで約2〜3週間</span>
-                <span>お見積もり無料</span>
             </div>
             <div class="hero-price">
-                <span class="small">鑑定・鑑別書発行</span>
+                <span class="small">仕分け無料・鑑定するものだけ</span>
                 <span class="num">1点 6,600<em>円(税込)〜</em></span>
             </div>
             <div>
@@ -489,38 +513,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
                     LINEで無料相談する
                 </a>
-                <p class="cta-note">写真を送るだけで、鑑定すべきお品かどうかご案内します</p>
+                <p class="cta-note">箱ごと・引き出しごとの写真でOK。仕分けの進め方を無料でご案内します</p>
             </div>
         </div>
     </section>
 
-    <!-- ══ Concern ══ -->
+    <!-- ══ Scene & Persona ══ -->
     <section class="concern" id="concern">
         <div class="container">
-            <p class="section-label">Your Concern</p>
-            <h2 class="section-title">こんなお悩みは<br class="sp-only">ありませんか？</h2>
-            <figure class="section-figure">
-                <img src="/appraisal/images/drawer-jewelry.webp" alt="引き出しに残された形見のジュエリー" loading="lazy" width="720" height="300">
-            </figure>
-            <div class="concern-grid">
-                <div class="concern-item">
-                    <span class="mark">1</span>
-                    <p>遺品整理で出てきたジュエリー、<strong>本物かどうか分からない</strong>まま手をつけられずにいる</p>
+            <p class="section-label">Your Situation</p>
+            <h2 class="section-title">こんな場面で、<br class="sp-only">ご相談いただいています</h2>
+            <p class="section-lead">どのお悩みも、出発点は同じです。「価値が分からないものが、まとめて手元にある」。だから当店は、箱ごとお送りいただくところから始めます。</p>
+            <div class="persona-grid">
+                <div class="persona-card">
+                    <img src="/appraisal/images/drawer-jewelry.webp" alt="実家の引き出しに残されたジュエリー" loading="lazy">
+                    <div class="body">
+                        <span class="scene-tag">遺品整理</span>
+                        <p class="quote">実家の整理で、母のジュエリーボックスが出てきた。本物かどうか分からないまま、捨てるに捨てられない。</p>
+                        <p class="who">親の家の片づけをしている50代の方</p>
+                    </div>
                 </div>
-                <div class="concern-item">
-                    <span class="mark">2</span>
-                    <p>相続で形見分けをしたいのに、<strong>価値の基準がなく</strong>話し合いが進まない</p>
+                <div class="persona-card">
+                    <img src="/appraisal/images/empathy-drawer-vintage.webp" alt="形見分けを待つ古いジュエリー" loading="lazy">
+                    <div class="body">
+                        <span class="scene-tag">相続・形見分け</span>
+                        <p class="quote">きょうだいで形見分けをしたいけれど、どれにどれだけの価値があるのか分からず、話が止まっている。</p>
+                        <p class="who">相続の手続きを進めている方</p>
+                    </div>
                 </div>
-                <div class="concern-item">
-                    <span class="mark">3</span>
-                    <p>買取店に持ち込む前に、<strong>客観的な裏付け</strong>を持っておきたい</p>
-                </div>
-                <div class="concern-item">
-                    <span class="mark">4</span>
-                    <p>鑑定書を紛失してしまった、<strong>古い鑑定書しか残っていない</strong></p>
+                <div class="persona-card">
+                    <img src="/appraisal/images/deskwoman.webp" alt="受け継いだ指輪を前に考える手元" loading="lazy">
+                    <div class="body">
+                        <span class="scene-tag">受け継いだ形見</span>
+                        <p class="quote">祖母の指輪を受け継いだけれど、サイズも合わないし、デザインも古い。直す？作り替える？それとも手放す？</p>
+                        <p class="who">形見をどうするか決めかねている方</p>
+                    </div>
                 </div>
             </div>
-            <p class="concern-close">その宝石の素性を確かめることが、<br><strong>遺されたものと向き合う最初の一歩</strong>です。</p>
+            <p class="concern-close">どれに価値があるか、分からないままで構いません。<br><strong>箱ごとまとめてお送りいただく</strong>ところから、一緒に整理していきます。</p>
         </div>
     </section>
 
@@ -601,6 +631,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
+    <!-- ══ After Appraisal ══ -->
+    <section class="after" id="after">
+        <div class="container">
+            <p class="section-label">After Appraisal</p>
+            <h2 class="section-title">鑑定して、終わりではありません。</h2>
+            <p class="section-lead">鑑定書とあわせて、お品ごとの「これからのご提案」を添えてお返しします。直すのか、作り替えるのか、手放すのか——決めるのは、それからで大丈夫です。</p>
+            <div class="reason-grid">
+                <div class="reason-card">
+                    <img src="/appraisal/images/inherited-ring-craftsman.webp" alt="形見の指輪を直す職人の手元" loading="lazy">
+                    <span class="num">A</span>
+                    <h3>直して、使う</h3>
+                    <p>サイズが合わない、石が緩んでいる——国家資格を持つ職人が自社工房でお直しします。サイズ直し8,800円(税込)〜、石留め5,500円(税込)〜。形見をそのまま日常へ。</p>
+                    <a class="more" href="/resize">指輪のサイズ直しについて詳しく</a>
+                </div>
+                <div class="reason-card">
+                    <img src="/appraisal/images/hero-atelier-ring.webp" alt="石を活かしてリフォームする作業" loading="lazy">
+                    <span class="num">B</span>
+                    <h3>作り替えて、受け継ぐ</h3>
+                    <p>古いデザインの指輪をペンダントに、大粒の石を普段使いのリングに。鑑定で確かめた石の価値を活かして、次の世代が使えるかたちへの仕立て直しをご提案します。</p>
+                </div>
+                <div class="reason-card">
+                    <img src="/appraisal/images/worry-stone-ring.webp" alt="手放すかどうか検討中の指輪" loading="lazy">
+                    <span class="num">C</span>
+                    <h3>手放すなら、納得のいくかたちで</h3>
+                    <p>当店は買取を行いません。だからこそ中立な立場で、「鑑定書を添えて複数の買取店で見積もりを取る」「相場の調べ方」など、損をしない手放し方を率直にアドバイスします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ══ Pricing ══ -->
     <section class="pricing" id="price">
         <div class="container">
@@ -608,6 +668,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="section-title">料金</h2>
             <p class="section-lead">表示はすべて税込・1点あたりの価格です。往復送料は無料、お見積もりにも費用はかかりません。</p>
             <div class="pricing-table">
+                <div class="pricing-row">
+                    <div class="name">仕分け・下見<small>箱ごとお送りいただいた全点を職人が1点ずつ拝見</small></div>
+                    <div class="val">無料</div>
+                </div>
                 <div class="pricing-row">
                     <div class="name">ソーティング（簡易鑑定）<small>ダイヤモンドの4C簡易判定</small></div>
                     <div class="val">6,600<em>円</em></div>
@@ -630,6 +694,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>遺品整理では複数のお品が見つかることがほとんどです。まとめてお送りいただければ、全体から10%引きいたします。</p>
             </div>
             <ul class="pricing-notes">
+                <li>※ 費用がかかるのは、ご承認いただいて鑑定に進むお品だけです。ご承認前に作業を始めることはありません。</li>
                 <li>※ 往復送料無料・全行程保険付き配送です。</li>
                 <li>※ 大粒石（2ct以上）や特殊な鑑別が必要なお品は、事前に追加費用をお見積もりします。</li>
                 <li>※ お届けまで約2〜3週間です。点数が多い場合は前後することがあります。</li>
@@ -645,22 +710,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="section-lead">ご来店は不要です。LINEでのご相談からお届けまで、全国どこからでも郵送で完結します。</p>
             <div class="process-steps">
                 <div class="process-step">
-                    <img src="/appraisal/images/process-step2-quote.webp" alt="LINEで宝石の写真を送って相談する様子" loading="lazy">
+                    <img src="/appraisal/images/process-step2-quote.webp" alt="LINEで箱ごとの写真を送って相談する様子" loading="lazy">
                     <span class="step-num">Step 01</span>
                     <h3>LINEで無料相談</h3>
-                    <p>お手元のお品の写真をお送りください。鑑定する価値があるか、どの書類が適しているかを無料でご案内し、お見積もりをお出しします。</p>
+                    <p>箱ごと・引き出しごとの写真で構いません。点数やお品の様子を拝見して、進め方をご案内します。</p>
                 </div>
                 <div class="process-step">
                     <img src="/appraisal/images/process-step1-kit.webp" alt="お届けする専用の梱包キット" loading="lazy">
                     <span class="step-num">Step 02</span>
-                    <h3>梱包キットでお送りいただく</h3>
-                    <p>専用の梱包キットをお届けします。お品を詰めてお送りください。送料は無料、配送には全行程で保険が付いています。</p>
+                    <h3>箱ごとまとめてお送りいただく</h3>
+                    <p>専用の梱包キットをお届けします。仕分け前のものが混ざっていて大丈夫です。送料無料・保険付き配送です。</p>
                 </div>
                 <div class="process-step">
-                    <img src="/appraisal/images/hero-ring-box.webp" alt="鑑定を終えてお届けする指輪" loading="lazy">
+                    <img src="/appraisal/images/deskwoman.webp" alt="お品を1点ずつ仕分け・記録する様子" loading="lazy">
                     <span class="step-num">Step 03</span>
-                    <h3>鑑定書とともにお届け</h3>
-                    <p>提携する国内の宝石鑑別機関で鑑定・鑑別を行い、書類とともにお品をご返送します。お返しの前に簡易クリーニングを無料で行います。</p>
+                    <h3>仕分けと無料お見積もり</h3>
+                    <p>職人が1点ずつ拝見し、鑑定する価値のあるお品をご報告。鑑定に進むものだけお見積もりし、ご承認いただいてから進めます。</p>
+                </div>
+                <div class="process-step">
+                    <img src="/appraisal/images/hero-ring-box.webp" alt="鑑定書とご提案を添えてお届け" loading="lazy">
+                    <span class="step-num">Step 04</span>
+                    <h3>鑑定書と「ご提案」をお届け</h3>
+                    <p>鑑定書・鑑別書とともに、お直し・リフォーム・手放し方など、お品ごとの「これからのご提案」を添えてご返送します。</p>
                 </div>
             </div>
             <p class="process-time">お届けまで <strong>約2〜3週間</strong></p>
@@ -714,8 +785,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <details class="faq-item"><summary>指輪やネックレスから石を外す必要はありますか？</summary>
                 <p class="answer">枠に留まったままでも鑑別は可能です。より正確なグレーディングが必要な場合は石を外して鑑定し、国家資格を持つ職人が元どおりにお戻しします（取り外し・再セットは別途2,200円(税込)〜）。</p>
             </details>
-            <details class="faq-item"><summary>何点もまとめてお願いできますか？</summary>
-                <p class="answer">はい、何点でもお預かりできます。3点以上で全体から10%OFFになります。「どれを鑑定すべきか分からない」という状態でも、写真をお送りいただければ見分け方からご案内します。</p>
+            <details class="faq-item"><summary>どれに価値があるか分からないのですが、まとめて送ってもいいですか？</summary>
+                <p class="answer">はい、それがいちばんおすすめの形です。箱ごと・引き出しごとお送りいただければ、職人が1点ずつ仕分けし（無料）、鑑定する価値のあるお品だけお見積もりをお出しします。ご承認いただいたものだけ鑑定に進み、3点以上の鑑定で全体から10%OFFになります。</p>
+            </details>
+            <details class="faq-item"><summary>鑑定に進まなかったお品はどうなりますか？</summary>
+                <p class="answer">仕分けの結果、鑑定に進まなかったお品も含めて、すべてそのままご返送します。当店がお品を処分したり、買い取ったりすることはありません。</p>
+            </details>
+            <details class="faq-item"><summary>売るかどうか、まだ決めていません。それでも相談できますか？</summary>
+                <p class="answer">もちろんです。当店は買取を行わないため、「直して使う」「リフォームする」「手放す」「そのまま保管する」のどの選択肢にも中立の立場でご提案できます。鑑定書とあわせてお品ごとの「これからのご提案」をお渡ししますので、決めるのはそれからで大丈夫です。</p>
             </details>
             <details class="faq-item"><summary>もし本物でなかった場合はどうなりますか？</summary>
                 <p class="answer">鑑別の結果は、良い結果もそうでない結果も、そのまま正直にお伝えします。費用はかかりますが、「確かめられたこと」自体が、手放す・手元に残すの判断材料になります。事前のLINE相談の段階で、写真から分かる範囲の見立てもお伝えしています。</p>
@@ -732,8 +809,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ══ Bottom CTA ══ -->
     <section class="cta-section" id="contact">
         <div class="container">
-            <h2>その宝石の物語を、<br>確かめることから始めませんか。</h2>
-            <p>写真を送るだけで、鑑定すべきお品かどうか・概算の費用を無料でご案内します。無理にお勧めすることはありません。</p>
+            <h2>まずは箱ごと、<br>写真に撮ってお送りください。</h2>
+            <p>どれに価値があるのか、分からないままで大丈夫です。仕分けの進め方と概算の費用を無料でご案内します。無理にお勧めすることはありません。</p>
             <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
                 LINEで無料相談する
@@ -760,7 +837,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="floating-cta" id="floatingCta">
         <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
-            LINEで無料相談（写真を送るだけ）
+            LINEで無料相談（箱ごとの写真でOK）
         </a>
     </div>
 
