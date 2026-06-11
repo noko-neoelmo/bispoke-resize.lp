@@ -438,6 +438,58 @@
             color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px;
         }
 
+        /* ── Insight (problem) ── */
+        .insight .section-title { font-size: clamp(21px, 4.4vw, 29px); }
+        .case-compare {
+            border: 1px solid var(--dusky-blue-light); border-radius: 16px;
+            overflow: hidden; margin: 0 0 18px; background: #fff;
+            box-shadow: 0 8px 28px rgba(27,42,74,0.08);
+        }
+        .case-head {
+            background: var(--navy); color: #fff; text-align: center;
+            font-family: var(--serif); font-size: 15px; letter-spacing: 0.06em;
+            padding: 14px 18px;
+        }
+        .case-cols { display: grid; grid-template-columns: 1fr 1fr; }
+        .case-col { padding: 24px 22px 22px; }
+        .case-col.bad { background: #F4F1EC; }
+        .case-col.good { background: #FBF6EC; border-left: 1px solid var(--gold); }
+        .case-tag {
+            display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em;
+            border-radius: 999px; padding: 3px 14px; margin-bottom: 14px;
+        }
+        .case-col.bad .case-tag { background: #8A8A8A; color: #fff; }
+        .case-col.good .case-tag { background: linear-gradient(135deg, var(--gold-top), var(--gold)); color: var(--navy-dark); }
+        .case-col img { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
+        .case-col h4 { font-family: var(--serif); font-size: 15.5px; color: var(--navy); letter-spacing: 0.04em; line-height: 1.6; margin-bottom: 8px; }
+        .case-col p { font-size: 13px; color: var(--text-secondary); }
+        .case-col .big { font-family: var(--serif); font-size: 21px; font-weight: 700; }
+        .case-col.bad .big { color: #6B6B6B; }
+        .case-col.good .big { color: var(--gold-deep); }
+        .case-note { font-size: 11.5px; color: var(--text-light); margin-bottom: 34px; }
+        .insight-strips { display: grid; gap: 14px; }
+        .insight-strip {
+            border-left: 3px solid var(--gold); background: var(--warm-white);
+            border-radius: 0 12px 12px 0; padding: 20px 24px;
+        }
+        .insight-strip h3 { font-family: var(--serif); font-size: 16.5px; color: var(--navy); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
+        .insight-strip p { font-size: 13.5px; color: var(--text-secondary); }
+        .insight-strip strong { color: var(--navy); }
+
+        /* ── Solution band ── */
+        .solution { background: linear-gradient(165deg, var(--navy) 0%, var(--navy-dark) 80%); color: #fff; }
+        .solution .section-label { color: var(--gold-top); }
+        .solution .section-title { color: #fff; }
+        .solution .section-lead { color: rgba(255,255,255,0.78); }
+        .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .solution-card {
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(232,210,160,0.35);
+            border-radius: 14px; padding: 26px 22px; text-align: center;
+        }
+        .solution-card .num { font-family: var(--en); color: var(--gold-top); font-size: 26px; display: block; margin-bottom: 10px; }
+        .solution-card h3 { font-family: var(--serif); font-size: 16.5px; color: var(--gold-top); font-weight: 600; letter-spacing: 0.05em; line-height: 1.6; margin-bottom: 10px; }
+        .solution-card p { font-size: 13px; color: rgba(255,255,255,0.82); text-align: left; }
+
         /* ── Brand story ── */
         .story { background: var(--warm-white); position: relative; overflow: hidden; }
         .story::before {
@@ -494,7 +546,9 @@
             .sp-only { display: inline; }
             section { padding: 60px 20px; }
             .concern-grid, .safety-grid { grid-template-columns: 1fr; }
-            .reason-grid, .service-grid, .process-steps, .persona-grid { grid-template-columns: 1fr; }
+            .reason-grid, .service-grid, .process-steps, .persona-grid, .solution-grid { grid-template-columns: 1fr; }
+            .case-cols { grid-template-columns: 1fr; }
+            .case-col.good { border-left: none; border-top: 1px solid var(--gold); }
             .service-grid { gap: 22px; }
             .hero { padding: 108px 20px 56px; }
             .hero-lead { font-size: 14px; }
@@ -527,7 +581,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="hero-label">Diamond &amp; Gemstone Appraisal</p>
             <p class="hero-service">ダイヤモンド・色石の鑑定書発行サービス</p>
             <h1>形見のジュエリーは、<br><span class="gold">箱ごと</span>お送りください。</h1>
-            <p class="hero-lead">遺品整理や相続で見つかった指輪やネックレス。どれに価値があるのか、分からないままで大丈夫です。職人が1点ずつ仕分けし、価値あるものには提携鑑別機関による鑑定書・鑑別書を発行。そのうえで「直して使う」「リフォームする」「手放す」——これからの選択肢までご提案します。全国どこからでも郵送で完結します。</p>
+            <p class="hero-lead">遺品整理や相続で見つかった指輪やネックレス。鑑定書のないまま買取店に持ち込むと、石は評価されず「地金の値段」になってしまうことも。まずは職人が1点ずつ仕分けし、価値あるものには世界基準の鑑定機関による鑑定書・鑑別書を取得。そのうえで「直して使う」「リフォームして受け継ぐ」「適正な評価で手放す」——これからの選択肢までご提案します。全国どこからでも郵送で完結します。</p>
             <div class="hero-badges">
                 <span>仕分け・お見積もり無料</span>
                 <span>郵送完結・全国対応</span>
@@ -584,34 +638,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <!-- ══ Reason ══ -->
-    <section class="reason" id="reason">
+    <!-- ══ Insight: the problem ══ -->
+    <section class="insight" id="insight">
         <div class="container">
-            <p class="section-label">Why Appraisal</p>
-            <h2 class="section-title">鑑定書が役に立つ、3つの場面</h2>
-            <p class="section-lead">鑑定書・鑑別書は、宝石の品質と素性を第三者機関が証明する書面です。遺品整理・相続の場面で「判断の物差し」になります。</p>
-            <div class="reason-grid">
-                <div class="reason-card">
-                    <img src="/appraisal/images/empathy-jewelry-box.webp" alt="形見分けを待つジュエリーボックス" loading="lazy">
-                    <span class="num">01</span>
-                    <h3>遺産分割・形見分けの<br>話し合いに</h3>
-                    <p>「どれが価値あるものか」が客観的に分かれば、形見分けの順番も、分け方の納得感も変わります。感情のもつれを防ぐ材料になります。</p>
+            <p class="section-label">The Problem</p>
+            <h2 class="section-title">なぜ形見の指輪が、<br>「地金の値段」で買い取られてしまうのか。</h2>
+            <p class="section-lead">日本の多くの買取店には、ダイヤモンドや色石を正しく査定できる鑑定士・設備・再販ルートがありません。そのため店頭では、石の価値は評価されず、<strong>金やプラチナの重さ（地金）だけ</strong>で値段がつくことが少なくないのです。</p>
+            <div class="case-compare">
+                <p class="case-head">たとえば——ダイヤモンド付きのプラチナリングの場合</p>
+                <div class="case-cols">
+                    <div class="case-col bad">
+                        <span class="case-tag">鑑定書なしで買取店へ</span>
+                        <img src="/appraisal/images/empathy-ring-slate.webp" alt="鑑定書のないダイヤモンドリング" loading="lazy">
+                        <h4>「地金」として査定される</h4>
+                        <p>Pt900 数グラム分の相場価格、<span class="big">数万円</span>の査定に。<br>ダイヤモンドは<strong>評価外（0円扱い）</strong>になることもあります。</p>
+                    </div>
+                    <div class="case-col good">
+                        <span class="case-tag">鑑定書を取ってから</span>
+                        <img src="/appraisal/images/ba-diamond-ring.webp" alt="鑑定でグレードが証明されたダイヤモンド" loading="lazy">
+                        <h4>石の価値が、評価の対象になる</h4>
+                        <p>グレードが書面で証明されることで、石を含めた価値で交渉できます。同じ指輪でも<span class="big">評価が数倍</span>になるケースがあります。</p>
+                    </div>
                 </div>
-                <div class="reason-card">
-                    <img src="/appraisal/images/vintage-ring.webp" alt="受け継がれたヴィンテージの指輪" loading="lazy">
-                    <span class="num">02</span>
-                    <h3>売却・買取の前の<br>裏付けとして</h3>
-                    <p>鑑定書があると、買取店の査定額が適正かどうかを判断する根拠になります。素性の分からないまま、言い値で手放さずに済みます。</p>
+            </div>
+            <p class="case-note">※ 一般的な例（イメージ）です。実際の査定額は、お品の状態・グレード・相場・店舗により異なります。</p>
+            <div class="insight-strips">
+                <div class="insight-strip">
+                    <h3>色石は、もっと見過ごされています</h3>
+                    <p>ルビーやサファイアは、<strong>天然か合成か、非加熱か加熱か</strong>で価値が数倍から数十倍変わります。その違いは専門機関の鑑別なしには証明できず、鑑別書がなければ査定にはほぼ反映されません。</p>
                 </div>
-                <div class="reason-card">
-                    <img src="/appraisal/images/hero-morning-ring.webp" alt="形見の指輪を身につける手元" loading="lazy">
-                    <span class="num">03</span>
-                    <h3>受け継いで使う・<br>保管するために</h3>
-                    <p>リフォームや修理、保険加入、次の世代への引き継ぎ。どの道を選ぶにも、品質の記録が残っていることが将来の安心につながります。</p>
+                <div class="insight-strip">
+                    <h3>相続では、「分からないまま」がいちばんのリスクです</h3>
+                    <p>価値が分からないまま形見分けをすれば、後から不公平の火種になります。相続税の申告でも、評価の基礎資料がなければ過大・過小な評価につながりかねません。鑑定書・鑑別書は、<strong>遺産分割の話し合いと申告の土台になる客観的な資料</strong>です。</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ══ Solution ══ -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <p class="section-label">Our Answer</p>
+            <h2 class="section-title">だから、RETOLD TOKYOは<br>「確かめてから決める」をつくりました。</h2>
+            <p class="section-lead">価値を確かめ、そのうえで「つなぐ」も「手放す」も選べるように。3つの役割をひとつの窓口でお引き受けします。</p>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <span class="num">01</span>
+                    <h3>世界基準の鑑定書を、<br>あなたの手元に</h3>
+                    <p>国際的に信頼される宝石鑑定機関での鑑定書・鑑別書の取得を代行します。世界のどこでも通用する評価が、交渉と判断の土台になります。</p>
+                </div>
+                <div class="solution-card">
+                    <span class="num">02</span>
+                    <h3>直す・作り替えて、<br>次の世代へつなぐ</h3>
+                    <p>国家資格を持つ自社工房の職人が、サイズ直し・修理・リフォームまで対応。形見を「使えるかたち」にして受け継げます。</p>
+                </div>
+                <div class="solution-card">
+                    <span class="num">03</span>
+                    <h3>手放すなら、<br>適正な評価での買取も</h3>
+                    <p>鑑定書に基づく正当な評価で、当店による買取も承ります。鑑定書はお客様のものですから、他店との比較に使っていただいても構いません。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ══ Service ══ -->
     <section class="service" id="service">
@@ -652,7 +741,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </ul>
                 </div>
             </div>
-            <p class="service-note">※ 鑑定・鑑別は提携する国内の宝石鑑別機関にて行います。</p>
+            <p class="service-note">※ 鑑定・鑑別は、国際的に信頼される宝石鑑定機関にて行います。発行される書面は売却・相続・保険のいずれの場面でも通用するものです。</p>
             <div class="stone-list">
                 <strong>対応する宝石</strong>
                 ダイヤモンド／ルビー／サファイア／エメラルド／アレキサンドライト／ヒスイ／パール（真珠）／トパーズ／アクアマリン　ほか<br>
@@ -685,7 +774,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <img src="/appraisal/images/worry-stone-ring.webp" alt="手放すかどうか検討中の指輪" loading="lazy">
                     <span class="num">C</span>
                     <h3>手放すなら、納得のいくかたちで</h3>
-                    <p>当店は買取を行いません。だからこそ中立な立場で、「鑑定書を添えて複数の買取店で見積もりを取る」「相場の調べ方」など、損をしない手放し方を率直にアドバイスします。</p>
+                    <p>鑑定書に基づく正当な評価で、当店による買取も承ります。鑑定書はお客様のものですから、他店との相見積もりに使っていただいて構いません——確かめたうえで、いちばん納得のいく手放し方を選んでください。</p>
                 </div>
             </div>
         </div>
@@ -847,7 +936,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="answer">仕分けの結果、鑑定に進まなかったお品も含めて、すべてそのままご返送します。当店がお品を処分したり、買い取ったりすることはありません。</p>
             </details>
             <details class="faq-item"><summary>売るかどうか、まだ決めていません。それでも相談できますか？</summary>
-                <p class="answer">もちろんです。当店は買取を行わないため、「直して使う」「リフォームする」「手放す」「そのまま保管する」のどの選択肢にも中立の立場でご提案できます。鑑定書とあわせてお品ごとの「これからのご提案」をお渡ししますので、決めるのはそれからで大丈夫です。</p>
+                <p class="answer">もちろんです。「直して使う」「リフォームする」「手放す」「そのまま保管する」、どの選択肢でも構いません。鑑定書とあわせてお品ごとの「これからのご提案」をお渡ししますので、決めるのはそれからで大丈夫です。無理にお勧めすることはありません。</p>
+            </details>
+            <details class="faq-item"><summary>買取もお願いできますか？</summary>
+                <p class="answer">はい。鑑定書に基づく適正な評価で、当店による買取も承ります。鑑定書はお客様のお手元に残るものですので、当店の買取価格を他店と比較していただくことも歓迎です。「地金の値段」ではなく、石の価値を含めた評価で判断してください。</p>
             </details>
             <details class="faq-item"><summary>もし本物でなかった場合はどうなりますか？</summary>
                 <p class="answer">鑑別の結果は、良い結果もそうでない結果も、そのまま正直にお伝えします。費用はかかりますが、「確かめられたこと」自体が、手放す・手元に残すの判断材料になります。事前のLINE相談の段階で、写真から分かる範囲の見立てもお伝えしています。</p>
@@ -865,7 +957,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="cta-section" id="contact">
         <div class="container">
             <h2>まずは箱ごと、<br>写真に撮ってお送りください。</h2>
-            <p>どれに価値があるのか、分からないままで大丈夫です。仕分けの進め方と概算の費用を無料でご案内します。無理にお勧めすることはありません。</p>
+            <p>「地金の値段」で手放してしまう前に。どれに価値があるのか分からないままで大丈夫です。仕分けの進め方と概算の費用を無料でご案内します。無理にお勧めすることはありません。</p>
             <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
                 LINEで無料相談する
