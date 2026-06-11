@@ -3113,31 +3113,19 @@
         .lineflow-note { font-size:12px; color:#666; text-align:center; margin:16px 0 0; line-height:1.8; }
         @media (min-width:768px) { .lineflow-title { font-size:26px; } }
 
-        /* ===== Preview: Price simulator ===== */
+        /* ===== Preview: Price simulator (LINE chat style) ===== */
         .sim-card { margin-top:2rem; padding:1.6rem 1.2rem; background:#fff; border-radius:12px; border:1px solid #e8e2d8; }
         .sim-title { font-size:1rem; font-weight:700; color:#1B2A4A; text-align:center; margin:0 0 .3rem; }
         .sim-sub { font-size:.78rem; color:#666; text-align:center; margin:0 0 1.1rem; }
-        .sim-q-label { font-size:.8rem; font-weight:700; color:#8a7a5a; margin:0 0 .5rem; text-align:center; }
-        .sim-options { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem; margin-bottom:1rem; }
-        .sim-opt { border:1.5px solid #d8d0c0; background:#faf8f4; border-radius:999px; padding:.55rem 1rem; font-size:.82rem; color:#3a3530; cursor:pointer; transition:all .15s; font-family:inherit; }
-        .sim-opt:hover { border-color:#8a7a5a; }
+        .sim-chat { max-width:480px; margin:0 auto; }
+        .sim-options { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.5rem; }
+        .sim-opt { border:1.5px solid #fff; background:rgba(255,255,255,.94); border-radius:999px; padding:.55rem 1rem; font-size:.82rem; color:#1B2A4A; cursor:pointer; transition:all .15s; font-family:inherit; box-shadow:0 1px 4px rgba(0,0,0,.1); }
+        .sim-opt:hover { border-color:#1B2A4A; }
         .sim-opt.on { background:#1B2A4A; border-color:#1B2A4A; color:#fff; font-weight:700; }
-        .sim-result { display:none; margin-top:.6rem; text-align:center; background:#f8f6f2; border-radius:10px; padding:1rem .8rem; }
-        .sim-result.show { display:block; animation:simIn .25s ease; }
+        .sim-stage { display:none; flex-direction:column; gap:12px; }
+        .sim-stage.show { display:flex; animation:simIn .25s ease; }
         @keyframes simIn { from { opacity:0; transform:translateY(6px);} to { opacity:1; transform:none;} }
-        .sim-result-label { font-size:.75rem; color:#666; margin:0 0 .2rem; }
-        .sim-result-price { font-size:1.7rem; font-weight:700; color:#1B2A4A; margin:0; }
-        .sim-result-price small { font-size:.85rem; font-weight:400; color:#8a7a5a; }
-        .sim-result-note { font-size:.72rem; color:#999; margin:.4rem 0 .8rem; line-height:1.6; }
-        .sim-result .btn-cta { font-size:.9rem; padding:.85rem 1.6rem; }
-
-        /* ===== Preview: No-resell philosophy strip ===== */
-        .noresell-strip { background:#1B2A4A; color:#fff; padding:44px 20px; text-align:center; }
-        .noresell-inner { max-width:640px; margin:0 auto; }
-        .noresell-title { font-size:20px; font-weight:700; margin:0 0 12px; letter-spacing:.04em; }
-        .noresell-title em { font-style:normal; color:#d8c89a; }
-        .noresell-body { font-size:13.5px; line-height:2; margin:0; opacity:.92; }
-        @media (min-width:768px) { .noresell-title { font-size:24px; } .noresell-body { font-size:14.5px; } }
+        .sim-chat .btn-cta { font-size:.9rem; padding:.85rem 1.6rem; }
 
         /* ===== Preview: closing CTA after FAQ ===== */
         .closing-cta { background:#fff; padding:56px 20px 64px; text-align:center; }
@@ -3262,31 +3250,7 @@
     <!-- ===== Preview: LINE Flow (chat preview) ===== -->
     <section class="lineflow-section" id="lineflow">
         <div class="lineflow-inner fade-in">
-            <h2 class="lineflow-title">LINEでのご相談は、こんな流れです</h2>
-            <p class="lineflow-sub">まずはLINEでお気軽にご相談ください。無料の返送キットをお送りし、<br class="br-pc-only">職人が実物を拝見してから正式なお見積もりをお伝えします。</p>
-            <div class="lineflow-chat" role="img" aria-label="LINE相談のやりとりイメージ">
-                <p class="lf-step-label">① 友だち追加して、LINEで相談</p>
-                <div class="lf-row user">
-                    <div class="lf-bubble">こんにちは。母から譲り受けた指輪が大きくて…サイズ直しできますか？<img class="lf-photo" src="/resize/images/BA2dia.webp" onerror="this.onerror=null;this.src='images/BA2dia.webp';" alt="相談する指輪の写真イメージ"></div>
-                </div>
-                <p class="lf-step-label">② 無料の返送キットをお届け。指輪を入れて送るだけ</p>
-                <div class="lf-row shop">
-                    <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
-                    <div class="lf-bubble">お写真ありがとうございます。対応可能です。正確なお見積もりのため、<span class="lf-strong">無料の返送キット</span>をお送りしますね。指輪を入れてポストにお出しください。往復送料は無料です。</div>
-                </div>
-                <p class="lf-step-label">③ 職人が実物を拝見して、正式なお見積もり</p>
-                <div class="lf-row shop">
-                    <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
-                    <div class="lf-bubble">お品物を拝見しました。Pt900のダイヤつきリングですね。<span class="lf-strong">2号ダウンで¥15,000〜</span>、新品磨き上げは無料でお付けします。ご了承いただけてから作業に入ります。</div>
-                </div>
-                <p class="lf-step-label">④ ご納得いただけたら、お仕立て開始</p>
-                <div class="lf-row user">
-                    <div class="lf-bubble">ありがとうございます。お願いします！</div>
-                </div>
-            </div>
-            <p class="lineflow-note">※やりとりの一例です。お見積もりにご納得いただけてから作業に入ります。<br>お見積もり後のキャンセルも可能です（その場合のご返送のみ着払いとなります）。</p>
-
-            <h3 class="lineflow-title" style="font-size:18px;margin:40px 0 6px;">ご依頼事例 — 職人からの完了報告</h3>
+            <h2 class="lineflow-title">ご依頼事例 — 職人からの完了報告</h2>
             <p class="lineflow-sub">実際にお直しした指輪の記録から。完了時には、このようにLINEでご報告しています。</p>
             <div class="lineflow-chat" role="img" aria-label="完了報告のやりとりイメージ">
                 <p class="lf-step-label">ブランドリング（K18）｜1.5号アップ＋新品磨き上げ｜約3週間</p>
@@ -3396,14 +3360,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== Preview: No-resell philosophy strip ===== -->
-    <section class="noresell-strip">
-        <div class="noresell-inner fade-in">
-            <h2 class="noresell-title">私たちは、<em>買取をしません。</em></h2>
-            <p class="noresell-body">RETOLD TOKYOは「売る」以外の選択肢を広げるために生まれたブランドです。<br>査定も、売却のご提案もいたしません。<br>思い出の指輪を、直して、もう一度使うために。それだけのためのチームです。</p>
         </div>
     </section>
 
@@ -3525,47 +3481,46 @@
                 <p style="font-size:.72rem;color:#999;text-align:center;margin:.6rem 0 0;">ブランド別のサイズ直し詳細：<a href="/resize/cartier" style="color:#1B2A4A;border-bottom:1px solid #c9bda5;">カルティエ</a>｜<a href="/resize/tiffany" style="color:#1B2A4A;border-bottom:1px solid #c9bda5;">ティファニー</a>｜<a href="/resize/chanel" style="color:#1B2A4A;border-bottom:1px solid #c9bda5;">シャネル</a></p>
             </div>
 
-            <!-- Size change guide -->
-            <div class="fade-in" style="margin-top:2rem;padding:1.5rem;background:#fff;border-radius:12px;border:1px solid #e8e2d8;">
-                <p style="font-size:.85rem;font-weight:700;color:#1B2A4A;text-align:center;margin:0 0 1rem;">サイズ変更幅と料金の目安</p>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:480px;margin:0 auto;">
-                    <div style="text-align:center;padding:1rem;background:#f8f6f2;border-radius:8px;">
-                        <p style="font-size:.75rem;color:#666;margin:0 0 .3rem;">大きくする場合</p>
-                        <p style="font-size:.85rem;font-weight:700;color:#1B2A4A;margin:0;">1〜2号アップ</p>
-                        <p style="font-size:1.1rem;font-weight:700;color:#8a7a5a;margin:.3rem 0 0;">&yen;8,800〜</p>
-                        <p style="font-size:.7rem;color:#999;margin:.2rem 0 0;">3号以上は要ご相談</p>
-                    </div>
-                    <div style="text-align:center;padding:1rem;background:#f8f6f2;border-radius:8px;">
-                        <p style="font-size:.75rem;color:#666;margin:0 0 .3rem;">小さくする場合</p>
-                        <p style="font-size:.85rem;font-weight:700;color:#1B2A4A;margin:0;">1〜2号ダウン</p>
-                        <p style="font-size:1.1rem;font-weight:700;color:#8a7a5a;margin:.3rem 0 0;">&yen;8,800〜</p>
-                        <p style="font-size:.7rem;color:#999;margin:.2rem 0 0;">0.5号刻みで調整可能</p>
-                    </div>
-                </div>
-                <p style="font-size:.72rem;color:#999;text-align:center;margin:.8rem 0 0;line-height:1.5;">※素材（K18・Pt・シルバー等）やデザイン（石付き・刻印あり等）により変動します。<br>正式なお見積もりはLINEで無料でお伝えします。</p>
-            </div>
-
-            <!-- Preview: Price simulator -->
+            <!-- Preview: Price simulator (LINE chat style) -->
             <div class="sim-card fade-in" id="sim">
                 <p class="sim-title">10秒でわかる、料金の目安</p>
-                <p class="sim-sub">2つ選ぶだけ。そのままLINEで正式なお見積もり（無料）に進めます。</p>
-                <p class="sim-q-label">Q1. どんな指輪ですか？</p>
-                <div class="sim-options" data-sim-q="type">
-                    <button type="button" class="sim-opt" data-price="8800" data-label="シンプルなリング">シンプル（甲丸・平打ち等）</button>
-                    <button type="button" class="sim-opt" data-price="15000" data-label="石つき・デザインリング">石つき・デザイン</button>
-                    <button type="button" class="sim-opt" data-price="25000" data-label="ブランドリング">ブランドリング</button>
-                    <button type="button" class="sim-opt" data-price="5500" data-label="石ゆるみ直し（石留め）">石のゆるみ直し</button>
-                </div>
-                <p class="sim-q-label">Q2. 直したい指輪は何本ですか？</p>
-                <div class="sim-options" data-sim-q="count">
-                    <button type="button" class="sim-opt" data-mult="1" data-label="1本">1本</button>
-                    <button type="button" class="sim-opt" data-mult="0.9" data-label="2本以上">2本以上（まとめ割10%OFF）</button>
-                </div>
-                <div class="sim-result" id="simResult">
-                    <p class="sim-result-label" id="simResultLabel"></p>
-                    <p class="sim-result-price">&yen;<span id="simResultPrice"></span><small>〜（税込・1点あたり）</small></p>
-                    <p class="sim-result-note">※1〜2号の変更が目安。素材・デザイン・変更幅により変動します。<br>正式なお見積もりは実物を拝見してお伝えします（返送キット・往復送料無料）。</p>
-                    <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">この内容でLINE無料見積もり</a>
+                <p class="sim-sub">タップで答えるだけ。そのままLINEで正式なお見積もり（無料）に進めます。</p>
+                <div class="lineflow-chat sim-chat">
+                    <div class="lf-row shop">
+                        <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                        <div class="lf-bubble">こんにちは。料金の目安をお調べします。<span class="lf-strong">直したい指輪は、どんなタイプですか？</span></div>
+                    </div>
+                    <div class="sim-options" data-sim-q="type">
+                        <button type="button" class="sim-opt" data-price="8800" data-label="シンプルなリング">シンプル（甲丸・平打ち等）</button>
+                        <button type="button" class="sim-opt" data-price="15000" data-label="石つき・デザインリング">石つき・デザイン</button>
+                        <button type="button" class="sim-opt" data-price="25000" data-label="ブランドリング">ブランドリング</button>
+                        <button type="button" class="sim-opt" data-price="5500" data-label="石ゆるみ直し（石留め）">石のゆるみ直し</button>
+                    </div>
+                    <div class="sim-stage" id="simStage2">
+                        <div class="lf-row user">
+                            <div class="lf-bubble" id="simEchoType"></div>
+                        </div>
+                        <div class="lf-row shop">
+                            <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                            <div class="lf-bubble">ありがとうございます。<span class="lf-strong">何本お直しされますか？</span><br>2本以上同時なら、まとめ割10%OFFが使えます。</div>
+                        </div>
+                        <div class="sim-options" data-sim-q="count">
+                            <button type="button" class="sim-opt" data-mult="1" data-label="1本">1本</button>
+                            <button type="button" class="sim-opt" data-mult="0.9" data-label="2本以上">2本以上（まとめ割10%OFF）</button>
+                        </div>
+                    </div>
+                    <div class="sim-stage" id="simStage3">
+                        <div class="lf-row user">
+                            <div class="lf-bubble" id="simEchoCount"></div>
+                        </div>
+                        <div class="lf-row shop">
+                            <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                            <div class="lf-bubble">お調べしました。目安は<span class="lf-strong">&yen;<span id="simResultPrice"></span>〜（税込・1点あたり）</span>です。<br><span style="font-size:.85em;opacity:.8;">※1〜2号の変更が目安。素材・デザイン・変更幅により変動します。正式なお見積もりは実物を拝見してお伝えします（返送キット・往復送料無料）。</span></div>
+                        </div>
+                        <div class="cta-center" style="margin-top:6px;">
+                            <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">この内容でLINE無料見積もり</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -3821,16 +3776,15 @@
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ event: 'lp_view', page: 'resize_lp_preview' });
 
-            // ── Price simulator ──
-            var simState = { price: null, mult: null, typeLabel: '', countLabel: '' };
+            // ── Price simulator (LINE chat style) ──
+            var simState = { price: null, mult: null, typeLabel: '', countLabel: '', fired: false };
             function simUpdate() {
                 if (simState.price === null || simState.mult === null) return;
-                var result = document.getElementById('simResult');
                 var unit = Math.round(simState.price * simState.mult / 10) * 10;
-                document.getElementById('simResultLabel').textContent = simState.typeLabel + '／' + simState.countLabel + ' の目安';
                 document.getElementById('simResultPrice').textContent = unit.toLocaleString();
-                if (!result.classList.contains('show')) {
-                    result.classList.add('show');
+                document.getElementById('simStage3').classList.add('show');
+                if (!simState.fired) {
+                    simState.fired = true;
                     window.dataLayer.push({ event: 'price_sim_complete', sim_type: simState.typeLabel, sim_count: simState.countLabel });
                 }
             }
@@ -3840,6 +3794,8 @@
                     btn.classList.add('on');
                     simState.price = parseInt(btn.dataset.price, 10);
                     simState.typeLabel = btn.dataset.label;
+                    document.getElementById('simEchoType').textContent = btn.dataset.label + 'をお願いしたいです。';
+                    document.getElementById('simStage2').classList.add('show');
                     simUpdate();
                 });
             });
@@ -3849,6 +3805,7 @@
                     btn.classList.add('on');
                     simState.mult = parseFloat(btn.dataset.mult);
                     simState.countLabel = btn.dataset.label;
+                    document.getElementById('simEchoCount').textContent = simState.countLabel + 'です。';
                     simUpdate();
                 });
             });
