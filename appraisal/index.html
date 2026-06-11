@@ -30,6 +30,14 @@
     <meta property="og:description" content="職人が1点ずつ仕分け（無料）し、価値あるものだけ鑑定書を発行。直す・リフォームする・手放す——これからのご提案までお渡しします。">
     <meta property="og:url" content="https://retold.tokyo/appraisal">
     <meta property="og:site_name" content="RETOLD TOKYO">
+    <meta property="og:image" content="https://retold.tokyo/appraisal/images/appraisal-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="形見のジュエリーは、箱ごとお送りください｜RETOLD TOKYO">
+    <meta name="twitter:description" content="仕分け無料。ダイヤ・色石の鑑定書/鑑別書発行から、これからのご提案まで。">
+    <meta name="twitter:image" content="https://retold.tokyo/appraisal/images/appraisal-og.png">
+    <link rel="icon" type="image/png" href="/appraisal/images/appraisal-favicon.png">
 
     <script type="application/ld+json">
     {
@@ -80,10 +88,54 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "ダイヤモンド・色石の鑑定書/鑑別書 発行代行",
+      "alternateName": "RETOLD TOKYO 宝石鑑定書発行サービス",
+      "provider": {
+        "@type": "Organization",
+        "name": "RETOLD TOKYO",
+        "url": "https://retold.tokyo/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "JP"
+      },
+      "serviceType": "Gemstone appraisal document arrangement",
+      "description": "遺品整理や相続で見つかったジュエリーを箱ごとお送りいただき、職人が無料で仕分けしたうえで、価値あるものだけ鑑定書・鑑別書の発行を代行します。",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "ソーティング（簡易鑑定）",
+          "price": "6600",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "宝石鑑別書",
+          "price": "8800",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "ダイヤモンド鑑定書",
+          "price": "11000",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="/appraisal/images/hero-indigo.webp" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" as="image" href="/appraisal/images/appraisal-hero-keepsake-box.webp" fetchpriority="high">
 
     <style>
         :root {
@@ -94,13 +146,13 @@
             --water-blue: #E0EBF4;
             --gold-top: #E8D2A0;
             --gold: #C9A876;
-            --gold-deep: #9C8456;
+            --gold-deep: #6F5D39;
             --warm-white: #F5F7FA;
             --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
-            --text-light: #888;
+            --text-light: #666;
             --line-green: #06C755;
-            --line-green-deep: #05A847;
+            --line-green-deep: #04943F;
             --border: #CBCDD0;
             --serif: "Noto Serif JP", "游明朝体", YuMincho, "Yu Mincho", serif;
             --sans: "游ゴシック体", YuGothic, "Yu Gothic Medium", "Yu Gothic", "Noto Sans JP", sans-serif;
@@ -117,6 +169,10 @@
         }
         img { max-width: 100%; display: block; }
         a { color: inherit; }
+        body > main > section:not(.hero) {
+            content-visibility: auto;
+            contain-intrinsic-size: 780px;
+        }
 
         /* ── Header ── */
         .header {
@@ -138,7 +194,7 @@
         }
         .header-cta {
             display: inline-flex; align-items: center; gap: 7px;
-            background: var(--line-green); color: #fff; text-decoration: none;
+            background: var(--line-green); color: var(--navy-dark); text-decoration: none;
             font-weight: 700; font-size: 13px; letter-spacing: 0.04em;
             padding: 10px 18px; border-radius: 999px;
             box-shadow: 0 2px 10px rgba(6,199,85,0.35);
@@ -153,7 +209,7 @@
             background:
                 radial-gradient(ellipse 90% 60% at 70% -10%, rgba(201,168,118,0.22), transparent 60%),
                 linear-gradient(170deg, rgba(27,42,74,0.72) 0%, rgba(19,28,50,0.86) 75%),
-                url('/appraisal/images/hero-indigo.webp') center 35% / cover no-repeat,
+                url('/appraisal/images/appraisal-hero-keepsake-box.webp') center 45% / cover no-repeat,
                 linear-gradient(165deg, var(--navy) 0%, var(--navy-dark) 70%);
             color: #fff;
             padding: 128px 24px 64px;
@@ -211,7 +267,7 @@
         /* ── CTA button (shared) ── */
         .btn-cta {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background: var(--line-green); color: #fff; text-decoration: none;
+            background: var(--line-green); color: var(--navy-dark); text-decoration: none;
             font-weight: 700; font-size: 17px; letter-spacing: 0.04em;
             padding: 18px 42px; border-radius: 999px;
             box-shadow: 0 6px 22px rgba(6,199,85,0.4);
@@ -306,6 +362,11 @@
             font-size: 24px; font-weight: 700; margin-bottom: 14px;
         }
         .service-card .price em { font-style: normal; font-size: 13px; font-weight: 500; }
+        .service-doc {
+            width: 100%; height: auto; aspect-ratio: 800 / 520; object-fit: cover; border-radius: 10px;
+            margin-bottom: 16px; border: 1px solid rgba(27,42,74,0.10);
+            box-shadow: 0 8px 20px rgba(27,42,74,0.08);
+        }
         .service-card ul { list-style: none; font-size: 13px; color: var(--text-secondary); margin-top: auto; }
         .service-card ul li { padding: 7px 0 7px 22px; position: relative; border-top: 1px dashed var(--dusky-blue-light); }
         .service-card ul li::before { content: "◆"; position: absolute; left: 2px; color: var(--gold); font-size: 10px; }
@@ -347,7 +408,7 @@
             border: 1px solid var(--dusky-blue-light); text-align: center; position: relative;
         }
         .process-step .step-num {
-            font-family: var(--en); color: var(--gold); font-size: 13px; letter-spacing: 0.3em;
+            font-family: var(--en); color: var(--gold-deep); font-size: 13px; letter-spacing: 0.3em;
             text-transform: uppercase; display: block; margin-bottom: 10px;
         }
         .process-step h3 {
@@ -458,10 +519,10 @@
             display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em;
             border-radius: 999px; padding: 3px 14px; margin-bottom: 14px;
         }
-        .case-col.bad .case-tag { background: #8A8A8A; color: #fff; }
+        .case-col.bad .case-tag { background: #666; color: #fff; }
         .case-col.good .case-tag { background: linear-gradient(135deg, var(--gold-top), var(--gold)); color: var(--navy-dark); }
         .case-col img { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
-        .case-col h4 { font-family: var(--serif); font-size: 15.5px; color: var(--navy); letter-spacing: 0.04em; line-height: 1.6; margin-bottom: 8px; }
+        .case-col h3 { font-family: var(--serif); font-size: 15.5px; color: var(--navy); letter-spacing: 0.04em; line-height: 1.6; margin-bottom: 8px; }
         .case-col p { font-size: 13px; color: var(--text-secondary); }
         .case-col .big { font-family: var(--serif); font-size: 21px; font-weight: 700; }
         .case-col.bad .big { color: #6B6B6B; }
@@ -471,6 +532,14 @@
         .insight-strip {
             border-left: 3px solid var(--gold); background: var(--warm-white);
             border-radius: 0 12px 12px 0; padding: 20px 24px;
+        }
+        .insight-strip.with-image {
+            display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(180px, 0.85fr);
+            gap: 20px; align-items: center;
+        }
+        .insight-strip img {
+            width: 100%; aspect-ratio: 800 / 520; object-fit: cover; border-radius: 10px;
+            box-shadow: 0 8px 22px rgba(27,42,74,0.12);
         }
         .insight-strip h3 { font-family: var(--serif); font-size: 16.5px; color: var(--navy); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
         .insight-strip p { font-size: 13.5px; color: var(--text-secondary); }
@@ -549,6 +618,7 @@
             .reason-grid, .service-grid, .process-steps, .persona-grid, .solution-grid { grid-template-columns: 1fr; }
             .case-cols { grid-template-columns: 1fr; }
             .case-col.good { border-left: none; border-top: 1px solid var(--gold); }
+            .insight-strip.with-image { grid-template-columns: 1fr; }
             .service-grid { gap: 22px; }
             .hero { padding: 108px 20px 56px; }
             .hero-lead { font-size: 14px; }
@@ -575,6 +645,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
     </header>
 
+    <main>
     <!-- ══ Hero ══ -->
     <section class="hero">
         <div class="hero-inner">
@@ -649,23 +720,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="case-cols">
                     <div class="case-col bad">
                         <span class="case-tag">鑑定書なしで買取店へ</span>
-                        <img src="/appraisal/images/empathy-ring-slate.webp" alt="鑑定書のないダイヤモンドリング" loading="lazy">
-                        <h4>「地金」として査定される</h4>
+                        <img src="/appraisal/images/appraisal-scrap-scale.webp" alt="買取店で地金として重さを量るイメージ" loading="lazy">
+                        <h3>「地金」として査定される</h3>
                         <p>Pt900 数グラム分の相場価格、<span class="big">数万円</span>の査定に。<br>ダイヤモンドは<strong>評価外（0円扱い）</strong>になることもあります。</p>
                     </div>
                     <div class="case-col good">
                         <span class="case-tag">鑑定書を取ってから</span>
-                        <img src="/appraisal/images/ba-diamond-ring.webp" alt="鑑定でグレードが証明されたダイヤモンド" loading="lazy">
-                        <h4>石の価値が、評価の対象になる</h4>
+                        <img src="/appraisal/images/appraisal-diamond-inspection.webp" alt="ルーペと鑑定環境でダイヤモンドを確認するイメージ" loading="lazy">
+                        <h3>石の価値が、評価の対象になる</h3>
                         <p>グレードが書面で証明されることで、石を含めた価値で交渉できます。同じ指輪でも<span class="big">評価が数倍</span>になるケースがあります。</p>
                     </div>
                 </div>
             </div>
             <p class="case-note">※ 一般的な例（イメージ）です。実際の査定額は、お品の状態・グレード・相場・店舗により異なります。</p>
             <div class="insight-strips">
-                <div class="insight-strip">
-                    <h3>色石は、もっと見過ごされています</h3>
-                    <p>ルビーやサファイアは、<strong>天然か合成か、非加熱か加熱か</strong>で価値が数倍から数十倍変わります。その違いは専門機関の鑑別なしには証明できず、鑑別書がなければ査定にはほぼ反映されません。</p>
+                <div class="insight-strip with-image">
+                    <div>
+                        <h3>色石は、もっと見過ごされています</h3>
+                        <p>ルビーやサファイアは、<strong>天然か合成か、非加熱か加熱か</strong>で価値が数倍から数十倍変わります。その違いは専門機関の鑑別なしには証明できず、鑑別書がなければ査定にはほぼ反映されません。</p>
+                    </div>
+                    <img src="/appraisal/images/appraisal-colored-gems.webp" alt="ルビー・サファイア・エメラルドなど色石を並べた物撮り" loading="lazy">
                 </div>
                 <div class="insight-strip">
                     <h3>相続では、「分からないまま」がいちばんのリスクです</h3>
@@ -712,6 +786,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="service-card">
                     <h3>ソーティング<br>（簡易鑑定）</h3>
                     <p class="sub">ダイヤモンド向け・メモ型</p>
+                    <img class="service-doc" src="/appraisal/images/appraisal-doc-sorting.webp" alt="SAMPLE入りのソーティングメモ風サンプル書面" loading="lazy" width="800" height="520">
                     <p class="price">6,600<em>円(税込)/1点</em></p>
                     <ul>
                         <li>4Cグレードを簡易書面で確認</li>
@@ -722,6 +797,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="service-card">
                     <h3>宝石鑑別書</h3>
                     <p class="sub">ルビー・サファイア等の色石向け</p>
+                    <img class="service-doc" src="/appraisal/images/appraisal-doc-identification.webp" alt="SAMPLE入りの宝石鑑別書風サンプル書面" loading="lazy" width="800" height="520">
                     <p class="price">8,800<em>円(税込)/1点</em></p>
                     <ul>
                         <li>宝石の種類を科学的に特定</li>
@@ -733,6 +809,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <span class="tag">相続・形見分けに人気</span>
                     <h3>ダイヤモンド鑑定書</h3>
                     <p class="sub">グレーディングレポート</p>
+                    <img class="service-doc" src="/appraisal/images/appraisal-doc-grading.webp" alt="SAMPLE入りのダイヤモンド鑑定書風サンプル書面" loading="lazy" width="800" height="520">
                     <p class="price">11,000<em>円(税込)/1点</em></p>
                     <ul>
                         <li>4C（カラット・カラー・クラリティ・カット）を正式書面で</li>
@@ -872,7 +949,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>職人が1点ずつ拝見し、鑑定する価値のあるお品をご報告。鑑定に進むものだけお見積もりし、ご承認いただいてから進めます。</p>
                 </div>
                 <div class="process-step">
-                    <img src="/appraisal/images/hero-ring-box.webp" alt="鑑定書とご提案を添えてお届け" loading="lazy">
+                    <img src="/appraisal/images/appraisal-return-set.webp" alt="返送箱と鑑定書サンプル、ご提案書を並べたセット" loading="lazy">
                     <span class="step-num">Step 04</span>
                     <h3>鑑定書と「ご提案」をお届け</h3>
                     <p>鑑定書・鑑別書とともに、お直し・リフォーム・手放し方など、お品ごとの「これからのご提案」を添えてご返送します。</p>
@@ -965,6 +1042,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="cta-note">ご相談・お見積もりは無料です</p>
         </div>
     </section>
+    </main>
 
     <!-- ══ Footer ══ -->
     <footer class="footer">
