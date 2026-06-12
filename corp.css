@@ -144,3 +144,6 @@ img { max-width: 100%; display: block; }
   .hero h1 { font-size: 27px !important; line-height: 1.8 !important; letter-spacing: 0.04em !important; }
   .hero h1 br { display: none; }
 }
+@media (max-width: 760px) {
+  .hero h1 .text-hollow { color: var(--carbon) !important; -webkit-text-stroke: 0 !important; }
+}
