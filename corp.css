@@ -140,3 +140,7 @@ img { max-width: 100%; display: block; }
   .vcard { margin-top: 0 !important; }
   .hero-meta { top: 76px; }
 }
+@media (max-width: 760px) {
+  .hero h1 { font-size: 27px !important; line-height: 1.8 !important; letter-spacing: 0.04em !important; }
+  .hero h1 br { display: none; }
+}
