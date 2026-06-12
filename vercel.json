@@ -1,24 +1,47 @@
 {
-  "rewrites": [
-    {
-      "source": "/resize/application/:path*",
-      "destination": "https://retold-resize-app.vercel.app/:path*"
-    },
-    { "source": "/resize/terms", "destination": "/resize/terms.html" },
-    { "source": "/resize/privacy", "destination": "/resize/privacy.html" },
-    { "source": "/resize/company", "destination": "/resize/company.html" },
-    { "source": "/resize/legal", "destination": "/resize/legal.html" },
-    { "source": "/resize/preview", "destination": "/resize/preview.html" },
-    { "source": "/repair", "destination": "/repair/index.html" }
-  ],
-  "redirects": [],
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "index, follow" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/resize",
+      "destination": "https://bispoke-resize-lp.vercel.app/"
+    },
+    {
+      "source": "/resize/:path*",
+      "destination": "https://bispoke-resize-lp.vercel.app/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/remodel",
+      "destination": "https://retold.tokyo",
+      "permanent": false
+    },
+    {
+      "source": "/remodel/:path*",
+      "destination": "https://retold.tokyo",
+      "permanent": false
     }
   ]
 }
