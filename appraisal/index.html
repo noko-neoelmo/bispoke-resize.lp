@@ -142,12 +142,12 @@
             --navy: #1B2A4A;
             --navy-dark: #131C32;
             --dusky-blue: #7B96B5;
-            --dusky-blue-light: #DCE5EE;
-            --water-blue: #E0EBF4;
+            --dusky-blue-light: #E5E1D8;
+            --water-blue: #EFECE6;
             --gold-top: #E8D2A0;
             --gold: #C9A876;
             --gold-deep: #6F5D39;
-            --warm-white: #F5F7FA;
+            --warm-white: #F7F5F1;
             --text-primary: #1A1A1A;
             --text-secondary: #4A4A4A;
             --text-light: #666;
@@ -234,7 +234,7 @@
             padding: 5px 18px; border-radius: 999px; margin-bottom: 22px;
         }
         .hero h1 {
-            font-family: var(--serif); font-weight: 600;
+            font-family: var(--serif); font-weight: 500;
             font-size: clamp(26px, 5.6vw, 40px); line-height: 1.55;
             letter-spacing: 0.06em; margin-bottom: 18px;
         }
@@ -248,15 +248,14 @@
             margin-bottom: 26px;
         }
         .hero-badges span {
-            font-size: 12px; letter-spacing: 0.05em; font-weight: 500;
-            background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
-            padding: 6px 14px; border-radius: 999px;
+            font-size: 12px; letter-spacing: 0.08em; font-weight: 400;
+            background: transparent; border: 1px solid rgba(255,255,255,0.34);
+            padding: 6px 16px; border-radius: 2px;
         }
         .hero-price {
             display: inline-block; margin-bottom: 30px;
-            background: linear-gradient(135deg, var(--gold-top), var(--gold));
-            color: var(--navy-dark); border-radius: 12px; padding: 14px 30px;
-            box-shadow: 0 6px 24px rgba(201,168,118,0.35);
+            background: var(--gold-top);
+            color: var(--navy-dark); border-radius: 2px; padding: 14px 32px;
         }
         .hero-price .small { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; display: block; }
         .hero-price .num { font-family: var(--serif); font-size: 30px; font-weight: 700; line-height: 1.3; }
@@ -278,17 +277,17 @@
         .cta-note { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 12px; }
 
         /* ── Section base ── */
-        section { padding: 78px 24px; }
+        section { padding: 108px 24px; }
         .container { max-width: 920px; margin: 0 auto; }
         .section-label {
-            font-family: var(--en); font-size: 13px; letter-spacing: 0.42em;
+            font-family: var(--en); font-size: 11px; letter-spacing: 0.55em;
             color: var(--gold-deep); text-transform: uppercase;
             text-align: center; margin-bottom: 10px;
         }
         .section-title {
-            font-family: var(--serif); font-weight: 600; color: var(--navy);
-            font-size: clamp(22px, 4.4vw, 30px); line-height: 1.6; letter-spacing: 0.05em;
-            text-align: center; margin-bottom: 18px;
+            font-family: var(--serif); font-weight: 500; color: var(--navy);
+            font-size: clamp(24px, 4.8vw, 34px); line-height: 1.65; letter-spacing: 0.06em;
+            text-align: center; margin-bottom: 22px;
         }
         .section-lead {
             font-size: 14.5px; color: var(--text-secondary); text-align: center;
@@ -300,7 +299,7 @@
         .concern-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
         .concern-item {
             background: #fff; border: 1px solid var(--dusky-blue-light);
-            border-radius: 12px; padding: 22px 20px;
+            border-radius: 4px; padding: 22px 20px;
             display: flex; gap: 13px; align-items: flex-start;
         }
         .concern-item .mark {
@@ -320,9 +319,8 @@
         /* ── Reason (3 scenes) ── */
         .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .reason-card {
-            border: 1px solid var(--dusky-blue-light); border-radius: 14px;
+            border: 1px solid var(--dusky-blue-light); border-radius: 4px;
             padding: 28px 22px; background: #fff;
-            box-shadow: 0 4px 18px rgba(27,42,74,0.05);
         }
         .reason-card .num {
             font-family: var(--en); font-size: 30px; color: var(--gold);
@@ -338,16 +336,16 @@
         .service { background: var(--water-blue); }
         .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 30px; }
         .service-card {
-            background: #fff; border-radius: 14px; padding: 26px 20px 24px;
+            background: #fff; border-radius: 4px; padding: 26px 20px 24px;
             border: 1px solid rgba(27,42,74,0.10); position: relative;
             display: flex; flex-direction: column;
         }
-        .service-card.featured { border: 2px solid var(--gold); box-shadow: 0 8px 28px rgba(156,132,86,0.18); }
+        .service-card.featured { border: 1px solid var(--gold); }
         .service-card .tag {
             position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--gold-top), var(--gold));
-            color: var(--navy-dark); font-size: 11px; font-weight: 700;
-            letter-spacing: 0.08em; padding: 4px 16px; border-radius: 999px; white-space: nowrap;
+            background: var(--gold-top); color: var(--navy-dark);
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.12em; padding: 4px 18px; border-radius: 2px; white-space: nowrap;
         }
         .service-card h3 {
             font-family: var(--serif); font-size: 17px; color: var(--navy); font-weight: 600;
@@ -363,16 +361,15 @@
         }
         .service-card .price em { font-style: normal; font-size: 13px; font-weight: 500; }
         .service-doc {
-            width: 100%; height: auto; aspect-ratio: 800 / 520; object-fit: cover; border-radius: 10px;
+            width: 100%; height: auto; aspect-ratio: 800 / 520; object-fit: cover; border-radius: 3px;
             margin-bottom: 16px; border: 1px solid rgba(27,42,74,0.10);
-            box-shadow: 0 8px 20px rgba(27,42,74,0.08);
         }
         .service-card ul { list-style: none; font-size: 13px; color: var(--text-secondary); margin-top: auto; }
         .service-card ul li { padding: 7px 0 7px 22px; position: relative; border-top: 1px dashed var(--dusky-blue-light); }
         .service-card ul li::before { content: "◆"; position: absolute; left: 2px; color: var(--gold); font-size: 10px; }
         .service-note { font-size: 12.5px; color: var(--text-secondary); text-align: center; }
         .stone-list {
-            margin-top: 26px; background: #fff; border-radius: 12px; padding: 20px 24px;
+            margin-top: 26px; background: #fff; border-radius: 4px; padding: 20px 24px;
             font-size: 13.5px; color: var(--text-secondary); text-align: center;
             border: 1px solid rgba(27,42,74,0.08);
         }
@@ -381,7 +378,7 @@
 
     <style>
         /* ── Pricing ── */
-        .pricing-table { border: 1px solid var(--dusky-blue-light); border-radius: 14px; overflow: hidden; margin-bottom: 22px; }
+        .pricing-table { border: 1px solid var(--dusky-blue-light); border-radius: 4px; overflow: hidden; margin-bottom: 22px; }
         .pricing-row {
             display: flex; justify-content: space-between; align-items: center; gap: 14px;
             padding: 18px 24px; background: #fff; border-top: 1px solid var(--dusky-blue-light);
@@ -392,8 +389,8 @@
         .pricing-row .val { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--navy); white-space: nowrap; }
         .pricing-row .val em { font-style: normal; font-size: 12px; font-weight: 500; }
         .bundle-callout {
-            border: 2px solid var(--gold); border-radius: 14px; background: linear-gradient(135deg, #FBF6EC, #F6EEDD);
-            padding: 22px 26px; text-align: center; margin-bottom: 22px;
+            border: 1px solid var(--gold); border-radius: 4px; background: #FBF8F1;
+            padding: 26px 26px; text-align: center; margin-bottom: 22px;
         }
         .bundle-callout .head { font-family: var(--serif); font-size: 19px; font-weight: 700; color: var(--gold-deep); letter-spacing: 0.06em; margin-bottom: 6px; }
         .bundle-callout p { font-size: 13.5px; color: var(--text-secondary); }
@@ -404,7 +401,7 @@
         .process { background: var(--warm-white); }
         .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
         .process-step {
-            background: #fff; border-radius: 14px; padding: 30px 22px 26px;
+            background: #fff; border-radius: 4px; padding: 30px 22px 26px;
             border: 1px solid var(--dusky-blue-light); text-align: center; position: relative;
         }
         .process-step .step-num {
@@ -427,7 +424,7 @@
         .safety-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
         .safety-item {
             background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.16);
-            border-radius: 12px; padding: 22px;
+            border-radius: 4px; padding: 22px;
         }
         .safety-item h3 {
             font-family: var(--serif); font-size: 15.5px; font-weight: 600; color: var(--gold-top);
@@ -436,7 +433,7 @@
         .safety-item p { font-size: 13px; color: rgba(255,255,255,0.8); }
 
         /* ── FAQ ── */
-        .faq-item { border: 1px solid var(--dusky-blue-light); border-radius: 12px; margin-bottom: 12px; background: #fff; overflow: hidden; }
+        .faq-item { border: 1px solid var(--dusky-blue-light); border-radius: 4px; margin-bottom: 12px; background: #fff; overflow: hidden; }
         .faq-item summary {
             cursor: pointer; list-style: none; display: flex; gap: 12px; align-items: baseline;
             padding: 18px 20px; font-weight: 600; font-size: 14.5px; color: var(--navy);
@@ -479,15 +476,14 @@
         .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .persona-card {
             background: #fff; border: 1px solid var(--dusky-blue-light);
-            border-radius: 14px; overflow: hidden;
-            box-shadow: 0 4px 18px rgba(27,42,74,0.05);
+            border-radius: 4px; overflow: hidden;
         }
         .persona-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
         .persona-card .body { padding: 20px; }
         .persona-card .scene-tag {
-            display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+            display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
             color: var(--gold-deep); border: 1px solid var(--gold);
-            border-radius: 999px; padding: 2px 12px; margin-bottom: 12px;
+            border-radius: 2px; padding: 2px 14px; margin-bottom: 12px;
         }
         .persona-card .quote {
             font-family: var(--serif); font-size: 14.5px; color: var(--navy);
@@ -502,9 +498,8 @@
         /* ── Insight (problem) ── */
         .insight .section-title { font-size: clamp(21px, 4.4vw, 29px); }
         .case-compare {
-            border: 1px solid var(--dusky-blue-light); border-radius: 16px;
+            border: 1px solid var(--dusky-blue-light); border-radius: 4px;
             overflow: hidden; margin: 0 0 18px; background: #fff;
-            box-shadow: 0 8px 28px rgba(27,42,74,0.08);
         }
         .case-head {
             background: var(--navy); color: #fff; text-align: center;
@@ -516,12 +511,12 @@
         .case-col.bad { background: #F4F1EC; }
         .case-col.good { background: #FBF6EC; border-left: 1px solid var(--gold); }
         .case-tag {
-            display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em;
-            border-radius: 999px; padding: 3px 14px; margin-bottom: 14px;
+            display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em;
+            border-radius: 2px; padding: 3px 14px; margin-bottom: 14px;
         }
         .case-col.bad .case-tag { background: #666; color: #fff; }
-        .case-col.good .case-tag { background: linear-gradient(135deg, var(--gold-top), var(--gold)); color: var(--navy-dark); }
-        .case-col img { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; margin-bottom: 14px; }
+        .case-col.good .case-tag { background: var(--gold-top); color: var(--navy-dark); }
+        .case-col img { width: 100%; height: 130px; object-fit: cover; border-radius: 3px; margin-bottom: 14px; }
         .case-col h3 { font-family: var(--serif); font-size: 15.5px; color: var(--navy); letter-spacing: 0.04em; line-height: 1.6; margin-bottom: 8px; }
         .case-col p { font-size: 13px; color: var(--text-secondary); }
         .case-col .big { font-family: var(--serif); font-size: 21px; font-weight: 700; }
@@ -531,15 +526,14 @@
         .insight-strips { display: grid; gap: 14px; }
         .insight-strip {
             border-left: 3px solid var(--gold); background: var(--warm-white);
-            border-radius: 0 12px 12px 0; padding: 20px 24px;
+            border-radius: 0; padding: 20px 24px;
         }
         .insight-strip.with-image {
             display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(180px, 0.85fr);
             gap: 20px; align-items: center;
         }
         .insight-strip img {
-            width: 100%; aspect-ratio: 800 / 520; object-fit: cover; border-radius: 10px;
-            box-shadow: 0 8px 22px rgba(27,42,74,0.12);
+            width: 100%; aspect-ratio: 800 / 520; object-fit: cover; border-radius: 3px;
         }
         .insight-strip h3 { font-family: var(--serif); font-size: 16.5px; color: var(--navy); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 8px; }
         .insight-strip p { font-size: 13.5px; color: var(--text-secondary); }
@@ -553,7 +547,7 @@
         .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
         .solution-card {
             background: rgba(255,255,255,0.06); border: 1px solid rgba(232,210,160,0.35);
-            border-radius: 14px; padding: 26px 22px; text-align: center;
+            border-radius: 4px; padding: 26px 22px; text-align: center;
         }
         .solution-card .num { font-family: var(--en); color: var(--gold-top); font-size: 26px; display: block; margin-bottom: 10px; }
         .solution-card h3 { font-family: var(--serif); font-size: 16.5px; color: var(--gold-top); font-weight: 600; letter-spacing: 0.05em; line-height: 1.6; margin-bottom: 10px; }
@@ -567,7 +561,7 @@
             color: rgba(27,42,74,0.045); white-space: nowrap; pointer-events: none;
         }
         .story-quote {
-            font-family: var(--serif); font-size: clamp(22px, 4.6vw, 30px); font-weight: 600;
+            font-family: var(--serif); font-size: clamp(23px, 4.8vw, 32px); font-weight: 500;
             color: var(--navy); text-align: center; letter-spacing: 0.06em; margin-bottom: 10px;
         }
         .story-quote-sub { text-align: center; font-size: 13.5px; color: var(--gold-deep); margin-bottom: 36px; letter-spacing: 0.08em; }
@@ -592,20 +586,20 @@
         /* ── Imagery ── */
         .section-figure { margin: 0 auto 40px; max-width: 720px; }
         .section-figure img {
-            width: 100%; height: 300px; object-fit: cover; border-radius: 14px;
-            box-shadow: 0 12px 32px rgba(27,42,74,0.16);
+            width: 100%; height: 300px; object-fit: cover; border-radius: 4px;
+            border: 1px solid var(--dusky-blue-light);
         }
         .reason-card img {
             display: block; width: calc(100% + 44px); height: 160px; object-fit: cover;
-            margin: -28px -22px 18px; border-radius: 13px 13px 0 0;
+            margin: -28px -22px 18px; border-radius: 4px 4px 0 0;
         }
         .process-step img {
             display: block; width: calc(100% + 44px); height: 140px; object-fit: cover;
-            margin: -30px -22px 16px; border-radius: 13px 13px 0 0;
+            margin: -30px -22px 16px; border-radius: 4px 4px 0 0;
         }
         .safety-figure { margin: 0 0 28px; }
         .safety-figure img {
-            width: 100%; height: 260px; object-fit: cover; border-radius: 14px;
+            width: 100%; height: 260px; object-fit: cover; border-radius: 4px;
             border: 1px solid rgba(255,255,255,0.14);
         }
 
@@ -613,7 +607,7 @@
         .sp-only { display: none; }
         @media (max-width: 720px) {
             .sp-only { display: inline; }
-            section { padding: 60px 20px; }
+            section { padding: 76px 20px; }
             .concern-grid, .safety-grid { grid-template-columns: 1fr; }
             .reason-grid, .service-grid, .process-steps, .persona-grid, .solution-grid { grid-template-columns: 1fr; }
             .case-cols { grid-template-columns: 1fr; }
