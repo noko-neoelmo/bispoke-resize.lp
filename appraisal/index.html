@@ -207,21 +207,19 @@
         .hero {
             position: relative; overflow: hidden;
             background:
-                radial-gradient(ellipse 90% 60% at 70% -10%, rgba(232,210,160,0.30), transparent 60%),
-                linear-gradient(170deg, rgba(27,42,74,0.50) 0%, rgba(19,28,50,0.72) 80%),
-                url('/appraisal/images/appraisal-hero-keepsake-box.webp') center 45% / cover no-repeat,
-                linear-gradient(165deg, var(--navy) 0%, var(--navy-dark) 70%);
-            color: #fff;
-            padding: 128px 24px 64px;
+                radial-gradient(ellipse 80% 55% at 75% -5%, rgba(232,210,160,0.35), transparent 65%),
+                linear-gradient(175deg, #FDFCFA 0%, var(--warm-white) 70%);
+            color: var(--navy);
+            padding: 124px 24px 0;
             text-align: center;
         }
         .hero::before {
-            content: "◆"; position: absolute; top: 90px; left: 8%;
-            color: rgba(201,168,118,0.18); font-size: 22px;
+            content: "◆"; position: absolute; top: 96px; left: 9%;
+            color: rgba(156,132,86,0.22); font-size: 20px;
         }
         .hero::after {
-            content: "◆"; position: absolute; bottom: 60px; right: 9%;
-            color: rgba(201,168,118,0.14); font-size: 34px;
+            content: "◆"; position: absolute; top: 240px; right: 8%;
+            color: rgba(156,132,86,0.16); font-size: 30px;
         }
         .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
         .hero-label {
@@ -229,19 +227,32 @@
             color: var(--gold-top); text-transform: uppercase; margin-bottom: 14px;
         }
         .hero-service {
-            display: inline-block; font-size: 13px; letter-spacing: 0.14em;
-            border: 1px solid rgba(232,210,160,0.5); color: var(--gold-top);
-            padding: 5px 18px; border-radius: 999px; margin-bottom: 22px;
+            display: inline-block; font-size: 12.5px; letter-spacing: 0.18em;
+            border: 1px solid var(--gold); color: var(--gold-deep);
+            padding: 5px 20px; border-radius: 2px; margin-bottom: 26px;
         }
         .hero h1 {
             font-family: var(--serif); font-weight: 500;
             font-size: clamp(26px, 5.6vw, 40px); line-height: 1.55;
             letter-spacing: 0.06em; margin-bottom: 18px;
         }
-        .hero h1 .gold { color: var(--gold-top); }
+        .hero h1 .gold {
+            color: var(--navy);
+            background: linear-gradient(transparent 70%, rgba(201,168,118,0.5) 70%);
+        }
+        .hero-sub {
+            font-family: var(--serif); font-size: clamp(15px, 3.4vw, 18px);
+            color: var(--navy); letter-spacing: 0.05em; line-height: 1.9;
+            margin-bottom: 18px;
+        }
         .hero-lead {
-            font-size: 15px; color: rgba(255,255,255,0.88);
-            max-width: 480px; margin: 0 auto 28px; text-align: center;
+            font-size: 14px; color: var(--text-secondary);
+            max-width: 480px; margin: 0 auto 30px; text-align: center;
+        }
+        .hero-photo { max-width: 880px; margin: 44px auto 0; }
+        .hero-photo img {
+            width: 100%; height: 200px; object-fit: cover;
+            border-radius: 4px 4px 0 0; display: block;
         }
         .hero-badges {
             display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
@@ -254,8 +265,8 @@
         }
         .hero-price {
             display: inline-block; margin-bottom: 30px;
-            background: var(--gold-top);
-            color: var(--navy-dark); border-radius: 2px; padding: 14px 32px;
+            background: #fff; border: 1px solid var(--gold);
+            color: var(--navy-dark); border-radius: 2px; padding: 14px 36px;
         }
         .hero-price .small { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; display: block; }
         .hero-price .num { font-family: var(--serif); font-size: 30px; font-weight: 700; line-height: 1.3; }
@@ -275,6 +286,7 @@
         .btn-cta:hover { background: var(--line-green-deep); transform: translateY(-2px); }
         .btn-cta svg { width: 22px; height: 22px; fill: currentColor; flex-shrink: 0; }
         .cta-note { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 12px; }
+        .hero .cta-note { color: var(--text-light); }
 
         /* ── Section base ── */
         section { padding: 108px 24px; }
@@ -644,12 +656,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="hero">
         <div class="hero-inner">
             <p class="hero-service">ダイヤモンド・色石の鑑定書発行サービス</p>
-            <h1>形見のジュエリーは、<br><span class="gold">箱ごと</span>お送りください。</h1>
-            <p class="hero-lead">遺品整理や相続で見つかったジュエリー。職人が1点ずつ仕分けし、世界基準の鑑定書で価値を確かめてから、「これから」を一緒に決めていきます。</p>
-            <div class="hero-badges">
-                <span>仕分け・お見積もり無料</span>
-                <span>郵送完結・全国対応</span>
-            </div>
+            <h1>その宝石、<span class="gold">売る前に</span>。</h1>
+            <p class="hero-sub">「地金の値段」で手放してしまう前に、<br>世界基準の鑑定書で価値を確かめませんか。</p>
+            <p class="hero-lead">遺品整理や相続で見つかったジュエリーは、箱ごとお送りください。<br>職人が1点ずつ仕分けします（仕分け無料・郵送完結・全国対応）。</p>
             <div class="hero-price">
                 <span class="small">仕分け無料・鑑定するものだけ</span>
                 <span class="num">1点 6,600<em>円(税込)〜</em></span>
@@ -661,6 +670,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </a>
                 <p class="cta-note">箱ごと・引き出しごとの写真でOK。仕分けの進め方を無料でご案内します</p>
             </div>
+            <figure class="hero-photo">
+                <img src="/appraisal/images/appraisal-hero-keepsake-box.webp" alt="木箱に収められた形見のジュエリー" fetchpriority="high" width="880" height="200">
+            </figure>
         </div>
     </section>
 
