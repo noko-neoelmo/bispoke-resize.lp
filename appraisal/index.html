@@ -226,14 +226,14 @@
             font-family: var(--en); letter-spacing: 0.42em; font-size: 12px;
             color: var(--gold-top); text-transform: uppercase; margin-bottom: 14px;
         }
-        .hero-service {
-            display: inline-block; font-size: 12.5px; letter-spacing: 0.18em;
-            border: 1px solid var(--gold); color: var(--gold-deep);
-            padding: 5px 20px; border-radius: 2px; margin-bottom: 26px;
+        .hero-eyebrow {
+            display: inline-block; font-size: 13px; letter-spacing: 0.16em; font-weight: 500;
+            color: var(--gold-deep); border-bottom: 1px solid var(--gold);
+            padding-bottom: 6px; margin-bottom: 24px;
         }
         .hero h1 {
             font-family: var(--serif); font-weight: 500;
-            font-size: clamp(26px, 5.6vw, 40px); line-height: 1.55;
+            font-size: clamp(24px, 5.4vw, 38px); line-height: 1.6;
             letter-spacing: 0.06em; margin-bottom: 18px;
         }
         .hero h1 .gold {
@@ -263,14 +263,37 @@
             background: transparent; border: 1px solid rgba(255,255,255,0.34);
             padding: 6px 16px; border-radius: 2px;
         }
-        .hero-price {
-            display: inline-block; margin-bottom: 30px;
+        .hero-offer {
+            max-width: 460px; margin: 0 auto 18px;
             background: #fff; border: 1px solid var(--gold);
-            color: var(--navy-dark); border-radius: 2px; padding: 14px 36px;
+            border-radius: 4px; padding: 18px 22px;
         }
-        .hero-price .small { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; display: block; }
-        .hero-price .num { font-family: var(--serif); font-size: 30px; font-weight: 700; line-height: 1.3; }
-        .hero-price .num em { font-style: normal; font-size: 15px; }
+        .hero-offer .offer-main {
+            font-size: 15.5px; font-weight: 700; color: var(--navy);
+            line-height: 1.7; margin-bottom: 6px;
+        }
+        .hero-offer .offer-main strong { color: var(--gold-deep); font-size: 18px; }
+        .hero-offer .offer-sub { font-size: 13px; color: var(--text-secondary); }
+        .hero-offer .offer-sub strong { font-family: var(--serif); color: var(--navy); font-size: 16px; white-space: nowrap; }
+        .trust-chips {
+            list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 6px 14px; margin: 0 auto 24px; padding: 0;
+        }
+        .trust-chips li {
+            font-size: 12px; font-weight: 500; color: var(--navy); letter-spacing: 0.04em;
+        }
+        .trust-chips li::before { content: "◆ "; color: var(--gold); font-size: 9px; }
+        .fineprint { font-size: 10.5px; color: var(--text-light); }
+        .hero-sub sup { font-size: 10px; color: var(--text-light); }
+
+        /* ── Inline CTA bands (mid-page exits) ── */
+        .cta-inline { text-align: center; margin-top: 42px; }
+        .cta-inline .q {
+            font-family: var(--serif); font-size: clamp(15px, 3.4vw, 18px);
+            color: var(--navy); letter-spacing: 0.05em; margin-bottom: 16px;
+        }
+        .cta-inline .btn-cta { font-size: 15px; padding: 15px 36px; }
+        .cta-inline .cta-note { color: var(--text-light); }
     </style>
 
     <style>
@@ -655,20 +678,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ══ Hero ══ -->
     <section class="hero">
         <div class="hero-inner">
-            <p class="hero-service">ダイヤモンド・色石の鑑定書発行サービス</p>
-            <h1>その宝石、<span class="gold">売る前に</span>。</h1>
-            <p class="hero-sub">「地金の値段」で手放してしまう前に、<br>世界基準の鑑定書で価値を確かめませんか。</p>
-            <p class="hero-lead">遺品整理や相続で見つかったジュエリーは、箱ごとお送りください。<br>職人が1点ずつ仕分けします（仕分け無料・郵送完結・全国対応）。</p>
-            <div class="hero-price">
-                <span class="small">仕分け無料・鑑定するものだけ</span>
-                <span class="num">1点 6,600<em>円(税込)〜</em></span>
+            <p class="hero-eyebrow">遺品整理・相続で見つかったジュエリーに</p>
+            <h1>その宝石、<br>「地金の値段」で<span class="gold">売る前に</span>。</h1>
+            <p class="hero-sub">ダイヤモンドや色石は、鑑定書の有無で<br>評価が数倍変わることがあります。<sup>※</sup></p>
+            <div class="hero-offer">
+                <p class="offer-main">箱ごと送るだけ。職人が全品、<strong>無料で仕分け</strong>します</p>
+                <p class="offer-sub">鑑定書の発行は、価値のあるものだけ<br><strong>1点 6,600円(税込)〜</strong></p>
             </div>
+            <ul class="trust-chips">
+                <li>世界基準の鑑定機関</li>
+                <li>全行程 保険付き配送</li>
+                <li>ご承認まで費用0円</li>
+            </ul>
             <div>
                 <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta hero-cta">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
-                    LINEで無料相談する
+                    写真を送って、無料診断
                 </a>
-                <p class="cta-note">箱ごと・引き出しごとの写真でOK。仕分けの進め方を無料でご案内します</p>
+                <p class="cta-note">箱ごとの写真1枚でOK／しつこい営業はいたしません<br><span class="fineprint">※評価は一般的な例です。お品・相場・店舗により異なります。</span></p>
             </div>
             <figure class="hero-photo">
                 <img src="/appraisal/images/appraisal-hero-keepsake-box.webp" alt="木箱に収められた形見のジュエリー" fetchpriority="high" width="880" height="200">
@@ -736,7 +763,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
             <p class="case-note">※ 一般的な例（イメージ）です。実際の査定額は、お品の状態・グレード・相場・店舗により異なります。</p>
-            <div class="insight-strips">
+            <div class="cta-inline">
+                <p class="q">お手元のジュエリーは、どちらになりそうですか。</p>
+                <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+                    写真を送って、無料で確かめる
+                </a>
+            </div>
+            <div class="insight-strips" style="margin-top: 42px;">
                 <div class="insight-strip with-image">
                     <div>
                         <h3>色石は、もっと見過ごされています</h3>
@@ -923,6 +957,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li>※ 大粒石（2ct以上）や特殊な鑑別が必要なお品は、事前に追加費用をお見積もりします。</li>
                 <li>※ お届けまで約2〜3週間です。点数が多い場合は前後することがあります。</li>
             </ul>
+            <div class="cta-inline">
+                <p class="q">鑑定するかどうかは、無料仕分けの結果を見てからで大丈夫です。</p>
+                <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
+                    まずは仕分けだけ、頼んでみる
+                </a>
+                <p class="cta-note">箱ごとの写真1枚でOK・概算は無料です</p>
+            </div>
         </div>
     </section>
 
@@ -1065,7 +1107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="floating-cta" id="floatingCta">
         <a href="https://liff.line.me/2009801854-l9LrHK08/" data-cta class="btn-cta">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.64 2 10.13c0 4.03 3.58 7.4 8.41 8.04.33.07.77.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.01.89.55 1.09-.46 5.87-3.46 8.01-5.92C21.66 13.31 22 11.78 22 10.13 22 5.64 17.52 2 12 2z"/></svg>
-            LINEで無料相談（箱ごとの写真でOK）
+            無料診断をはじめる（写真1枚でOK）
         </a>
     </div>
 
@@ -1094,6 +1136,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         cta_location: el.closest('.floating-cta') ? 'floating' :
                                       el.closest('.hero') ? 'hero' :
                                       el.closest('.header') ? 'header' :
+                                      el.closest('#insight') ? 'insight_inline' :
+                                      el.closest('#price') ? 'pricing_inline' :
                                       el.closest('.cta-section') ? 'cta_section' : 'other'
                     });
                     if (typeof fbq === 'function') {
