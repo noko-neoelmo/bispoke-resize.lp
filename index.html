@@ -75,7 +75,10 @@ fbq('track', 'PageView');
     </div>
     <div class="reveal">
       <div class="tilt" style="--r:2.5deg;overflow:hidden">
-        <video src="images/atelier.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        <video autoplay muted loop playsinline preload="metadata" style="width:100%;display:block" poster="images/setting.png">
+          <source src="images/atelier.webm" type="video/webm">
+          <source src="images/atelier.mp4" type="video/mp4">
+        </video>
       </div>
       <p style="margin-top:14px;font-family:var(--font-mono);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mute);text-align:right">Atelier — Hands at work</p>
     </div>
