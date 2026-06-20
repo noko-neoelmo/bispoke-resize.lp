@@ -1342,10 +1342,11 @@
                 el.addEventListener('click', function() {
                     window.dataLayer.push({
                         event: 'line_cta_click',
+                        funnel: 'repair',
+                        cta_source: 'lp',
                         cta_location: el.closest('.floating-cta') ? 'floating' :
                                       el.closest('.hero-repair') ? 'hero' :
-                                      el.closest('.cta-center') ? 'price_section' : 'other',
-                        cta_page: 'repair'
+                                      el.closest('.cta-center') ? 'price_section' : 'other'
                     });
                     if (typeof fbq === 'function') {
                         fbq('track', 'Lead', { content_name: 'repair_lp_cta_click' });
