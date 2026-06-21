@@ -542,6 +542,84 @@
         }
         .cta-center .btn-cta { width: 100%; max-width: 420px; }
 
+        /* ===== Repair case cards (Before/After + price example) ===== */
+        .case-disclaimer {
+            font-size: 11.5px; color: var(--text-light);
+            text-align: center; margin: 0 0 20px; line-height: 1.7;
+        }
+        .case-grid {
+            display: grid; grid-template-columns: 1fr; gap: 14px; align-items: stretch;
+        }
+        @media (min-width: 540px) { .case-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
+        .case-card {
+            background: #FFFFFF; border: 1px solid rgba(27,42,74,0.10);
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 16px rgba(27,42,74,0.06);
+            display: flex; flex-direction: column;
+        }
+        .case-ba {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+            background: rgba(27,42,74,0.10);
+        }
+        .case-ba figure {
+            position: relative; margin: 0; aspect-ratio: 1 / 1;
+            overflow: hidden; background: var(--water-blue);
+        }
+        .case-ba img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .case-ba figcaption {
+            position: absolute; top: 6px; left: 6px;
+            font-size: 9px; font-weight: 700; letter-spacing: 0.08em;
+            color: #FFFFFF; background: rgba(19,28,50,0.74);
+            padding: 2px 8px; border-radius: 999px;
+        }
+        .case-ba figure.is-after figcaption {
+            background: linear-gradient(180deg, var(--gold-top) 0%, var(--gold) 100%);
+            color: var(--navy);
+        }
+        .case-body {
+            padding: 13px 14px 14px; display: flex; flex-direction: column; flex: 1;
+        }
+        .case-tag {
+            align-self: flex-start; font-size: 10px; font-weight: 700;
+            letter-spacing: 0.04em; color: var(--navy);
+            background: var(--dusky-blue-light);
+            padding: 3px 9px; border-radius: 999px; margin-bottom: 8px;
+        }
+        .case-item {
+            font-size: 13px; font-weight: 700; color: var(--navy);
+            line-height: 1.4; margin-bottom: 4px;
+        }
+        .case-note {
+            font-size: 11.5px; color: var(--text-secondary);
+            line-height: 1.6; margin-bottom: 12px; flex: 1;
+        }
+        .case-price {
+            display: flex; align-items: baseline; justify-content: space-between;
+            padding-top: 10px; border-top: 1px solid rgba(27,42,74,0.10);
+        }
+        .case-price-label { font-size: 11px; color: var(--text-light); font-weight: 600; }
+        .case-price-amount { font-size: 21px; font-weight: 800; color: var(--navy); line-height: 1; }
+        .case-price-amount span { font-size: 11px; font-weight: 500; color: var(--text-secondary); margin-left: 1px; }
+        .price-guide {
+            margin: 22px 0 0; padding: 16px 18px; background: #FFFFFF;
+            border: 1px solid rgba(27,42,74,0.10); border-radius: 12px;
+        }
+        .price-guide-title {
+            font-size: 12px; font-weight: 700; color: var(--navy);
+            text-align: center; letter-spacing: 0.04em; margin: 0 0 10px;
+        }
+        .price-guide-list {
+            list-style: none; margin: 0; padding: 0;
+            display: grid; grid-template-columns: 1fr; gap: 6px;
+        }
+        @media (min-width: 540px) { .price-guide-list { grid-template-columns: 1fr 1fr; gap: 6px 18px; } }
+        .price-guide-list li {
+            display: flex; align-items: baseline; justify-content: space-between;
+            gap: 10px; font-size: 12px; color: var(--text-secondary);
+            border-bottom: 1px dotted rgba(27,42,74,0.16); padding-bottom: 5px;
+        }
+        .price-guide-list li b { font-weight: 700; color: var(--navy); white-space: nowrap; }
+
         /* ===== Process ===== */
         .process-flow { display: grid; grid-template-columns: 1fr; gap: 18px; }
         @media (min-width: 600px) { .process-flow { grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: stretch; } }
@@ -1075,67 +1153,99 @@
     <!-- ===== Menu / Price Section ===== -->
     <div class="section section-bg-water" id="price">
         <div class="container">
-            <p class="section-label fade-in">MENU & PRICING</p>
-            <h2 class="section-title fade-in">修理メニュー・料金</h2>
-            <p class="section-desc fade-in">お見積もりは無料です。</p>
+            <p class="section-label fade-in">REPAIR CASES &amp; PRICE</p>
+            <h2 class="section-title fade-in">修理の事例と料金</h2>
+            <p class="section-desc fade-in">「この修理は、いくらだったのか」。実際の修理内容をもとにした料金事例です。</p>
 
-            <div class="menu-grid fade-in">
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <p class="case-disclaimer fade-in">※下記は実際の修理内容をもとにした参考料金です。素材・状態により変動し、正式な金額は無料お見積もりでご案内します。</p>
+
+            <div class="case-grid fade-in">
+                <div class="case-card">
+                    <div class="case-ba">
+                        <figure><figcaption>BEFORE</figcaption><img src="/repair/images/cases/chain-before.jpg" alt="チェーンが切れたK18ネックレス（修理前）" loading="lazy"></figure>
+                        <figure class="is-after"><figcaption>AFTER</figcaption><img src="/repair/images/cases/chain-after.jpg" alt="ロウ付けで接合したK18ネックレス（修理後）" loading="lazy"></figure>
                     </div>
-                    <h3 class="menu-card-title">チェーン切れ修理</h3>
-                    <p class="menu-card-desc">ネックレス・ブレスレットのチェーン切れをロウ付けで修理。切れた箇所がわからないほど仕上げます。</p>
-                    <p class="menu-card-price">5,500<span>円（税込）〜</span></p>
-                </div>
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+                    <div class="case-body">
+                        <span class="case-tag">チェーン切れ修理</span>
+                        <p class="case-item">K18 ネックレス</p>
+                        <p class="case-note">留め具付近で切れたチェーンを、跡が分からないようロウ付けで接合。</p>
+                        <div class="case-price"><span class="case-price-label">この事例の料金</span><span class="case-price-amount">¥6,600<span>（税込）</span></span></div>
                     </div>
-                    <h3 class="menu-card-title">石留め直し</h3>
-                    <p class="menu-card-desc">外れた石の再留め、爪の作り直し。ダイヤモンド・カラーストーンなど全ての石に対応します。</p>
-                    <p class="menu-card-price">5,500<span>円（税込）〜</span></p>
                 </div>
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                <div class="case-card">
+                    <div class="case-ba">
+                        <figure><figcaption>BEFORE</figcaption><img src="/repair/images/cases/stone-before.jpg" alt="メレダイヤが外れたPt900リング（修理前）" loading="lazy"></figure>
+                        <figure class="is-after"><figcaption>AFTER</figcaption><img src="/repair/images/cases/stone-after.jpg" alt="石を留め直したPt900リング（修理後）" loading="lazy"></figure>
                     </div>
-                    <h3 class="menu-card-title">留め具交換</h3>
-                    <p class="menu-card-desc">クラスプ（留め金具）の交換・修理。マグネット式への変更など、使いやすさの改善もご相談ください。</p>
-                    <p class="menu-card-price">3,300<span>円（税込）〜</span></p>
-                </div>
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m0 16v1m-8-9H3m18 0h-1m-2.636-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707"/><circle cx="12" cy="12" r="4"/></svg>
+                    <div class="case-body">
+                        <span class="case-tag">石留め直し</span>
+                        <p class="case-item">Pt900 リング</p>
+                        <p class="case-note">外れたメレダイヤ1石を、爪を起こして再セッティング。</p>
+                        <div class="case-price"><span class="case-price-label">この事例の料金</span><span class="case-price-amount">¥7,700<span>（税込）</span></span></div>
                     </div>
-                    <h3 class="menu-card-title">新品仕上げ（磨き直し）</h3>
-                    <p class="menu-card-desc">くすみ・小傷を職人の手で磨き上げ、購入時のような輝きに。全素材に対応します。</p>
-                    <p class="menu-card-price">3,300<span>円（税込）〜</span></p>
                 </div>
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3"/></svg>
+                <div class="case-card">
+                    <div class="case-ba">
+                        <figure><figcaption>BEFORE</figcaption><img src="/repair/images/cases/pearl-before.jpg" alt="糸が緩んだアコヤパールネックレス（修理前）" loading="lazy"></figure>
+                        <figure class="is-after"><figcaption>AFTER</figcaption><img src="/repair/images/cases/pearl-after.jpg" alt="オールノットで組み直したパールネックレス（修理後）" loading="lazy"></figure>
                     </div>
-                    <h3 class="menu-card-title">メッキ再加工</h3>
-                    <p class="menu-card-desc">ホワイトゴールドのロジウムメッキ剥がれ、シルバーの黒ずみなど、コーティングをかけ直します。</p>
-                    <p class="menu-card-price">5,500<span>円（税込）〜</span></p>
-                </div>
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h8m-4-4v8"/><circle cx="18" cy="12" r="4"/></svg>
+                    <div class="case-body">
+                        <span class="case-tag">真珠の糸替え</span>
+                        <p class="case-item">アコヤ パールネックレス</p>
+                        <p class="case-note">40cmを一粒ずつ結ぶオールノットで組み直し。切れにくく安心。</p>
+                        <div class="case-price"><span class="case-price-label">この事例の料金</span><span class="case-price-amount">¥9,900<span>（税込）</span></span></div>
                     </div>
-                    <h3 class="menu-card-title">イヤリング⇔ピアス変換</h3>
-                    <p class="menu-card-desc">イヤリングをピアスに、ピアスをイヤリングに変換。金具の交換で、お好みの装着方法に変えられます。</p>
-                    <p class="menu-card-price">5,500<span>円（税込）〜</span></p>
                 </div>
-                <div class="menu-card">
-                    <div class="menu-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                <div class="case-card">
+                    <div class="case-ba">
+                        <figure><figcaption>BEFORE</figcaption><img src="/repair/images/cases/clasp-before.jpg" alt="引き輪が壊れたシルバーブレスレット（修理前）" loading="lazy"></figure>
+                        <figure class="is-after"><figcaption>AFTER</figcaption><img src="/repair/images/cases/clasp-after.jpg" alt="クラスプを交換したシルバーブレスレット（修理後）" loading="lazy"></figure>
                     </div>
-                    <h3 class="menu-card-title">指輪のサイズ直し</h3>
-                    <p class="menu-card-desc">ゆるくなった、きつくなった指輪も対応。修理品とまとめてLINEでご相談いただけます。</p>
-                    <p class="menu-card-price">8,800<span>円（税込）〜</span></p>
+                    <div class="case-body">
+                        <span class="case-tag">留め具交換</span>
+                        <p class="case-item">SV ブレスレット</p>
+                        <p class="case-note">壊れた引き輪を、着けやすい新しいクラスプへ交換。</p>
+                        <div class="case-price"><span class="case-price-label">この事例の料金</span><span class="case-price-amount">¥3,300<span>（税込）</span></span></div>
+                    </div>
                 </div>
+                <div class="case-card">
+                    <div class="case-ba">
+                        <figure><figcaption>BEFORE</figcaption><img src="/repair/images/cases/polish-before.jpg" alt="小傷とくすみのあるK18リング（修理前）" loading="lazy"></figure>
+                        <figure class="is-after"><figcaption>AFTER</figcaption><img src="/repair/images/cases/polish-after.jpg" alt="磨き直したK18リング（修理後）" loading="lazy"></figure>
+                    </div>
+                    <div class="case-body">
+                        <span class="case-tag">新品仕上げ</span>
+                        <p class="case-item">K18 リング</p>
+                        <p class="case-note">小傷・くすみを職人の手で磨き直し、購入時のような輝きへ。</p>
+                        <div class="case-price"><span class="case-price-label">この事例の料金</span><span class="case-price-amount">¥4,400<span>（税込）</span></span></div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-ba">
+                        <figure><figcaption>BEFORE</figcaption><img src="/repair/images/cases/earring-before.jpg" alt="K10イヤリング（変換前）" loading="lazy"></figure>
+                        <figure class="is-after"><figcaption>AFTER</figcaption><img src="/repair/images/cases/earring-after.jpg" alt="ピアスに変換したK10（変換後）" loading="lazy"></figure>
+                    </div>
+                    <div class="case-body">
+                        <span class="case-tag">イヤリング→ピアス</span>
+                        <p class="case-item">K10 イヤリング</p>
+                        <p class="case-note">金具をポスト式ピアスに変換（1ペア）。デザインはそのまま。</p>
+                        <div class="case-price"><span class="case-price-label">この事例の料金</span><span class="case-price-amount">¥6,600<span>（税込）</span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-guide fade-in">
+                <p class="price-guide-title">料金の目安</p>
+                <ul class="price-guide-list">
+                    <li>留め具交換<b>3,300円〜</b></li>
+                    <li>新品仕上げ（磨き直し）<b>3,300円〜</b></li>
+                    <li>チェーン切れ修理<b>5,500円〜</b></li>
+                    <li>石留め直し<b>5,500円〜</b></li>
+                    <li>メッキ再加工<b>5,500円〜</b></li>
+                    <li>イヤリング⇔ピアス変換<b>5,500円〜</b></li>
+                    <li>真珠の糸替え（オールノット）<b>9,900円〜</b></li>
+                    <li>指輪のサイズ直し<b>8,800円〜</b></li>
+                </ul>
             </div>
 
             <div class="price-includes fade-in" style="margin-top:24px;">
