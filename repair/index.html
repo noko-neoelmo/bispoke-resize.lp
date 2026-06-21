@@ -389,37 +389,40 @@
         .worries-block { text-align: center; }
         .worries-eyebrow {
             font-size: 10px; letter-spacing: 0.32em; color: var(--gold);
-            margin-bottom: 10px; text-transform: uppercase; font-weight: 600;
+            margin-bottom: 8px; text-transform: uppercase; font-weight: 600;
         }
         .worries-title {
             font-family: "Noto Serif JP", serif;
             font-size: 19px; font-weight: 700; color: var(--navy);
-            margin-bottom: 28px; line-height: 1.4;
+            margin-bottom: 16px; line-height: 1.4;
         }
         .worries-title strong { position: relative; display: inline-block; }
         .worries-title strong::after { content: '？'; color: var(--pink-shocking); margin-left: 2px; }
         @media (min-width: 600px) { .worries-title { font-size: 24px; } }
         .worries-list {
-            list-style: none; padding: 0; margin: 0 0 24px;
-            display: grid; grid-template-columns: 1fr; gap: 12px;
+            list-style: none; padding: 0; margin: 0 0 14px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 9px;
             align-items: stretch;
         }
-        @media (min-width: 600px) { .worries-list { grid-template-columns: 1fr 1fr; gap: 14px; } }
+        @media (min-width: 600px) { .worries-list { gap: 14px; } }
         .worries-list li {
-            position: relative; display: grid; grid-template-columns: 76px 1fr; align-items: center; gap: 14px;
-            min-height: 112px; padding: 12px; background: #FFFFFF;
+            position: relative; display: grid; grid-template-columns: 48px 1fr; align-items: center; gap: 10px;
+            min-height: 60px; padding: 9px; background: #FFFFFF;
             border: 1px solid rgba(123,150,181,0.24); border-radius: 8px;
-            font-size: 13.5px; font-weight: 600; color: #1B2A4A;
-            line-height: 1.5; text-align: left;
+            font-size: 12px; font-weight: 600; color: #1B2A4A;
+            line-height: 1.4; text-align: left;
             box-shadow: 0 2px 8px rgba(27,42,74,0.04);
         }
-        @media (min-width: 600px) { .worries-list li { min-height: 124px; font-size: 14px; } }
+        @media (min-width: 600px) {
+            .worries-list li { grid-template-columns: 64px 1fr; min-height: 76px; font-size: 14px; gap: 14px; padding: 12px; }
+        }
         .worry-icon {
-            width: 76px; height: 88px; border-radius: 6px;
+            width: 48px; height: 48px; border-radius: 6px;
             background: var(--dusky-blue-light); color: var(--navy);
             display: block; overflow: hidden;
             border: 1px solid rgba(27,42,74,0.10);
         }
+        @media (min-width: 600px) { .worry-icon { width: 64px; height: 64px; } }
         .worry-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .worry-icon img {
             filter: brightness(1.16) saturate(1.04);
@@ -428,9 +431,9 @@
         /* ===== Contrast triangle + Pride ===== */
         .contrast-section {
             position: relative; background: #F5F7FA;
-            padding: 48px 0 56px; overflow: hidden;
+            padding: 32px 0 44px; overflow: hidden;
         }
-        @media (min-width: 720px) { .contrast-section { padding: 64px 0 76px; } }
+        @media (min-width: 720px) { .contrast-section { padding: 56px 0 72px; } }
         .contrast-inner {
             position: relative; padding: 0 24px;
             max-width: 720px; margin: 0 auto;
@@ -438,7 +441,7 @@
         @media (min-width: 720px) { .contrast-inner { padding: 0 56px; } }
         .contrast-triangle {
             position: relative; width: 100%; max-width: 380px;
-            margin: 32px auto 0; aspect-ratio: 6 / 2.0;
+            margin: 16px auto 0; aspect-ratio: 6 / 2.0;
         }
         @media (min-width: 600px) { .contrast-triangle { max-width: 460px; aspect-ratio: 7 / 2.0; } }
         .contrast-triangle::before {
