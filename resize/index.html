@@ -3123,6 +3123,166 @@
         .hero-v2-chips { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; }
         .hero-v2-chip { background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.07); border-radius:999px; padding:5px 12px; font-size:12px; font-weight:700; color:#1B2A4A; box-shadow:0 1px 4px rgba(0,0,0,.06); }
         .hero-v2-chip .chip-accent { color:#8a7a5a; }
+
+        /* ════════════════════════════════════════════════
+           RT MOTION LAYER (additive · 2026-06 refresh)
+           - hero load orchestration
+           - richer scroll reveals
+           - "Ring Sizer" hero signature
+           All effects respect prefers-reduced-motion.
+        ════════════════════════════════════════════════ */
+
+        /* ── Hero load orchestration (JS adds .rt-anim then .rt-ready to body) ── */
+        body.rt-anim .hero-v2-eyebrow,
+        body.rt-anim .hero-v2-trust-highlight,
+        body.rt-anim .hero-v2-title,
+        body.rt-anim .hero-v2-lead,
+        body.rt-anim .hero-v2-chips,
+        body.rt-anim .rt-sizer,
+        body.rt-anim .hero-v2-cta-block,
+        body.rt-anim .hero-v2-gauge-card {
+            opacity: 0;
+            transform: translateY(16px);
+            filter: blur(8px);
+        }
+        body.rt-anim.rt-ready .hero-v2-eyebrow,
+        body.rt-anim.rt-ready .hero-v2-trust-highlight,
+        body.rt-anim.rt-ready .hero-v2-title,
+        body.rt-anim.rt-ready .hero-v2-lead,
+        body.rt-anim.rt-ready .hero-v2-chips,
+        body.rt-anim.rt-ready .rt-sizer,
+        body.rt-anim.rt-ready .hero-v2-cta-block,
+        body.rt-anim.rt-ready .hero-v2-gauge-card {
+            opacity: 1;
+            transform: none;
+            filter: blur(0);
+            transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.9s cubic-bezier(0.16,1,0.3,1),
+                        filter 0.7s ease;
+        }
+        body.rt-anim.rt-ready .hero-v2-eyebrow        { transition-delay: 0.05s; }
+        body.rt-anim.rt-ready .hero-v2-trust-highlight{ transition-delay: 0.12s; }
+        body.rt-anim.rt-ready .hero-v2-title          { transition-delay: 0.20s; }
+        body.rt-anim.rt-ready .hero-v2-lead           { transition-delay: 0.34s; }
+        body.rt-anim.rt-ready .hero-v2-chips          { transition-delay: 0.44s; }
+        body.rt-anim.rt-ready .rt-sizer               { transition-delay: 0.54s; }
+        body.rt-anim.rt-ready .hero-v2-cta-block      { transition-delay: 0.62s; }
+        body.rt-anim.rt-ready .hero-v2-gauge-card     { transition-delay: 0.72s; }
+
+        /* ── Richer scroll reveal (upgrades existing .fade-in) ── */
+        .fade-in {
+            transform: translateY(28px) scale(0.985);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.8s cubic-bezier(0.16,1,0.3,1);
+            will-change: opacity, transform;
+        }
+        .fade-in.visible { transform: translateY(0) scale(1); }
+
+        /* ── CTA tactile feedback ── */
+        .btn-cta { will-change: transform; }
+        .btn-cta:active { transform: translateY(1px) scale(0.985); }
+
+        /* ── SIGNATURE: Ring Sizer ── */
+        .rt-sizer {
+            margin-top: 4px;
+            max-width: 340px;
+        }
+        .rt-sizer-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .rt-sizer-tag {
+            font-family: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+            font-size: 10px;
+            letter-spacing: 0.24em;
+            font-weight: 700;
+            color: var(--gold-deep);
+            text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+        }
+        .rt-sizer-read {
+            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
+            color: var(--navy);
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .rt-sizer-read b { font-size: 22px; font-weight: 700; }
+        .rt-sizer-read span { font-size: 12px; margin-left: 2px; opacity: 0.75; }
+        .rt-sizer-rule {
+            position: relative;
+            height: 30px;
+            margin-top: 9px;
+            border-bottom: 1px solid rgba(27,42,74,0.40);
+        }
+        .rt-sizer-ticks { position: absolute; inset: 0; pointer-events: none; }
+        .rt-sizer-ticks::before,
+        .rt-sizer-ticks::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+        }
+        /* half-size (0.5号) ticks every 5% */
+        .rt-sizer-ticks::before {
+            height: 9px;
+            background: repeating-linear-gradient(90deg,
+                rgba(27,42,74,0.34) 0 1px, transparent 1px 5%);
+        }
+        /* full-size (1号) ticks every 10% */
+        .rt-sizer-ticks::after {
+            height: 16px;
+            background: repeating-linear-gradient(90deg,
+                rgba(27,42,74,0.55) 0 1px, transparent 1px 10%);
+        }
+        .rt-sizer-marker {
+            position: absolute;
+            bottom: -3px;
+            left: 64%;
+            width: 2px;
+            height: 26px;
+            background: var(--gold);
+            transition: left 1.15s cubic-bezier(0.34,1.4,0.5,1);
+            box-shadow: 0 0 10px rgba(201,168,118,0.6);
+        }
+        .rt-sizer-marker::before {
+            content: '';
+            position: absolute;
+            top: -5px; left: 50%;
+            width: 9px; height: 9px;
+            background: var(--gold);
+            border: 1.5px solid #fff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        }
+        .rt-sizer-foot {
+            margin-top: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+        }
+
+        /* ── Honor reduced motion: kill all added motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            body.rt-anim .hero-v2-eyebrow,
+            body.rt-anim .hero-v2-trust-highlight,
+            body.rt-anim .hero-v2-title,
+            body.rt-anim .hero-v2-lead,
+            body.rt-anim .hero-v2-chips,
+            body.rt-anim .rt-sizer,
+            body.rt-anim .hero-v2-cta-block,
+            body.rt-anim .hero-v2-gauge-card {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+                transition: none !important;
+            }
+            .fade-in { transition: opacity 0.4s ease; transform: none; }
+            .fade-in.visible { transform: none; }
+            .rt-sizer-marker { transition: none; }
+        }
     </style>
     <script>
     (function () {
@@ -3888,6 +4048,100 @@
                 });
             });
         });
+    </script>
+
+    <!-- ══ RT motion layer (additive) ══ -->
+    <script>
+    (function () {
+        var reduce = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function injectSizer() {
+            var text = document.querySelector('.hero-v2-text');
+            if (!text || document.querySelector('.rt-sizer')) return null;
+            var el = document.createElement('div');
+            el.className = 'rt-sizer';
+            el.setAttribute('aria-hidden', 'true');
+            el.innerHTML =
+                '<div class="rt-sizer-head">' +
+                    '<span class="rt-sizer-tag">RING SIZER · 0.5 STEP</span>' +
+                    '<span class="rt-sizer-read"><b id="rtSizerNum">16.0</b><span>号</span></span>' +
+                '</div>' +
+                '<div class="rt-sizer-rule">' +
+                    '<div class="rt-sizer-ticks"></div>' +
+                    '<div class="rt-sizer-marker" id="rtSizerMarker"></div>' +
+                '</div>' +
+                '<div class="rt-sizer-foot">0.5号刻みで、ぴったりの一点へ。</div>';
+            text.appendChild(el);
+            return el;
+        }
+
+        function animateSizer() {
+            var marker = document.getElementById('rtSizerMarker');
+            var num = document.getElementById('rtSizerNum');
+            if (!marker || !num) return;
+            var fromSize = 16, toSize = 9;           // a believable size-down
+            var toLeft = 26;                          // % position to snap to
+            if (reduce) {
+                marker.style.left = toLeft + '%';
+                num.textContent = toSize.toFixed(1);
+                return;
+            }
+            // snap the marker
+            requestAnimationFrame(function () {
+                marker.style.left = toLeft + '%';
+            });
+            // count the readout down in 0.5 steps, in sync with the snap
+            var current = fromSize;
+            var stepMs = 1150 / ((fromSize - toSize) / 0.5);
+            var timer = setInterval(function () {
+                current -= 0.5;
+                if (current <= toSize) { current = toSize; clearInterval(timer); }
+                num.textContent = current.toFixed(1);
+            }, stepMs);
+        }
+
+        function staggerReveals() {
+            // give grouped .fade-in items (without an explicit delay class)
+            // a gentle cascade based on their order within a shared parent
+            var seen = new Map();
+            document.querySelectorAll('.fade-in').forEach(function (el) {
+                if (/fade-in-delay-/.test(el.className)) return;
+                var p = el.parentElement;
+                var i = seen.get(p) || 0;
+                seen.set(p, i + 1);
+                if (i > 0) {
+                    el.style.transitionDelay = Math.min(i, 5) * 0.08 + 's';
+                }
+            });
+        }
+
+        function start() {
+            injectSizer();
+            staggerReveals();
+            if (reduce) { animateSizer(); return; }
+            document.body.classList.add('rt-anim');
+            var played = false;
+            function play() {
+                if (played) return;
+                played = true;
+                document.body.classList.add('rt-ready');
+                setTimeout(animateSizer, 520); // after the sizer fades in
+            }
+            // double rAF so initial hidden state is committed before playing
+            requestAnimationFrame(function () {
+                requestAnimationFrame(play);
+            });
+            // safety net: never leave the hero hidden if rAF stalls
+            setTimeout(play, 1200);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', start);
+        } else {
+            start();
+        }
+    })();
     </script>
 
 </body>
