@@ -3989,9 +3989,9 @@
                     html = 'お調べしました。目安は<span class="lf-strong">&yen;' + total.toLocaleString() + '〜（税込・1点あたり）</span>です。';
                     if (simState.dir === 'up') {
                         if (metalKnown) {
-                            notes.push('サイズアップ分の地金代（' + simState.metalLabel + ' 約&yen;' + simState.metalRate.toLocaleString() + '／号 × ' + (simState.sizes || 1) + '号 ＝ &yen;' + metalCost.toLocaleString() + '）を含みます。');
+                            notes.push('サイズアップ分の地金（素材）代を含みます。');
                         } else {
-                            notes.push('上記は地金代を含みません。素材により別途（K18 約&yen;2,500／号・Pt 約&yen;1,800／号・シルバー 約&yen;700／号）かかります。');
+                            notes.push('上記は地金代を含みません。素材により別途、地金代がかかります。');
                         }
                     }
                     if (simState.urgency === 'rush') {
