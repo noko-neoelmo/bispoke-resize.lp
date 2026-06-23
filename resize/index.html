@@ -3123,6 +3123,181 @@
         .hero-v2-chips { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; }
         .hero-v2-chip { background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.07); border-radius:999px; padding:5px 12px; font-size:12px; font-weight:700; color:#1B2A4A; box-shadow:0 1px 4px rgba(0,0,0,.06); }
         .hero-v2-chip .chip-accent { color:#8a7a5a; }
+
+        /* ════════════════════════════════════════════════
+           RT MOTION LAYER (additive · 2026-06 refresh)
+           - hero load orchestration
+           - richer scroll reveals
+           - "10秒でわかる、料金の目安" modal
+           All effects respect prefers-reduced-motion.
+        ════════════════════════════════════════════════ */
+
+        /* ── Hero load orchestration (JS adds .rt-anim then .rt-ready to body) ── */
+        body.rt-anim .hero-v2-eyebrow,
+        body.rt-anim .hero-v2-trust-highlight,
+        body.rt-anim .hero-v2-title,
+        body.rt-anim .hero-v2-lead,
+        body.rt-anim .hero-v2-chips,
+        body.rt-anim .rt-quote-trigger,
+        body.rt-anim .hero-v2-cta-block,
+        body.rt-anim .hero-v2-gauge-card {
+            opacity: 0;
+            transform: translateY(16px);
+            filter: blur(8px);
+        }
+        body.rt-anim.rt-ready .hero-v2-eyebrow,
+        body.rt-anim.rt-ready .hero-v2-trust-highlight,
+        body.rt-anim.rt-ready .hero-v2-title,
+        body.rt-anim.rt-ready .hero-v2-lead,
+        body.rt-anim.rt-ready .hero-v2-chips,
+        body.rt-anim.rt-ready .rt-quote-trigger,
+        body.rt-anim.rt-ready .hero-v2-cta-block,
+        body.rt-anim.rt-ready .hero-v2-gauge-card {
+            opacity: 1;
+            transform: none;
+            filter: blur(0);
+            transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.9s cubic-bezier(0.16,1,0.3,1),
+                        filter 0.7s ease;
+        }
+        body.rt-anim.rt-ready .hero-v2-eyebrow        { transition-delay: 0.05s; }
+        body.rt-anim.rt-ready .hero-v2-trust-highlight{ transition-delay: 0.12s; }
+        body.rt-anim.rt-ready .hero-v2-title          { transition-delay: 0.20s; }
+        body.rt-anim.rt-ready .hero-v2-lead           { transition-delay: 0.34s; }
+        body.rt-anim.rt-ready .hero-v2-chips          { transition-delay: 0.44s; }
+        body.rt-anim.rt-ready .rt-quote-trigger       { transition-delay: 0.54s; }
+        body.rt-anim.rt-ready .hero-v2-cta-block      { transition-delay: 0.62s; }
+        body.rt-anim.rt-ready .hero-v2-gauge-card     { transition-delay: 0.72s; }
+
+        /* ── Richer scroll reveal (upgrades existing .fade-in) ── */
+        .fade-in {
+            transform: translateY(28px) scale(0.985);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+                        transform 0.8s cubic-bezier(0.16,1,0.3,1);
+            will-change: opacity, transform;
+        }
+        .fade-in.visible { transform: translateY(0) scale(1); }
+
+        /* ── CTA tactile feedback ── */
+        .btn-cta { will-change: transform; }
+        .btn-cta:active { transform: translateY(1px) scale(0.985); }
+
+        /* ── Quote modal trigger (in hero) ── */
+        .rt-quote-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            padding: 11px 18px;
+            background: #fff;
+            border: 1px solid rgba(27,42,74,0.16);
+            border-radius: 999px;
+            color: var(--navy);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(27,42,74,0.10);
+            transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+        }
+        .rt-quote-trigger:hover {
+            box-shadow: 0 8px 24px rgba(27,42,74,0.16);
+            transform: translateY(-1px);
+            border-color: rgba(201,168,118,0.7);
+        }
+        .rt-quote-trigger:active { transform: translateY(0); }
+        .rt-quote-trigger .rt-qt-pulse {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 0 rgba(201,168,118,0.6);
+            animation: rt-qt-pulse 2s ease-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes rt-qt-pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(201,168,118,0.55); }
+            70%  { box-shadow: 0 0 0 9px rgba(201,168,118,0); }
+            100% { box-shadow: 0 0 0 0 rgba(201,168,118,0); }
+        }
+        .rt-quote-trigger .rt-qt-arrow { margin-left: 2px; opacity: 0.55; }
+
+        /* ── Quote modal ── */
+        .rt-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        @media (min-width: 600px) { .rt-modal { align-items: center; padding: 24px; } }
+        .rt-modal.open { opacity: 1; pointer-events: auto; }
+        .rt-modal-backdrop {
+            position: absolute; inset: 0;
+            background: rgba(19,28,50,0.55);
+            backdrop-filter: blur(2px);
+        }
+        .rt-modal-sheet {
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 20px 20px 0 0;
+            padding: 26px 22px calc(24px + env(safe-area-inset-bottom));
+            box-shadow: 0 -8px 40px rgba(19,28,50,0.28);
+            transform: translateY(24px);
+            transition: transform 0.42s cubic-bezier(0.16,1,0.3,1);
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (min-width: 600px) {
+            .rt-modal-sheet { border-radius: 20px; transform: translateY(16px) scale(0.98); }
+        }
+        .rt-modal.open .rt-modal-sheet { transform: none; }
+        .rt-modal-close {
+            position: absolute; top: 12px; right: 12px;
+            width: 36px; height: 36px;
+            border: none; background: rgba(27,42,74,0.06);
+            border-radius: 50%;
+            font-size: 20px; line-height: 1; color: var(--navy);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .rt-modal-close:hover { background: rgba(27,42,74,0.12); }
+        .rt-modal-body { padding-top: 6px; }
+        /* host the existing #sim price simulator inside the modal */
+        .rt-modal .sim-card.rt-in-modal {
+            margin-top: 0;
+            border: none;
+            padding: 8px 2px 2px;
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── Honor reduced motion: kill all added motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            body.rt-anim .hero-v2-eyebrow,
+            body.rt-anim .hero-v2-trust-highlight,
+            body.rt-anim .hero-v2-title,
+            body.rt-anim .hero-v2-lead,
+            body.rt-anim .hero-v2-chips,
+            body.rt-anim .rt-quote-trigger,
+            body.rt-anim .hero-v2-cta-block,
+            body.rt-anim .hero-v2-gauge-card {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+                transition: none !important;
+            }
+            .fade-in { transition: opacity 0.4s ease; transform: none; }
+            .fade-in.visible { transform: none; }
+            .rt-quote-trigger .rt-qt-pulse { animation: none; }
+            .rt-modal, .rt-modal-sheet { transition: none; animation: none; }
+        }
     </style>
     <script>
     (function () {
@@ -3168,31 +3343,8 @@
         <div class="hero-v2-inner">
             <div class="hero-v2-text">
                 <p class="hero-v2-eyebrow">RETOLD TOKYO ／ Ring Resize</p>
-                <div class="hero-v2-trust-highlight" aria-label="安心して相談できる理由">
-                    <div class="hero-v2-trust-item">
-                        <span class="hero-v2-trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M3 7.5h11v8.8H3z"></path>
-                                <path d="M14 10h3.2l2.8 3.2v3.1h-6z"></path>
-                                <circle cx="7" cy="17.2" r="1.7"></circle>
-                                <circle cx="17.2" cy="17.2" r="1.7"></circle>
-                            </svg>
-                        </span>
-                        <span>全国・往復送料無料</span>
-                    </div>
-                    <div class="hero-v2-trust-item">
-                        <span class="hero-v2-trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.2 10.8 12 4.5l4.8 6.3"></path>
-                                <path d="M4.8 10.8h14.4l-2.8 8.7H7.6z"></path>
-                                <path d="M8.4 10.8 12 19.5l3.6-8.7"></path>
-                            </svg>
-                        </span>
-                        <span>国家資格保有の職人も在籍</span>
-                    </div>
-                </div>
                 <h1 class="hero-v2-title"><span class="accent">0.5号刻みの</span><br>指輪サイズ直し</h1>
-                <p class="hero-v2-lead">思い出のつまった指輪、タンスにしまっておくだけではもったいない。私たちの技術で、もう一度あなたの手元で輝かせてください。</p>
+                <p class="hero-v2-lead">タンスに眠ったままの指輪を、もう一度あなたの手元へ。</p>
                 <div class="hero-v2-chips" aria-label="料金と対応の目安">
                     <span class="hero-v2-chip"><span class="chip-accent">¥5,500</span>(税込)〜</span>
                     <span class="hero-v2-chip">他店で断られた指輪もOK</span>
@@ -3473,16 +3625,32 @@
                         </div>
                         <div class="lf-row shop">
                             <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
-                            <div class="lf-bubble">どのくらい大きくしますか？<span class="lf-strong">3号以上のアップですか？</span></div>
+                            <div class="lf-bubble"><span class="lf-strong">何号くらい大きくしますか？</span></div>
                         </div>
                         <div class="sim-options" data-sim-q="size">
-                            <button type="button" class="sim-opt" data-big="0" data-label="1〜2号アップ">1〜2号くらい</button>
+                            <button type="button" class="sim-opt" data-big="0" data-sizes="1" data-label="1号アップ">1号</button>
+                            <button type="button" class="sim-opt" data-big="0" data-sizes="2" data-label="2号アップ">2号</button>
                             <button type="button" class="sim-opt" data-big="1" data-label="3号以上アップ">3号以上</button>
+                        </div>
+                    </div>
+                    <div class="sim-stage" id="simStageMetal">
+                        <div class="lf-row user">
+                            <div class="lf-bubble" id="simEchoSize"></div>
+                        </div>
+                        <div class="lf-row shop">
+                            <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                            <div class="lf-bubble">サイズアップは、広げた分の<span class="lf-strong">地金（素材）代が加わります</span>。お直しする指輪の素材を教えてください。</div>
+                        </div>
+                        <div class="sim-options" data-sim-q="metal">
+                            <button type="button" class="sim-opt" data-metal="2500" data-label="K18（ゴールド）">K18（ゴールド）</button>
+                            <button type="button" class="sim-opt" data-metal="1800" data-label="プラチナ（Pt）">プラチナ（Pt）</button>
+                            <button type="button" class="sim-opt" data-metal="700" data-label="シルバー（925）">シルバー（925）</button>
+                            <button type="button" class="sim-opt" data-metal="-1" data-label="素材がわからない">わからない</button>
                         </div>
                     </div>
                     <div class="sim-stage" id="simStageEngrave">
                         <div class="lf-row user">
-                            <div class="lf-bubble" id="simEchoSize"></div>
+                            <div class="lf-bubble" id="simEchoMetal"></div>
                         </div>
                         <div class="lf-row shop">
                             <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
@@ -3506,9 +3674,23 @@
                             <button type="button" class="sim-opt" data-mult="0.9" data-label="2本以上">2本以上（まとめ割10%OFF）</button>
                         </div>
                     </div>
-                    <div class="sim-stage" id="simStageResult">
+                    <div class="sim-stage" id="simStageUrgency">
                         <div class="lf-row user">
                             <div class="lf-bubble" id="simEchoCount"></div>
+                        </div>
+                        <div class="lf-row shop">
+                            <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                            <div class="lf-bubble">お届け時期のご希望はありますか？<br><span class="lf-strong">特急なら最短2週間、おまかせなら5%OFF</span>でお仕立てします。</div>
+                        </div>
+                        <div class="sim-options" data-sim-q="urgency">
+                            <button type="button" class="sim-opt" data-urgency="normal" data-label="通常（約1ヶ月）">通常（約1ヶ月）</button>
+                            <button type="button" class="sim-opt" data-urgency="rush" data-label="お急ぎ・2週間以内の特急（+3,300円）">お急ぎ・2週間以内（+3,300円）</button>
+                            <button type="button" class="sim-opt" data-urgency="relax" data-label="納期おまかせ・約2ヶ月以内（5%OFF）">納期おまかせ・約2ヶ月（5%OFF）</button>
+                        </div>
+                    </div>
+                    <div class="sim-stage" id="simStageResult">
+                        <div class="lf-row user">
+                            <div class="lf-bubble" id="simEchoUrgency"></div>
                         </div>
                         <div class="lf-row shop">
                             <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
@@ -3774,8 +3956,8 @@
             window.dataLayer.push({ event: 'lp_view', page: 'resize_lp' });
 
             // ── Price simulator (LINE chat style, branching) ──
-            var simState = { price: null, typeLabel: '', dir: null, big: null, engrave: null, mult: null, countLabel: '', fired: false };
-            var simStageOrder = ['simStageDir', 'simStageSize', 'simStageEngrave', 'simStageCount', 'simStageResult'];
+            var simState = { price: null, typeLabel: '', dir: null, big: null, sizes: 0, metalRate: null, metalLabel: '', engrave: null, mult: null, countLabel: '', urgency: null, urgencyLabel: '', fired: false };
+            var simStageOrder = ['simStageDir', 'simStageSize', 'simStageMetal', 'simStageEngrave', 'simStageCount', 'simStageUrgency', 'simStageResult'];
             function simResetAfter(stageId) {
                 var from = simStageOrder.indexOf(stageId) + 1;
                 simStageOrder.slice(from).forEach(function(id) {
@@ -3790,22 +3972,47 @@
                 btn.classList.add('on');
             }
             function simResult() {
-                if (simState.mult === null) return;
-                var html;
+                if (!simState.urgency) return;
+                var html, notes = [];
                 if (simState.big === 1) {
-                    html = 'ありがとうございます。<span class="lf-strong">3号以上のサイズアップは、デザインや構造によって最適な方法が変わるため、実物を拝見して個別にお見積もり</span>します。お見積もりは無料、返送キットも往復送料無料です。';
+                    html = 'ありがとうございます。<span class="lf-strong">3号以上のサイズアップは、デザインや構造によって最適な方法が変わるため、実物を拝見して個別にお見積もり</span>します。地金代もあわせてお伝えします。お見積もりは無料、返送キットも往復送料無料です。';
                 } else {
-                    var unit = Math.round(simState.price * simState.mult / 10) * 10;
-                    html = 'お調べしました。目安は<span class="lf-strong">&yen;' + unit.toLocaleString() + '〜（税込・1点あたり）</span>です。<br><span style="font-size:.85em;opacity:.8;">※1〜2号の変更が目安。素材・デザイン・変更幅により変動します。正式なお見積もりは実物を拝見してお伝えします（返送キット・往復送料無料）。</span>';
+                    var base = simState.price;
+                    var metalKnown = (simState.dir === 'up' && simState.metalRate && simState.metalRate > 0);
+                    var metalCost = metalKnown ? simState.metalRate * (simState.sizes || 1) : 0;
+                    var subtotal = base + metalCost;
+                    var bundleMult = simState.mult || 1;
+                    var discMult = bundleMult, rushFee = 0;
+                    if (simState.urgency === 'rush') { rushFee = 3300; }
+                    else if (simState.urgency === 'relax') { discMult = Math.min(bundleMult, 0.95); }
+                    var total = Math.round(subtotal * discMult / 10) * 10 + rushFee;
+                    html = 'お調べしました。目安は<span class="lf-strong">&yen;' + total.toLocaleString() + '〜（税込・1点あたり）</span>です。';
+                    if (simState.dir === 'up') {
+                        if (metalKnown) {
+                            notes.push('サイズアップ分の地金（素材）代を含みます。');
+                        } else {
+                            notes.push('上記は地金代を含みません。素材により別途、地金代がかかります。');
+                        }
+                    }
+                    if (simState.urgency === 'rush') {
+                        notes.push('2週間以内の特急対応（+&yen;3,300）を含みます。');
+                    } else if (simState.urgency === 'relax') {
+                        if (bundleMult < 1) { notes.push('まとめ割10%OFFと納期おまかせ5%OFFは併用できないため、割引の大きいまとめ割を適用しています。'); }
+                        else { notes.push('納期おまかせ（約2ヶ月以内）で5%OFFを適用しています。'); }
+                    }
+                    notes.push('素材・デザイン・変更幅により変動します。正式なお見積もりは実物を拝見してお伝えします（返送キット・往復送料無料）。');
                 }
                 if (simState.engrave === 1) {
-                    html += '<br><span style="font-size:.85em;opacity:.8;">※作業で刻印が消えてしまう場合も、事前にご要望いただければ刻印追加は無料です（ブランド刻印は除く）。</span>';
+                    notes.push('作業で刻印が消えてしまう場合も、事前にご要望いただければ刻印追加は無料です（ブランド刻印は除く）。');
+                }
+                if (notes.length) {
+                    html += '<br><span style="font-size:.85em;opacity:.8;">※' + notes.join('<br>※') + '</span>';
                 }
                 document.getElementById('simResultBubble').innerHTML = html;
                 simShow('simStageResult');
                 if (!simState.fired) {
                     simState.fired = true;
-                    window.dataLayer.push({ event: 'price_sim_complete', sim_type: simState.typeLabel, sim_dir: simState.dir, sim_big: simState.big, sim_engrave: simState.engrave, sim_count: simState.countLabel });
+                    window.dataLayer.push({ event: 'price_sim_complete', sim_type: simState.typeLabel, sim_dir: simState.dir, sim_big: simState.big, sim_sizes: simState.sizes, sim_metal: simState.metalLabel || '', sim_engrave: simState.engrave, sim_count: simState.countLabel, sim_urgency: simState.urgency });
                 }
             }
             document.querySelectorAll('[data-sim-q="type"] .sim-opt').forEach(function(btn) {
@@ -3824,14 +4031,14 @@
                 btn.addEventListener('click', function() {
                     simSelect(btn, 'dir');
                     simState.dir = btn.dataset.dir;
-                    simState.big = null; simState.engrave = null; simState.mult = null;
+                    simState.big = null; simState.sizes = 0; simState.metalRate = null; simState.engrave = null; simState.mult = null; simState.urgency = null;
                     document.getElementById('simEchoDir').textContent = btn.dataset.label + 'です。';
                     simResetAfter('simStageDir');
                     if (simState.dir === 'up') {
                         simShow('simStageSize');
                     } else {
-                        simState.big = 0;
-                        document.getElementById('simEchoSize').textContent = btn.dataset.label + 'です。';
+                        simState.big = 0; simState.metalRate = 0;
+                        document.getElementById('simEchoMetal').textContent = btn.dataset.label + 'です。';
                         simShow('simStageEngrave');
                     }
                 });
@@ -3840,9 +4047,27 @@
                 btn.addEventListener('click', function() {
                     simSelect(btn, 'size');
                     simState.big = parseInt(btn.dataset.big, 10);
-                    simState.engrave = null; simState.mult = null;
-                    document.getElementById('simEchoSize').textContent = btn.dataset.label + 'を考えています。';
+                    simState.sizes = btn.dataset.sizes ? parseInt(btn.dataset.sizes, 10) : 0;
+                    simState.metalRate = null; simState.engrave = null; simState.mult = null; simState.urgency = null;
                     simResetAfter('simStageSize');
+                    if (simState.big === 1) {
+                        simState.metalRate = 0;
+                        document.getElementById('simEchoMetal').textContent = btn.dataset.label + 'を考えています。';
+                        simShow('simStageEngrave');
+                    } else {
+                        document.getElementById('simEchoSize').textContent = btn.dataset.label + 'を考えています。';
+                        simShow('simStageMetal');
+                    }
+                });
+            });
+            document.querySelectorAll('[data-sim-q="metal"] .sim-opt').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    simSelect(btn, 'metal');
+                    simState.metalRate = parseInt(btn.dataset.metal, 10);
+                    simState.metalLabel = btn.dataset.label;
+                    simState.engrave = null; simState.mult = null; simState.urgency = null;
+                    document.getElementById('simEchoMetal').textContent = btn.dataset.label + 'です。';
+                    simResetAfter('simStageMetal');
                     simShow('simStageEngrave');
                 });
             });
@@ -3850,7 +4075,7 @@
                 btn.addEventListener('click', function() {
                     simSelect(btn, 'engrave');
                     simState.engrave = parseInt(btn.dataset.engrave, 10);
-                    simState.mult = null;
+                    simState.mult = null; simState.urgency = null;
                     document.getElementById('simEchoEngrave').textContent = simState.engrave === 1 ? '刻印があります。' : '刻印はありません。';
                     simResetAfter('simStageEngrave');
                     simShow('simStageCount');
@@ -3861,7 +4086,18 @@
                     simSelect(btn, 'count');
                     simState.mult = parseFloat(btn.dataset.mult);
                     simState.countLabel = btn.dataset.label;
+                    simState.urgency = null;
                     document.getElementById('simEchoCount').textContent = simState.countLabel + 'です。';
+                    simResetAfter('simStageCount');
+                    simShow('simStageUrgency');
+                });
+            });
+            document.querySelectorAll('[data-sim-q="urgency"] .sim-opt').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    simSelect(btn, 'urgency');
+                    simState.urgency = btn.dataset.urgency;
+                    simState.urgencyLabel = btn.dataset.label;
+                    document.getElementById('simEchoUrgency').textContent = btn.dataset.label + 'で。';
                     simResult();
                 });
             });
@@ -3888,6 +4124,180 @@
                 });
             });
         });
+    </script>
+
+    <!-- ══ RT motion layer (additive) ══ -->
+    <script>
+    (function () {
+        var reduce = window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var lastFocus = null;
+        var simOrigin = null; // placeholder to restore the simulator on close
+        var modalEverOpened = false; // suppress exit-intent once the user has engaged
+
+        function pushDL(obj) {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push(obj);
+        }
+
+        function injectTrigger() {
+            var text = document.querySelector('.hero-v2-text');
+            if (!text || document.querySelector('.rt-quote-trigger')) return;
+            // only show the trigger if the existing simulator is on the page
+            if (!document.getElementById('sim')) return;
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'rt-quote-trigger';
+            btn.setAttribute('aria-haspopup', 'dialog');
+            btn.innerHTML =
+                '<span class="rt-qt-pulse" aria-hidden="true"></span>' +
+                '<span>10秒でわかる、料金の目安</span>' +
+                '<span class="rt-qt-arrow" aria-hidden="true">›</span>';
+            btn.addEventListener('click', function () { openModal('hero_trigger'); });
+            text.appendChild(btn);
+        }
+
+        function buildModal() {
+            if (document.getElementById('rtQuoteModal')) return;
+            var m = document.createElement('div');
+            m.className = 'rt-modal';
+            m.id = 'rtQuoteModal';
+            m.setAttribute('role', 'dialog');
+            m.setAttribute('aria-modal', 'true');
+            m.setAttribute('aria-label', '料金の目安シミュレーター');
+            m.innerHTML =
+                '<div class="rt-modal-backdrop" data-close></div>' +
+                '<div class="rt-modal-sheet">' +
+                    '<button type="button" class="rt-modal-close" data-close aria-label="閉じる">×</button>' +
+                    '<div class="rt-modal-body" id="rtModalBody"></div>' +
+                '</div>';
+            document.body.appendChild(m);
+            m.querySelectorAll('[data-close]').forEach(function (el) {
+                el.addEventListener('click', closeModal);
+            });
+        }
+
+        // move the existing #sim simulator into the modal (reuses its working logic)
+        function openModal(trigger) {
+            var src = (typeof trigger === 'string') ? trigger : 'hero_trigger';
+            buildModal();
+            var m = document.getElementById('rtQuoteModal');
+            var sim = document.getElementById('sim');
+            var body = document.getElementById('rtModalBody');
+            if (!m || !sim || !body) return;
+            modalEverOpened = true;
+            lastFocus = document.activeElement;
+            if (!simOrigin) {
+                simOrigin = document.createComment('rt-sim-origin');
+                sim.parentNode.insertBefore(simOrigin, sim);
+            }
+            sim.classList.add('visible', 'rt-in-modal');
+            body.appendChild(sim);
+            m.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            pushDL({ event: 'quote_modal_open', page: 'resize_lp', trigger: src });
+            var closeBtn = m.querySelector('.rt-modal-close');
+            if (closeBtn) closeBtn.focus();
+            document.addEventListener('keydown', onKey);
+        }
+
+        function closeModal() {
+            var m = document.getElementById('rtQuoteModal');
+            if (!m) return;
+            var sim = document.getElementById('sim');
+            if (sim && simOrigin && simOrigin.parentNode) {
+                simOrigin.parentNode.insertBefore(sim, simOrigin); // restore in place
+                sim.classList.remove('rt-in-modal');
+            }
+            m.classList.remove('open');
+            document.body.style.overflow = '';
+            document.removeEventListener('keydown', onKey);
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+
+        function onKey(e) { if (e.key === 'Escape') closeModal(); }
+
+        // Exit-intent: gently surface the estimate when someone is about to leave.
+        // Guardrails: once per session, never after the user opened it themselves,
+        // and not within the first 5s. Desktop = pointer exits the top of the
+        // viewport; mobile = a fast upward scroll back toward the top after scrolling down.
+        function armExitIntent() {
+            if (reduce) return; // a sudden popup is jarring for reduced-motion users
+            if (!document.getElementById('sim')) return;
+            var KEY = 'rt_exit_shown';
+            try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+            var armedAt = Date.now();
+            var fired = false, hasScrolledDown = false;
+            var lastY = window.pageYOffset || 0, lastT = armedAt;
+
+            function fire(trigger) {
+                if (fired || modalEverOpened) return;
+                if (Date.now() - armedAt < 5000) return;
+                fired = true;
+                try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+                cleanup();
+                openModal(trigger);
+            }
+            function onMouseOut(e) {
+                if (e.clientY <= 0 && !e.relatedTarget) fire('exit_intent_desktop');
+            }
+            function onScroll() {
+                var y = window.pageYOffset || 0, t = Date.now();
+                if (y > 320) hasScrolledDown = true;
+                var v = (y - lastY) / (t - lastT || 1); // px/ms; negative = scrolling up
+                if (hasScrolledDown && v < -1.2 && y < 420) fire('exit_intent_mobile');
+                lastY = y; lastT = t;
+            }
+            function cleanup() {
+                document.removeEventListener('mouseout', onMouseOut);
+                window.removeEventListener('scroll', onScroll);
+            }
+            document.addEventListener('mouseout', onMouseOut);
+            window.addEventListener('scroll', onScroll, { passive: true });
+        }
+
+        function staggerReveals() {
+            // give grouped .fade-in items (without an explicit delay class)
+            // a gentle cascade based on their order within a shared parent
+            var seen = new Map();
+            document.querySelectorAll('.fade-in').forEach(function (el) {
+                if (/fade-in-delay-/.test(el.className)) return;
+                var p = el.parentElement;
+                var i = seen.get(p) || 0;
+                seen.set(p, i + 1);
+                if (i > 0) {
+                    el.style.transitionDelay = Math.min(i, 5) * 0.08 + 's';
+                }
+            });
+        }
+
+        function start() {
+            injectTrigger();
+            staggerReveals();
+            armExitIntent();
+            if (reduce) { return; }
+            document.body.classList.add('rt-anim');
+            var played = false;
+            function play() {
+                if (played) return;
+                played = true;
+                document.body.classList.add('rt-ready');
+            }
+            // double rAF so initial hidden state is committed before playing
+            requestAnimationFrame(function () {
+                requestAnimationFrame(play);
+            });
+            // safety net: never leave the hero hidden if rAF stalls
+            setTimeout(play, 1200);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', start);
+        } else {
+            start();
+        }
+    })();
     </script>
 
 </body>
