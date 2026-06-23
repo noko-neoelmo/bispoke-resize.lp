@@ -3268,74 +3268,15 @@
             display: flex; align-items: center; justify-content: center;
         }
         .rt-modal-close:hover { background: rgba(27,42,74,0.12); }
-        .rt-modal-eyebrow {
-            font-family: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-            font-size: 10px; letter-spacing: 0.22em; font-weight: 700;
-            color: var(--gold-deep); margin-bottom: 6px;
+        .rt-modal-body { padding-top: 6px; }
+        /* host the existing #sim price simulator inside the modal */
+        .rt-modal .sim-card.rt-in-modal {
+            margin-top: 0;
+            border: none;
+            padding: 8px 2px 2px;
+            opacity: 1;
+            transform: none;
         }
-        .rt-modal-title {
-            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
-            font-size: 22px; font-weight: 700; color: var(--navy);
-            line-height: 1.35; margin-bottom: 4px;
-        }
-        .rt-modal-sub { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 18px; }
-        .rt-q-grid { display: grid; gap: 10px; }
-        .rt-q-opt {
-            display: flex; align-items: center; gap: 12px;
-            width: 100%; text-align: left;
-            padding: 14px 16px;
-            border: 1px solid rgba(27,42,74,0.14);
-            border-radius: 14px;
-            background: #fff; cursor: pointer;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
-        }
-        .rt-q-opt:hover {
-            border-color: rgba(201,168,118,0.8);
-            box-shadow: 0 6px 18px rgba(27,42,74,0.10);
-            transform: translateY(-1px);
-        }
-        .rt-q-opt .rt-q-emoji {
-            width: 38px; height: 38px; flex-shrink: 0;
-            display: flex; align-items: center; justify-content: center;
-            background: var(--water-blue); border-radius: 10px; font-size: 18px;
-        }
-        .rt-q-opt .rt-q-label { font-size: 14px; font-weight: 700; color: var(--navy); }
-        .rt-q-opt .rt-q-desc { font-size: 11.5px; color: var(--text-light); margin-top: 1px; }
-        .rt-q-opt .rt-q-chev { margin-left: auto; color: rgba(27,42,74,0.3); }
-
-        /* result view */
-        .rt-result { display: none; animation: rt-result-in 0.4s cubic-bezier(0.16,1,0.3,1); }
-        .rt-result.show { display: block; }
-        .rt-q-grid.hide { display: none; }
-        @keyframes rt-result-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-        .rt-result-card {
-            background: linear-gradient(180deg, var(--water-blue) 0%, #fff 100%);
-            border: 1px solid rgba(27,42,74,0.12);
-            border-radius: 16px;
-            padding: 20px 18px;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-        .rt-result-cat { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-        .rt-result-price {
-            font-family: "Noto Serif JP", "游明朝体", YuMincho, serif;
-            color: var(--navy); line-height: 1; margin-bottom: 6px;
-        }
-        .rt-result-price b { font-size: 38px; font-weight: 700; }
-        .rt-result-price .yen { font-size: 18px; }
-        .rt-result-price .tilde { font-size: 18px; opacity: 0.7; }
-        .rt-result-tax { font-size: 11px; color: var(--text-light); }
-        .rt-result-note { font-size: 11.5px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
-        .rt-result-bundle {
-            display: inline-block; margin-bottom: 14px;
-            background: var(--pink-soft); color: var(--pink-shocking-deep);
-            font-size: 11.5px; font-weight: 700; padding: 4px 12px; border-radius: 999px;
-        }
-        .rt-result-back {
-            display: block; margin: 12px auto 0; background: none; border: none;
-            color: var(--text-light); font-size: 12px; cursor: pointer; text-decoration: underline;
-        }
-        .rt-modal-foot { font-size: 10.5px; color: var(--text-light); text-align: center; margin-top: 14px; line-height: 1.6; }
 
         /* ── Honor reduced motion: kill all added motion ── */
         @media (prefers-reduced-motion: reduce) {
@@ -3355,7 +3296,7 @@
             .fade-in { transition: opacity 0.4s ease; transform: none; }
             .fade-in.visible { transform: none; }
             .rt-quote-trigger .rt-qt-pulse { animation: none; }
-            .rt-modal, .rt-modal-sheet, .rt-result { transition: none; animation: none; }
+            .rt-modal, .rt-modal-sheet { transition: none; animation: none; }
         }
     </style>
     <script>
@@ -3402,31 +3343,8 @@
         <div class="hero-v2-inner">
             <div class="hero-v2-text">
                 <p class="hero-v2-eyebrow">RETOLD TOKYO ／ Ring Resize</p>
-                <div class="hero-v2-trust-highlight" aria-label="安心して相談できる理由">
-                    <div class="hero-v2-trust-item">
-                        <span class="hero-v2-trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M3 7.5h11v8.8H3z"></path>
-                                <path d="M14 10h3.2l2.8 3.2v3.1h-6z"></path>
-                                <circle cx="7" cy="17.2" r="1.7"></circle>
-                                <circle cx="17.2" cy="17.2" r="1.7"></circle>
-                            </svg>
-                        </span>
-                        <span>全国・往復送料無料</span>
-                    </div>
-                    <div class="hero-v2-trust-item">
-                        <span class="hero-v2-trust-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.2 10.8 12 4.5l4.8 6.3"></path>
-                                <path d="M4.8 10.8h14.4l-2.8 8.7H7.6z"></path>
-                                <path d="M8.4 10.8 12 19.5l3.6-8.7"></path>
-                            </svg>
-                        </span>
-                        <span>国家資格保有の職人も在籍</span>
-                    </div>
-                </div>
                 <h1 class="hero-v2-title"><span class="accent">0.5号刻みの</span><br>指輪サイズ直し</h1>
-                <p class="hero-v2-lead">思い出のつまった指輪、タンスにしまっておくだけではもったいない。私たちの技術で、もう一度あなたの手元で輝かせてください。</p>
+                <p class="hero-v2-lead">タンスに眠ったままの指輪を、もう一度あなたの手元へ。</p>
                 <div class="hero-v2-chips" aria-label="料金と対応の目安">
                     <span class="hero-v2-chip"><span class="chip-accent">¥5,500</span>(税込)〜</span>
                     <span class="hero-v2-chip">他店で断られた指輪もOK</span>
@@ -4129,18 +4047,9 @@
     (function () {
         var reduce = window.matchMedia &&
             window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var LIFF = 'https://liff.line.me/2009801854-l9LrHK08/';
-        var LINE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;flex-shrink:0;"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>';
-
-        // 料金目安（LP内のJSON-LD/FAQと整合）
-        var QUOTE_OPTS = [
-            { key:'simple', emoji:'💍', label:'サイズ直し（シンプル）', desc:'甲丸・平打ちなど装飾のないリング', cat:'サイズ直し（シンプル）', price:'8,800', note:'1〜2号の変更が目安。素材・変更幅により変動します。' },
-            { key:'stone',  emoji:'💎', label:'石付き・デザインリング', desc:'石や装飾のついたリング', cat:'石付き・デザインリング', price:'15,000', note:'石の有無・デザインにより変動します。' },
-            { key:'brand',  emoji:'👑', label:'ブランド／高難度', desc:'カルティエ等・特殊な構造', cat:'ブランド／高難度リング', price:'25,000', note:'構造により変動します。フルエタニティ等は要相談。' },
-            { key:'reset',  emoji:'✨', label:'石の留め直し', desc:'石のぐらつき・外れ', cat:'石の留め直し', price:'5,500', note:'石の数・留め方により変動します。' }
-        ];
 
         var lastFocus = null;
+        var simOrigin = null; // placeholder to restore the simulator on close
 
         function pushDL(obj) {
             window.dataLayer = window.dataLayer || [];
@@ -4150,6 +4059,8 @@
         function injectTrigger() {
             var text = document.querySelector('.hero-v2-text');
             if (!text || document.querySelector('.rt-quote-trigger')) return;
+            // only show the trigger if the existing simulator is on the page
+            if (!document.getElementById('sim')) return;
             var btn = document.createElement('button');
             btn.type = 'button';
             btn.className = 'rt-quote-trigger';
@@ -4164,80 +4075,38 @@
 
         function buildModal() {
             if (document.getElementById('rtQuoteModal')) return;
-            var opts = QUOTE_OPTS.map(function (o) {
-                return '<button type="button" class="rt-q-opt" data-key="' + o.key + '">' +
-                    '<span class="rt-q-emoji" aria-hidden="true">' + o.emoji + '</span>' +
-                    '<span><span class="rt-q-label">' + o.label + '</span>' +
-                    '<span class="rt-q-desc">' + o.desc + '</span></span>' +
-                    '<span class="rt-q-chev" aria-hidden="true">›</span>' +
-                '</button>';
-            }).join('');
             var m = document.createElement('div');
             m.className = 'rt-modal';
             m.id = 'rtQuoteModal';
             m.setAttribute('role', 'dialog');
             m.setAttribute('aria-modal', 'true');
-            m.setAttribute('aria-labelledby', 'rtModalTitle');
+            m.setAttribute('aria-label', '料金の目安シミュレーター');
             m.innerHTML =
                 '<div class="rt-modal-backdrop" data-close></div>' +
                 '<div class="rt-modal-sheet">' +
                     '<button type="button" class="rt-modal-close" data-close aria-label="閉じる">×</button>' +
-                    '<p class="rt-modal-eyebrow">QUICK ESTIMATE</p>' +
-                    '<h2 class="rt-modal-title" id="rtModalTitle">10秒でわかる、料金の目安</h2>' +
-                    '<p class="rt-modal-sub">どんなご依頼ですか？タップで目安をお出しします。</p>' +
-                    '<div class="rt-q-grid">' + opts + '</div>' +
-                    '<div class="rt-result" id="rtResult"></div>' +
-                    '<p class="rt-modal-foot">※表示は税込のおおよその目安です。実際の金額は素材・デザイン・状態により変わります。お見積もりは無料です。</p>' +
+                    '<div class="rt-modal-body" id="rtModalBody"></div>' +
                 '</div>';
             document.body.appendChild(m);
             m.querySelectorAll('[data-close]').forEach(function (el) {
                 el.addEventListener('click', closeModal);
             });
-            m.querySelectorAll('.rt-q-opt').forEach(function (b) {
-                b.addEventListener('click', function () { showResult(b.dataset.key); });
-            });
         }
 
-        function showResult(key) {
-            var o = QUOTE_OPTS.filter(function (x) { return x.key === key; })[0];
-            if (!o) return;
-            var grid = document.querySelector('#rtQuoteModal .rt-q-grid');
-            var res = document.getElementById('rtResult');
-            pushDL({ event: 'quote_modal_select', quote_type: o.cat });
-            res.innerHTML =
-                '<div class="rt-result-card">' +
-                    '<p class="rt-result-cat">' + o.cat + '</p>' +
-                    '<p class="rt-result-price"><span class="yen">¥</span><b>' + o.price + '</b><span class="tilde">〜</span></p>' +
-                    '<p class="rt-result-tax">税込・1点あたりの目安</p>' +
-                '</div>' +
-                '<span class="rt-result-bundle">2点以上の同時依頼で 10%OFF</span>' +
-                '<p class="rt-result-note">' + o.note + ' 正式な金額は実物を拝見してお伝えします。お見積もり・返送キットは往復送料無料です。</p>' +
-                '<a href="' + LIFF + '" data-cta data-cta-loc="quote_modal" class="btn-cta">' + LINE_SVG + 'この内容でLINEに無料相談</a>' +
-                '<button type="button" class="rt-result-back">← 別の内容で見る</button>';
-            res.classList.add('show');
-            grid.classList.add('hide');
-            res.querySelector('.rt-result-back').addEventListener('click', resetModal);
-            var cta = res.querySelector('a[data-cta]');
-            cta.addEventListener('click', function () {
-                pushDL({ event: 'line_cta_click', funnel: 'resize', cta_source: 'lp', cta_location: 'quote_modal', quote_type: o.cat });
-                if (typeof fbq === 'function') { fbq('track', 'Lead', { content_name: 'resize_quote_modal_cta' }); }
-            });
-            res.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
-        }
-
-        function resetModal() {
-            var grid = document.querySelector('#rtQuoteModal .rt-q-grid');
-            var res = document.getElementById('rtResult');
-            if (res) { res.classList.remove('show'); res.innerHTML = ''; }
-            if (grid) grid.classList.remove('hide');
-        }
-
+        // move the existing #sim simulator into the modal (reuses its working logic)
         function openModal() {
             buildModal();
             var m = document.getElementById('rtQuoteModal');
-            if (!m) return;
+            var sim = document.getElementById('sim');
+            var body = document.getElementById('rtModalBody');
+            if (!m || !sim || !body) return;
             lastFocus = document.activeElement;
-            resetModal();
+            if (!simOrigin) {
+                simOrigin = document.createComment('rt-sim-origin');
+                sim.parentNode.insertBefore(simOrigin, sim);
+            }
+            sim.classList.add('visible', 'rt-in-modal');
+            body.appendChild(sim);
             m.classList.add('open');
             document.body.style.overflow = 'hidden';
             pushDL({ event: 'quote_modal_open', page: 'resize_lp' });
@@ -4249,6 +4118,11 @@
         function closeModal() {
             var m = document.getElementById('rtQuoteModal');
             if (!m) return;
+            var sim = document.getElementById('sim');
+            if (sim && simOrigin && simOrigin.parentNode) {
+                simOrigin.parentNode.insertBefore(sim, simOrigin); // restore in place
+                sim.classList.remove('rt-in-modal');
+            }
             m.classList.remove('open');
             document.body.style.overflow = '';
             document.removeEventListener('keydown', onKey);
