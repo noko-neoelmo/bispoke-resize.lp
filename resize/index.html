@@ -4050,6 +4050,7 @@
 
         var lastFocus = null;
         var simOrigin = null; // placeholder to restore the simulator on close
+        var modalEverOpened = false; // suppress exit-intent once the user has engaged
 
         function pushDL(obj) {
             window.dataLayer = window.dataLayer || [];
@@ -4069,7 +4070,7 @@
                 '<span class="rt-qt-pulse" aria-hidden="true"></span>' +
                 '<span>10秒でわかる、料金の目安</span>' +
                 '<span class="rt-qt-arrow" aria-hidden="true">›</span>';
-            btn.addEventListener('click', openModal);
+            btn.addEventListener('click', function () { openModal('hero_trigger'); });
             text.appendChild(btn);
         }
 
@@ -4094,12 +4095,14 @@
         }
 
         // move the existing #sim simulator into the modal (reuses its working logic)
-        function openModal() {
+        function openModal(trigger) {
+            var src = (typeof trigger === 'string') ? trigger : 'hero_trigger';
             buildModal();
             var m = document.getElementById('rtQuoteModal');
             var sim = document.getElementById('sim');
             var body = document.getElementById('rtModalBody');
             if (!m || !sim || !body) return;
+            modalEverOpened = true;
             lastFocus = document.activeElement;
             if (!simOrigin) {
                 simOrigin = document.createComment('rt-sim-origin');
@@ -4109,7 +4112,7 @@
             body.appendChild(sim);
             m.classList.add('open');
             document.body.style.overflow = 'hidden';
-            pushDL({ event: 'quote_modal_open', page: 'resize_lp' });
+            pushDL({ event: 'quote_modal_open', page: 'resize_lp', trigger: src });
             var closeBtn = m.querySelector('.rt-modal-close');
             if (closeBtn) closeBtn.focus();
             document.addEventListener('keydown', onKey);
@@ -4131,6 +4134,45 @@
 
         function onKey(e) { if (e.key === 'Escape') closeModal(); }
 
+        // Exit-intent: gently surface the estimate when someone is about to leave.
+        // Guardrails: once per session, never after the user opened it themselves,
+        // and not within the first 5s. Desktop = pointer exits the top of the
+        // viewport; mobile = a fast upward scroll back toward the top after scrolling down.
+        function armExitIntent() {
+            if (reduce) return; // a sudden popup is jarring for reduced-motion users
+            if (!document.getElementById('sim')) return;
+            var KEY = 'rt_exit_shown';
+            try { if (sessionStorage.getItem(KEY)) return; } catch (e) {}
+            var armedAt = Date.now();
+            var fired = false, hasScrolledDown = false;
+            var lastY = window.pageYOffset || 0, lastT = armedAt;
+
+            function fire(trigger) {
+                if (fired || modalEverOpened) return;
+                if (Date.now() - armedAt < 5000) return;
+                fired = true;
+                try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+                cleanup();
+                openModal(trigger);
+            }
+            function onMouseOut(e) {
+                if (e.clientY <= 0 && !e.relatedTarget) fire('exit_intent_desktop');
+            }
+            function onScroll() {
+                var y = window.pageYOffset || 0, t = Date.now();
+                if (y > 320) hasScrolledDown = true;
+                var v = (y - lastY) / (t - lastT || 1); // px/ms; negative = scrolling up
+                if (hasScrolledDown && v < -1.2 && y < 420) fire('exit_intent_mobile');
+                lastY = y; lastT = t;
+            }
+            function cleanup() {
+                document.removeEventListener('mouseout', onMouseOut);
+                window.removeEventListener('scroll', onScroll);
+            }
+            document.addEventListener('mouseout', onMouseOut);
+            window.addEventListener('scroll', onScroll, { passive: true });
+        }
+
         function staggerReveals() {
             // give grouped .fade-in items (without an explicit delay class)
             // a gentle cascade based on their order within a shared parent
@@ -4149,6 +4191,7 @@
         function start() {
             injectTrigger();
             staggerReveals();
+            armExitIntent();
             if (reduce) { return; }
             document.body.classList.add('rt-anim');
             var played = false;
