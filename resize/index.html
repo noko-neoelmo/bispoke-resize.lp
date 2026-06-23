@@ -3625,16 +3625,32 @@
                         </div>
                         <div class="lf-row shop">
                             <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
-                            <div class="lf-bubble">どのくらい大きくしますか？<span class="lf-strong">3号以上のアップですか？</span></div>
+                            <div class="lf-bubble"><span class="lf-strong">何号くらい大きくしますか？</span></div>
                         </div>
                         <div class="sim-options" data-sim-q="size">
-                            <button type="button" class="sim-opt" data-big="0" data-label="1〜2号アップ">1〜2号くらい</button>
+                            <button type="button" class="sim-opt" data-big="0" data-sizes="1" data-label="1号アップ">1号</button>
+                            <button type="button" class="sim-opt" data-big="0" data-sizes="2" data-label="2号アップ">2号</button>
                             <button type="button" class="sim-opt" data-big="1" data-label="3号以上アップ">3号以上</button>
+                        </div>
+                    </div>
+                    <div class="sim-stage" id="simStageMetal">
+                        <div class="lf-row user">
+                            <div class="lf-bubble" id="simEchoSize"></div>
+                        </div>
+                        <div class="lf-row shop">
+                            <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                            <div class="lf-bubble">サイズアップは、広げた分の<span class="lf-strong">地金（素材）代が加わります</span>。お直しする指輪の素材を教えてください。</div>
+                        </div>
+                        <div class="sim-options" data-sim-q="metal">
+                            <button type="button" class="sim-opt" data-metal="2500" data-label="K18（ゴールド）">K18（ゴールド）</button>
+                            <button type="button" class="sim-opt" data-metal="1800" data-label="プラチナ（Pt）">プラチナ（Pt）</button>
+                            <button type="button" class="sim-opt" data-metal="700" data-label="シルバー（925）">シルバー（925）</button>
+                            <button type="button" class="sim-opt" data-metal="-1" data-label="素材がわからない">わからない</button>
                         </div>
                     </div>
                     <div class="sim-stage" id="simStageEngrave">
                         <div class="lf-row user">
-                            <div class="lf-bubble" id="simEchoSize"></div>
+                            <div class="lf-bubble" id="simEchoMetal"></div>
                         </div>
                         <div class="lf-row shop">
                             <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
@@ -3658,9 +3674,23 @@
                             <button type="button" class="sim-opt" data-mult="0.9" data-label="2本以上">2本以上（まとめ割10%OFF）</button>
                         </div>
                     </div>
-                    <div class="sim-stage" id="simStageResult">
+                    <div class="sim-stage" id="simStageUrgency">
                         <div class="lf-row user">
                             <div class="lf-bubble" id="simEchoCount"></div>
+                        </div>
+                        <div class="lf-row shop">
+                            <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
+                            <div class="lf-bubble">お届け時期のご希望はありますか？<br><span class="lf-strong">特急なら最短2週間、おまかせなら5%OFF</span>でお仕立てします。</div>
+                        </div>
+                        <div class="sim-options" data-sim-q="urgency">
+                            <button type="button" class="sim-opt" data-urgency="normal" data-label="通常（約1ヶ月）">通常（約1ヶ月）</button>
+                            <button type="button" class="sim-opt" data-urgency="rush" data-label="お急ぎ・2週間以内の特急（+3,300円）">お急ぎ・2週間以内（+3,300円）</button>
+                            <button type="button" class="sim-opt" data-urgency="relax" data-label="納期おまかせ・約2ヶ月以内（5%OFF）">納期おまかせ・約2ヶ月（5%OFF）</button>
+                        </div>
+                    </div>
+                    <div class="sim-stage" id="simStageResult">
+                        <div class="lf-row user">
+                            <div class="lf-bubble" id="simEchoUrgency"></div>
                         </div>
                         <div class="lf-row shop">
                             <div class="lf-avatar"><img src="/resize/images/foundericon.webp" onerror="this.onerror=null;this.src='images/foundericon.webp';" alt="RETOLD TOKYO"></div>
@@ -3926,8 +3956,8 @@
             window.dataLayer.push({ event: 'lp_view', page: 'resize_lp' });
 
             // ── Price simulator (LINE chat style, branching) ──
-            var simState = { price: null, typeLabel: '', dir: null, big: null, engrave: null, mult: null, countLabel: '', fired: false };
-            var simStageOrder = ['simStageDir', 'simStageSize', 'simStageEngrave', 'simStageCount', 'simStageResult'];
+            var simState = { price: null, typeLabel: '', dir: null, big: null, sizes: 0, metalRate: null, metalLabel: '', engrave: null, mult: null, countLabel: '', urgency: null, urgencyLabel: '', fired: false };
+            var simStageOrder = ['simStageDir', 'simStageSize', 'simStageMetal', 'simStageEngrave', 'simStageCount', 'simStageUrgency', 'simStageResult'];
             function simResetAfter(stageId) {
                 var from = simStageOrder.indexOf(stageId) + 1;
                 simStageOrder.slice(from).forEach(function(id) {
@@ -3942,22 +3972,47 @@
                 btn.classList.add('on');
             }
             function simResult() {
-                if (simState.mult === null) return;
-                var html;
+                if (!simState.urgency) return;
+                var html, notes = [];
                 if (simState.big === 1) {
-                    html = 'ありがとうございます。<span class="lf-strong">3号以上のサイズアップは、デザインや構造によって最適な方法が変わるため、実物を拝見して個別にお見積もり</span>します。お見積もりは無料、返送キットも往復送料無料です。';
+                    html = 'ありがとうございます。<span class="lf-strong">3号以上のサイズアップは、デザインや構造によって最適な方法が変わるため、実物を拝見して個別にお見積もり</span>します。地金代もあわせてお伝えします。お見積もりは無料、返送キットも往復送料無料です。';
                 } else {
-                    var unit = Math.round(simState.price * simState.mult / 10) * 10;
-                    html = 'お調べしました。目安は<span class="lf-strong">&yen;' + unit.toLocaleString() + '〜（税込・1点あたり）</span>です。<br><span style="font-size:.85em;opacity:.8;">※1〜2号の変更が目安。素材・デザイン・変更幅により変動します。正式なお見積もりは実物を拝見してお伝えします（返送キット・往復送料無料）。</span>';
+                    var base = simState.price;
+                    var metalKnown = (simState.dir === 'up' && simState.metalRate && simState.metalRate > 0);
+                    var metalCost = metalKnown ? simState.metalRate * (simState.sizes || 1) : 0;
+                    var subtotal = base + metalCost;
+                    var bundleMult = simState.mult || 1;
+                    var discMult = bundleMult, rushFee = 0;
+                    if (simState.urgency === 'rush') { rushFee = 3300; }
+                    else if (simState.urgency === 'relax') { discMult = Math.min(bundleMult, 0.95); }
+                    var total = Math.round(subtotal * discMult / 10) * 10 + rushFee;
+                    html = 'お調べしました。目安は<span class="lf-strong">&yen;' + total.toLocaleString() + '〜（税込・1点あたり）</span>です。';
+                    if (simState.dir === 'up') {
+                        if (metalKnown) {
+                            notes.push('サイズアップ分の地金代（' + simState.metalLabel + ' 約&yen;' + simState.metalRate.toLocaleString() + '／号 × ' + (simState.sizes || 1) + '号 ＝ &yen;' + metalCost.toLocaleString() + '）を含みます。');
+                        } else {
+                            notes.push('上記は地金代を含みません。素材により別途（K18 約&yen;2,500／号・Pt 約&yen;1,800／号・シルバー 約&yen;700／号）かかります。');
+                        }
+                    }
+                    if (simState.urgency === 'rush') {
+                        notes.push('2週間以内の特急対応（+&yen;3,300）を含みます。');
+                    } else if (simState.urgency === 'relax') {
+                        if (bundleMult < 1) { notes.push('まとめ割10%OFFと納期おまかせ5%OFFは併用できないため、割引の大きいまとめ割を適用しています。'); }
+                        else { notes.push('納期おまかせ（約2ヶ月以内）で5%OFFを適用しています。'); }
+                    }
+                    notes.push('素材・デザイン・変更幅により変動します。正式なお見積もりは実物を拝見してお伝えします（返送キット・往復送料無料）。');
                 }
                 if (simState.engrave === 1) {
-                    html += '<br><span style="font-size:.85em;opacity:.8;">※作業で刻印が消えてしまう場合も、事前にご要望いただければ刻印追加は無料です（ブランド刻印は除く）。</span>';
+                    notes.push('作業で刻印が消えてしまう場合も、事前にご要望いただければ刻印追加は無料です（ブランド刻印は除く）。');
+                }
+                if (notes.length) {
+                    html += '<br><span style="font-size:.85em;opacity:.8;">※' + notes.join('<br>※') + '</span>';
                 }
                 document.getElementById('simResultBubble').innerHTML = html;
                 simShow('simStageResult');
                 if (!simState.fired) {
                     simState.fired = true;
-                    window.dataLayer.push({ event: 'price_sim_complete', sim_type: simState.typeLabel, sim_dir: simState.dir, sim_big: simState.big, sim_engrave: simState.engrave, sim_count: simState.countLabel });
+                    window.dataLayer.push({ event: 'price_sim_complete', sim_type: simState.typeLabel, sim_dir: simState.dir, sim_big: simState.big, sim_sizes: simState.sizes, sim_metal: simState.metalLabel || '', sim_engrave: simState.engrave, sim_count: simState.countLabel, sim_urgency: simState.urgency });
                 }
             }
             document.querySelectorAll('[data-sim-q="type"] .sim-opt').forEach(function(btn) {
@@ -3976,14 +4031,14 @@
                 btn.addEventListener('click', function() {
                     simSelect(btn, 'dir');
                     simState.dir = btn.dataset.dir;
-                    simState.big = null; simState.engrave = null; simState.mult = null;
+                    simState.big = null; simState.sizes = 0; simState.metalRate = null; simState.engrave = null; simState.mult = null; simState.urgency = null;
                     document.getElementById('simEchoDir').textContent = btn.dataset.label + 'です。';
                     simResetAfter('simStageDir');
                     if (simState.dir === 'up') {
                         simShow('simStageSize');
                     } else {
-                        simState.big = 0;
-                        document.getElementById('simEchoSize').textContent = btn.dataset.label + 'です。';
+                        simState.big = 0; simState.metalRate = 0;
+                        document.getElementById('simEchoMetal').textContent = btn.dataset.label + 'です。';
                         simShow('simStageEngrave');
                     }
                 });
@@ -3992,9 +4047,27 @@
                 btn.addEventListener('click', function() {
                     simSelect(btn, 'size');
                     simState.big = parseInt(btn.dataset.big, 10);
-                    simState.engrave = null; simState.mult = null;
-                    document.getElementById('simEchoSize').textContent = btn.dataset.label + 'を考えています。';
+                    simState.sizes = btn.dataset.sizes ? parseInt(btn.dataset.sizes, 10) : 0;
+                    simState.metalRate = null; simState.engrave = null; simState.mult = null; simState.urgency = null;
                     simResetAfter('simStageSize');
+                    if (simState.big === 1) {
+                        simState.metalRate = 0;
+                        document.getElementById('simEchoMetal').textContent = btn.dataset.label + 'を考えています。';
+                        simShow('simStageEngrave');
+                    } else {
+                        document.getElementById('simEchoSize').textContent = btn.dataset.label + 'を考えています。';
+                        simShow('simStageMetal');
+                    }
+                });
+            });
+            document.querySelectorAll('[data-sim-q="metal"] .sim-opt').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    simSelect(btn, 'metal');
+                    simState.metalRate = parseInt(btn.dataset.metal, 10);
+                    simState.metalLabel = btn.dataset.label;
+                    simState.engrave = null; simState.mult = null; simState.urgency = null;
+                    document.getElementById('simEchoMetal').textContent = btn.dataset.label + 'です。';
+                    simResetAfter('simStageMetal');
                     simShow('simStageEngrave');
                 });
             });
@@ -4002,7 +4075,7 @@
                 btn.addEventListener('click', function() {
                     simSelect(btn, 'engrave');
                     simState.engrave = parseInt(btn.dataset.engrave, 10);
-                    simState.mult = null;
+                    simState.mult = null; simState.urgency = null;
                     document.getElementById('simEchoEngrave').textContent = simState.engrave === 1 ? '刻印があります。' : '刻印はありません。';
                     simResetAfter('simStageEngrave');
                     simShow('simStageCount');
@@ -4013,7 +4086,18 @@
                     simSelect(btn, 'count');
                     simState.mult = parseFloat(btn.dataset.mult);
                     simState.countLabel = btn.dataset.label;
+                    simState.urgency = null;
                     document.getElementById('simEchoCount').textContent = simState.countLabel + 'です。';
+                    simResetAfter('simStageCount');
+                    simShow('simStageUrgency');
+                });
+            });
+            document.querySelectorAll('[data-sim-q="urgency"] .sim-opt').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    simSelect(btn, 'urgency');
+                    simState.urgency = btn.dataset.urgency;
+                    simState.urgencyLabel = btn.dataset.label;
+                    document.getElementById('simEchoUrgency').textContent = btn.dataset.label + 'で。';
                     simResult();
                 });
             });
