@@ -53,7 +53,7 @@ mainにpush → Vercel自動デプロイ。PRは不要（静的HTML単体のた�
 
 - CSSはすべてインライン（`<style>`タグ内）。外部CSSファイルなし
 - 画像はすべて `/resize/images/` 以下。**WebP配信（2026-06-05〜）**: 参照は `.webp`、PNG/JPG原本も残置。新規画像は `node ~/Projects/retold-tokyo/scripts/optimize-images.mjs resize/images --quality=72 --max-width=1100` でWebP化し、`src`/`url()` は `.webp` を参照すること（JSON-LDの `"image"` はpng維持）。FVヒーロー(CSS背景)は `<link rel=preload as=image fetchpriority=high>` 済み
-- CTA href はすべて `https://liff.line.me/2009801854-l9LrHK08/`
+- CTA href はすべて `https://liff.line.me/2009801854-l9LrHK08/?lp=resize`。`?lp=resize` はサイズ直しファネルのマーカーで、retold-resize-app の follow webhook がこれを見て「サイズ直し歓迎メッセージ」を出し分ける（マーカー無しのLIFFルート着地は中立案内になる）。**削らないこと**
 - `data-cta` 属性でGTM dataLayerイベント `line_cta_click` を発火
 - 料金変更時はFAQ・JSON-LD・meta description・プロモバナー・フローティングCTAも忘れず更新
 
