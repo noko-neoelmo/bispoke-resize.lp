@@ -22,7 +22,7 @@
     src="https://www.facebook.net/tr?id=956051253500043&ev=PageView&noscript=1"/></noscript>
 
     <title>ネックレス修理・パールの糸替え｜郵送で無料見積もり｜RETOLD TOKYO</title>
-    <meta name="description" content="ネックレスのチェーン切れ、パールの糸替え、留め具の付け直し。もう使えないと諦めた一本を、国内の職人がお直しします。完全オンライン・往復送料無料。LINEで写真を送るだけで無料お見積もり。チェーン切れ修理は9,900円〜、石留め直しは9,900円〜。いずれも点検・洗浄・磨き仕上げ込みの一式価格です。">
+    <meta name="description" content="ネックレスのチェーン切れ、パールの糸替え、留め具の付け直し。もう使えないと諦めた一本を、国内の職人がお直しします。完全オンライン・往復送料無料。LINEで写真を送るだけで無料お見積もり。チェーン切れ修理＋新品仕上げ＋石・トップ調整の「ネックレスまるごとパック」一律16,500円（税込）。単品修理は9,900円〜の一式価格（点検・洗浄・磨き込み）。2点以上の同時依頼でまとめ割10%OFF。">
     <link rel="canonical" href="https://retold.tokyo/repair">
 
     <!-- ══ OGP / Twitter Card ══ -->
@@ -47,7 +47,7 @@
           "name": "ジュエリー修理にはいくらかかりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "5,500円〜が目安です。いずれも点検・洗浄・磨き仕上げ込みの一式価格です。新品仕上げ（磨き直し）は5,500円〜（他のお直しと同時なら無料）、チェーン切れ修理は9,900円〜、メッキ再加工は8,800円〜、パールの糸替えは9,900円〜、石留め直しは9,900円〜、留め具交換は13,200円〜、指輪のサイズ直しは13,200円〜、イヤリング⇔ピアス変換は20,000円〜（ペア・使う地金により変動）。素材や状態により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。"
+            "text": "5,500円〜が目安です。いずれも点検・洗浄・磨き仕上げ込みの一式価格です。新品仕上げ（磨き直し）は5,500円〜（他のお直しと同時なら無料）、チェーン切れ修理は9,900円〜、メッキ再加工は8,800円〜、パールの糸替えは9,900円〜、石留め直しは9,900円〜、留め具交換は13,200円〜、指輪のサイズ直しは13,200円〜、イヤリング⇔ピアス変換は20,000円〜（ペア・使う地金により変動）。ネックレスは、チェーン切れ修理・新品仕上げ・石やトップの調整をまとめた「ネックレスまるごとパック」一律16,500円（税込）もご用意しています。2点以上の修理を同時にご依頼いただくと、まとめ割で合計から10%OFFになります。素材や状態により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。"
           }
         },
         {
@@ -103,7 +103,7 @@
       "url": "https://retold.tokyo/repair",
       "offers": {
         "@type": "Offer",
-        "price": "3300",
+        "price": "5500",
         "priceCurrency": "JPY"
       }
     }
@@ -228,6 +228,31 @@
         .header-cta svg { width: 14px; height: 14px; color: #FFFFFF; }
 
         /* ===== Hero ===== */
+        .promo-banner {
+            margin-top: 56px;
+            background: var(--navy);
+            color: #FFFFFF;
+            padding: 9px 12px;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            font-size: 12px; font-weight: 700; line-height: 1.3;
+            text-align: center; white-space: nowrap;
+        }
+        .promo-banner .promo-banner-strong {
+            color: var(--gold-top); font-weight: 900;
+            font-size: 16px; letter-spacing: 0.02em; margin: 0 2px;
+        }
+        @media (min-width: 600px) {
+            .promo-banner { font-size: 13px; padding: 10px 18px; }
+            .promo-banner .promo-banner-strong { font-size: 18px; }
+        }
+        .promo-banner + .hero-repair { margin-top: 0; }
+        .price-matome {
+            display: block; width: fit-content; margin: 0 auto 18px;
+            background: var(--navy); color: #FFFFFF;
+            font-size: 13px; font-weight: 700; line-height: 1.4;
+            padding: 8px 18px; border-radius: 999px; text-align: center;
+        }
+        .price-matome strong { color: var(--gold-top); font-weight: 900; }
         .hero-repair {
             position: relative; margin-top: 56px;
             min-height: min(640px, calc(100svh - 56px)); max-height: 720px;
@@ -348,6 +373,34 @@
             .hero-repair-proof { margin-bottom: 24px; }
             .hero-repair-proof-item { min-height: 66px; padding: 10px 12px; }
             .hero-repair-proof-main { font-size: 13px; }
+        }
+        .hero-repair-offer {
+            display: block; text-decoration: none;
+            max-width: 400px; margin: 0 0 16px;
+            padding: 12px 14px; border-radius: 10px;
+            border: 1px solid rgba(232,210,160,0.55);
+            background: rgba(19,28,50,0.55);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+        .hero-repair-offer-label {
+            display: block; font-size: 10px; font-weight: 800;
+            letter-spacing: 0.14em; color: var(--gold-top);
+            text-transform: uppercase; margin-bottom: 4px;
+        }
+        .hero-repair-offer-main {
+            display: block; font-size: 12px; font-weight: 700;
+            color: #FFFFFF; line-height: 1.5; margin-bottom: 4px;
+        }
+        .hero-repair-offer-price {
+            display: block; font-size: 20px; font-weight: 800;
+            color: #FFFFFF; line-height: 1.2;
+        }
+        .hero-repair-offer-price small { font-size: 11px; font-weight: 600; }
+        @media (min-width: 600px) {
+            .hero-repair-offer { margin-bottom: 20px; }
+            .hero-repair-offer-main { font-size: 13px; }
+            .hero-repair-offer-price { font-size: 22px; }
         }
         .hero-repair-badges {
             display: flex; gap: 6px; flex-wrap: wrap;
@@ -553,6 +606,29 @@
             border-top: 1px solid rgba(27,42,74,0.10);
         }
         .menu-card-price span { font-size: 12px; font-weight: 400; }
+        .menu-card-featured {
+            grid-column: 1 / -1;
+            border: 2px solid var(--navy);
+            box-shadow: 0 8px 24px rgba(27,42,74,0.14);
+            min-height: 0; position: relative;
+            padding-top: 26px;
+        }
+        .menu-card-featured-badge {
+            position: absolute; top: -12px; left: 16px;
+            font-size: 11px; font-weight: 800; letter-spacing: 0.06em;
+            color: #FFFFFF; background: var(--navy);
+            padding: 4px 12px; border-radius: 999px;
+        }
+        .menu-pack-items {
+            display: flex; flex-wrap: wrap; align-items: center;
+            gap: 6px; margin: 8px 0 10px;
+        }
+        .menu-pack-item {
+            font-size: 12px; font-weight: 700; color: var(--navy);
+            background: var(--water-blue); border-radius: 999px;
+            padding: 5px 12px;
+        }
+        .menu-pack-plus { font-size: 12px; font-weight: 800; color: var(--navy); }
         .price-includes {
             display: flex; flex-wrap: wrap; justify-content: center;
             gap: 8px; margin: 8px 0 18px;
@@ -733,6 +809,9 @@
             .hero-repair-proof-label,
             .hero-repair-proof-main { display: inline; }
             .hero-repair-proof-label { margin-right: 6px; }
+            .hero-repair-offer { padding: 8px 10px; margin-bottom: 10px; }
+            .hero-repair-offer-main { font-size: 11px; }
+            .hero-repair-offer-price { font-size: 17px; }
             .hero-repair-badges { gap: 5px; margin-bottom: 12px; }
             .hero-repair-badge { font-size: 9.5px; padding: 5px 8px; }
             .hero-repair .btn-sub-text-light { font-size: 10px; padding: 5px 8px; }
@@ -922,16 +1001,26 @@
         </a>
     </header>
 
+    <!-- Promo Banner: まとめ割 -->
+    <div class="promo-banner" role="note" aria-label="まとめ割キャンペーン">
+        <span class="promo-banner-text">まとめ割｜2点以上の同時ご依頼で <span class="promo-banner-strong">10%OFF</span></span>
+    </div>
+
     <!-- ===== Hero ===== -->
     <section class="hero-repair" id="top">
         <p class="hero-repair-eyebrow">RETOLD TOKYO ／ Jewelry Repair</p>
         <h1 class="hero-repair-title">ジュエリー修理専門店</h1>
-        <p class="hero-repair-lead">チェーン切れ、留め具の付け直し、パールの糸替え。引き出しに戻す前に、写真を送ってください。<br>来店不要。LINEと郵送だけで完結します。</p>
+        <p class="hero-repair-lead">チェーン切れ、留め具の付け直し、パールの糸替え。<br>ブランド・購入元を問わず、国内の職人がお直しします。</p>
+        <a href="#price" class="hero-repair-offer">
+            <span class="hero-repair-offer-label">Necklace Full Repair</span>
+            <span class="hero-repair-offer-main">チェーン切れ修理＋新品仕上げ＋石・トップの調整</span>
+            <span class="hero-repair-offer-price">まるごと一律 16,500<small>円（税込）</small></span>
+        </a>
         <div class="hero-repair-badges">
-            <span class="hero-repair-badge">ネックレス修理</span>
-            <span class="hero-repair-badge">パール糸替え</span>
-            <span class="hero-repair-badge">チェーン切れ</span>
-            <span class="hero-repair-badge">留め具付け直し</span>
+            <span class="hero-repair-badge">往復送料無料</span>
+            <span class="hero-repair-badge">1年保証</span>
+            <span class="hero-repair-badge">国家資格の職人</span>
+            <span class="hero-repair-badge">オンライン完結</span>
         </div>
         <div class="hero-repair-cta">
             <a href="https://retold-resize-app.vercel.app/repair/estimate" data-cta class="btn-cta" style="box-shadow:0 8px 22px rgba(6,199,85,0.35),0 0 0 4px rgba(255,255,255,0.20);">
@@ -1063,8 +1152,22 @@
             <p class="section-label fade-in">MENU & PRICING</p>
             <h2 class="section-title fade-in">修理メニュー・料金</h2>
             <p class="section-desc fade-in">お見積もりは無料です。</p>
+            <p class="price-matome fade-in">まとめ割｜2点以上の同時ご依頼で合計から<strong>10%OFF</strong></p>
 
             <div class="menu-grid fade-in">
+                <div class="menu-card menu-card-featured">
+                    <span class="menu-card-featured-badge">まとめてお得</span>
+                    <h3 class="menu-card-title">ネックレスまるごとパック</h3>
+                    <div class="menu-pack-items">
+                        <span class="menu-pack-item">チェーン切れ修理</span>
+                        <span class="menu-pack-plus">＋</span>
+                        <span class="menu-pack-item">新品仕上げ（磨き）</span>
+                        <span class="menu-pack-plus">＋</span>
+                        <span class="menu-pack-item">石・トップの調整</span>
+                    </div>
+                    <p class="menu-card-desc">切れたチェーンの修理と一緒に、全体を職人の手で磨き上げ、石のゆるみやトップの調整までまとめて行う一律価格のパックです。</p>
+                    <p class="menu-card-price">16,500<span>円（税込）</span></p>
+                </div>
                 <div class="menu-card">
                     <div class="menu-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
@@ -1152,7 +1255,7 @@
                 <p style="font-size:.78rem;color:#666;text-align:center;margin:.8rem 0 0;line-height:1.6;">ブランドジュエリー、ヴィンテージ、セカンドハンド購入品も対応。<br>指輪のサイズ直しも同じLINEでまとめてご相談いただけます。</p>
             </div>
 
-            <p class="price-note fade-in">※素材・状態・修理内容により変動します。正式なお見積もりはLINEでお伝えします。<br>※修理が困難な場合はお断りすることがあります。その場合は着払いにて返送いたします。</p>
+            <p class="price-note fade-in">※素材・状態・修理内容により変動します。正式なお見積もりはLINEでお伝えします。<br>※ネックレスまるごとパックは一律料金です。特殊な修理・素材は追加お見積もりとなる場合があります。<br>※まとめ割10%OFFは、2点以上の修理を同時にご依頼いただいた場合に、お見積もり時に適用されます。<br>※修理が困難な場合はお断りすることがあります。その場合は着払いにて返送いたします。</p>
 
             <div class="cta-center fade-in">
                 <a href="https://retold-resize-app.vercel.app/repair/estimate" data-cta class="btn-cta">
@@ -1244,7 +1347,7 @@
                     修理の料金はどのくらいですか？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text"><strong>5,500円〜が目安です。</strong>いずれも点検・洗浄・磨き仕上げ込みの一式価格です。新品仕上げ（磨き直し）は5,500円〜（他のお直しと同時なら無料）、チェーン切れ修理は9,900円〜、メッキ再加工は8,800円〜、パールの糸替えは9,900円〜、石留め直しは9,900円〜、留め具交換は13,200円〜、指輪のサイズ直しは13,200円〜、イヤリング⇔ピアス変換は20,000円〜（ペア・使う地金により変動）。素材や状態により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。</p>
+                    <p class="faq-answer-text"><strong>5,500円〜が目安です。</strong>いずれも点検・洗浄・磨き仕上げ込みの一式価格です。新品仕上げ（磨き直し）は5,500円〜（他のお直しと同時なら無料）、チェーン切れ修理は9,900円〜、メッキ再加工は8,800円〜、パールの糸替えは9,900円〜、石留め直しは9,900円〜、留め具交換は13,200円〜、指輪のサイズ直しは13,200円〜、イヤリング⇔ピアス変換は20,000円〜（ペア・使う地金により変動）。ネックレスは、チェーン切れ修理・新品仕上げ・石やトップの調整をまとめた「ネックレスまるごとパック」一律16,500円（税込）もご用意しています。2点以上の修理を同時にご依頼いただくと、まとめ割で合計から10%OFFになります。素材や状態により変動します。お見積もりは無料ですので、LINEでお気軽にご相談ください。</p>
                 </div>
             </div>
 
@@ -1316,7 +1419,7 @@
                     複数のジュエリーを一度に修理できますか？
                 </button>
                 <div class="faq-answer">
-                    <p class="faq-answer-text">はい。返送キットにまとめてお入れいただければ、複数のジュエリーを同時に修理いたします。</p>
+                    <p class="faq-answer-text">はい。返送キットにまとめてお入れいただければ、複数のジュエリーを同時に修理いたします。<strong>2点以上の同時ご依頼にはまとめ割が適用され、合計金額から10%OFFになります。</strong></p>
                 </div>
             </div>
 
