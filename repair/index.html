@@ -619,16 +619,32 @@
             color: #FFFFFF; background: var(--navy);
             padding: 4px 12px; border-radius: 999px;
         }
-        .menu-pack-items {
-            display: flex; flex-wrap: wrap; align-items: center;
-            gap: 6px; margin: 8px 0 10px;
+        .menu-pack-list {
+            list-style: none; margin: 10px 0 12px; padding: 0;
+            display: flex; flex-direction: column; gap: 8px;
         }
-        .menu-pack-item {
-            font-size: 12px; font-weight: 700; color: var(--navy);
-            background: var(--water-blue); border-radius: 999px;
-            padding: 5px 12px;
+        .menu-pack-list li {
+            display: flex; align-items: baseline; gap: 8px;
+            font-size: 12.5px; font-weight: 600; color: var(--text-primary);
+            line-height: 1.55;
         }
-        .menu-pack-plus { font-size: 12px; font-weight: 800; color: var(--navy); }
+        .menu-pack-list .menu-pack-check {
+            color: var(--line-green); font-weight: 800; flex-shrink: 0;
+        }
+        .menu-pack-list .menu-pack-val {
+            margin-left: auto; padding-left: 8px; flex-shrink: 0;
+            font-size: 11px; font-weight: 600; color: var(--text-light);
+            white-space: nowrap;
+        }
+        .menu-pack-list .menu-pack-note {
+            display: block; font-size: 11px; font-weight: 400;
+            color: var(--text-secondary);
+        }
+        .menu-card-anchor {
+            font-size: 12px; font-weight: 600; color: var(--text-light);
+            margin-top: 2px;
+        }
+        .menu-card-anchor s { color: var(--text-light); }
         .price-includes {
             display: flex; flex-wrap: wrap; justify-content: center;
             gap: 8px; margin: 8px 0 18px;
@@ -1156,24 +1172,35 @@
 
             <div class="menu-grid fade-in">
                 <div class="menu-card menu-card-featured">
-                    <span class="menu-card-featured-badge">まとめてお得</span>
+                    <span class="menu-card-featured-badge">単品合計より ¥3,300おトク</span>
                     <h3 class="menu-card-title">ネックレスまるごとパック</h3>
-                    <div class="menu-pack-items">
-                        <span class="menu-pack-item">チェーン切れ修理</span>
-                        <span class="menu-pack-plus">＋</span>
-                        <span class="menu-pack-item">新品仕上げ（磨き）</span>
-                        <span class="menu-pack-plus">＋</span>
-                        <span class="menu-pack-item">石・トップの調整</span>
-                    </div>
-                    <p class="menu-card-desc">切れたチェーンの修理と一緒に、全体を職人の手で磨き上げ、石のゆるみやトップの調整までまとめて行う一律価格のパックです。</p>
-                    <p class="menu-card-price">16,500<span>円（税込）</span></p>
+                    <ul class="menu-pack-list">
+                        <li>
+                            <span class="menu-pack-check">✓</span>
+                            <span>チェーン切れ修理<span class="menu-pack-note">機械のレーザー溶接ではなく、職人の手による伝統的なロウ付け</span></span>
+                            <span class="menu-pack-val">単品 9,900円〜</span>
+                        </li>
+                        <li>
+                            <span class="menu-pack-check">✓</span>
+                            <span>石のゆるみ・トップの調整</span>
+                            <span class="menu-pack-val">単品 9,900円〜</span>
+                        </li>
+                        <li>
+                            <span class="menu-pack-check">✓</span>
+                            <span>全体の点検・洗浄・新品仕上げ（磨き込み）</span>
+                            <span class="menu-pack-val">込み</span>
+                        </li>
+                    </ul>
+                    <p class="menu-card-desc">修理から仕上げまで、1本まるごと職人がお直しします。一律価格なので、お見積もりで金額が上がる心配がありません。</p>
+                    <p class="menu-card-anchor">単品合計 <s>19,800円〜</s></p>
+                    <p class="menu-card-price">一律 16,500<span>円（税込）</span></p>
                 </div>
                 <div class="menu-card">
                     <div class="menu-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
                     </div>
                     <h3 class="menu-card-title">チェーン切れ修理</h3>
-                    <p class="menu-card-desc">ネックレス・ブレスレットのチェーン切れをロウ付けで修理。切れた箇所がわからないほど仕上げます。留め具の点検・調整、洗浄・磨き仕上げ込みの一式価格です。</p>
+                    <p class="menu-card-desc">ネックレス・ブレスレットのチェーン切れを、機械のレーザー溶接ではなく職人の伝統的なロウ付けで修理。切れた箇所がわからないほど仕上げます。留め具の点検・調整、洗浄・磨き仕上げ込みの一式価格です。</p>
                     <p class="menu-card-price">9,900<span>円（税込）〜</span></p>
                 </div>
                 <div class="menu-card">
