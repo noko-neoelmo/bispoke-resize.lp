@@ -2,6 +2,22 @@
 
 RETOLD TOKYO サイズ直しLP（静的HTML）。本番: https://retold.tokyo/resize
 
+## 判断の委譲（CEOに聞かずに進めてよいこと）
+
+判断基準は**取り消しコスト**。正本: `bispoke-cxo/skills/delegation-policy.md`（`delegation-policy` スキル）。
+
+**自動でやる（聞かない）**
+- コピー・FAQ文言・スタイル・meta の改善（DESIGN.md と禁止表現の範囲内）
+- 画像の最適化・WebP化・preload 調整
+- **日程と内容が既に決まっているキャンペーンの切替実装**（スクリプト＋ワークフロー作成を含む）
+- mainへのpush（このリポはPR不要・静的HTML単体）
+
+**必ず聞く（asks登録して waiting_ceo）**
+- **価格表記の変更**（一式13,200円〜の体系そのもの）
+- **キャンペーンの新設・割引率の決定**（実装は自動、設計は承認）
+- LPの構造改変（セクションの追加・削除・順序変更）
+- CTA先URLの変更（`?lp=resize` マーカーの削除は特に禁止）
+
 ## 構成
 
 - `resize/index.html` — LP本体（単一HTML、CSS/JSインライン、約3200行）
