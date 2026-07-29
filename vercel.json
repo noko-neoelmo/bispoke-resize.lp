@@ -9,7 +9,8 @@
     { "source": "/resize/company", "destination": "/resize/company.html" },
     { "source": "/resize/legal", "destination": "/resize/legal.html" },
     { "source": "/resize/preview", "destination": "/resize/preview.html" },
-    { "source": "/repair", "destination": "/repair/index.html" }
+    { "source": "/repair", "destination": "/repair/index.html" },
+    { "source": "/appraisal", "destination": "/appraisal/index.html" }
   ],
   "redirects": [],
   "trailingSlash": false,
