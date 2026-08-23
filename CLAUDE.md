@@ -2,6 +2,22 @@
 
 RETOLD TOKYO サイズ直しLP（静的HTML）。本番: https://retold.tokyo/resize
 
+## 判断の委譲（CEOに聞かずに進めてよいこと）
+
+判断基準は**取り消しコスト**。正本: `bispoke-cxo/skills/delegation-policy.md`（`delegation-policy` スキル）。
+
+**自動でやる（聞かない）**
+- コピー・FAQ文言・スタイル・meta の改善（DESIGN.md と禁止表現の範囲内）
+- 画像の最適化・WebP化・preload 調整
+- **日程と内容が既に決まっているキャンペーンの切替実装**（スクリプト＋ワークフロー作成を含む）
+- mainへのpush（このリポはPR不要・静的HTML単体）
+
+**必ず聞く（asks登録して waiting_ceo）**
+- **価格表記の変更**（一式13,200円〜の体系そのもの）
+- **キャンペーンの新設・割引率の決定**（実装は自動、設計は承認）
+- LPの構造改変（セクションの追加・削除・順序変更）
+- CTA先URLの変更（`?lp=resize` マーカーの削除は特に禁止）
+
 ## 構成
 
 - `resize/index.html` — LP本体（単一HTML、CSS/JSインライン、約3200行）
@@ -64,6 +80,21 @@ mainにpush → Vercel自動デプロイ。PRは不要（静的HTML単体のた�
 - インラインCSSの色は DESIGN.md の `colors`（CTA=Navy `#1B2A4A`、背景=Off White `#FAF8F5`、テキスト=Ink `#3D3D3D` 等）に一致させる
 - セリフ体・グラデーション・キラキラ・暖色演出は禁止（DESIGN.md「Do's and Don'ts」参照）
 - 正本: https://github.com/noko-neoelmo/bispoke-cxo/blob/main/DESIGN.md
+
+## CEOへの報告（全セッション必須・書式固定）
+
+正本: `bispoke-cxo/skills/delegation-policy.md`（`delegation-policy` スキル）
+
+**見出しはこの3つだけ。1項目1行。理由・経緯は聞かれるまで書かない。**
+
+```
+## いま        終わったこと・動いているもの（最大3行）
+## つぎ        次にやること（最大3行）
+## あなたの判断  無ければ「なし」
+```
+
+- **数字は事実と解釈を分ける** — 生データ（コマンド／出力）を先に出し、解釈は `解釈:` と明示して分ける。取れていない値を推測で埋めず**「未取得」と書く**。単位・期間・母数・出典（正本v5/Supabase/Ads API/GA4）を必ず添える
+- **複雑なものは文章にしない** — 比較・フロー・数字の推移・全体像は**HTMLで図解**（Artifact）。チャットには結論3行＋リンクだけ置き、図の中身を書き写さない
 
 ## オフィス報告（BiSPOKE Office・全セッション必須）
 
