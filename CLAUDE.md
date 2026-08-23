@@ -82,3 +82,9 @@ curl -sS -X POST "$B/office_sessions?on_conflict=session_key" -H "apikey: $K" -H
 ```
 
 マイルストーン完了時は `office_milestones` の該当行を `done=true` にPATCHする（進捗%は消化率で自動算出）。
+
+## 自動リマインドの停止（CEO指示 2026-07-30・全セッション必須）
+
+このリポで作業するセッションは、**自分自身への定期リマインド（自己チェックイン）を作成しない**。`send_later` / `ScheduleWakeup` / `CronCreate` で「1時間後にPRを確認する」類のRoutineを作らず、発火しても再武装しない。PR追従は Webhook イベント（CI失敗・レビューコメント・マージ競合）が届いたときだけ行う。CEOが明示的に指示した業務Routine（日次監視・レポート生成等）は対象外。
+
+正本: https://github.com/noko-neoelmo/bispoke-cxo/blob/main/CLAUDE.md
