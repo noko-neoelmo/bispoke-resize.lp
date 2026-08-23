@@ -54,7 +54,9 @@ mainにpush → Vercel自動デプロイ。PRは不要（静的HTML単体のた�
 - CSSはすべてインライン（`<style>`タグ内）。外部CSSファイルなし
 - 画像はすべて `/resize/images/` 以下。**WebP配信（2026-06-05〜）**: 参照は `.webp`、PNG/JPG原本も残置。新規画像は `node ~/Projects/retold-tokyo/scripts/optimize-images.mjs resize/images --quality=72 --max-width=1100` でWebP化し、`src`/`url()` は `.webp` を参照すること（JSON-LDの `"image"` はpng維持）。FVヒーロー(CSS背景)は `<link rel=preload as=image fetchpriority=high>` 済み
 - CTA href はすべて `https://liff.line.me/2009801854-l9LrHK08/?lp=resize`。`?lp=resize` はサイズ直しファネルのマーカーで、retold-resize-app の follow webhook がこれを見て「サイズ直し歓迎メッセージ」を出し分ける（マーカー無しのLIFFルート着地は中立案内になる）。**削らないこと**
-- `data-cta` 属性でGTM dataLayerイベント `line_cta_click` を発火
+- `data-cta` 属性でGTM dataLayerイベント `line_cta_click` を発火。パラメータは `funnel` / `cta_source` / `cta_id`（=`data-cta`の値）/ `cta_location`（hero・founder・closing・floating）
+- **計測上の注意（2026-07-27 判明）**: GA4プロパティ `533025810` には**カスタムディメンションが1件も登録されていない**。そのため `cta_location` 等のイベントパラメータは送信されていても GA4 で照会できない。CTA別の内訳を見るには GA4管理画面で `cta_id` / `cta_location` / `funnel` をイベントスコープのカスタムディメンションとして登録すること（**登録は遡及しない**。登録日以降のデータのみ）
+- 上記の保険として、各CTAのLIFF URLに `&cta=<hero|founder|closing|floating>` を付与している。これは標準ディメンション `pageLocation`（遷移先 retold-resize-app）で追えるため、GA4/GTMの設定変更なしにCTA別の内訳が取れる。**`?lp=resize` と併せて削らないこと**（webhookは `landingPath.includes("lp=resize")` の部分一致なので追加パラメータは安全）
 - 料金変更時はFAQ・JSON-LD・meta description・プロモバナー・フローティングCTAも忘れず更新
 
 ## デザインシステム（DESIGN.md）
